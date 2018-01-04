@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[text]]></title>
+      <url>/2018/01/04/text/</url>
+      <content type="html"></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[2018最新版hexo+Github搭建个人博客教程]]></title>
+      <url>/2018/01/04/2018%E6%9C%80%E6%96%B0%E7%89%88hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>现在是大三了，身边的甚多朋友技术都还不错，动不动就搭建自己的网站什么的。本着向大佬学习（zhuangbi）的心情，我也开始在阿里云上面买了一个云服务器（学生套餐9.9），使用phpstudy软件一键部署了一个web服务器。但是想想其实没什么用，我只是想找一个属于自己的个人博客而已。所以将目光转向了hexo。 经过很多的摸索，终于是做好了我的博客：<a href="http://bianxiaofeng.top" target="_blank" rel="noopener">http://bianxiaofeng.top</a>, 就像每个语言入门必写<code>hello world</code>一样，我也想把自己使用hexo的相关经历写下来，方便自己以后查阅也希望能够帮助到更多的朋友。  </p>
+</blockquote>
+<p>博主使用是Windows10操作系统，其他系统自测。</p>
+<h2 id="总述"><a href="#总述" class="headerlink" title="总述"></a>总述</h2><p>搭建的过程分为以下几步：  </p>
+<ol>
+<li>安装Node.js  </li>
+</ol>
+<ol>
+<li>安装Git软件  </li>
+</ol>
+<ol>
+<li>安装hexo博客框架  </li>
+</ol>
+<ol>
+<li>测试本地运行（线下访问个人博客）  </li>
+</ol>
+<ol>
+<li>部署到Coding以及GitHub上（线上访问个人博客）  </li>
+</ol>
+<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>Node.js下载地址：<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a>    </p>
+<p>安装过程一路默认安装即可。   </p>
+<p>详细安装文档参看：<a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">http://www.runoob.com/nodejs/nodejs-install-setup.html</a>  </p>
+<h2 id="安装Git软件"><a href="#安装Git软件" class="headerlink" title="安装Git软件"></a>安装Git软件</h2><p>Git软件下载地址：<a href="https://git-scm.com/download" target="_blank" rel="noopener">https://git-scm.com/download</a>  </p>
+<p>安装过程一路默认安装即可。 </p>
+<p>关于更多的Git讲解参看：  </p>
+<p><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a>  </p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><h3 id="什么是-Hexo？"><a href="#什么是-Hexo？" class="headerlink" title="什么是 Hexo？"></a>什么是 Hexo？</h3><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 </p>
+<p>Hexo官方网站：<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>安装命令：  </p>
+<pre><code>npm install -g hexo-cli  #-g表示全局安装
+</code></pre><p><em>这里提一下：关于hexo的终端操作最好是在管理员模式下，读者可以采用<code>按住Shift然后再点击鼠标右键</code>选择弹出菜单的<code>在此处打开Powershell窗口</code>保证运行在管理员状态下。</em>  </p>
+<h3 id="初始化hexo"><a href="#初始化hexo" class="headerlink" title="初始化hexo"></a>初始化hexo</h3><p>在电脑合适的位置新建一个文件夹存放博客。本文中取名为<code>Blog</code>文件夹。  </p>
+<p>控制台命令行使用cd命令进入到Blog文件夹，输入以下命令进行初始化：  </p>
+<pre><code>hexo init  # 初始化 
+</code></pre><p>初始化完成之后，因为会出现有些依赖包未安装成功的情况，所以请再输入以下命令安装依赖包:  </p>
+<pre><code>hexo install   # 安装依赖包  
+</code></pre><h2 id="测试本地运行"><a href="#测试本地运行" class="headerlink" title="测试本地运行"></a>测试本地运行</h2><p>完成以上安装步骤后，便可以在本地预览博客效果了。  </p>
+<p>输入以下命令：  </p>
+<pre><code>hexo g   # 等同于hexo generate，生成静态文件
+hexo s   # 等同于hexo server，在本地服务器运行
+</code></pre><p>然后打开浏览器地址栏输入：<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>便可以预览生成的博客框架雏形了。  </p>
+<h2 id="部署到GitHub以及Coding上"><a href="#部署到GitHub以及Coding上" class="headerlink" title="部署到GitHub以及Coding上"></a>部署到GitHub以及Coding上</h2><blockquote>
+<p>建立博客网站肯定是要让大家看到的，由于Github是歪果仁的网站，且禁止百度爬虫访问，所以会导致百度搜不到你的网站。所以我们要做好两手准备：国内采用Coding托管，国外采用GitHub托管。  </p>
+</blockquote>
+<p>分别注册GitHub以及Coding的账号。  </p>
+<ul>
+<li><p>GitHub网址如下：<a href="http://www.github.com" target="_blank" rel="noopener">http://www.github.com</a>  </p>
+</li>
+<li><p>Coding网址如下：<a href="https://coding.net" target="_blank" rel="noopener">https://coding.net</a>  </p>
+</li>
+</ul>
+<h3 id="GitHub注册"><a href="#GitHub注册" class="headerlink" title="GitHub注册"></a>GitHub注册</h3><p>1、在GitHub首页点击<code>Start Project</code>  </p>
+<p>2、创建Repository </p>
+<p><img src="https://i.imgur.com/HKup5ys.png" alt="">  </p>
+<p>PS：创建时，填写<code>Repository name</code>的时候，Repository name的格式必须为{user_name}.github.io，其中{user_name}必须与你的用户名一样，这是GitHub Pages的特殊命名规范（亲测不区分大小写）。</p>
+<h3 id="Coding注册"><a href="#Coding注册" class="headerlink" title="Coding注册"></a>Coding注册</h3><blockquote>
+<p>CODING 是国内专业的一站式云端软件服务平台，成立于 2014 年 2 月，总部位于深圳，并于北京、上海、成都、西雅图设立分部，已获得了 IDG 和光速的两轮投资共计 1500 万美元。旗下自主研发运营 Coding.net 云端开发协作平台，累积 25 万开发者，37 万个项目。在云计算时代，把代码托管、产品演示、WebIDE 等开发工具集成到浏览器中，免除繁杂的开发环境部署，节省成本，帮助软件开发者提高生产效率，并实现 “Coding Anytime Anywhere” 的愿景。2015 年 10 月，基于 Coding.net 的工具平台，CODING 推出云端软件众包服务平台 “码市”，旨在通过云端协作以及众包的方式提高软件交付的效率，帮助软件开发行业实现高效的资源匹配。</p>
+<p>Coding.net 为开发者提供了免费的基础服务，包括但不限于 Git 代码托管，项目管理，Pages 服务，代码质量管理。您可以在 Coding.net 一站完成代码及代码质量，项目及项目人员的管理，Coding.net 让开发变得前所未有的敏捷和简单。</p>
+</blockquote>
+<p>Coding的仓库容量只有256M，但是用来发布博文是够了的。  </p>
+<p>注册步骤没啥好说的。  </p>
+<p>主要说一下创建仓库的时候（顺便说一句：Coding毕竟还是国内的，各方面比较适合国人的习惯，操作起来是比GitHub顺手点。 ）  </p>
+<p>点击下面的“加号”创建一个仓库：  </p>
+<p><img src="https://i.imgur.com/vanCb7s.png" alt="">  </p>
+<p>然后输入项目名称以及项目描述：  </p>
+<p><img src="https://i.imgur.com/0ze8avx.png" alt=""><br><em>此处的项目名称不像GitHub那样有着严格的命名规范，你可以按照你能想象到的方式输入。建议不要输入中文，不然后面会走的很安详。这里我是输入的自己的用户名作为项目名称。</em>  </p>
+<p>开启Pages服务（步骤如下图）  </p>
+<p><img src="https://i.imgur.com/F4nGZCc.png" alt=""><br>选择部署来源为<code>master分支</code>，然后点击<a href="http://username.coding.me/yourRepoName" target="_blank" rel="noopener"> http://username.coding.me/yourRepoName</a>就可以查看你的博客了，不过你点进去是404，因为你仓库里面啥都没有。  </p>
+<p>到此，注册和创建仓库一步骤已经全部完成了。  </p>
+<h3 id="部署到线上（GitHub和Coding）"><a href="#部署到线上（GitHub和Coding）" class="headerlink" title="部署到线上（GitHub和Coding）"></a>部署到线上（GitHub和Coding）</h3><blockquote>
+<p>我看到很多博客上面说到配置文件的时候，没有区分站点配置文件和主题配置文件，这里我先说清楚。站点配置文件和主题配置文件名称都是一样的<code>_config.yml</code>，站点配置文件在网站根目录，主题配置文件在根目录下的theme文件的具体theme下的<code>_config.yml</code>。  </p>
+</blockquote>
+<h4 id="修改站点配置文件"><a href="#修改站点配置文件" class="headerlink" title="修改站点配置文件"></a>修改站点配置文件</h4><p>打开<code>_config.yml</code>到最后<code>deploy</code>选项：<br>配置如下：  </p>
+<pre><code># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo:
+    github: https://github.com/DimpleFeng/dimplefeng.github.io.git,master
+    coding: https://git.coding.net/DimpleFeng/test.git,master
+</code></pre><p>注意：每个冒号后面都是有一个空格的，这是node的语法。  </p>
+<h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><p>部署之前需要安装<code>git</code>部署插件，否则会提示<code>Deployer not found</code>错误。  </p>
+<pre><code>npm install hexo-deployer-git --save
+</code></pre><p>安装完毕后控制台输入：  </p>
+<pre><code>hexo g -d   
+</code></pre><p>随后访问你的以下网址（注意替换）：</p>
+<p><a href="yourName.github.io">yourName.github.io </a><br><a href="yourName.coding.me">yourName.coding.me </a>  </p>
+<h1 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h1><p>接下来呢，我还会针对Next主题、相关的网站配置以及域名和百度谷歌收录进行说明，欢迎关注我的系列文章。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>洋洋洒洒的写了4000+字，确实每一步都是在仔仔细细的做，记录。这篇博文参考了hexo的官方文档，以及百度谷歌的各种教程，重复杂乱居多，网上各种文章都是复制粘贴重复很多且不是最新的，我只想用最平凡的文字记录最清晰的道路。我是一个被代码耽误的诗人，这是我朋友给我的评价哈哈哈。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> hexo个人博客搭建之路 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[站点被百度谷歌收录]]></title>
+      <url>/2018/01/02/%E7%AB%99%E7%82%B9%E8%A2%AB%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E6%94%B6%E5%BD%95/</url>
+      <content type="html"><![CDATA[<p>精心写一篇博文但是没人看怎么办呢？百度搜不到，谷歌搜不到？别慌，还需要将你的网站提交到百度和谷歌。</p>
+<p>在开始之前，你可以按照以下格式在百度和谷歌搜索下你的网站：<br><img src="https://i.imgur.com/5hnjkNo.png" alt=""></p>
+<p><img src="https://i.imgur.com/yQ3UAjT.png" alt=""><br>注意：提交到谷歌需要科学上网。</p>
+<h1 id="提交百度搜索引擎"><a href="#提交百度搜索引擎" class="headerlink" title="提交百度搜索引擎"></a>提交百度搜索引擎</h1><p>登录<a href="http://ziyuan.baidu.com/site/index" target="_blank" rel="noopener">http://ziyuan.baidu.com/site/index</a></p>
+<p>ps：可能需要个人信息认证，按照提示认证即可！  </p>
+<p><img src="https://i.imgur.com/YpUnA4O.png" alt=""></p>
+<h2 id="点击添加站点"><a href="#点击添加站点" class="headerlink" title="点击添加站点"></a>点击添加站点</h2><p>会看到如下界面：<br><img src="https://i.imgur.com/zWlFN8G.png" alt="">  </p>
+<h2 id="在图中文本框添加你的个人网站域名"><a href="#在图中文本框添加你的个人网站域名" class="headerlink" title="在图中文本框添加你的个人网站域名"></a>在图中文本框添加你的个人网站域名</h2><p>最好是带上<code>www</code></p>
+<h2 id="设置站点领域"><a href="#设置站点领域" class="headerlink" title="设置站点领域"></a>设置站点领域</h2><p>这里我选择<code>信息技术</code>，点击下一步。 </p>
+<h2 id="选择验证方式"><a href="#选择验证方式" class="headerlink" title="选择验证方式"></a>选择验证方式</h2><h3 id="验证方式一：文件验证"><a href="#验证方式一：文件验证" class="headerlink" title="验证方式一：文件验证"></a>验证方式一：文件验证</h3><p><img src="https://i.imgur.com/lj9qSFz.png" alt=""><br>  这里我选择的是文件验证，建议大家也使用文件验证方式，这样比较简单。 </p>
+<blockquote>
+<ol>
+<li>请点击 下载验证文件 获取验证文件（当前最新：baidu_verify_Rkofa3ZBzc.html）</li>
+</ol>
+<ol>
+<li>将验证文件放置于您所配置域名(www.bianxiaofeng.top)的根目录下</li>
+</ol>
+<ol>
+<li>点击这里确认验证文件可以正常访问</li>
+</ol>
+<ol>
+<li>请点击“完成验证”按钮</li>
+</ol>
+<p>为保持验证通过的状态,成功验证后请不要删除HTML文件   </p>
+</blockquote>
+<p>网站的根目录在那里呢？  </p>
+<p>在你的博客的本地根目录的<code>Source</code>文件夹内。  </p>
+<p><img src="https://i.imgur.com/NbWMPCi.png" alt=""><br> 然后控制台输入：<code>hexo g -d</code>，部署到网站上。</p>
+<p>验证方式：<br>点击3步骤的验证。如果能点击进去证明成功。   </p>
+<h2 id="随后点完成验证。"><a href="#随后点完成验证。" class="headerlink" title="随后点完成验证。"></a>随后点完成验证。</h2><h3 id="HTML标签验证"><a href="#HTML标签验证" class="headerlink" title="HTML标签验证"></a>HTML标签验证</h3><p>本文使用的是Next主题。在<code>themes/next/layout/_partials/head.swig</code>内：修改meta标签为站长网站上给出的标签即可：</p>
+<p><img src="https://i.imgur.com/5BsCvZk.png" alt="">  </p>
+<p>同时，在themes/next/_config.yml中将google-site-verification和baidu_site_verification的值设置为true即可。</p>
+<p> 然后控制台输入：<code>hexo g -d</code>，部署到网站上。</p>
+<h2 id="CNAME验证"><a href="#CNAME验证" class="headerlink" title="CNAME验证"></a>CNAME验证</h2><p><img src="https://i.imgur.com/IfCkGvN.png" alt="">  </p>
+<p>配置方式如图：</p>
+<p><img src="https://i.imgur.com/UeHI8VE.png" alt="">  </p>
+<h1 id="谷歌验证"><a href="#谷歌验证" class="headerlink" title="谷歌验证"></a>谷歌验证</h1><p>登录<a href="https://www.google.com/webmasters/tools/home?hl=zh-CN" target="_blank" rel="noopener">https://www.google.com/webmasters/tools/home?hl=zh-CN</a><br>如图：<br><img src="https://i.imgur.com/g9YE3s8.png" alt="">   </p>
+<h2 id="在上图输入你的网站地址"><a href="#在上图输入你的网站地址" class="headerlink" title="在上图输入你的网站地址"></a>在上图输入你的网站地址</h2><h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p><img src="https://i.imgur.com/XqmMJLv.png" alt=""></p>
+<p>按照下图进行选择：</p>
+<p><img src="https://i.imgur.com/BkGlDW2.png" alt="">  </p>
+<p>在阿里云的解析当中添加下面的解析：<br><img src="https://i.imgur.com/LlISN8f.png" alt="">  </p>
+<p>点击验证即可。  </p>
+<p><img src="https://i.imgur.com/fLZQwgj.png" alt="">  </p>
+<h1 id="站点地图"><a href="#站点地图" class="headerlink" title="站点地图"></a>站点地图</h1><blockquote>
+<p>站点地图是一种文件，您可以通过该文件列出您网站上的网页，从而将您网站内容的组织架构告知Google和其他搜索引擎。Googlebot等搜索引擎网页抓取工具会读取此文件，以便更加智能地抓取您的网站。 </p>
+</blockquote>
+<h2 id="安装百度谷歌的站点地图文件"><a href="#安装百度谷歌的站点地图文件" class="headerlink" title="安装百度谷歌的站点地图文件"></a>安装百度谷歌的站点地图文件</h2><pre><code>npm install hexo-generator-sitemap --save
+
+npm install hexo-generator-baidu-sitemap --save  
+</code></pre><h2 id="修改博客配置文件"><a href="#修改博客配置文件" class="headerlink" title="修改博客配置文件"></a>修改博客配置文件</h2><p>打开站点配置文件：<br><img src="https://i.imgur.com/AcrthZy.png" alt="">  </p>
+<p>主要是将url设置为你的站点名称。</p>
+<p>然后执行：<code>hexo clean</code>和<code>hexo g</code>  </p>
+<p>这样在你的网站根目录的<code>public</code>文件夹下生成sitemap.xml文件和baidusitemap.xml文件：  </p>
+<p><img src="https://i.imgur.com/jqyyXOX.png" alt="">  </p>
+<p>其中sitemap.xml文件是搜索引擎通用的文件，baidusitemap.xml是百度专用的sitemap文件。  </p>
+<h2 id="向谷歌提交链接"><a href="#向谷歌提交链接" class="headerlink" title="向谷歌提交链接"></a>向谷歌提交链接</h2><p>google站点平台：<a href="https://www.google.com/webmasters/tools/home?hl=zh-CN" target="_blank" rel="noopener">https://www.google.com/webmasters/tools/home?hl=zh-CN</a>，然后就是注册账号、验证站点、提交sitemap，</p>
+<p><img src="https://i.imgur.com/A5rvI8A.png" alt="">    </p>
+<p><img src="https://i.imgur.com/UOvfbDi.png" alt="">  </p>
+<p>提交你的site就行了</p>
+<h2 id="百度收录"><a href="#百度收录" class="headerlink" title="百度收录"></a>百度收录</h2><p>百度收录很麻烦，效率比谷歌差远了。</p>
+<h3 id="设置自动推送"><a href="#设置自动推送" class="headerlink" title="设置自动推送"></a>设置自动推送</h3><p>在主题配置文件下设置,将baidu_push设置为true：</p>
+<pre><code># Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
+baidu_push: true 
+</code></pre><h3 id="sitemap"><a href="#sitemap" class="headerlink" title="sitemap"></a>sitemap</h3><p>将生成的baidusitemap.xml提交到百度<a href="http://ziyuan.baidu.com/linksubmit/index" target="_blank" rel="noopener">http://ziyuan.baidu.com/linksubmit/index</a></p>
+<p>点击链接提交 ：</p>
+<p><img src="https://i.imgur.com/sCONlMv.png" alt="">  </p>
+<p>输入文件地址提交  </p>
+<p><img src="https://i.imgur.com/M8JJBIe.png" alt=""></p>
+<p>稍后你刷新页面，就可以看到状态了。</p>
+<p>本文参考：<br><a href="http://blog.csdn.net/sunshine940326/article/details/70936988" target="_blank" rel="noopener">http://blog.csdn.net/sunshine940326/article/details/70936988</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> hexo个人博客搭建之路 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo博文置顶（自定义排序）]]></title>
+      <url>/2018/01/01/Hexo%E5%8D%9A%E6%96%87%E7%BD%AE%E9%A1%B6/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>HEXO默认是按照时间顺序排一条线，然后按照时间顺序来决定显示的顺序的。按照网上的教程整理了一份方法。</p>
+</blockquote>
+<h1 id="Hexo博文置顶（自定义排序）"><a href="#Hexo博文置顶（自定义排序）" class="headerlink" title="Hexo博文置顶（自定义排序）"></a>Hexo博文置顶（自定义排序）</h1><p>使用的是<code>top</code>属性，<code>top</code>值越高，排序越在前，不设置<code>top</code>值得博文按照时间顺序排序。<br>修改Hexo文件夹下的node_modules/hexo-generator-index/lib/generator.js  </p>
+<p>打开在最后添加如下<code>javascript</code>代码  </p>
+<pre><code>posts.data = posts.data.sort(function(a, b) {
+if(a.top &amp;&amp; b.top) { // 两篇文章top都有定义
+    if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排
+    else return b.top - a.top; // 否则按照top值降序排
+}
+else if(a.top &amp;&amp; !b.top) { // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）
+    return -1;
+}
+else if(!a.top &amp;&amp; b.top) {
+    return 1;
+}
+else return b.date - a.date; // 都没定义按照文章日期降序排
+</code></pre><p>}); </p>
+<p>在写文章的时候添加top属性就行了。 </p>
+<p>文章有多种属性，一个一个添加是不是很麻烦呢？  </p>
+<p>这个时候可以修改：HEXO博客的<code>scaffolds\post.md</code>  </p>
+<p>附上个人的<code>post</code>设置   </p>
+<p><img src="https://i.imgur.com/QS4D72n.png" alt=""></p>
+]]></content>
+      
+        <categories>
+            
+            <category> hexo个人博客搭建之路 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[网站重要资料文件]]></title>
+      <url>/2018/01/01/%E7%BD%91%E7%AB%99%E9%87%8D%E8%A6%81%E8%B5%84%E6%96%99%E6%96%87%E4%BB%B6/</url>
+      <content type="html"><![CDATA[<p>以下内容加密访问<br><a id="more"></a></p>
+<p>博客推广：<a href="http://selfboot.cn/2014/12/21/add_blog_to_google/" target="_blank" rel="noopener">http://selfboot.cn/2014/12/21/add_blog_to_google/</a></p>
+<p><a href="http://blog.csdn.net/MasterAnt_D/article/details/56839222" target="_blank" rel="noopener">http://blog.csdn.net/MasterAnt_D/article/details/56839222</a></p>
+<p><a href="https://www.jianshu.com/p/7e1166eb412a" target="_blank" rel="noopener">https://www.jianshu.com/p/7e1166eb412a</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 网站相关文件 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 网站文件 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MyEclipse2017 CI7 集成开发环境的破解与使用]]></title>
+      <url>/2017/12/30/MyEclipse2017-CI7-%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%9A%84%E7%A0%B4%E8%A7%A3%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
+      <content type="html"><![CDATA[<h1 id="MyEclipse2017-CI7-集成开发环境的破解与使用"><a href="#MyEclipse2017-CI7-集成开发环境的破解与使用" class="headerlink" title="MyEclipse2017 CI7  集成开发环境的破解与使用"></a>MyEclipse2017 CI7  集成开发环境的破解与使用</h1><blockquote>
+<p>MyEclipse，是在eclipse 基础上加上自己的插件开发而成的功能强大的企业级集成开发环境，主要用于Java、Java EE以及移动应用的开发。MyEclipse的功能非常强大，支持也十分广泛，尤其是对各种开源产品的支持相当不错。<br>MyEclipse企业级工作平台（MyEclipseEnterprise Workbench ，简称MyEclipse）是对EclipseIDE的扩展，利用它我们可以在数据库和JavaEE的开发、发布以及应用程序服务器的整合方面极大的提高工作效率。它是功能丰富的JavaEE集成开发环境，包括了完备的编码、调试、测试和发布功能，完整支持HTML，Struts，JSP，CSS，Javascript，Spring，SQL，Hibernate  。<br>MyEclipse 是一个十分优秀的用于开发Java, J2EE的 Eclipse 插件集合，MyEclipse的功能非常强大，支持也十分广泛，尤其是对各种开源产品的支持十分不错。MyEclipse可以支持Java Servlet，AJAX，JSP，JSF，Struts，Spring，Hibernate，EJB3，JDBC数据库链接工具等多项功能。可以说MyEclipse是几乎囊括了目前所有主流开源产品的专属eclipse开发工具。—— <a href="https://baike.baidu.com/item/MyEclipse/783967?fr=aladdin" target="_blank"> [百度百科 ]</a></p>
+</blockquote>
+<p><em>本文主要通过本人自己的经验对网上的一些各类大神的教程进行总结与更新（大神们的教程已经发布很久了，不能适用现在的最新版本）。</em></p>
+<p>备注：本教程默认读者是配置好了JAVA的相关环境的，请读者自行配置相关环境。</p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>下载地址建议还是去官方的网站吧，为了安全。嘻嘻</p>
+<pre><code>附上下载地址：http://www.myeclipsecn.com/download/
+</code></pre><p>注：下载需要微信扫码获取密码。<br><img src="http://img.blog.csdn.net/20170907122010684?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="注意我使用的版本为MyEclipse 2017 CI 7（2017-7-12更新），以后更新的版本有可能破解方法不能适用"><br>    注意我使用的版本为MyEclipse 2017 CI 7（2017-7-12更新）</p>
+<p>下载默认安装即可。</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p><strong><em>安装完毕之后，一定要记住，不要选择那个默认的打开MyEclipse ！！！</em></strong></p>
+<p><img src="http://img.blog.csdn.net/20170907162256989?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h2 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h2><p>然后使用我们的破解工具：<br>        破解工具下载地址：<a href="http://download.csdn.net/download/qq_32454537/9968200" target="_blank" rel="noopener">http://download.csdn.net/download/qq_32454537/9968200</a></p>
+<p>###1、解压文件后打开文件夹：<br>        <img src="http://img.blog.csdn.net/20170907122456966?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>###2、复制这里面的所有内容：<br><img src="http://img.blog.csdn.net/20170907122549774?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>###3、到MyEclipse的安装目录下：<br><img src="http://img.blog.csdn.net/20170907122656782?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>###4、复制到这个plugins文件夹内，覆盖就可。<br>ps：一共是64个文件。</p>
+<p>###5、打开myeclipse2017_keygen这个文件夹<br><img src="http://img.blog.csdn.net/20170907122900501?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>###6、打开之后双击打开红框部分<br><img src="http://img.blog.csdn.net/20170907122934081?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>###7、打开后如图<br>填写UserCode为任意英文或者数字，这里填写为admin、<br>下面一个下拉选择框选择BLUE<br>按SystemId按钮，可能需要按两下，知道SystemId输入框出现一连串的“莫名其妙”的符号。<br>这个时候再按Active按钮，此时最下面的TextView就会出现这么一坨东西，代表基本成功<br><img src="http://img.blog.csdn.net/20170907162902448?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>这个时候，还需要点击Tools，选择tools里的save propertity<br><img src="http://img.blog.csdn.net/20170907163006825?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>PS：附上操作顺序图<br><img src="http://img.blog.csdn.net/20170907123217745?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>然后打开MyEclipse敬请享用吧。</p>
+<p>如果有问题欢迎回复。我在线都会答。</p>
+<h2 id="其他事项"><a href="#其他事项" class="headerlink" title="其他事项"></a>其他事项</h2><h3 id="2017年9月8日更新："><a href="#2017年9月8日更新：" class="headerlink" title="2017年9月8日更新："></a>2017年9月8日更新：</h3><p>如果出现了破解失败，即进去显示还有5天就到期。<br>请按照以下步骤执行：<br>1、首先卸载MyEclipse ，卸载完毕后请删除MyEclipse中的所有的文件。<br>2、按住Windows键+R，输入regedit，进去注册表编辑页面，按住Ctrl+F，出来搜索框，请输入：MyEclipse，然后回车，进行搜索，搜索出来了按del键进行删除。然后再按住F3继续搜索，直到搜索完毕。<br>3、重新按照如上步骤，重新破解安装。</p>
+<h3 id="2017年12月30日更新："><a href="#2017年12月30日更新：" class="headerlink" title="2017年12月30日更新："></a>2017年12月30日更新：</h3><p>也没更新啥，就换了下排版嘻嘻嘻！</p>
+<p>本文链接：<a href="http://blog.csdn.net/qq_32454537/article/details/77880294" target="_blank" rel="noopener">http://blog.csdn.net/qq_32454537/article/details/77880294</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Java学习 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
+</search>
