@@ -404,12 +404,10 @@ else return b.date - a.date; // 都没定义按照文章日期降序排
     </entry>
     
     <entry>
-      <title><![CDATA[网站重要资料文件]]></title>
-      <url>/2018/01/01/%E7%BD%91%E7%AB%99%E9%87%8D%E8%A6%81%E8%B5%84%E6%96%99%E6%96%87%E4%BB%B6/</url>
+      <title><![CDATA[Hexo]]></title>
+      <url>/2018/01/01/hexo/</url>
       <content type="html"><![CDATA[<p>以下内容加密访问<br><a id="more"></a></p>
-<p>博客推广：<a href="http://selfboot.cn/2014/12/21/add_blog_to_google/" target="_blank" rel="noopener">http://selfboot.cn/2014/12/21/add_blog_to_google/</a></p>
-<p><a href="http://blog.csdn.net/MasterAnt_D/article/details/56839222" target="_blank" rel="noopener">http://blog.csdn.net/MasterAnt_D/article/details/56839222</a></p>
-<p><a href="https://www.jianshu.com/p/7e1166eb412a" target="_blank" rel="noopener">https://www.jianshu.com/p/7e1166eb412a</a></p>
+<p>进军hexo，留下足迹！</p>
 ]]></content>
       
         <categories>
