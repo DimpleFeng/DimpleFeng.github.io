@@ -470,6 +470,56 @@ else return b.date - a.date; // 都没定义按照文章日期降序排
         
     </entry>
     
+    <entry>
+      <title><![CDATA[Android Studio 优化2017年12月24日更新]]></title>
+      <url>/2017/12/04/Android%20Studio%20%E4%BC%98%E5%8C%962017%E5%B9%B412%E6%9C%8824%E6%97%A5%E6%9B%B4%E6%96%B0/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p><em>安装好Android Studio之后需要根据自己的习惯进行一些设置，下载些插件、设置下软件的相关属性等等。刚好重装了下系统，针对这个Android Studio进行了相关的设置，在这里将经历说一下，避免自己以后晚了相关设置也方便一些需要帮助的朋友</em>  </p>
+</blockquote>
+<p>更新记录：2017年12月24日22:32:37更新</p>
+<p>本文主要分为设置篇和插件篇： </p>
+<h1 id="技巧篇"><a href="#技巧篇" class="headerlink" title="技巧篇"></a>技巧篇</h1><p>##快速查找以及快捷键搜索<br>在AS的面板上双击<code>shift</code>键，即可调出全局搜索。<img src="http://img.blog.csdn.net/20171224213924058?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>AS有很多的快捷键，对于这些快捷键你不一定随时都能记得，这个时候可以使用<code>Win+Shift+A</code>键输入你想用的功能。后面会提示相关的快捷键的。<br><img src="http://img.blog.csdn.net/20171224214158337?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"> </p>
+<h2 id="恢复默认布局"><a href="#恢复默认布局" class="headerlink" title="恢复默认布局"></a>恢复默认布局</h2><p>当你各种乱动默认的面板布局的时候，有的面板你想找的时候却发现找不到了，这个时候按住 <code>Shift+F12</code>就可以重置默认面板。<br><img src="http://img.blog.csdn.net/20171224214521926?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述">  </p>
+<h2 id="Tip-of-the-day"><a href="#Tip-of-the-day" class="headerlink" title="Tip of the day"></a>Tip of the day</h2><p>打开软件的时候随机显示关于Android Studio的相关使用提示。（很有用的，别关）</p>
+<p><img src="http://img.blog.csdn.net/20171224215949578?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h2 id="Android-Studio相关网站"><a href="#Android-Studio相关网站" class="headerlink" title="Android Studio相关网站"></a>Android Studio相关网站</h2><ul>
+<li><a href="http://www.android-studio.org/" target="_blank" rel="noopener">Android Studio 中文社区</a> </li>
+<li><a href="https://stackoverflow.com/" target="_blank" rel="noopener">优质的问答社区（英文的）</a> </li>
+</ul>
+<h1 id="设置篇"><a href="#设置篇" class="headerlink" title="设置篇"></a>设置篇</h1><blockquote>
+<p>Android Studio到底是外国人开发的，这个东西拿到手感觉和我们日常使用的IDE有点···· </p>
+</blockquote>
+<h2 id="鼠标滚轮滑动调整字体大小"><a href="#鼠标滚轮滑动调整字体大小" class="headerlink" title="鼠标滚轮滑动调整字体大小"></a>鼠标滚轮滑动调整字体大小</h2><p>打开<code>File</code>里的<code>Setting</code> 勾选<code>Change font size(Zoom)with Ctrl——Mouse Wheel</code><br><img src="http://img.blog.csdn.net/20171224214754310?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述">  </p>
+<h2 id="查看参数定义"><a href="#查看参数定义" class="headerlink" title="查看参数定义"></a>查看参数定义</h2><p>使用快捷键<code>Ctrl+P</code>可以查看当前鼠标所在位置的方法的参数定义。<br><img src="http://img.blog.csdn.net/20171224222531022?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"> </p>
+<h2 id="鼠标移动显示API文档"><a href="#鼠标移动显示API文档" class="headerlink" title="鼠标移动显示API文档"></a>鼠标移动显示API文档</h2><p>设置当鼠标移动到方法上的时候显示API文档。<code>Editor-&gt;General-&gt;show quick document on mouse move</code>  后面那个Delay Time 是设置延时的，单位为毫秒。但是建议电脑性能差一点的不要开，会很卡。<br><img src="http://img.blog.csdn.net/20171224222926874?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h2 id="设置默认的字体大小"><a href="#设置默认的字体大小" class="headerlink" title="设置默认的字体大小"></a>设置默认的字体大小</h2><p>打开AS的时候发现蚊子一样大小的代码，密密麻麻的密集恐惧症受不了。<code>Editor-&gt;Colors&amp;Fonts-&gt;Font</code><br>一般设置到18就行了<br><img src="http://img.blog.csdn.net/20171224215037079?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述">  </p>
+<h2 id="更改快捷键"><a href="#更改快捷键" class="headerlink" title="更改快捷键"></a>更改快捷键</h2><p>设置<code>Keymap</code>，快捷键太多，可以使用搜索框搜索 </p>
+<p><img src="http://img.blog.csdn.net/20171224220232053?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h2 id="设置代码提示"><a href="#设置代码提示" class="headerlink" title="设置代码提示"></a>设置代码提示</h2><h2 id="代码提示的时候匹配所有字符"><a href="#代码提示的时候匹配所有字符" class="headerlink" title="代码提示的时候匹配所有字符"></a>代码提示的时候匹配所有字符</h2><p>选择None就可以匹配到很多方法或者关键字，这个在你忘了这个方法怎么写的时候非常有用。<br><img src="http://img.blog.csdn.net/20171224220954002?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h1 id="插件篇"><a href="#插件篇" class="headerlink" title="插件篇"></a>插件篇</h1><h2 id="AndroidAccessors"><a href="#AndroidAccessors" class="headerlink" title="AndroidAccessors"></a>AndroidAccessors</h2><p>快速生成<code>get</code>和<code>set</code>系列方法。这个在你定义<code>JavaBean</code>的时候非常有用。<br><img src="http://img.blog.csdn.net/20171224221252982?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述">  </p>
+<h2 id="ButterKnifeZelezny-插件"><a href="#ButterKnifeZelezny-插件" class="headerlink" title="ButterKnifeZelezny 插件"></a>ButterKnifeZelezny 插件</h2><p>如果你厌倦了findViewById这样的写法，那么这个插件是你的选择。这个配合ButterKnife使用的。</p>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>这里我推荐一个<code>MaterialDesign AS UI Theme</code> 这个主题比较好用，尤其是配合黑色的AS主题的时候。</p>
+<p>顺便推荐一个<a href="http://color-themes.com/" target="_blank" rel="noopener">http://color-themes.com/</a> 这个网站下载你喜欢的主题，然后导入主题即可。<br><img src="http://img.blog.csdn.net/20171224222110962?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>插件及常用的快捷键请看我之前的博客：<a href="http://blog.csdn.net/qq_32454537/article/details/77870200" target="_blank" rel="noopener">http://blog.csdn.net/qq_32454537/article/details/77870200</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Android </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> Android Studio </tag>
+            
+        </tags>
+        
+    </entry>
+    
   
   
 </search>
