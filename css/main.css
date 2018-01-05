@@ -2142,7 +2142,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff9490;
+  background: #2b30ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3286,4 +3286,10 @@ hr {
 }
 .post-toc ol a {
   color: #612f2f;
+}
+.footer {
+  background: #fff9f9;
+}
+.site-title {
+  font-family: 'Lobster Two', 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
