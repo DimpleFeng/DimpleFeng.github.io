@@ -2030,7 +2030,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1f96d7;
+  background: #e37863;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3164,5 +3164,5 @@ hr {
   background-image: url("/images/bg.jpg");
 }
 .header {
-  background-image: url("http://resources.bianxiaofeng.top/test.jpg");
+  background: url("http://resources.bianxiaofeng.top/test.jpg");
 }
