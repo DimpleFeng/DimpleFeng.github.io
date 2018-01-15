@@ -164,7 +164,7 @@
 
 
 
-  <title>Hexo博文置顶（自定义排序） | Dimple's Blog</title>
+  <title> | Dimple's Blog</title>
   
 
 
@@ -355,272 +355,34 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.bianxiaofeng.com/2018/01/01/Hexo博文置顶/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dimple">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://resources.bianxiaofeng.top/authorHead.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dimple's Blog">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
+	<h1 class="post-title" itemprop="name headline"></h1>
+
+
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo博文置顶（自定义排序）</h1>
+          
+google-site-verification: google6ca399b2aa6583b1.html
         
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-01T21:29:57+08:00">2018-01-01</time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo个人博客搭建之路/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo个人博客搭建之路</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/01/01/Hexo博文置顶/" class="leancloud_visitors" data-flag-title="Hexo博文置顶（自定义排序）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-			
-				
-				<span class="post-count">
-				  &nbsp; | &nbsp;
-				  <span class="post-meta-item-icon">
-					<i class="fa fa-calendar-o"></i>
-				  </span>
-				  <span class="post-meta-item-text">总字数:</span>
-				  <span class="post-meta-item-text">302</span>
-				</span>
-				
-				<span class="post-count">
-				  &nbsp; | &nbsp;
-				  <span class="post-meta-item-icon">
-					<i class="fa fa-calendar-o"></i>
-				  </span>
-				  <span class="post-meta-item-text">预计阅读时间:</span>
-				  <span class="post-meta-item-text">1&nbsp;分钟</span>
-				</span>
-				
-				
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      </div>
       
       
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox"
-                 href="https://i.imgur.com/MS4iV4R.jpg" rel="gallery_cjcfkwws6000uzshxklkfyka0"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="https://i.imgur.com/MS4iV4R.jpg" itemprop="contentUrl"/>
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
-
-      
-        <blockquote>
-<p>HEXO默认是按照时间顺序排一条线，然后按照时间顺序来决定显示的顺序的。按照网上的教程整理了一份方法。</p>
-</blockquote>
-<h1 id="Hexo博文置顶（自定义排序）"><a href="#Hexo博文置顶（自定义排序）" class="headerlink" title="Hexo博文置顶（自定义排序）"></a>Hexo博文置顶（自定义排序）</h1><p>使用的是<code>top</code>属性，<code>top</code>值越高，排序越在前，不设置<code>top</code>值得博文按照时间顺序排序。<br>修改Hexo文件夹下的node_modules/hexo-generator-index/lib/generator.js  </p>
-<p>打开在最后添加如下<code>javascript</code>代码  </p>
-<pre><code>posts.data = posts.data.sort(function(a, b) {
-if(a.top &amp;&amp; b.top) { // 两篇文章top都有定义
-    if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排
-    else return b.top - a.top; // 否则按照top值降序排
-}
-else if(a.top &amp;&amp; !b.top) { // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）
-    return -1;
-}
-else if(!a.top &amp;&amp; b.top) {
-    return 1;
-}
-else return b.date - a.date; // 都没定义按照文章日期降序排
-</code></pre><p>}); </p>
-<p>在写文章的时候添加top属性就行了。 </p>
-<p>文章有多种属性，一个一个添加是不是很麻烦呢？  </p>
-<p>这个时候可以修改：HEXO博客的<code>scaffolds\post.md</code>  </p>
-<p>附上个人的<code>post</code>设置   </p>
-<p><img src="https://i.imgur.com/QS4D72n.png" alt=""></p>
-
       
     </div>
     
     
     
-
-	<div>
-  
-    <div>
-    
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-    
-</div>
-  
-	</div>
-    
-
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>na，给我一个棒棒糖！</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="http://resources.bianxiaofeng.top/wechatpay.png" alt="Dimple 微信支付"/>
-        <p>微信支付</p>
-      </div>
-    
-
-    
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="http://resources.bianxiaofeng.top/alipay.png" alt="Dimple 支付宝"/>
-        <p>支付宝</p>
-      </div>
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
-    
-
-    
-
-    <footer class="post-footer">
- 
-     <div>    
-      
-      <ul class="post-copyright">
-		<li class="post-copyright-link">
-          <strong>本文标题：</strong>
-          <a href="http://www.bianxiaofeng.com/2018/01/01/Hexo博文置顶/" title="Hexo博文置顶（自定义排序）">Hexo博文置顶（自定义排序）</a>
-        </li>
-         <li class="post-copyright-link">
-          <strong>本文作者：</strong>
-          <a href="/" title="欢迎访问 Dimple 的个人博客">Dimple</a>
-        </li>
-
-        <li class="post-copyright-date">
-            <strong>发布时间：</strong>2018年1月1日 - 21时01分
-        </li>  
-
-        <li class="post-copyright-link">
-          <strong>本文链接：</strong>
-          <a href="http://www.bianxiaofeng.com/2018/01/01/Hexo博文置顶/" title="Hexo博文置顶（自定义排序）">http://www.bianxiaofeng.com/2018/01/01/Hexo博文置顶/</a>
-        </li>
-
-        
-
-        <li class="post-copyright-license">
-          <strong>版权声明： </strong>
-          本文由 Dimple 原创，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">保留署名-非商业性使用-禁止演绎 4.0-国际许可协议</a> </br>转载请保留以上声明信息！
-        </li>
-      </ul>
-    
-  </div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
@@ -658,17 +420,8 @@ else return b.date - a.date; // 都没定义按照文章日期降序排
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -754,22 +507,6 @@ else return b.date - a.date; // 都没定义按照文章日期降序排
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博文置顶（自定义排序）"><span class="nav-number">1.</span> <span class="nav-text">Hexo博文置顶（自定义排序）</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
