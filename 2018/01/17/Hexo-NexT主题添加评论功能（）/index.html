@@ -410,15 +410,17 @@
 
           
             
+            <!--noindex-->
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/01/17/Hexo-NexT主题添加评论功能（）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/01/17/Hexo-NexT主题添加评论功能（）/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/01/17/Hexo-NexT主题添加评论功能（）/" itemprop="commentsCount"></span>
                 </a>
               </span>
+              <!--/noindex-->
             
           
 
@@ -446,7 +448,7 @@
 					<i class="fa fa-calendar-o"></i>
 				  </span>
 				  <span class="post-meta-item-text">总字数:</span>
-				  <span class="post-meta-item-text">1,529</span>
+				  <span class="post-meta-item-text">1,784</span>
 				</span>
 				
 				<span class="post-count">
@@ -455,7 +457,7 @@
 					<i class="fa fa-calendar-o"></i>
 				  </span>
 				  <span class="post-meta-item-text">预计阅读时间:</span>
-				  <span class="post-meta-item-text">5&nbsp;分钟</span>
+				  <span class="post-meta-item-text">6&nbsp;分钟</span>
 				</span>
 				
 				
@@ -525,7 +527,7 @@ changyan:
 </ol>
 <p>PS：部署成功后可能不会立即显示你的网站，这个时候你去你的网站评论一下就行了。</p>
 <h2 id="参考界面-2"><a href="#参考界面-2" class="headerlink" title="参考界面"></a>参考界面</h2><ol>
-<li>留言评论界面<img src="https://i.imgur.com/LK7ij0Z.png" alt=""><img src="https://i.imgur.com/Kkwxgi7.png" alt=""></li>
+<li>留言评论界面<img src="https://i.imgur.com/LK7ij0Z.png" alt=""></li>
 <li>后台管理界面：<img src="https://i.imgur.com/rWfmRzF.png" alt=""><img src="https://i.imgur.com/hsEwGrE.png" alt=""><h2 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h2>对于友言，我觉得确实是我比较喜欢的类型了，支持匿名评论功能（默认是关闭的，需要手动开启），但是匿名只是匿名，没有留联系方式的地方，这点我觉得还是有点不好。</li>
 </ol>
 <h1 id="来必力"><a href="#来必力" class="headerlink" title="来必力"></a>来必力</h1><p><img src="https://i.imgur.com/UEsZmFf.png" alt=""></p>
@@ -538,8 +540,13 @@ changyan:
 <li>打开NexT主题的配置文件<code>—config</code>中，搜索livere_uid，将livere_uid前面的#号去掉，将id填写到livere_uid：后面。</li>
 </ol>
 <h2 id="参考界面-3"><a href="#参考界面-3" class="headerlink" title="参考界面"></a>参考界面</h2><ol>
-<li></li>
+<li>设置界面<img src="https://i.imgur.com/dvonjM1.png" alt=""></li>
+<li>数据分析界面<img src="https://i.imgur.com/NLFltb6.png" alt=""></li>
+<li>体验Demo：<a href="https://livere.com/city-demo" target="_blank" rel="noopener">Demo</a></li>
 </ol>
+<h2 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h2><p>如果大家仔细观察应该能发现这是韩国人的东西，但也正是因为这是外国人的东西，收到国内的各种条条框框的限制比较少。对于来必力，这个产品比较不错，首先界面美化上就比之前的几种类型要好很多。但是没有匿名评论，支持邮箱账号注册评论。</p>
+<h1 id="总结-4"><a href="#总结-4" class="headerlink" title="总结"></a>总结</h1><p>考试之前就像写一篇博文来介绍这几类评论工具了，但是平时的时候没有特别认真听，导致那个时候一点时间都不敢耽搁。哎~。评论工具还有很多很多，如果需要的话，还是需要自己修改一些代码才行。就我个人感觉而言，我觉得Hypercomments、来必力还有友言都还不错，畅言需要备案。就看各位老铁们喜欢什么了。</p>
+<p>顺便说一句，寒假快乐！</p>
 
       
     </div>
@@ -646,7 +653,7 @@ changyan:
 
   
     <div class="comments" id="comments">
-      <div id="SOHUCS"></div>
+      <div id="hypercomments_widget"></div>
     </div>
 
   
@@ -778,7 +785,7 @@ changyan:
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多说"><span class="nav-number">2.</span> <span class="nav-text">多说</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hypercomments"><span class="nav-number">3.</span> <span class="nav-text">Hypercomments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#说在前面"><span class="nav-number">3.1.</span> <span class="nav-text">说在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加Hypercomments评论"><span class="nav-number">3.2.</span> <span class="nav-text">添加Hypercomments评论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考界面"><span class="nav-number">3.3.</span> <span class="nav-text">参考界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.4.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#畅言"><span class="nav-number">4.</span> <span class="nav-text">畅言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加方法"><span class="nav-number">4.1.</span> <span class="nav-text">添加方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考界面-1"><span class="nav-number">4.2.</span> <span class="nav-text">参考界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结-1"><span class="nav-number">4.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#友言"><span class="nav-number">5.</span> <span class="nav-text">友言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加方法-1"><span class="nav-number">5.1.</span> <span class="nav-text">添加方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考界面-2"><span class="nav-number">5.2.</span> <span class="nav-text">参考界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结-2"><span class="nav-number">5.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#来必力"><span class="nav-number">6.</span> <span class="nav-text">来必力</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加方法-2"><span class="nav-number">6.1.</span> <span class="nav-text">添加方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考界面-3"><span class="nav-number">6.2.</span> <span class="nav-text">参考界面</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多说"><span class="nav-number">2.</span> <span class="nav-text">多说</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hypercomments"><span class="nav-number">3.</span> <span class="nav-text">Hypercomments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#说在前面"><span class="nav-number">3.1.</span> <span class="nav-text">说在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加Hypercomments评论"><span class="nav-number">3.2.</span> <span class="nav-text">添加Hypercomments评论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考界面"><span class="nav-number">3.3.</span> <span class="nav-text">参考界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.4.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#畅言"><span class="nav-number">4.</span> <span class="nav-text">畅言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加方法"><span class="nav-number">4.1.</span> <span class="nav-text">添加方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考界面-1"><span class="nav-number">4.2.</span> <span class="nav-text">参考界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结-1"><span class="nav-number">4.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#友言"><span class="nav-number">5.</span> <span class="nav-text">友言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加方法-1"><span class="nav-number">5.1.</span> <span class="nav-text">添加方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考界面-2"><span class="nav-number">5.2.</span> <span class="nav-text">参考界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结-2"><span class="nav-number">5.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#来必力"><span class="nav-number">6.</span> <span class="nav-text">来必力</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加方法-2"><span class="nav-number">6.1.</span> <span class="nav-text">添加方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考界面-3"><span class="nav-number">6.2.</span> <span class="nav-text">参考界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结-3"><span class="nav-number">6.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结-4"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
@@ -927,59 +934,36 @@ changyan:
 
 	
 
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100067, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100067, xid: "2018/01/17/Hexo-NexT主题添加评论功能（）/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100067/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
 
 
 
 
-  
 
 
 
 
 
-  
-
-
-
-
-
-
-
-<!-- LOCAL: You can save these files to your site and update links -->
-    
-        
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-
-    
-      <script type="text/javascript">
-      function renderGitment(){
-        var gitment = new Gitmint({
-            id: window.location.pathname, 
-            owner: 'DimpleFeng',
-            repo: 'new',
-            
-            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
-            
-            oauth: {
-            
-            
-                client_secret: '379f40bf41b52e886ff6dc0c98af82c4ac425659',
-            
-                client_id: 'fca4ba1e780fd9c444b2'
-            }});
-        gitment.render('gitment-container');
-      }
-
-      
-      renderGitment();
-      
-      </script>
-    
 
 
 

@@ -432,15 +432,17 @@
 
           
             
+            <!--noindex-->
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/01/04/2018最新版hexo-Github搭建个人博客教程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/01/04/2018最新版hexo-Github搭建个人博客教程/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/01/04/2018最新版hexo-Github搭建个人博客教程/" itemprop="commentsCount"></span>
                 </a>
               </span>
+              <!--/noindex-->
             
           
 
@@ -500,7 +502,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="https://i.imgur.com/ddHM0LH.png" rel="gallery_cjcipnw1k0002owhxrfjxymo4"
+                 href="https://i.imgur.com/ddHM0LH.png" rel="gallery_cjciq00ym0006e0hxca4492rq"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://i.imgur.com/ddHM0LH.png" itemprop="contentUrl"/>
               </a>
@@ -709,7 +711,7 @@ deploy:
 
   
     <div class="comments" id="comments">
-      <div id="SOHUCS"></div>
+      <div id="hypercomments_widget"></div>
     </div>
 
   
@@ -990,59 +992,36 @@ deploy:
 
 	
 
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 100067, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 100067, xid: "2018/01/04/2018最新版hexo-Github搭建个人博客教程/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/100067/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
 
 
 
 
-  
 
 
 
 
 
-  
-
-
-
-
-
-
-
-<!-- LOCAL: You can save these files to your site and update links -->
-    
-        
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-
-    
-      <script type="text/javascript">
-      function renderGitment(){
-        var gitment = new Gitmint({
-            id: window.location.pathname, 
-            owner: 'DimpleFeng',
-            repo: 'new',
-            
-            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
-            
-            oauth: {
-            
-            
-                client_secret: '379f40bf41b52e886ff6dc0c98af82c4ac425659',
-            
-                client_id: 'fca4ba1e780fd9c444b2'
-            }});
-        gitment.render('gitment-container');
-      }
-
-      
-      renderGitment();
-      
-      </script>
-    
 
 
 
