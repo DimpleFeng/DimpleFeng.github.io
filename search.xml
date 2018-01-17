@@ -28,12 +28,13 @@
 <li>Lite Demo ：<a href="https://www.hypercomments.com/en/demo?type=blogs" target="_blank" rel="noopener">Demo</a></li>
 </ol>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>繁体中文看的我是很难受。虽然只有几行而已。优点呢是评论可以匿名，可以评论上传图片、影片等。功能还是比较强大，设置界面是英文，且没有中文支持！</p>
-<h1 id="畅言"><a href="#畅言" class="headerlink" title="畅言"></a>畅言</h1><blockquote>
+<h1 id="畅言"><a href="#畅言" class="headerlink" title="畅言"></a>畅言</h1><p><img src="https://i.imgur.com/TxLKDXM.png" alt=""></p>
+<blockquote>
 <p>畅言是业内领先的社会化评论系统，支持PC和移动端两种接入方式，为网站提供了一种全新的评论方式。畅言拥有多种常用账号登录、三重过滤机制、实时的数据统计、快捷数据导出、全面支持移动端等领先功能。充分满足了当前各大网站对于用户登录、评论、分享 、审核等方面的需求。<br>畅言在业内率先实现三重过滤机制。当评论数据产生后，首先经过搜狐垃圾过滤系统，防灌水、防垃圾、防广告；然后经过官方提供违禁词库和站长自定义的敏感词过滤；最后是网站的自主审核，所有畅言合作网站都有专属的管理后台，管理所有本网评论。网站对本站评论拥有完全的管理，可以设置先发后审与先审后发等多种审核形式。  </p>
 </blockquote>
 <h2 id="添加方法"><a href="#添加方法" class="headerlink" title="添加方法"></a>添加方法</h2><ol>
 <li>注册畅言  <a href="https://changyan.kuaizhan.com/" target="_blank" rel="noopener">Go</a></li>
-<li>将畅言密钥复制到NexT主题的配置文件<code>—config</code>中，搜索changyan。</li>
+<li>将畅言密钥复制到NexT主题的配置文件<code>—config</code>中，搜索changyan，填写下面的代码，注意替换成你的代码。</li>
 </ol>
 <pre><code># changyan
 changyan:
@@ -41,7 +42,34 @@ changyan:
   appid: yourid
   appkey: yourkey
 </code></pre><h2 id="参考界面-1"><a href="#参考界面-1" class="headerlink" title="参考界面"></a>参考界面</h2><p> 1.畅言后台 <img src="https://i.imgur.com/Kpb83UA.png" alt=""><br> 2.评论登录后需要手机号码验证：<img src="https://i.imgur.com/TsA80yh.png" alt=""><br> 3.评论界面：<img src="https://i.imgur.com/C9JCqzJ.png" alt="">  </p>
-<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p> 关于畅言，大家可能印象最深的是灌水功能了，这个</p>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p> 关于畅言，大家可能印象最深的是灌水功能了，这个功能目前已经是出于失灵与半失灵的状态，官方估计也没怎么维护了。最难受的是，需要手机号验证，这也就阻挡了大部分的评论者。如果能够添加一个像Hypercomments的匿名功能的话，可能会好很多。最最重要的是，畅言是需要你的备案号的，就是说，你一个没有备案的网站是没法长时间使用畅言的。</p>
+<h1 id="友言"><a href="#友言" class="headerlink" title="友言"></a>友言</h1><p> <img src="https://i.imgur.com/F9aMLio.png" alt=""></p>
+<blockquote>
+<p>友言是一个简单而强大的社会化评论及聚合平台。用户可以使用社交账号一键评论同步至社交网络，将内容和自己的评论分享给好友。增加第三方网站用户活跃度，调动好友参与评论，帮助网站实现社会化网络优化SMO，有效提升网站社会化流量！  </p>
+<h2 id="添加方法-1"><a href="#添加方法-1" class="headerlink" title="添加方法"></a>添加方法</h2><p>友言的添加方法也极其简单：</p>
+</blockquote>
+<ol>
+<li>在<a href="http://www.uyan.cc" target="_blank" rel="noopener">友言官网</a>注册账号，得到用户ID</li>
+<li>将友言ID复制到NexT主题的配置文件<code>—config</code>中，搜索youyan，将youyan_uid前面的#号去掉，将id填写到youyan_uid：后面。</li>
+<li>部署到你的网站。</li>
+</ol>
+<p>PS：部署成功后可能不会立即显示你的网站，这个时候你去你的网站评论一下就行了。</p>
+<h2 id="参考界面-2"><a href="#参考界面-2" class="headerlink" title="参考界面"></a>参考界面</h2><ol>
+<li>留言评论界面<img src="https://i.imgur.com/LK7ij0Z.png" alt=""><img src="https://i.imgur.com/Kkwxgi7.png" alt=""></li>
+<li>后台管理界面：<img src="https://i.imgur.com/rWfmRzF.png" alt=""><img src="https://i.imgur.com/hsEwGrE.png" alt=""><h2 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h2>对于友言，我觉得确实是我比较喜欢的类型了，支持匿名评论功能（默认是关闭的，需要手动开启），但是匿名只是匿名，没有留联系方式的地方，这点我觉得还是有点不好。</li>
+</ol>
+<h1 id="来必力"><a href="#来必力" class="headerlink" title="来必力"></a>来必力</h1><p><img src="https://i.imgur.com/UEsZmFf.png" alt=""></p>
+<blockquote>
+<p>使用社交网站账户登录，免去注册过程。<br>提高用户的参与和沟通意愿。<br>管理/删除我的评论内容。<br>提供管理页面，管理网站文章及评论内容。</p>
+</blockquote>
+<h2 id="添加方法-2"><a href="#添加方法-2" class="headerlink" title="添加方法"></a>添加方法</h2><ol>
+<li>在<a href="https://livere.com/" target="_blank" rel="noopener">来必力</a>的官网上注册账号。</li>
+<li>在<a href="https://livere.com/insight/myCode" target="_blank" rel="noopener">此处</a>获取data-uid。</li>
+<li>打开NexT主题的配置文件<code>—config</code>中，搜索livere_uid，将livere_uid前面的#号去掉，将id填写到livere_uid：后面。</li>
+</ol>
+<h2 id="参考界面-3"><a href="#参考界面-3" class="headerlink" title="参考界面"></a>参考界面</h2><ol>
+<li></li>
+</ol>
 ]]></content>
       
         
