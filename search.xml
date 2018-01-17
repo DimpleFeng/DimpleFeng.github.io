@@ -3,9 +3,46 @@
   
     
     <entry>
-      <title><![CDATA[20180117102253]]></title>
+      <title><![CDATA[Hexo-NexT主题添加评论功能（）]]></title>
       <url>/2018/01/17/Hexo-NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%EF%BC%88%EF%BC%89/</url>
-      <content type="html"></content>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>最近捣鼓着博客的评论功能，看到很多形形色色的评论插件，比如来必力，畅言等等之类的。功能是各不一样，网上教程是关于某一类的评论插件的介绍，不是很全面，所以本文主要是弄一个全面的评论插件集成，然后分别说一下各自的优点以及不足，千挑万选之后总有一个适合你。<br>我使用的是NexT主题，NexT主题是集成了评论功能的。所以这里就直接是以NexT主题为例了。  </p>
+</blockquote>
+<h1 id="多说"><a href="#多说" class="headerlink" title="多说"></a>多说</h1><p>多说的功能还是很强大的，加上很早之前就有了各种社交途径的分享，很受大家喜爱。虽然多说在2017年6月1日正式停止，但是还是纪念下多说吧。虽然我没有用过，但是我在一些技术交流群中还是听到很多人在说多说。<br><img src="https://i.imgur.com/IcR5S7r.png" alt="">  </p>
+<h1 id="Hypercomments"><a href="#Hypercomments" class="headerlink" title="Hypercomments"></a>Hypercomments</h1><blockquote>
+<p>Communication is Empathy.<br>Tailored comment system for your site.    </p>
+</blockquote>
+<p><img src="https://i.imgur.com/BgAR237.png" alt=""></p>
+<h2 id="说在前面"><a href="#说在前面" class="headerlink" title="说在前面"></a>说在前面</h2><p>这是一个国外的评论系统，总的来说，界面设计等等还是很不错的。在NexT主题中操作也还算简单，事实上所有的评论在NexT上的操作都还是很简单的。  </p>
+<p>但是这个界面是繁体中文的，目前我还没有找到改为简体中文的方法，看着是有一点难受。这个呢，可以<strong>匿名评论</strong>，说到匿名评论其实做的还是不错的，匿名评论可以添加能够联系到你的邮箱地址，这样当有人回答你的时候有邮件提醒。不得不说这点还是不错的。  </p>
+<h2 id="添加Hypercomments评论"><a href="#添加Hypercomments评论" class="headerlink" title="添加Hypercomments评论"></a>添加Hypercomments评论</h2><ol>
+<li>在<a href="https://www.hypercomments.com/" target="_blank" rel="noopener">Hypercomments</a>官网登录，目前只支持谷歌账号登录，国内有万里长城阻隔，翻墙注意安全！</li>
+<li>选择Lite版本，点击Install。<img src="https://i.imgur.com/gsT39R9.png" alt=""></li>
+<li>在设置中（齿轮图标的那个），点击Widget，然后在代码框中找到<code>Widget_id</code>，记录下来。</li>
+<li>在NexT主题的配置文件<code>—config</code>中搜索hypercomments_id，然后去掉前面的#号，冒号后面加一个空格填入上面记录的Id。</li>
+<li>部署就能看到效果。</li>
+</ol>
+<h2 id="参考界面"><a href="#参考界面" class="headerlink" title="参考界面"></a>参考界面</h2><ol>
+<li>评论效果：  <img src="https://i.imgur.com/448OmUd.png" alt=""></li>
+<li>匿名评论界面：<img src="https://i.imgur.com/zdUopLe.png" alt=""></li>
+<li>Lite Demo ：<a href="https://www.hypercomments.com/en/demo?type=blogs" target="_blank" rel="noopener">Demo</a></li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>繁体中文看的我是很难受。虽然只有几行而已。优点呢是评论可以匿名，可以评论上传图片、影片等。功能还是比较强大，设置界面是英文，且没有中文支持！</p>
+<h1 id="畅言"><a href="#畅言" class="headerlink" title="畅言"></a>畅言</h1><blockquote>
+<p>畅言是业内领先的社会化评论系统，支持PC和移动端两种接入方式，为网站提供了一种全新的评论方式。畅言拥有多种常用账号登录、三重过滤机制、实时的数据统计、快捷数据导出、全面支持移动端等领先功能。充分满足了当前各大网站对于用户登录、评论、分享 、审核等方面的需求。<br>畅言在业内率先实现三重过滤机制。当评论数据产生后，首先经过搜狐垃圾过滤系统，防灌水、防垃圾、防广告；然后经过官方提供违禁词库和站长自定义的敏感词过滤；最后是网站的自主审核，所有畅言合作网站都有专属的管理后台，管理所有本网评论。网站对本站评论拥有完全的管理，可以设置先发后审与先审后发等多种审核形式。  </p>
+</blockquote>
+<h2 id="添加方法"><a href="#添加方法" class="headerlink" title="添加方法"></a>添加方法</h2><ol>
+<li>注册畅言  <a href="https://changyan.kuaizhan.com/" target="_blank" rel="noopener">Go</a></li>
+<li>将畅言密钥复制到NexT主题的配置文件<code>—config</code>中，搜索changyan。</li>
+</ol>
+<pre><code># changyan
+changyan:
+  enable: true
+  appid: yourid
+  appkey: yourkey
+</code></pre><h2 id="参考界面-1"><a href="#参考界面-1" class="headerlink" title="参考界面"></a>参考界面</h2><p> 1.畅言后台 <img src="https://i.imgur.com/Kpb83UA.png" alt=""><br> 2.评论登录后需要手机号码验证：<img src="https://i.imgur.com/TsA80yh.png" alt=""><br> 3.评论界面：<img src="https://i.imgur.com/C9JCqzJ.png" alt="">  </p>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p> 关于畅言，大家可能印象最深的是灌水功能了，这个</p>
+]]></content>
       
         
     </entry>
