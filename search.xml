@@ -3,6 +3,53 @@
   
     
     <entry>
+      <title></title>
+      <url>/2018/01/19/2018-1-19%20153336/</url>
+      <content type="html"><![CDATA[<h1 id="使用VSCode-七牛云图床插件-自定义快捷键配置Hexo博文编写环境"><a href="#使用VSCode-七牛云图床插件-自定义快捷键配置Hexo博文编写环境" class="headerlink" title="使用VSCode+七牛云图床插件+自定义快捷键配置Hexo博文编写环境"></a>使用VSCode+七牛云图床插件+自定义快捷键配置Hexo博文编写环境</h1><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在我的电脑上安装了MarkdownPad++还有VSCode（主要是用来写前端的），VSCode也是可以写md文章的。之所以之前我是安装了MarkdownPad++，是因为它有一个可以上传图片的功能，再加上它还有一些VSCode没有的快捷键，所以一直是两个软件并存，直到今天重新捣鼓了一下，终于可以去掉MarkdownPad++了。不得不说VSCode确实很强大，更加难得的是支持中文，这使我对这个软件的好感度哧溜的加加加。 </p>
+<p>特写下这个教程，方便同样是我这种情况的朋友。   </p>
+<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><ul>
+<li>首先你得要有VSCode对吧，没有的话我也是附上链接：<a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Go</a>  </li>
+</ul>
+<ul>
+<li>其次是在VSCode中安装一个预览MD文件的插件<code>Markdown Preview Enhanced</code>，这样写文章的时候能够做到实时预览了。  </li>
+</ul>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-2018119155259.png" alt="{mdFileName}-2018119155259"></p>
+<ul>
+<li>为了能够最大程度的获得一些markdown的通用快捷键，这里可以下载一个<code>Markdown Shortcuts</code>插件，比如Ctrl+l插入链接、Ctrl+B加粗之类的。  </li>
+</ul>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-2018119155358.png" alt="{mdFileName}-2018119155358">  </p>
+<ul>
+<li><p>最核心的一步——安装七牛云图床插件。</p>
+<ul>
+<li><p>安装插件<code>qiniu-upload-image</code>。<br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-2018119155541.png" alt="{mdFileName}-2018119155541"></p>
+</li>
+<li><p>注册<a href="https://www.qiniu.com/" target="_blank" rel="noopener">七牛云</a>（注册后需要认证，我的认证时间是半天。）<br>接着在<img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201811916325.png" alt="{mdFileName}-201811916325">新建对象存储。这里会有一个默认的【测试域名】，如果你的网站还没有备案的话，就用这个默认的吧。备案了的可以自定义域名。</p>
+</li>
+<li><p>配置VSCode过程 </p>
+<ul>
+<li>依次打开【文件】-【首选项】-【设置】</li>
+<li>在【搜索设置】中搜索<code>qiniu</code>关键字</li>
+<li>将【qiniu configuration】中的6个子设置从【默认设置】拷贝到【用户设置】<br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-2018119155911.png" alt="{mdFileName}-2018119155911">  </li>
+<li>其中的【AccessKey 签名授权】【SecretKey 签名授权】在<a href="https://portal.qiniu.com/user/key" target="_blank" rel="noopener">密钥管理</a></li>
+<li>七牛图片上传空间是你的存储空间的名字，七牛图床域名为测试域名。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>接着还想在VSCode里面直接完成部署功能。<br>有两种方法：</p>
+<ul>
+<li>1 安装<code>vscode-Hexo</code>插件 然后直接在命令面板中输入以下命令：<br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201811916939.png" alt="{mdFileName}-201811916939">  </li>
+<li>2 按住Ctrl+` 在VSCode中弹出终端，也可以在这里面直接输入命令操作。<br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-2018119161338.png" alt="{mdFileName}-2018119161338"></li>
+</ul>
+</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>卸载掉MarkdownPad ，电脑又轻松了几百M。如果需要帮助的盆友请留言。</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[大学期间的视频文档]]></title>
       <url>/2018/01/17/2018-1-17%20162928/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>考完试恍恍惚惚，简直不敢相信大三已经又过去了一半了，时间是真的快。经历了前两天去西岭雪山玩的时候手机丢了的不愉快，决定好好整理了下大学做过的一些东西，做一个备份。  </p>
