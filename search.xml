@@ -474,7 +474,7 @@ padding: 25px;
     </entry>
     
     <entry>
-      <title><![CDATA[2018最新版hexo+Github搭建个人博客教程]]></title>
+      <title><![CDATA[2018最新版hexo+Github搭建个人博客教程（2018-1-22 更新）]]></title>
       <url>/2018/01/04/2018-01-04%20212731/</url>
       <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
 <p>现在是大三了，身边的甚多朋友技术都还不错，动不动就搭建自己的网站什么的。本着向大佬学习（zhuangbi）的心情，我也开始在阿里云上面买了一个云服务器（学生套餐9.9），使用phpstudy软件一键部署了一个web服务器。但是想想其实没什么用，我只是想找一个属于自己的个人博客而已。所以将目光转向了hexo。 经过很多的摸索，终于是做好了我的博客：<a href="http://bianxiaofeng.com" target="_blank" rel="noopener">http://bianxiaofeng.com</a>, 就像每个语言入门必写<code>hello world</code>一样，我也想把自己使用hexo的相关经历写下来，方便自己以后查阅也希望能够帮助到更多的朋友。  </p>
@@ -497,6 +497,8 @@ padding: 25px;
 <li><p>部署到Coding以及GitHub上（线上访问个人博客）  </p>
 </li>
 <li><p>设置域名解析  </p>
+</li>
+<li><p>其他（写一篇新的博文，设置categories,tags）</p>
 </li>
 </ol>
 <h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>Node.js下载地址：<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a>    </p>
@@ -587,6 +589,11 @@ deploy:
 <p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-2018122144052.png" alt="{mdFileName}-2018122144052"></p>
 <p>OK ,大功告成，你可以通过你的域名访问你的网站了。<a href="http://www.bianxiaofeng.com">Dimple</a></p>
 <p>###</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="写一篇新的博文"><a href="#写一篇新的博文" class="headerlink" title="写一篇新的博文"></a>写一篇新的博文</h2><p>两种方法：  </p>
+<ul>
+<li>在博文根目录的Source文件夹的post文件夹下直接新建一个md文件</li>
+<li>在博文根目录打来PowerShell，然后输入<code>hexo new &#39;你的标题&#39;</code>回车在你的post文件夹下就新建了一个博文，打开编辑即可。然后使用<code>hexo g -d</code>部署到线上。  </li>
+</ul>
 <h1 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h1><p>接下来呢，我还会针对Next主题、相关的网站配置以及域名和百度谷歌收录进行说明，欢迎关注我的系列文章。</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>洋洋洒洒的写了4000+字，确实每一步都是在仔仔细细的做，记录。这篇博文参考了hexo的官方文档，以及百度谷歌的各种教程，重复杂乱居多，网上各种文章都是复制粘贴重复很多且不是最新的，我只想用最平凡的文字记录最清晰的道路。我是一个被代码耽误的诗人，这是我朋友给我的评价哈哈哈。</p>
 ]]></content>
