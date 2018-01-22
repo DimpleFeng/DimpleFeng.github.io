@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 
-
   
 
 
@@ -490,7 +489,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://pic.sc.chinaz.com/files/pic/pic9/201712/bpic4828.jpg" rel="gallery_cjcllsob0000qsohxet9g98iu"
+                 href="http://pic.sc.chinaz.com/files/pic/pic9/201712/bpic4828.jpg" rel="gallery_cjcpt19m3000pvshxv6rifztl"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://pic.sc.chinaz.com/files/pic/pic9/201712/bpic4828.jpg" itemprop="contentUrl"/>
               </a>
@@ -1401,5 +1400,25 @@
 <!-- 页面点击小红心 start--> 
   <script type="text/javascript" src="/js/src/love.js"></script>
 <!-- 页面点击小红心 end--> 
+
+<!--崩溃欺骗-->
+<script>
+var OriginTitile = document.title;
+ var titleTime;
+ document.addEventListener('visibilitychange', function () {
+     if (document.hidden) {
+         $('[rel="icon"]').attr('href', "/img/TEP.ico");
+         document.title = '╭(°A°`)╮ 页面崩溃啦 ~ | 量子广告！';
+         clearTimeout(titleTime);
+     }
+     else {
+         $('[rel="icon"]').attr('href', "/favicon.ico");
+         document.title = '(ฅ>ω<*ฅ) 噫又好了~' + OriginTitile;
+         titleTime = setTimeout(function () {
+             document.title = OriginTitile;
+         }, 2000);
+     }
+ });
+ </script>
 </body>
 </html>
