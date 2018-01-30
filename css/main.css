@@ -2142,7 +2142,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff4b;
+  background: #beffff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3295,4 +3295,7 @@ hr {
 }
 .footer {
   height: 85px;
+}
+.post post-type-normal {
+  width: 100px;
 }

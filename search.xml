@@ -3,10 +3,732 @@
   
     
     <entry>
-      <title></title>
-      <url>/2018/01/27/2018-1-27%20133122/</url>
-      <content type="html"></content>
+      <title><![CDATA[Android学习之路笔记]]></title>
+      <url>/2018/01/29/2018-1-29-220254/</url>
+      <content type="html"><![CDATA[<p>最近是看了下大二上学期的时候学习Android的一些笔记资料，觉得以前是写的还有需要改进的地方，所以准备再重新整理整理发出来。学习Android的时候，是采用的视频+文档结合的方式。书呢看的是：郭大神的《第一行代码》。所以本篇笔记还是按照郭大神的目录来进行记录的。  </p>
+<h1 id="第一章：了解全貌——Android王国简介"><a href="#第一章：了解全貌——Android王国简介" class="headerlink" title="第一章：了解全貌——Android王国简介"></a>第一章：了解全貌——Android王国简介</h1><p> 1、Android的四层架构：Linux内核层、系统运行库层、应用框架层和应用层<br> 2、Android的四大组件：活动（Activity）、服务（Service）、广播接收器（Broadcast Receiver）、内容提供器（Content Provider）<br> 3 、使用res目录下的资源的两种方式     </p>
+<pre><code>例如：
+    使用Res/values/string.xml文件，内容如下   
+&lt;resources&gt;
+    &lt;string name=&quot;app_name&gt;HrlloWorld&lt;/string&gt;
+&lt;/resources&gt;
+在代码中采用R.string.app_name获得HelloWorld的引用
+在XML中通过@string/app_name获得引用
+</code></pre><p> 4、app下的build.grade文件分析  </p>
+<pre><code>apply plugin: &apos;com.android.application&apos;   应用的插件，有两种值可以选，com.android.application 表示这是一个应用程序模块，com.android.library表示这是一个库模块。
+                                         应用程序模块和库模块的最大区别是应用程序模块是可以直接运行的，而库模块只能作为代码库依赖于其他应用程序模块来运行。
+android
+   compileSdkVersion 25   项目编译的版本
+   buildToolsVersion &quot;25.0.2&quot;   项目构建工具的版本
+   defaultConfig {  对项目的更多细节进行配置
+       applicationId &quot;com.example.dimple.alertdialog&quot;   指定项目的包名
+       minSdkVersion 25    指定项目最低兼容的安卓版本
+       targetSdkVersion 25    表示Android25上已经做了充分的测试，
+       versionCode 1      指定项目的版本号
+       versionName &quot;1.0&quot;    指定项目的版本名
+       testInstrumentationRunner &quot;android.support.test.runner.AndroidJUnitRunner&quot;
+   }
+   buildTypes { 用于指定安装文件的相关配置
+       release {
+           minifyEnabled false   表示是否对项目进行代码混淆
+           proguardFiles getDefaultProguardFile(&apos;proguard-android.txt&apos;), &apos;proguard-rules.pro&apos;  指定混淆的时候使用的规则文件
+       }
+   }
+}
+​
+dependencies {  指定当前项目的依赖关系，Android中一共有三种依赖方式：本地依赖、库依赖、远程依赖。
+                本地依赖可以对本地的jar包或者目录添加依赖关系，库依赖可以对项目中的库模块进行添加依赖关系。
+                远程依赖可以对jcenter库上的开源项目添加依赖关系。
+   compile fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])   本地依赖声明，表示将lib目录下的所有的jar文件添加到项目的构建路径中
+   androidTestCompile(&apos;com.android.support.test.espresso:espresso-core:2.2.2&apos;, {
+       exclude group: &apos;com.android.support&apos;, module: &apos;support-annotations&apos;
+   })
+   compile &apos;com.android.support:appcompat-v7:25.3.0&apos;   标准的远程依赖库格式，其中“com.android.support”是域名部分，用于和其他公司的库作区分。
+                                                        “appcompat-v7”是组名称，用于和同一个公司的不同的库作区分。“25.3.0”是版本号，用于和同一个库的不同版本作区分。
+   compile &apos;com.android.support.constraint:constraint-layout:1.0.1&apos;
+   testCompile &apos;junit:junit:4.12&apos;
+}
+</code></pre><h1 id="第二章-先从看得到的入手——探究活动"><a href="#第二章-先从看得到的入手——探究活动" class="headerlink" title="第二章 先从看得到的入手——探究活动"></a>第二章 先从看得到的入手——探究活动</h1><h2 id="1、Genenate-Layout-File-是表示自动为Activity创建一个布局，Launcher-Activity表示将当前活动设置为主活动。"><a href="#1、Genenate-Layout-File-是表示自动为Activity创建一个布局，Launcher-Activity表示将当前活动设置为主活动。" class="headerlink" title="1、Genenate Layout File 是表示自动为Activity创建一个布局，Launcher Activity表示将当前活动设置为主活动。"></a>1、Genenate Layout File 是表示自动为Activity创建一个布局，Launcher Activity表示将当前活动设置为主活动。</h2><h2 id="2、配置主活动的方法：在Manifest中的Activity标签中添加标签，并在这个标签中添加"><a href="#2、配置主活动的方法：在Manifest中的Activity标签中添加标签，并在这个标签中添加" class="headerlink" title="2、配置主活动的方法：在Manifest中的Activity标签中添加标签，并在这个标签中添加"></a>2、配置主活动的方法：在Manifest中的Activity标签中添加<intent-filter>标签，并在这个标签中添加</intent-filter></h2><pre><code>&lt;action android:name=&quot;android.intent.action.MAIN&quot;/&gt;
+&lt;category android:name-&quot;android.intent.category.LAUNCHER&quot;/&gt;  
+</code></pre><h2 id="3、在活动中使用Menu"><a href="#3、在活动中使用Menu" class="headerlink" title="3、在活动中使用Menu"></a>3、在活动中使用Menu</h2><p>在res中新建Menu文件夹，创建XML文件，然后在相应的Java代码中重写onCreateOptionMenu()和onOptionItemSelect()方法。  </p>
+<pre><code>在onCreateOptionMenu()：  
+public boolean onCreateOptionMenu()
+{
+   getMenuInflater().inflater(R.menu.main,menu);
+   return true;
+}  
+</code></pre><p>onOptionItemSelect()用于响应用户的事件。在此函数中，可以通过:item.getItemId判断点击的是哪一个菜单项。  </p>
+<h2 id="4、销毁一个活动使用finish-函数，效果和按下back键是一样的"><a href="#4、销毁一个活动使用finish-函数，效果和按下back键是一样的" class="headerlink" title="4、销毁一个活动使用finish()函数，效果和按下back键是一样的"></a>4、销毁一个活动使用finish()函数，效果和按下back键是一样的</h2><h2 id="5、使用Intent"><a href="#5、使用Intent" class="headerlink" title="5、使用Intent"></a>5、使用Intent</h2><p>Intent是Android程序中各组件之间进行交互的主要方式，它不仅可以指明当前组件想要执行的动作，还可以在不同的组件之间进行数据的传递。Intent一般可以用于启动活动，启动服务，以及发送广播等场景。  </p>
+<p>Intent有多个构造函数：Intent(Context packageContext,Class&lt;?&gt;cls)；第一个参数Context要求提供一个启动活动的上下文，第二个参数class用于指定想要启动的目标。  </p>
+<p>使用StartActivity()；启动活动。  </p>
+<p>使用隐式的Intent启动方法  </p>
+<p>在需要启动的活动的Manifest文件中配置Iintent-filter 中的action和category<br>然后使用Intent饿构造函数，传进去action和category，如果category是默认的话就可以不用传入进去。  </p>
+<p>如果不是默认的，需要使用intent.addcategory();  </p>
+<p>Intent的其他用法：<br>打开网页、拨号、<br>Intent向下一个活动传递数据  </p>
+<p>使用intent.putExtra()函数，此方法就可以将想要存放的数据暂存在Intent中。第一个参数是键，第二个参数是要传入的数据。  </p>
+<p>getStringExtra()和getIntExtra()等系列方法可以获得数据。  </p>
+<h2 id="6、Intent向上一个活动传递数据。"><a href="#6、Intent向上一个活动传递数据。" class="headerlink" title="6、Intent向上一个活动传递数据。"></a>6、Intent向上一个活动传递数据。</h2><p>使用startActivityForResult()方法在A中来启动Activity B；第一个参数是Intent，第二个参数是请求码，用于在回调之后来判断数据的来源。  </p>
+<p>在B中Intent中putExtra()来返回要传递的数据。  </p>
+<p>同时调用setResult()方法，第一个参数是要上一个活动A传递的处理结果，一般只使用RESULT_OK或RESULT_CANCELED两个值，第二个参数价将带有数据的Intent返回。  </p>
+<p>在A中重写onActivityResult()方法，此方法有三个参数，第一个参数requestCode是我们在A中使用startActivityForResult()方法传入的，第二个参数是resultCode是在B中返回数据的时候传入的setResult方法中的结果码。第三个参数是传入的数据。  </p>
+<p>一般是重写back键按下之后回调的方法：onBackPressed();</p>
+<h2 id="7、活动的生命周期"><a href="#7、活动的生命周期" class="headerlink" title="7、活动的生命周期"></a>7、活动的生命周期</h2><ul>
+<li>当活动被首次创建的时候：<br>会依次调用：    onCreate()方法、onStart()方法、onResume方法。  </li>
+<li>当从当前的活动跳转到另一个界面的时候（当前活动不可见）<br>会依次调用：      onPause()方法、onStop()方法  </li>
+<li>当从其他活动再跳转回来的时候<br>会依次调用：     onRestart()方法、onStart()方法、onResume()方法  </li>
+<li>当从当前活动跳转自另一个活动的时候（当前活动可见）<br>会依次调用：    onPause()方法   </li>
+<li>当从这个活动跳转会主活动的时候<br>会依次调用：    onResume()方法  </li>
+<li>结束当前活动的时候<br>会依次调用：     onDestory()方法  <h1 id="第三章-常用控件的使用方法"><a href="#第三章-常用控件的使用方法" class="headerlink" title="第三章 常用控件的使用方法"></a>第三章 常用控件的使用方法</h1><h2 id="ListView的使用"><a href="#ListView的使用" class="headerlink" title="ListView的使用"></a>ListView的使用</h2><h3 id="listView-的简单用法"><a href="#listView-的简单用法" class="headerlink" title="listView 的简单用法"></a>listView 的简单用法</h3><pre><code>首先，需要在布局中加入ListView控件，然后需要定义适配器（一般是ArrayAdapter）
+</code></pre>ArrayAdapter<string>adapter=new ArrayAdapter<string>(<br>  context,resourse,data);<br>listView.setAdapter(adapter);<h3 id="ListView之自定义适配器"><a href="#ListView之自定义适配器" class="headerlink" title="ListView之自定义适配器"></a>ListView之自定义适配器</h3>  首先先创建一个类，这个类中包含了需要进行自定义适配器需要用到的相关资源文件，此类为JAVABean。<br>此外，还需要一个适配器，适配器继承自ArrayAdapter&lt;&gt;并泛型为定义的类。在此适配器中，重写getView()方法。   </string></string></li>
+</ul>
+<pre><code>`     
+ /***  
+ * 自定义适配器,继承自ArrayAdapter,并将泛型指定为Fruit类  
+ */  
+ class MyAdapter extends ArrayAdapter&lt;Fruit&gt;{  
+    /**  
+     *  
+     * @param context  
+     * @param resource  
+     * @param objects  
+     */  
+    private  int Resource;  
+    public MyAdapter(@NonNull Context context, @LayoutRes int resource, @NonNull List&lt;Fruit&gt; objects) {  
+        super(context, resource, objects);  
+        Resource=resource;  
+    }  
+ ​  
+    @NonNull  
+    @Override  
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {  
+        View view;  
+        ViewHolder viewHolder;  
+        Fruit fruit=getItem(position);    
+        if (convertView==null){  
+            view= LayoutInflater.from(getContext()).inflate(Resource,parent,false);  
+            viewHolder-new ViewHolder();  
+            viewHolder.ImageView imageView=view.findViewById(R.id.imageView);  
+            viewHolder.TextView textView=view.findViewById(R.id.textView);  
+            view.setTag(viewHolder);//将ViewHolder存储在View中
+        }else{  
+            view=convertView;  
+            viewHolder=(ViewHolder)getTag();//重新获取ViewHolder  
+        }  
+        imageView.setImageResource(fruit.getFruitImage());  
+        textView.setText(fruit.getFruitName());  
+        return view;  
+    }  
+    class ViewHolder(){  
+        ImageView fruitImage;  
+        TextView fruitName;  
+
+    }  `
+</code></pre><p>其中getItem()方法是每个子项滚动到屏幕类的时候被调用。<br>    convertView将之前的项目进行缓存。<br>新建一个内部类ViewHolder，用于对实例对象进行缓存，把控件的实例都存放在viewHolder中，然后调用View的setTag()方法，将ViewHolder对象保存在View中，当convertView不为null的时候，调用View中的getTag()方法，将ViewHolder取出。这样系统每次就不用通过findViewById()来获取控件实例。<br>    点击事件需要设置监听  </p>
+<pre><code>@Override
+public void onItemClick(AdapterView&lt;?&gt; adapterView, View view, int i, long l) {
+   Fruit fruit=fruitList.get(i);
+    Toast.makeText(getApplicationContext(),&quot;position&quot;+i+fruit.getFruitName(),Toast.LENGTH_LONG).show();
+}
+</code></pre><h2 id="RecyclerView使用"><a href="#RecyclerView使用" class="headerlink" title="RecyclerView使用"></a>RecyclerView使用</h2><p>由于是新增的部件，所以需要添加依赖包  </p>
+<p><code>compile &#39;com.android.support:recyclerview-v7:26.+&#39;  //此处需要注意的是V7:后的，是appcompat后面的版本号</code>  </p>
+<pre><code>      initData();//初始化集合List中的数据
+       RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+       FruitAdapter adapter = new FruitAdapter(fruitList);
+       /**
+        * 这里用于指定RecyclerView的布局方式
+        */
+       LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+       recyclerView.setLayoutManager(linearLayoutManager);
+       recyclerView.setAdapter(adapter);
+public class FruitAdapter extends RecyclerView.Adapter&lt;FruitAdapter.ViewHolder&gt;{
+   private List&lt;Fruit&gt;mFruitList;
+
+       /**
+        * 构造函数用于将要展示的数据传入，并赋值给一个全局变量mFruitList。
+        * @param mFruitList
+        */
+       public FruitAdapter(List&lt;Fruit&gt; mFruitList) {
+           this.mFruitList = mFruitList;
+       }
+    ​
+       /**
+        * 首先定义了一个内部类ViewHolder，ViewHolder要继承自RecyclerView.ViewHolder，然后ViewHolder的构造函数要传入一个view参数
+        * 这个参数通常就是RecyclerView子项最外层的布局。
+        */
+       static class ViewHolder extends RecyclerView.ViewHolder{
+           ImageView fruitImage;
+           private View fruitView;//设置view点击事件  添加此变量来保存子项最外层的布局的实例
+           TextView fruitName;
+           public ViewHolder(View view) {
+               super(view);
+               fruitView=view;//获取View
+               fruitImage=view.findViewById(R.id.imageView);
+               fruitName=view.findViewById(R.id.textView);
+    ​
+           }
+       }
+    ​
+       /**
+        * onCreateViewHolder()是用于创建ViewHolder实例的，在这个方法中，将布局加载到ViewHolder的实例中，然后将ViewHolder实例返回
+        * @param parent
+        * @param viewType
+        * @return
+        */
+       @Override
+       public FruitAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+           View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.fruit_item,parent,false);
+    ​
+           final ViewHolder holder=new ViewHolder(view);
+           /**
+            * ViewHolder设置点击事件
+            */
+           holder.fruitView.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
+                   /*
+                   通过ViewHolder的getAdapterPosition获得position
+                   然后可以通过该位置在List中获取实例
+                    */
+                   int position =holder.getAdapterPosition();
+                   Fruit fruit=mFruitList.get(position);
+                   Toast.makeText(view.getContext(),&quot;this is &quot;+ fruit.getFruitName(),Toast.LENGTH_LONG).show();
+               }
+           });
+           return holder;
+       }
+    ​
+       /**
+        * 用于对RecyclerView子项的数据进行赋值，当每个子项被滚动到屏幕内的时候被调用
+        * @param holder
+        * @param position
+        */
+       @Override
+       public void onBindViewHolder(FruitAdapter.ViewHolder holder, int position) {
+           Fruit fruit=mFruitList.get(position);
+           holder.fruitImage.setImageResource(fruit.getFruitImage());
+           holder.fruitName.setText(fruit.getFruitName());
+       }
+    ​
+       /**
+        * 返回当前要加载的数据源的长度
+        * @return
+        */
+       @Override
+       public int getItemCount() {
+           return mFruitList.size();
+       }
+    }`
+</code></pre><p>瀑布流使用： StaggeredGridLayoutManager  设置瀑布流的布局方式  </p>
+<p>如果需要设置为横向滑动的话就需要在MainActivity中的LinearLayoutManager设置方向</p>
+<p>  linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);</p>
+<p>使用步骤：</p>
+<p>获取RecyclerView实例——设置layoutManager布局对象——绑定适配器<br>创建JavaBean类<br>创建适配器——继承自《RecyclerView.Adapter<javabean.viewholder>》（ViewHolder为内部类）——创建ViewHolder内部类继承自RecyclerView.ViewHolder并完成控件的初始化——创建构造器进行相关数据的传入——重写onCreaterViewHolder()、onBindViewHolder()、getItemCount()方法。<br>重写onCreateViewHolder()方法——获取View对象，创建ViewHolder实例，返回ViewHolder实例（同时可以设置点击事件）<br>重写onBindViewHolder()方法（对子项的数据进行赋值操作，通过Position获取实例）——将数据设置到ViewHolder中的控件实例中。  </javabean.viewholder></p>
+<h1 id="第四章-碎片"><a href="#第四章-碎片" class="headerlink" title="第四章 碎片"></a>第四章 碎片</h1><h2 id="碎片的静态加载"><a href="#碎片的静态加载" class="headerlink" title="碎片的静态加载"></a>碎片的静态加载</h2><p>在MainActivity的布局文件中添加<fragment>的使用</fragment></p>
+<pre><code>&lt;fragment  
+       android:id=&quot;@+id/id_fragment_title&quot;  
+       android:name=&quot;com.zhy.zhy_fragments.TitleFragment&quot;  
+       android:layout_width=&quot;match_parent&quot;  
+       android:layout_height=&quot;45dp&quot; /&gt;  
+</code></pre><p>在TitleFragment的布局文件和JAVA文件中进行操作<br>在java文件中重写onCreateView方法，注意要继承只V4包的Fragment  </p>
+<h2 id="碎片的动态加载"><a href="#碎片的动态加载" class="headerlink" title="碎片的动态加载"></a>碎片的动态加载</h2><p>在MainActivity的布局文件中声明一个区域作为碎片出现的位置 。<br>找MainActivity的JAVA文件中首先设置默认的显示的Fragment  </p>
+<pre><code>prvate void setDefaultFragment(){
+   FragmentManager fm =getFragmentManager();
+   FragmentTransaction transaction = fm.beginTransaction();
+   FragmentOne one=new FragmentOne();
+   transaction.replace(R.id.mainactivity_fragment,one);
+   transaction.commit();
+}
+</code></pre><h3 id="Fragment常用的API："><a href="#Fragment常用的API：" class="headerlink" title="Fragment常用的API："></a>Fragment常用的API：</h3><p>Fragment常用的三个类</p>
+<p>要用于定义Fragment。</p>
+<ul>
+<li>android.app.FragmentManager主要用于在Activity中操作Fragment。</li>
+<li>android.app.FragmentTransaction保证一系列Fragment操作的原子性。</li>
+</ul>
+<p>获取FragmentManager的方式  </p>
+<ul>
+<li>getFragmentManager()  //在V4包中，getSupportFragmentManager()</li>
+</ul>
+<p>主要的操作中都是FragmentTransaction的方法<br>    FragmentManager fm =getSupportFragmentManager();<br>    FragmentTransaction transaction = fm.beginTransaction();//开启一个事务<br>    transaction.add(); //向Activity中添加一个Fragment<br>    transaction.remove();//从Activity中移除一个Fragment<br>    transaction.replace();//使用另一个Fragment替换掉当前的Fragment，实际上是remove()和add()的合体<br>    transaction.show();//显示之前隐藏的Fragment<br>    transaction.hide();//隐藏当前的Fragment，仅仅设置为隐藏，并不会销毁<br>    transaction.commit();//提交一个事务  </p>
+<p>注：如果希望保留用户在当前fragment的数据，就使用hide()和show()组合，这样不会销毁当前的Fragment<br>        如果不希望保留用户当前在Fragment的数据，就使用remove()和add()组合或者直接使用replace()，这样就会销毁当前的Fragment，再进去的时候就会重新加载<br>        如果使用replace的话，当程序已经不在当前的界面的时候，在其他界面按Back键的时候，将不会返回到这个界面，直接退出<br>        想要保留这个fragment的话，就需要将它添加到回退栈中：    transaction.addToBackStack();<br><a href="http://blog.csdn.net/lmj623565791/article/details/37970961/" target="_blank" rel="noopener">参考博客</a></p>
+<h1 id="第五章-广播"><a href="#第五章-广播" class="headerlink" title="第五章 广播"></a>第五章 广播</h1><h2 id="1、广播的两种类型"><a href="#1、广播的两种类型" class="headerlink" title="1、广播的两种类型"></a>1、广播的两种类型</h2><ul>
+<li>标准广播  广播发出后，所有的广播接收器会在同一时间接收到这条广播。效率较高，无法截断。</li>
+<li><p>有序广播  广播发出后，同一时刻只有一个广播接收器能够接收到这条广播，并且优先级高的可以先接收到这条广播，并且前面的广播接收器可以截断广播。</p>
+<h2 id="2、注册广播的两种方式"><a href="#2、注册广播的两种方式" class="headerlink" title="2、注册广播的两种方式"></a>2、注册广播的两种方式</h2><p>  在代码中注册——动态注册——在程序关闭之后就不能再接收到广播<br>  在AndroidManifest中注册——静态注册——与程序是否关闭无关  </p>
+<h2 id="3、创建广播接收器的方法"><a href="#3、创建广播接收器的方法" class="headerlink" title="3、创建广播接收器的方法"></a>3、创建广播接收器的方法</h2><p>新建一个类，继承自BroadcastReceiver，并重写父类的onReceive()方法。<br>这样，当有广播到来的时候，onReceive()方法就会得到调用。  </p>
+<h2 id="4、动态注册广播的方法"><a href="#4、动态注册广播的方法" class="headerlink" title="4、动态注册广播的方法"></a>4、动态注册广播的方法</h2><p>创建IntentInfilter的实例，添加一个action  </p>
+<p>  IntentInfilter intentInfliter =new IntentInfliter();//创建IntentFilter实例<br>  intentInfilter.addAction(“android.net.conn.CONNECTIVITY_CHANGE”);//为这个IntentFilter添加action<br>  registerReceiver(networkChageReceiver,interFilter);//动态注册广播，这样networkChangeReceiver就会接收到所有值为android.net.conn.CONNECTIVITY_CHANGE的广播   </p>
+</li>
+</ul>
+<p>动态注册的广播需要取消注册，在onDestory中调用unRegisterReceiver()方法来实现的。</p>
+<h2 id="5、静态注册广播的方法"><a href="#5、静态注册广播的方法" class="headerlink" title="5、静态注册广播的方法"></a>5、静态注册广播的方法</h2><p>使用android Studio的快捷键创建一个广播接收器，点击包名——New——Other——Broadcast Receiver，Exported表示是否允许广播接收器接收本程序以外的广播，Enable表示是否启用这个广播。  </p>
+<p>（静态注册的广播接收器必须要在AndroidManifest中注册才能使用，使用Android Studio创建的广播接收器已经在AndroidManifest中注册了）<br>注册方式信息如下：</p>
+<pre><code>       &lt;receiver
+           android:name=&quot;.MyReceiver&quot;
+           android:enabled=&quot;true&quot;
+           android:exported=&quot;true&quot;&gt;
+           &lt;intent-filter  android:priority=&quot;100&quot;&gt;
+               &lt;action android:name=&quot;android.intent.action.BATTERY_LOW&quot;
+           &lt;/intent-filter&gt;
+       &lt;/receiver&gt;
+   &lt;/application&gt;
+
+在&lt;intent-filter&gt;标签中添加相应的Action
+</code></pre><p>注意某些操作需要用到权限，需要在Manifest中添加权限。</p>
+<p>此外，在onReceive中不能添加太多的逻辑以及耗时操作，在广播接收器中是不允许多开线程的，当此方法运行了太长时间而没有结束，程序会报错。</p>
+<p>发送动态广播的方法：  </p>
+<pre><code>Intent intent=new Intent(&quot;android.net.conn.CONNECTIVITY_CHANGE&quot;);
+sendBroadcast(intent);
+</code></pre><h2 id="6、自定义广播"><a href="#6、自定义广播" class="headerlink" title="6、自定义广播"></a>6、自定义广播</h2><p>创建一个自定义的广播接收器继承自BroadcastReceicer，并重写onReceive()方法。<br>然后使用Intent发送广播。</p>
+<ul>
+<li>有序广播<br>在Manifest中的Broadcast标签的Intent-filter中设置优先级属性priority<br>发送广播的时候与标准广播不同<br>sendOrderBroadcast(intent,null)//第一个是Intent实例，第二个是与权限相关的字符串，这里传入null  </li>
+<li>截断广播<br>abortBroadcast();//在广播接收器中调用这个方法就可以截断广播</li>
+</ul>
+<h2 id="7、本地广播"><a href="#7、本地广播" class="headerlink" title="7、本地广播"></a>7、本地广播</h2><pre><code>本地广播的出现是为了解决广播在整个系统中运行中的安全性的问题，全局广播会被其他程序所截获，造成信息泄露。  
+本地广播的用法  
+</code></pre><p>主要是使用一个LocalBroadcastManager来对广播进行管理，并提供了发送广播和和注册广播的方法。  </p>
+<pre><code>localBroadcastManager=LocalBroadcastManager.getInstance(getApplicationContext());
+      Button button= (Button) findViewById(R.id.button);
+      button.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              Intent intent=new Intent(&quot;com.example.dimple.mytest.MYMY&quot;);
+              localBroadcastManager.sendBroadcast(intent);
+          }
+      });
+      IntentFilter intentFilter=new IntentFilter();
+      intentFilter.addAction(&quot;com.example.dimple.mytest.MYMY&quot;);
+      localBroadcastManager.registerReceiver(new MyReceiver(),intentFilter);
+</code></pre><p>本地广播只能通过动态注册。</p>
+<p>通过LocalBroadcastMaager的getInstance()方法得到实例。<br>然后注册广播的时候就调用LocalBroadcastManager()的registerRecriver()方法.<br>在发送广播的时候就调用LocalBroadcastManager的sendBroadcastManager()方法。</p>
+<h1 id="第六章-存储"><a href="#第六章-存储" class="headerlink" title="第六章 存储"></a>第六章 存储</h1><h2 id="1、使用SharedPreferences"><a href="#1、使用SharedPreferences" class="headerlink" title="1、使用SharedPreferences"></a>1、使用SharedPreferences</h2><p>SharedPreferences是采用键值对的方式来存储数据的。<br>要使用SharedPreferences需要首先获得SharedPreferences对象。获取该对象的方式有：<br>Context类中的getSharedPreferences()方法<br>Activity类中的getPreferences()方法<br>PrederencesManager类中的getDefaultSharedPreferences()方法<br><strong>使用步骤</strong><br>调用sharedPreferences对象的editor()方法来获得一个sharedPerferences.Editor()对象<br>向sharedPerferences.Editor()对象添加数据。调用editor的putString()等些列方法<br>调用editor的apply()方法提交数据。  </p>
+<p><strong>读取SharedPreferences的方法</strong>  </p>
+<p>获取SharedPreferences对象，通过getString()系列方法得到数据。注意这里有两个参数，第一个是要读取的数据的键，第二个参数是没有找到这个数据返回的值。</p>
+<h2 id="2、使用SQLite数据库进行存储"><a href="#2、使用SQLite数据库进行存储" class="headerlink" title="2、使用SQLite数据库进行存储"></a>2、使用SQLite数据库进行存储</h2><p>android中为了更好的管理数据库，提供了一个SQLiteOpenHelper的帮助类（抽象类），需要实现SQLiteOpenHelper抽象方法中的抽象方法onCreate()（在数据库被创建的时候会调用），onUpgrade()（在数据库版本被升级的时候被调用）  </p>
+<p>获取实例的方法：(都可以打开或者创建数据库)<br>getReadableDatebase()只能是通过只读的方式来打开数据库。<br>getWritableDatebase()使用读写的方式打开数据库。  </p>
+<p><strong>使用方法：</strong><br>新建一个JAVA类继承自SQLiteOpenHelper，实现两个抽象方法onCreate()和onUpgrade()，创建构造器（使用参数较少的那一个构造器），其参数有  </p>
+<pre><code>Context context, String name, SQLiteDatabase.CursorFactory factory, int version
+</code></pre><p>/<em><br>第一个参数是context上下文<br>第二个参数是数据库名<br>第三个参数允许在查询的时候返回一个自定义的Cursor，一般为null<br>第四个参数是当前数据库的版本号，可用于对数据库的更新操作
+</em>/</p>
+<p>构建出SQLiteOpenHelper实例（new）以后，调用getReadableDatebase()或者getWritableDatebase()就可以创建数据库了。<br>创建的数据库的名字一般放在 /data/data/<package name="">/datebase目录下。</package></p>
+<p>配置adb 在安卓SDK的目录下有一个platform-tools文件夹，将这个文件夹配置到系统的环境变量中，使用adb shell进入控制台终端</p>
+<p>使用sqlite3 +数据库名称 打开数据库<br>使用.table 查看数据库中的表、<br>使用 .schema 查看建表语句  </p>
+<p>3、向SQLite数据库中添加数据<br>调用SQLiteOpenHelper的getReadableDatebase()或者getWritableDatebase()创建数据库后会返回一个SQLiteDatabase对象，借助这个对象就可以对数据库进行CRUD操作<br><strong>添加数据</strong><br>    SQLiteDatabase提供一个insert()方法用于添加数据。这个方法有三个参数。第一个参数是数据库表名称，第二个是用于指定在未添加数据的情况下给某些数据项自动赋值为null，第三个参数是ContentValues对象，它提供一系列的put()方法重载，用于向contentValues添加数据。使用此方法的时候需要创建ContentValues对象。  </p>
+<pre><code>sqLiteDatabase.insert(&quot;Book&quot;,null,contentValues);//插入信息到Book
+</code></pre><p><strong>更新数据</strong><br>    SQLiteDatabase提供一个update()的方法，第一个参数是表名，第二个参数是ContentValues对象，第三四个参数用于约定更新某一行或者某几行的数据。  </p>
+<pre><code>sqLiteDatabase.update(&quot;Book&quot;,contentValues,&quot;id=?&quot;,new String[]{&quot;1&quot;});//更新id为1的书的信息
+第三个参数对应的是SQL的where语句，第四个提供约束的具体信息。
+</code></pre><p><strong>删除数据</strong></p>
+<pre><code>SQLiteDatabase提供一个delete()的方法，第一个参数是表名，第二三个参数用于约定删除某一行或者某几行的数据。   
+
+ sqLiteDatabase.delete(&quot;Book&quot;,&quot;pages&gt;?&quot;,new String[]{&quot;500&quot;});//删除页数超过500页的书的信息  
+</code></pre><p><strong>查询数据</strong>  </p>
+<pre><code>query(table, columns, selection, selectionArgs, groupBy, having, orderBy, limit)方法各参数的含义：
+</code></pre><ul>
+<li><p>table：表名。相当于select语句from关键字后面的部分。如果是多表联合查询，可以用逗号将两个表名分开。</p>
+</li>
+<li><p>columns：要查询出来的列名。相当于select语句select关键字后面的部分。</p>
+</li>
+<li><p>selection：查询条件子句，相当于select语句where关键字后面的部分，在条件子句允许使用占位符“?”</p>
+</li>
+<li><p>selectionArgs：对应于selection语句中占位符的值，值在数组中的位置与占位符在语句中的位置必须一致，否则就会有异常。</p>
+</li>
+<li><p>groupBy：相当于select语句group by关键字后面的部分</p>
+</li>
+<li><p>having：相当于select语句having关键字后面的部分</p>
+</li>
+<li><p>orderBy：相当于select语句order by关键字后面的部分，如：personid desc, age asc;</p>
+</li>
+<li><p>limit：指定偏移量和获取的记录数，相当于select语句limit关键字后面的部分。  </p>
+<pre><code>               sqLiteDatabase=mySqlite.getWritableDatabase();
+               Cursor cursor=sqLiteDatabase.query(&quot;Book&quot;,null,null,null,null,null,null);//查询完毕后得到一个游标Cursor对象，通过这个对象去访问数据
+               if (cursor.moveToFirst()){//将游标移动到第一行的位置
+                   do{//接下来是循环
+                       //在这个循环中可以通过Cursor的getColumnIndex()方法获取到某一行的索引。将这个索引传入相应的取值方法中就可以得到相应的数据了。
+​
+                       String name=cursor.getString(cursor.getColumnIndex(&quot;name&quot;));
+                       String author =cursor.getString(cursor.getColumnIndex(&quot;author&quot;));
+                       int pages=cursor.getInt(cursor.getColumnIndex(&quot;pages&quot;));
+                       double price=cursor.getDouble(cursor.getColumnIndex(&quot;price&quot;));
+                       builder.append(&quot;name\n&quot;).append(name).append(&quot;author\n&quot;).append(author).append(&quot;pages\n&quot;).append(pages).append(&quot;price\n&quot;).append(price);
+                   }while (cursor.moveToNext());
+                   textView.setText(builder);
+               }
+</code></pre></li>
+</ul>
+<h2 id="4、使用LitePal操作数据库"><a href="#4、使用LitePal操作数据库" class="headerlink" title="4、使用LitePal操作数据库"></a>4、使用LitePal操作数据库</h2><p><strong>配置过程</strong><br>    编辑app/build.gradle文件，在dependencies闭包中加入  </p>
+<pre><code>compile &apos;org.litepal.android:core:1.3.2&apos;
+</code></pre><p>然后在app/src/main目录新建一个assets目录，在此目录下创建一个litepal.xml文件  </p>
+<pre><code>&lt;litepal&gt;  
+    &lt;!--dbname标签用于指定数据库名，version标签用于指定数据库版本号，list标签用于指定所有的映射模型--&gt;  
+    &lt;dbname value=&quot;BookStore&quot;&gt;&lt;/dbname&gt;
+    &lt;version value =&quot;2&quot;&gt;&lt;/version&gt;
+    &lt;list&gt;
+        &lt;mapping class=&quot;com.example.dimple.sharedpreferencestest.Book&quot;&gt;&lt;/mapping&gt;
+        &lt;mapping class=&quot;com.example.dimple.sharedpreferencestest.Category&quot;&gt;&lt;/mapping&gt;
+    &lt;/list&gt;
+&lt;/litepal&gt;
+</code></pre><p>最后需要在AndroidManifest中将项目的application配置为  </p>
+<pre><code>&lt;application
+    android:name=&quot;org.litepal.LitePalApplication&quot;
+    android:allowBackup=&quot;true&quot;
+    android:icon=&quot;@mipmap/ic_launcher&quot;
+</code></pre><p><strong>创建数据库：</strong><br>    使用面向对象的思想，定义一个Book类JavaBean类。<br>    将关系模型添加到映射模型列表中  </p>
+<pre><code>&lt;mapping class=&quot;com.example.dimple.sharedpreferencestest.Book&quot;&gt;&lt;/mapping&gt;
+</code></pre><p>注：不管需要多少关系模型，注意要使用完整的类名，不管需要多少模型类映射，都需要用同样的方式在<list>标签下配置。  </list></p>
+<p>在代码中使用Connector.getDatabase()；创建数据库。  </p>
+<p>升级版本号，就可以直接修改litepal.xml中的version即可。此升级不会删除数据库。  </p>
+<p><strong>添加数据</strong><br>    需要将JavaBean类继承自DataSupport类。<br>    在java代码中，直接new一个JavaBean类的对象出来，然后调用set系列方法，最后调用DataSupport父类传下来的save()方法即可。</p>
+<p><strong>更新数据</strong><br>直接new一个JavaBean对象出来，调用要修该的数据项的set函数，然后updataAll();  此方法可以设置约束条件  </p>
+<pre><code>book.updateAll(&quot;name=?&quot;,&quot;the da vinvi code &quot;);//修改所有name=the da vinvi code的数据项。
+</code></pre><p><strong>删除数据</strong>  </p>
+<pre><code> DataSupport.deleteAll(Book.class,&quot;price&gt;?&quot;,&quot;17&quot;);
+第一个参数是指定表，后面的参数是指定参数的数据项的属性。
+</code></pre><p><strong>查询数据</strong><br>注：<br> for (Book book:bookList)的意思是循环bookList集合，每次取得的实例就给Book book；</p>
+<p>List<book> bookList=DataSupport.findAll(Book.class);<br>findAll()返回的是一个List集合。  </book></p>
+<p><strong>常用的查询API</strong></p>
+<ul>
+<li><p>查询第一条数据  </p>
+<pre><code>Book book =DataSupport.findFirst(Book.class);  
+</code></pre></li>
+<li><p>查询最后一条数据  </p>
+<pre><code>Book book =DataSupport.findLast(Book.class);  
+</code></pre></li>
+<li><p>select()方法可以指定查询那几列的数据。  </p>
+<pre><code>List&lt;Book&gt; bookList =DataSupport.select(&quot;name&quot;,&quot;pages&quot;).find(Book.class);
+</code></pre></li>
+<li><p>where()方法可以指定查询的约束条件   </p>
+<pre><code>List&lt;Book&gt; bookList =DataSupport.where(&quot;name=?&quot;,&quot;bianxiaofeng&quot;).find(Book.class);  
+</code></pre></li>
+<li><p>order()方法可以指定结果的排序方式  </p>
+<pre><code>List&lt;Book&gt; bookList =DataSupport.order(&quot;pages desc&quot;).find(Book.class);
+</code></pre></li>
+<li><p>limit()方法可以指定结果的数量  </p>
+<pre><code>List&lt;Book&gt; bookList =DataSupport.limit(3).find(Book.class);
+</code></pre></li>
+</ul>
+<p>还可以对所有的方法进行连缀组合操作。  </p>
+<h1 id="第七章-内容提供器"><a href="#第七章-内容提供器" class="headerlink" title="第七章 内容提供器"></a>第七章 内容提供器</h1><h2 id="1、内容提供器主要在不同的应用程序之间实现数据共享的功能。使用内容提供器是Android跨程序共享数据的标准方式。"><a href="#1、内容提供器主要在不同的应用程序之间实现数据共享的功能。使用内容提供器是Android跨程序共享数据的标准方式。" class="headerlink" title="1、内容提供器主要在不同的应用程序之间实现数据共享的功能。使用内容提供器是Android跨程序共享数据的标准方式。"></a>1、内容提供器主要在不同的应用程序之间实现数据共享的功能。使用内容提供器是Android跨程序共享数据的标准方式。</h2><h2 id="2、运行时权限"><a href="#2、运行时权限" class="headerlink" title="2、运行时权限"></a>2、运行时权限</h2><pre><code>权限分为普通权限和危险权限。危险权限分为9组24个。每一个危险权限都属于一个权限组，一旦用户同意了某个权限组的一个权限，则对应的权限组都可以被获得权限。  
+</code></pre><p><strong>步骤：</strong><br>第一步需要判断用户是不是已经授权了。借助的是ContextCompat.setSelfPermission()方法。此方法接收两个参数：第一个是Context上下文，第二个是具体的权限名。<br> Manifest.permission.```。使用方法的返回值和PackageManager.PERMISSION_GEANTED作比较，相等就表示已经授权。不相等就表示没有授权。</p>
+<p>如果授权的话就执行具体的逻辑。如果不等的话就说明还没有得到用户的权限的同意，这个时候需要申请用户的权限。</p>
+<p>调用ActivityCompat.requestPermission()方法来向用户申请权限。requrestPermission接受三个参数，第一个参数是要求的Activity实例，第二个参数是String数组，这里需要把要申请的权限名写在里面，第三个是请求码，需要唯一。在这个方法中判断是否得到授权。</p>
+<pre><code>//申请权限
+if (ContextCompat.checkSelfPermission(MainActivity.this,Manifest.permission
+                       .CALL_PHONE)!=PackageManager.PERMISSION_GRANTED){
+                   ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest
+                           .permission.CALL_PHONE},1);
+               }else {
+                  //do something else
+               }
+@Override
+   public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                          @NonNull int[] grantResults) {
+           switch (requestCode){
+               case 1:
+                   if (grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                       //do something else.
+                   }else{
+                       Toast.makeText(MainActivity.this,&quot;failed!&quot;,Toast.LENGTH_LONG).show();
+                   }
+           }
+   }
+</code></pre><h2 id="3、contentResolver的基本用法"><a href="#3、contentResolver的基本用法" class="headerlink" title="3、contentResolver的基本用法"></a>3、contentResolver的基本用法</h2><p>对于一个应用程序来说，如果访问内容提供器中的共享的数据，就一定要借助ContentResolver类。可以通过getContentReslover来获取该类的实例。  </p>
+<p>使用inset()用于添加数据。update()用于更新数据。delete()用户删除数据。queny()用于查询数据。ContentReslover的增删查改需要接受Uri对象作为参数。  </p>
+<p>和数据库的操作一样是使用ContentValues作为中转传数据。调用CRUD函数进行操作。</p>
+<h1 id="第八章-运用手机多媒体"><a href="#第八章-运用手机多媒体" class="headerlink" title="第八章 运用手机多媒体"></a>第八章 运用手机多媒体</h1><h2 id="1、使用通知Notification"><a href="#1、使用通知Notification" class="headerlink" title="1、使用通知Notification"></a>1、使用通知Notification</h2><p>使用通知的步骤<br>首先需要一个NotificationManager来对通过通知进行管理，可以调用Context的getSystemService()方法来获取到。<br>getSystemService()方法接受一个字符串参数用于确定获取系统的哪一个服务。这里传入Context.NOTIFICATION_SERVICE即可。 </p>
+<pre><code>NotificationManger manager=(NitificationManager)getSystemSerice(Context.NOTIFICATION_SERVICE);
+</code></pre><p>接下来需要一个Builder构造器来创建Notification对象（为了实现兼容，使用v4包的NotificationCompat类）  </p>
+<pre><code>Notification notification =new NotificationCompat.Builer(context);  
+</code></pre><p>然后调用一系列的set方法对这个实体类进行设置。最后调用manager的notify()方法，该方法接收两个参数，第一个参数是Notification的id，第二个参数是Notification的类。<br>以上功能实现后就可以发送通知了，不过通知不可点击。如果需要点击需要PendingIntent</p>
+<p>注：PendingIntent和Intent的异同点：</p>
+<ul>
+<li><p>都可以指明一个意图，都可以用于启动活动，服务，以及发送广播。</p>
+</li>
+<li><p>Intent倾向于立即去执行某个动作，PendingIntent更加倾向在合适的时机去执行某个动作。</p>
+</li>
+</ul>
+<p><strong>pendingIntent的使用方法：</strong><br>使用静态方法获得PendingIntent的实例，getActivity()、getBroadcast()、getService()。  </p>
+<p>四个参数：content，0，Intent对象、0</p>
+<pre><code>Intent intent=new Intent(MainActivity.this,nextActivity.class);
+PendingIntent pi=PendingIntent.getActivity(MainActivity.this,0,intent,0);
+</code></pre><p><strong>不能这个通知写在OnClickListener的匿名内部类</strong></p>
+<h2 id="2、调用摄像头"><a href="#2、调用摄像头" class="headerlink" title="2、调用摄像头"></a>2、调用摄像头</h2><pre><code>private void camera() {
+       /**
+        * 首先创建了一个File对象，用于存放摄像头拍下的图片，这里将图像命名为outputImage.jpg，并将它存放在手机的关联目录下、
+        * 接着进行一个判断，如果设备系统的版本低于7.0 的话就，就调用Uri的fromFile()方法将File转化为Uri对象，这个Uri对象标识着outputImage这张图片的真实路径，否则
+        * 就调用FileProvider的geUriForFile()将File转化成一个封装过的Uri对象。
+        */
+       File outputImage=new File(Environment.getExternalStorageDirectory(),&quot;output_image.jpg&quot;);
+       try{
+           if (outputImage.exists()) {
+               outputImage.delete();
+           }
+           outputImage.createNewFile();
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+       if (Build.VERSION.SDK_INT&gt;=24){
+           imageUri= FileProvider.getUriForFile(MainActivity.this,&quot;com.example.dimple.test619.fileProvider&quot;,outputImage);
+       }else{
+           imageUri=Uri.fromFile(outputImage);
+       }
+       Intent intent=new Intent(&quot;android.media.action.IMAGE_CAPTURE&quot;);
+       intent.putExtra(MediaStore.EXTRA_OUTPUT,imageUri);//填入指定的文件输出地址
+       startActivityForResult(intent,TAKE_PHOTO);
+   }
+@Override
+   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+       switch (requestCode) {
+           case TAKE_PHOTO: {
+               if (resultCode == RESULT_OK) {
+                   try{
+                       Bitmap bitmap= BitmapFactory.decodeStream(getContentResolver()//将图片解析为bitmap对象
+                               .openInputStream(imageUri));
+                       picture.setImageBitmap(bitmap);
+                   } catch (FileNotFoundException e) {
+                       e.printStackTrace();
+                   }
+​
+               }
+           }
+           break;
+           default:
+               break;
+       }
+</code></pre><p>因为用到了ContentProvider，所以需要在Manifest中注册</p>
+<pre><code>&lt;provider
+            android:authorities=&quot;com.example.dimple.test619.fileProvider&quot;
+            android:name=&quot;android.support.v4.content.FileProvider&quot;
+           android:exported=&quot;false&quot;
+           android:grantUriPermissions=&quot;true&quot;&gt;
+           &lt;meta-data   //指定Uri的共享路径
+               android:name=&quot;android.support.FILE_PROVIDER_PATHS&quot;
+               android:resource=&quot;@xml/file_paths&quot;/&gt;
+        &lt;/provider&gt;
+    &lt;/application&gt;
+​
+&lt;/manifest&gt;
+</code></pre><p>新建XML文件  </p>
+<pre><code>&lt;?xml version =&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+    &lt;path xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;external-path name=&quot;my_images&quot; path=&quot;&quot;/&gt;
+&lt;/path&gt;  
+</code></pre><h2 id="3、播放音频"><a href="#3、播放音频" class="headerlink" title="3、播放音频"></a>3、播放音频</h2><p>在Android中播放音频文件一般都是使用MediaPayer来实现的，它对多种格式的音频文件提供了非常全面的控制方法，使得音频播放比较简单。</p>
+<pre><code>方法名            功能描述          备注    
+setDataSource()        设置要播放的文件的地址        
+prepare()        在开始播放之前调用这个方法完成准备工作        
+start()        开始播放视频        
+pause()        暂停播放音频        
+reset()        将Mediaplayer对象重置为刚开始创建的状态        
+seekTo()        从指定的位置开始播放音频        
+stop()        停止播放音频        
+release()        释放掉与MediaPlyer相关的资源        
+isPlaying()        判断当前MediaPlayer是否在播放        
+getDuration()    获取之路的音频文件的时长    
+</code></pre><h2 id="4、播放视频"><a href="#4、播放视频" class="headerlink" title="4、播放视频"></a>4、播放视频</h2><pre><code>方法名               功能描述          备注    
+setVideoPat()   设置要播放的视频文件的地址            
+start()        开始或继续播放视频        
+pause()        暂停播放视频        
+resume()        将视频从头播放        
+isPlaying()        是否正在播放        
+getDuration()        获取时长    
+seekTo()        从指定的位置开始播放    
+XML中包含VideoView。
+通过VideoView来进行操作。
+</code></pre><h1 id="第九章-使用网络技术"><a href="#第九章-使用网络技术" class="headerlink" title="第九章 使用网络技术"></a>第九章 使用网络技术</h1><h2 id="1、WebView-的用法"><a href="#1、WebView-的用法" class="headerlink" title="1、WebView 的用法"></a>1、WebView 的用法</h2><p>获取WebView的实例，通过getSetting()方法对浏览的相关属性进行设置。调用setJavaScriptEnabled()方法来让WebView支持JavaScript脚本。调用wenViewClient()方法。是希望网页依然在本程序中，不然就会跳转出去。</p>
+<h2 id="2、使用HTTP协议访问网络"><a href="#2、使用HTTP协议访问网络" class="headerlink" title="2、使用HTTP协议访问网络"></a>2、使用HTTP协议访问网络</h2><p>首先开启一个子线程，在子线程中进行网络数据请求操作，获取HttpRULConnection实例。  </p>
+<pre><code>URL url=new URL(&quot;https://www.baidu.com&quot;);
+HttpURLConnection connection==(HttpURLConnection)url.openConnection();
+connection.setConnectionTimeOut(8000);//设置链接超时
+connection.setReadTimeOut(8000);//设置读取超时
+</code></pre><p>之后再调用getInputStream()方法获取到服务器返回的流，然后进行流读取。  </p>
+<pre><code>ImputStream in=connection.getInputStream();
+//下面进行流读取
+BufferedReader reader=new BufferedReader(new InputStreamReader(in));
+String line;
+StringBuilder builder=new StringBuilder();
+while((line=reader.readerLine())!=null){
+  builder.append(line);
+}
+
+最后关闭链接
+connection.disconnect();
+</code></pre><h2 id="3、使用OkHttp"><a href="#3、使用OkHttp" class="headerlink" title="3、使用OkHttp"></a>3、使用OkHttp</h2><p>在app/build.grade中dependencies中添加如下内容：  </p>
+<pre><code>compile &apos;com.squareup.okhttp3:okhttp:3.4.1&apos;
+</code></pre><p>具体使用步骤：<br>创建一个OkHttpClient实例  </p>
+<pre><code>OkHttpClient client=new OkHttpClient();  
+</code></pre><p>接下来如果需要发起一条Http请求，需要创建一个Request对象  </p>
+<pre><code>Request request=new Request.Builder().build();  
+</code></pre><p>以上代码创建了一个空的Request对象，没有什么实际作用，在build()方法之前加入很多连缀来丰富这个request对象，可以使用uri()方法来设置目标网络地址。  </p>
+<p>之后调用OkHttpClient的newCall()方法来创建一个Call对象，并调用它的execute()方法来发送请求并获得服务器的数据。  </p>
+<pre><code>Response response=client.newCall(request).execute();
+</code></pre><p>其中Resopnse就是服务器返回的数据了，以下方法可以得到具体的内容</p>
+<pre><code>String responseData=response.body().string();
+</code></pre><p>发送数据：  </p>
+<p>首先需要构建出一个RequestBody对象来存放待提交的数据。</p>
+<pre><code>ResquestBody requestBody=new FormBody.Builder().add(&quot;username&quot;,&quot;admin&quot;).add(&quot;password&quot;,&quot;123456&quot;).build();
+</code></pre><p>接下来就和Get请求一样了，调用execute()方法来获得服务器返回的数据。</p>
+<h2 id="4、解析JOSN数据"><a href="#4、解析JOSN数据" class="headerlink" title="4、解析JOSN数据"></a>4、解析JOSN数据</h2><p><a href="http://mobileapi.72g.com/index.php?tp=andv4/quan&amp;op=qinfo" target="_blank" rel="noopener">http://mobileapi.72g.com/index.php?tp=andv4/quan&amp;op=qinfo</a></p>
+<h2 id="5、解析Json数据"><a href="#5、解析Json数据" class="headerlink" title="5、解析Json数据"></a>5、解析Json数据</h2><p>首先配置服务器：电脑端访问网址为127.0.0.1 模拟器访问端网址：10.0.2.2</p>
+<p><strong>使用JsonObject：</strong><br>首先将从服务器中的数据放在JSONArray中，然后循环遍历这个Json数组，从中取出的每一个元素都是JSONObject对象，调用getString()方法就可以取出数据。  </p>
+<pre><code>JSONArray jsonArray=new JSONArray(response);
+    for (int i=0;i&lt;jsonArray.length();i++){
+        JSONObject jsonObject=jsonArray.getJSONObject(i);
+        Log.d(&quot;TAG&quot;, &quot;Data :&quot;+jsonObject.getString(&quot;name&quot;)+jsonObject.getString(&quot;id&quot;)+jsonObject.getString(&quot;version&quot;));
+    }
+</code></pre><p><strong>使用Gson</strong><br>首先需要添加依赖  </p>
+<pre><code>compile &apos;com.google.code.gson:gson:2.8.1&apos;
+</code></pre><p>Gson可以将一段Json格式的字符串自动映射成为一个对象，从而不需要我们编写代码进行解析。</p>
+<p>比如：一段json格式的数据如下<br>{“name”：”Tom”，”age”:”20”}<br>我们可以定义 一个Person类，并加入name和age两个字段。只需要简单的调用如下代码就可以将JSON数据自动解析成一个Person对象了。 </p>
+<pre><code>Gson gson=new Gson();
+Person person=gson.fromJson(jsonData,Person.class)  
+</code></pre><p>如果解析的是一段json数组就需要借助TypeToken将期望解析成的数据类型传入到fromJson中。  </p>
+<pre><code>Gson gson=new Gson();
+ List&lt;App&gt;appList=gson.fromJson(response,new TypeToken&lt;List&lt;App&gt;&gt;(){}.getType());
+for (App app:appList){
+  Log.d(&quot;TAG&quot;, &quot;run: &quot;+app.getId()+&quot;\n&quot;+app.getName()+&quot;\n&quot;+app.getVersion());
+ }
+</code></pre><p>定义Okhttp工具类  </p>
+<pre><code>public class HttpUtility {
+   public static void senOkHttpRequest(String address,okhttp3.Callback callback){
+       OkHttpClient client=new OkHttpClient();
+       Request request=new Request.Builder().url(address).build();
+       client.newCall(request).enqueue(callback);
+   }
+}
+​
+</code></pre><p>在调用工具类的时候就这样写：</p>
+<pre><code>HttpUtility.senOkHttpRequest(&quot;http://10.0.2.2/me.json&quot;, new okhttp3.Callback() {
+           @Override
+           public void onFailure(Call call, IOException e) {
+//                T网络请求失败&quot;相关逻辑
+           }
+​
+           @Override
+           public void onResponse(Call call, Response response) throws IOException {
+//                网络请求成功相关逻辑
+               String responseData=response.body().string();
+               showResponse(responseData);
+           }
+       });
+</code></pre><h1 id="第12章-Material-Design"><a href="#第12章-Material-Design" class="headerlink" title="第12章 Material Design"></a>第12章 Material Design</h1><h2 id="1、ToolBar代替ActionBar"><a href="#1、ToolBar代替ActionBar" class="headerlink" title="1、ToolBar代替ActionBar"></a>1、ToolBar代替ActionBar</h2><p> 需要在Manifest中设置主题为NoActionBar  </p>
+<pre><code>&lt;android.support.v7.widget.Toolbar
+       android:layout_width=&quot;match_parent&quot;
+       android:layout_height=&quot;?attr/actionBarSize&quot;
+       android:id=&quot;@+id/toolBar&quot;
+       android:background=&quot;@color/colorPrimary&quot; /&gt;
+Toolbar toolbar = (Toolbar) findViewById(R.id.toolBar);
+       setSupportActionBar(toolbar);
+</code></pre><p>扩展：在ToolBar中添加其他控件<br>新建menu文件夹，在其中添加Menu resourse file，创建一个xml文件。  </p>
+<pre><code>&lt;item  
+       android:id=&quot;@+id/delete&quot;
+       android:icon=&quot;@drawable/wujiaoxing&quot;//指定按钮的图标
+       android:title=&quot;@string/delete&quot;//指定按钮的文字
+       app:showAsAction=&quot;always&quot; /&gt;//指定按钮的显示位置。always表示永远显示再ToolBar中，如果屏幕不够就不显示
+                                   nerver表示永远显示再菜单项中，ifRoom表示屏幕空间足够的情况下就显示在ToolBar中，如果不够的话就显示在菜单项中。
+​
+</code></pre><p>在MainActivity中重写onCreateOptionMenu方法显示出menu，使用onOptionsItemSelected()方法来响应点击事件。</p>
+<h2 id="2、滑动菜单——DrawerLayout"><a href="#2、滑动菜单——DrawerLayout" class="headerlink" title="2、滑动菜单——DrawerLayout"></a>2、滑动菜单——DrawerLayout</h2><p>首先它是一个布局，在布局中只允许放入 两个直接控件，第一个子控件是主屏幕显示的内容，第二个子控件是滑动菜单栏显示的内容。</p>
+<p>使用  </p>
+<pre><code>&lt;android.support.v4.widget.DrawerLayout&gt;&lt;/android.support.v4.widget.DrawerLayout&gt;
+</code></pre><p>注意：</p>
+<p>第二个子控件需要设置android:layout_gravity=””，需要告诉DrawerLayout菜单是再屏幕的右边还是左边  </p>
+<pre><code>android:layout_gravity=&quot;start&quot;  
+</code></pre><p>使用ToolBar的最左边加入导航按钮。  </p>
+<pre><code>ActionBar actionBar=getSupportActionBar();//获取ActionBar的实例，这个实例的具体提现是由ToolBar来实现的。
+
+
+       if (actionBar!=null){
+           actionBar.setDisplayHomeAsUpEnabled(true);//显示导航键
+           actionBar.setHomeAsUpIndicator(R.drawable.meiyuan);//设置导航键的图标。这个图标叫做HOMEAsUp
+       }
+</code></pre><p>在onOptionsItemSelected()方法来对HomeAsUp按钮的点击事件，HomeAsUp的id是<br>android.R.id.home  </p>
+<p>然后调用DrawerLayout的openDrawert()方法将滑动菜单显示出来。  </p>
+<h2 id="3、NavigationView"><a href="#3、NavigationView" class="headerlink" title="3、NavigationView"></a>3、NavigationView</h2><p>NavigationView是DesignSupport库中提供的一个控件。</p>
+<p>使用的时候需要添加闭包关系  </p>
+<pre><code>compile &apos;de.hdodenhof:circleimageview:2.1.0&apos;
+compile &apos;com.android.support:design:26.0.0-alpha1&apos;
+</code></pre><p>在使用Navigation之前，需要准备两个东西，menu和headLayout </p>
+<p>menu是在navigationView中显示菜单项的，headLayout是在NavigationView中显示头部布局的。</p>
+<p>头部布局中使用circleImage来设置圆形头像。</p>
+<p>设置完毕后在MainActivity中添加  </p>
+<pre><code>&lt;android.support.design.widget.NavigationView
+       android:id=&quot;@+id/nav_view&quot;
+       android:layout_width=&quot;match_parent&quot;
+       android:layout_height=&quot;match_parent&quot;
+       android:layout_gravity=&quot;start&quot;
+       app:headerLayout=&quot;@layout/nav_header&quot;
+       app:menu=&quot;@menu/nav_menu&quot; /&gt;
+</code></pre><p>同时可以设置监听  </p>
+<pre><code>public boolean onNavigationItemSelected(@NonNull MenuItem item)
+</code></pre><h2 id="4、悬浮按钮和可交互提示"><a href="#4、悬浮按钮和可交互提示" class="headerlink" title="4、悬浮按钮和可交互提示"></a>4、悬浮按钮和可交互提示</h2><p><strong>悬浮按钮</strong>  </p>
+<p>添加FloatActionButton布局  </p>
+<pre><code>&lt;android.support.design.widget.FloatingActionButton
+    android:id=&quot;@+id/floatButton&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:layout_gravity=&quot;bottom|end&quot;
+    app:elevation=&quot;8dp&quot;设置悬浮高度
+    android:layout_margin=&quot;10dp&quot;
+    android:src=&quot;@drawable/meiyuan&quot; /&gt;
+</code></pre><p>setOnClickListener可以设置点击事件</p>
+<p><strong>可交互提示：SnakeBar</strong>  </p>
+<pre><code>Snackbar.make(view,&quot;Date Deleted&quot;,Snackbar.LENGTH_LONG)   //make方法创建了一个Snake对象，第一个 参数需要传入一个人View，只要是当前界面的任意一个View都可以，第二个参数是SnakeBar中显示的内容，第三个是显示的时长
+                    .setAction(&quot;Un Do&quot;, new View.OnClickListener() {//调用setAction来设置一个动作，从而让SnakeBar不仅仅是一个提示，而是可以和用户进行交互的//第一个是按钮的名字，第二个是点击事件。
+                        @Override
+                        public void onClick(View view) {
+                            Toast.makeText(MainActivity.this, &quot;Un Do Successed!&quot;, Toast.LENGTH_SHORT).show();
+                        }
+                    }).show();
+</code></pre><p>调用setAction来设置一个动作，从而让SnakeBar不仅仅是一个提示，而是可以和用户进行交互的//第一个是按钮的名字，第二个是点击事件。  </p>
+<p>出现界面重叠，需要使用CoordinatorLayout来替换掉FrameLayout，它可以监听所有子控件的所有事件，从而自动做出合理的响应。  </p>
+<h2 id="5、卡片式布局"><a href="#5、卡片式布局" class="headerlink" title="5、卡片式布局"></a>5、卡片式布局</h2><p>添加依赖：  </p>
+<pre><code>compile &apos;com.android.support:recyclerview-v7:26.0.0-alpha1&apos;
+compile &apos;com.android.support:cardview-v7:26.0.0-alpha1&apos;
+compile &apos;com.github.bumptech.glide:glide:4.0.0-RC1&apos;
+</code></pre><p>Glide是一个强大的图片加载库，它不仅可以加载本地图片，还可以加载网络图片，GIF图片，甚至是本地视频。  </p>
+<p>具体操作见recyclerView，只是将recyclerView 的子项布局的外层布局改为CardView</p>
+<p>这种会将ToolBar遮盖，使用AppBarLayout<br>使用AppBarLayout包裹ToolBar，同时指定RecyclerView的布局行为  </p>
+<pre><code>app:layout_behavior=&quot;@string/appbar_scrolling_view_behavior&quot;
+</code></pre><p>同时还可以设置滑动隐藏<br>在toolBar中加入  </p>
+<pre><code>app:layout_scrollFlags=&quot;scroll|enterAlways|snap&quot;
+</code></pre><p>scroll表示RecyclerView向上滑动的时候，ToolBar会一起向上隐藏，enterAlways表示向下滚动的时候，ToolBar会同步显示。snap表示还没有完全隐藏的时候，会自动向上向下偏移。</p>
+<h2 id="6、下拉刷新"><a href="#6、下拉刷新" class="headerlink" title="6、下拉刷新"></a>6、下拉刷新</h2><p>SwipeRefreshLayout就是用于下拉刷新的核心类。使用《swipeRefreshLayout》包裹需要下拉刷新的部件。  </p>
+<pre><code>wipeRefresh.setColorSchemeResources(R.color.colorPrimary);
+       swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+           @Override
+           public void onRefresh() {
+               refreshFuite();
+           }
+       });  
+</code></pre><h2 id="7、可折叠标题栏ColapsingToolbarLayout"><a href="#7、可折叠标题栏ColapsingToolbarLayout" class="headerlink" title="7、可折叠标题栏ColapsingToolbarLayout"></a>7、可折叠标题栏ColapsingToolbarLayout</h2><p>colapsing不能独立存在，在设计的时候就只能用作AppBarLayout的直接子布局。而AppBarLayout又必须是CoordinatorLayout的子布局</p>
+<p>DrawerLayout ——滑动菜单栏——只能拥有两个字节子布局（第一个是主屏幕的内容、第二个是滑动屏的内容）   </p>
+<p>NavigationView——滑动菜单栏滑动屏布局（需要headLayout、和menu布局 （showAsAction））——需要Design Support库  </p>
+<p>FloatActionButton——悬浮按钮  </p>
+<p>SnakeBar——提示工具  </p>
+<p>CoordinatorLayout——加强版的FrameLayout——监听子控件各种事件、自动做出合理的响应。防止控件重叠。  </p>
+<p>CardView_FrameLayout——提供圆角和阴影效果（cardCornerRadius指定卡片的弧度，elevation指定卡片的高度）   </p>
+<p>Glide——图片加载库  </p>
+<p>AppBarLayout——解决FrameLayout中的默认位置为左上角造成的遮挡ToolBar——将ToolBar嵌套到AppBarLayout（    app:layout_scrollFlags=”scroll|snap|enterAlways”），然后给重叠的部件指定布局行为behaver  </p>
+<p>SwipeRefreshLayout——下拉刷新——包裹需刷新的部件  </p>
+<p>CollapsingToolbarLayout——可折叠标题栏——不能独立存在只能作为AppBarLayout的直接子布局、AppBarLayout必须是coordinatorLayout的子布局  </p>
+<p>NestedScrollView——ScrollView——内部只能存在一个直接子布局  </p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>以上就是我的Android学习过程中整理的一些东西，重新再整理了一遍，也算是重新学习了一次，在重新学习的过程中，还是发现有很多不足不周到的地方。温故而知新，自己还记录了很多笔记，趁现在还时间充裕，还会再好好温习一下。</p>
+]]></content>
       
+        <categories>
+            
+            <category> Android </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> Android笔记 </tag>
+            
+        </tags>
         
     </entry>
     
