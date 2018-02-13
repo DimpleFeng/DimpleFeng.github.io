@@ -1136,6 +1136,19 @@ padding: 25px;
 <h2 id="设置网站图标"><a href="#设置网站图标" class="headerlink" title="设置网站图标"></a>设置网站图标</h2><p>默认的网站图标是一个N，当然是需要制定一个图了，在网上找到图后，将其放在<code>/themes/next/source/images</code>里面，然后在主题配置文件中修改下图所示图片位置</p>
 <p><img src="https://i.imgur.com/sHd5kLC.png" alt="">  </p>
 <p>还有一些就不详细说了，另外注意下好多的东西已经过时了。比如next主题已经换了域了。很多教程还停留在3.0时代，但是现在next的版本是V6.0，截止我这篇教程发布的时期。</p>
+<h2 id="设置文章浏览数（热度）"><a href="#设置文章浏览数（热度）" class="headerlink" title="设置文章浏览数（热度）"></a>设置文章浏览数（热度）</h2><p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201821323114.png" alt="{mdFileName}-201821323114">   </p>
+<p>如上图所示  </p>
+<p>首先需要在<a href="https://leancloud.cn" target="_blank" rel="noopener">leancloud</a>上注册一个账号，注册的过程省略。  </p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-2018213231335.png" alt="{mdFileName}-2018213231335">  </p>
+<p>点击<strong>访问控制台</strong>  </p>
+<p>点击<strong>创建应用</strong><br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-2018213231512.png" alt="{mdFileName}-2018213231512">  </p>
+<p>这里选择开发版就行，应用名称随意。  </p>
+<p>随后进入设置界面  </p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-2018213231716.png" alt="{mdFileName}-2018213231716">  </p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-2018213231754.png" alt="{mdFileName}-2018213231754">   </p>
+<p>在next主题的配置文件中填写以下信息：  </p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201821323191.png" alt="{mdFileName}-201821323191">  </p>
+<p>随后在主题文件的languages目录下找到你设置的语言yml下，把visitors后面的字符改为<strong>热度</strong>，到此大功告成。</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>这篇文章就只是简单的介绍了下NexT主题，关于这个主题呢，要达到个性化定制的话，还是需要再花点功夫的。还有就是这个<code>hexo s</code>预览效果确实不好，修改了网站内容之后，需要重新<code>hexo clean</code>再<code>hexo s</code>才能看到效果，有同样问题的兄dei就不需要担心自己的修改是错的。</p>
 ]]></content>
       

@@ -4,8 +4,34 @@
 
     
   <url>
+    <loc>http://www.bianxiaofeng.com/2018/01/04/2018-01-04%20213124/</loc>
+    <lastmod>2018-02-13T15:23:17.668Z</lastmod>
+    <data>
+        <display>
+        <title>2018最新版Hexo博客Next主题6.0配置优化</title>
+        <pubTime>2018-01-04T13:31:24.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>next</tag>
+         
+        <tag>next主题优化</tag>
+         
+        <tag>next6.0</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.bianxiaofeng.com/2018/01/29/2018-1-29-220254/</loc>
-    <lastmod>2018-02-08T08:53:28.621Z</lastmod>
+    <lastmod>2018-02-08T08:54:29.222Z</lastmod>
     <data>
         <display>
         <title>Android学习之路笔记</title>
@@ -184,32 +210,6 @@
         <tag>hexo疑难杂症</tag>
          
         <tag>hexo问题</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/04/2018-01-04%20213124/</loc>
-    <lastmod>2018-01-17T07:23:54.164Z</lastmod>
-    <data>
-        <display>
-        <title>2018最新版Hexo博客Next主题6.0配置优化</title>
-        <pubTime>2018-01-04T13:31:24.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>next</tag>
-         
-        <tag>next主题优化</tag>
-         
-        <tag>next6.0</tag>
          
          
            
