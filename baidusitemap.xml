@@ -4,6 +4,43 @@
 
     
   <url>
+    <loc>http://www.bianxiaofeng.com/2018/03/04/2018-3-4-135539/</loc>
+    <lastmod>2018-03-04T07:24:47.115Z</lastmod>
+    <data>
+        <display>
+        <title>Android BroadcastReceiver 的静态动态注册及区别</title>
+        <pubTime>2018-03-04T05:56:09.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/01/29/2018-1-29-220254/</loc>
+    <lastmod>2018-03-04T05:55:16.119Z</lastmod>
+    <data>
+        <display>
+        <title>Android学习之路笔记</title>
+        <pubTime>2018-01-29T14:03:08.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Android笔记</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.bianxiaofeng.com/2018/01/04/2018-01-04%20213124/</loc>
     <lastmod>2018-02-13T15:23:17.668Z</lastmod>
     <data>
@@ -23,28 +60,6 @@
            
              
               <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/29/2018-1-29-220254/</loc>
-    <lastmod>2018-02-08T08:54:29.222Z</lastmod>
-    <data>
-        <display>
-        <title>Android学习之路笔记</title>
-        <pubTime>2018-01-29T14:03:08.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Android笔记</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
           
         </display>
     </data>

@@ -3,13 +3,117 @@
   
     
     <entry>
+      <title><![CDATA[Android BroadcastReceiver 的静态动态注册及区别]]></title>
+      <url>/2018/03/04/2018-3-4-135539/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>为了方便Android系统各个应用程序及程序内部进行通信，Android系统引入了一套广播机制。各个应用程序可以对感兴趣的广播进行注册，当系统或者其他程序发出这条广播的时候，对发出的广播进行注册的程序便能够收到这条广播。为此，Android系统中有一套完整的API，允许程序只有的发送和接受广播。<br>本文会分别介绍静态注册广播和动态注册广播的方法并比较这两种的区别。   </p>
+<p><strong>在此会先说明发送广播的两种方法</strong></p>
+<h1 id="广播两种基本类型"><a href="#广播两种基本类型" class="headerlink" title="广播两种基本类型"></a>广播两种基本类型</h1><p>在一个程序中，可以发送广播供当前程序的广播接收器收到。首先我们来看下两种方式的发送广播。<br>在Android系统中，主要有两种基本的广播类型：  </p>
+<ul>
+<li>标准广播（Normal Broadcasts）  </li>
+<li>有序广播（Ordered Broadcasts）  <h2 id="标准广播"><a href="#标准广播" class="headerlink" title="标准广播"></a>标准广播</h2></li>
+</ul>
+<p>是一种完全异步执行的广播，在广播发出之后，所有的广播接收器会在同一时间接收到这条广播，广播无法被截断。   </p>
+<p>发送广播的方式十分简单，只需要实例化一个<strong>Intent</strong>对象，然后调用<strong>context</strong>的<strong> sendBroadcast() </strong>方法。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//intent中的参数为action</span><br><span class="line">Intent intent=new Intent(&quot;com.example.dimple.BROADCAST_TEST&quot;);</span><br><span class="line">sendBroadcast(intent);</span><br></pre></td></tr></table></figure>
+<p>这样就完成了广播的发送，至于接收呢，需要用到广播接收器，这个下面会写到。  </p>
+<h2 id="有序广播"><a href="#有序广播" class="headerlink" title="有序广播"></a>有序广播</h2><p>是一种同步执行的广播，在广播发出之后，优先级高的广播接收器可以优先接收到这条广播，并可以在优先级较低的广播接收器之前截断停止发送这条广播。    </p>
+<p>至于有序广播：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">        //intent中的参数为action</span><br><span class="line">        Intent intent=new Intent(&quot;com.example.dimple.BROADCAST_TEST&quot;);</span><br><span class="line">        sendOrderBroadcast(intent，null);//第二个参数是与权限相关的字符串。</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">到此时，如果你的程序中只有一个广播接收器的话，是体现不出有序广播的特点的，</span><br><span class="line">右击包名——New——Other——BroadcastReceiver多创建几个广播接收器。 </span><br><span class="line"></span><br><span class="line">此时你还是会发现，所有的广播接收器是同时接收到广播消息的。注意上面介绍的时候说到优先级，这个时候我们需要设置优先级，在AndroidManifest文件中的Receiver标签中设置广播接收器的优先级。</span><br></pre></td></tr></table></figure></p>
+<pre><code>&lt;receiver
+    android:name=&quot;.MyReceiver&quot;
+    android:enabled=&quot;true&quot;
+    android:exported=&quot;true&quot;&gt;
+    &lt;!--注意此时有一个Priority属性--&gt;
+    &lt;intent-filter android:priority=&quot;100&quot;&gt;
+        &lt;action android:name=&quot;android.intent.action.BROADCAST_TEST&quot;&gt;&lt;/action&gt;
+    &lt;/intent-filter&gt;
+&lt;/receiver&gt;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">优先级越高的广播接收器可以先收到广播，也可以在收到广播的时候调用**abortBroadcast()**方法截断广播。优先级低的广播接收器就无法接收到广播了。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 注册广播   </span><br><span class="line"></span><br><span class="line">## 自定义BroadcastReceiver  </span><br><span class="line">在Android的广播接收机制中，如果需要接收广播，就需要创建广播接收器。而创建广播接收器的方法就是**新建一个类（可以是单独新建类，也可以是内部类（public））** 继承自**BroadcastReceiver**   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```  </span><br><span class="line">   class myBroadcastReceiver extends BroadcastReceiver&#123;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public void onReceive(Context context, Intent intent) &#123;</span><br><span class="line">            //接收到广播的处理，注意不能有耗时操作，当此方法长时间未结束，会报错。</span><br><span class="line">            //同时，广播接收器中不能开线程。</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="两种注册方法"><a href="#两种注册方法" class="headerlink" title="两种注册方法"></a>两种注册方法</h2><h3 id="动态注册"><a href="#动态注册" class="headerlink" title="动态注册"></a>动态注册</h3><p>所谓动态注册是指在代码中注册。步骤如下 ：  </p>
+<ul>
+<li>实例化自定义的广播接收器。</li>
+<li>创建<strong>IntentFilter</strong>实例。  </li>
+<li>调用<strong>IntentFilter</strong>实例的<strong>addAction()</strong>方法添加监听的广播类型。 </li>
+<li>最后调用<strong>Context</strong>的<strong>registerReceiver(BroadcastReceiver,IntentFilter)</strong>动态的注册广播。  </li>
+</ul>
+<p>此时，已经为我们自定义的广播接收器绑定了广播，当收到和绑定的广播一直的广播的时候，就会调用广播接收器中的<strong>onReceiver</strong>方法。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MyBroadcastReceiver myBroadcastReceiver=new MyBroadcastReceiver();</span><br><span class="line">IntentFilter intentFilter=new IntentFilter();</span><br><span class="line">intentFilter.addAction(&quot;com.example.dimple.MY_BROADCAST&quot;);</span><br><span class="line">registerReceiver(myBroadcastReceiver,intentFilter);</span><br></pre></td></tr></table></figure>
+<p>PS:这里提醒一点，如果需要接收系统的广播（比如电量变化，网络变化等等），别忘记在AndroidManifest配置文件中加上权限。  </p>
+<p>另外，动态注册的广播在活动结束的时候需要取消注册：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">protected void onDestroy() &#123;</span><br><span class="line">    super.onDestroy();</span><br><span class="line">    unregisterReceiver(myBroadcastReceiver);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="静态注册"><a href="#静态注册" class="headerlink" title="静态注册"></a>静态注册</h3><p>这里我们使用静态注册来接收开机广播。<br>使用Android Studio 中的快捷方法来创建广播接收器。  </p>
+<p>右击包名——New——Other——BroadcastReceiver。  </p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-20183414490.png" alt="{mdFileName}-20183414490">  </p>
+<p>PS：静态注册的广播接收器需要在AndroidManifest文件中注册，由于使用的AS的快捷方式，所以已经创建好了。<br>如图所示：  </p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201834145034.png" alt="{mdFileName}-201834145034">  </p>
+<p>在创建好的广播接收器中添加一个Toast提示。代码如下：    </p>
+<figure class="highlight plain"><figcaption><span>class MyReceiver extends BroadcastReceiver &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    @Override</span><br><span class="line">    public void onReceive(Context context, Intent intent) &#123;</span><br><span class="line">        Toast.makeText(context,&quot;开机启动！&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后在AndroidManifest文件中添加：  </p>
+<ul>
+<li><p>权限<br><code>&lt;uses-permission android:name=&quot;android.permission.RECEIVE_BOOT_COMPLETED&quot;&gt;&lt;/uses-permission&gt;</code>    </p>
+</li>
+<li><p>Intent-filter  </p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;receiver</span><br><span class="line">    android:name=&quot;.MyReceiver&quot;</span><br><span class="line">    android:enabled=&quot;true&quot;</span><br><span class="line">    android:exported=&quot;true&quot;&gt;</span><br><span class="line">    &lt;!--添加以下3行--&gt;</span><br><span class="line">    &lt;intent-filter&gt;</span><br><span class="line">        &lt;action android:name=&quot;android.intent.action.BOOT_COMPLETED&quot;&gt;&lt;/action&gt;</span><br><span class="line">    &lt;/intent-filter&gt;</span><br><span class="line">&lt;/receiver&gt;</span><br></pre></td></tr></table></figure>
+<p>此时重启Android系统就可以收到开机提示了。  </p>
+<h3 id="两种注册方式的区别"><a href="#两种注册方式的区别" class="headerlink" title="两种注册方式的区别"></a>两种注册方式的区别</h3><ul>
+<li><p>动态注册的广播接收器可以自由的控制注册和取消，有很大的灵活性。但是只能在程序启动之后才能收到广播，此外，不知道你注意到了没，广播接收器的注销是在onDestroy()方法中的。所以广播接收器的生命周期是和当前活动的生命周期一样。  </p>
+</li>
+<li><p>静态注册的广播不受程序是否启动的约束，当应用程序关闭之后，还是可以接收到广播。</p>
+</li>
+</ul>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Android学习之路笔记]]></title>
       <url>/2018/01/29/2018-1-29-220254/</url>
       <content type="html"><![CDATA[<p>最近是看了下大二上学期的时候学习Android的一些笔记资料，觉得以前是写的还有需要改进的地方，所以准备再重新整理整理发出来。学习Android的时候，是采用的视频+文档结合的方式。书呢看的是：郭大神的《第一行代码》。所以本篇笔记还是按照郭大神的目录来进行记录的。  </p>
 <h1 id="第一章：了解全貌——Android王国简介"><a href="#第一章：了解全貌——Android王国简介" class="headerlink" title="第一章：了解全貌——Android王国简介"></a>第一章：了解全貌——Android王国简介</h1><p> 1、Android的四层架构：Linux内核层、系统运行库层、应用框架层和应用层<br> 2、Android的四大组件：活动（Activity）、服务（Service）、广播接收器（Broadcast Receiver）、内容提供器（Content Provider）<br> 3 、使用res目录下的资源的两种方式     </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">例如：</span><br><span class="line">    使用Res/values/string.xml文件，内容如下   </span><br><span class="line">&lt;resources&gt;</span><br><span class="line">    &lt;string name=&quot;app_name&gt;HrlloWorld&lt;/string&gt;</span><br><span class="line">&lt;/resources&gt;</span><br><span class="line">在代码中采用R.string.app_name获得HelloWorld的引用</span><br><span class="line">在XML中通过@string/app_name获得引用</span><br></pre></td></tr></table></figure>
-<p> 4、app下的build.grade文件分析<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: &apos;com.android.application&apos;   应用的插件，有两种值可以选，com.android.application 表示这是一个应用程序模块，com.android.library表示这是一个库模块。</span><br><span class="line">                                         应用程序模块和库模块的最大区别是应用程序模块是可以直接运行的，而库模块只能作为代码库依赖于其他应用程序模块来运行。</span><br><span class="line">android</span><br><span class="line">   compileSdkVersion 25   项目编译的版本</span><br><span class="line">   buildToolsVersion &quot;25.0.2&quot;   项目构建工具的版本</span><br><span class="line">   defaultConfig &#123;  对项目的更多细节进行配置</span><br><span class="line">       applicationId &quot;com.example.dimple.alertdialog&quot;   指定项目的包名</span><br><span class="line">       minSdkVersion 25    指定项目最低兼容的安卓版本</span><br><span class="line">       targetSdkVersion 25    表示Android25上已经做了充分的测试，</span><br><span class="line">       versionCode 1      指定项目的版本号</span><br><span class="line">       versionName &quot;1.0&quot;    指定项目的版本名</span><br><span class="line">       testInstrumentationRunner &quot;android.support.test.runner.AndroidJUnitRunner&quot;</span><br><span class="line">   &#125;</span><br><span class="line">   buildTypes &#123; 用于指定安装文件的相关配置</span><br><span class="line">       release &#123;</span><br><span class="line">           minifyEnabled false   表示是否对项目进行代码混淆</span><br><span class="line">           proguardFiles getDefaultProguardFile(&apos;proguard-android.txt&apos;), &apos;proguard-rules.pro&apos;  指定混淆的时候使用的规则文件</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">​</span><br><span class="line">dependencies &#123;  指定当前项目的依赖关系，Android中一共有三种依赖方式：本地依赖、库依赖、远程依赖。</span><br><span class="line">                本地依赖可以对本地的jar包或者目录添加依赖关系，库依赖可以对项目中的库模块进行添加依赖关系。</span><br><span class="line">                远程依赖可以对jcenter库上的开源项目添加依赖关系。</span><br><span class="line">   compile fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])   本地依赖声明，表示将lib目录下的所有的jar文件添加到项目的构建路径中</span><br><span class="line">   androidTestCompile(&apos;com.android.support.test.espresso:espresso-core:2.2.2&apos;, &#123;</span><br><span class="line">       exclude group: &apos;com.android.support&apos;, module: &apos;support-annotations&apos;</span><br><span class="line">   &#125;)</span><br><span class="line">   compile &apos;com.android.support:appcompat-v7:25.3.0&apos;   标准的远程依赖库格式，其中“com.android.support”是域名部分，用于和其他公司的库作区分。</span><br><span class="line">                                                        “appcompat-v7”是组名称，用于和同一个公司的不同的库作区分。“25.3.0”是版本号，用于和同一个库的不同版本作区分。</span><br><span class="line">   compile &apos;com.android.support.constraint:constraint-layout:1.0.1&apos;</span><br><span class="line">   testCompile &apos;junit:junit:4.12&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="第二章-先从看得到的入手——探究活动"><a href="#第二章-先从看得到的入手——探究活动" class="headerlink" title="第二章 先从看得到的入手——探究活动"></a>第二章 先从看得到的入手——探究活动</h1><h2 id="1、Genenate-Layout-File-是表示自动为Activity创建一个布局，Launcher-Activity表示将当前活动设置为主活动。"><a href="#1、Genenate-Layout-File-是表示自动为Activity创建一个布局，Launcher-Activity表示将当前活动设置为主活动。" class="headerlink" title="1、Genenate Layout File 是表示自动为Activity创建一个布局，Launcher Activity表示将当前活动设置为主活动。"></a>1、Genenate Layout File 是表示自动为Activity创建一个布局，Launcher Activity表示将当前活动设置为主活动。</h2><h2 id="2、配置主活动的方法：在Manifest中的Activity标签中添加标签，并在这个标签中添加"><a href="#2、配置主活动的方法：在Manifest中的Activity标签中添加标签，并在这个标签中添加" class="headerlink" title="2、配置主活动的方法：在Manifest中的Activity标签中添加标签，并在这个标签中添加"></a>2、配置主活动的方法：在Manifest中的Activity标签中添加<intent-filter>标签，并在这个标签中添加</intent-filter></h2><pre><code>&lt;action android:name=&quot;android.intent.action.MAIN&quot;/&gt;
+<pre><code>例如：
+    使用Res/values/string.xml文件，内容如下   
+&lt;resources&gt;
+    &lt;string name=&quot;app_name&gt;HrlloWorld&lt;/string&gt;
+&lt;/resources&gt;
+在代码中采用R.string.app_name获得HelloWorld的引用
+在XML中通过@string/app_name获得引用
+</code></pre><p> 4、app下的build.grade文件分析  </p>
+<pre><code>apply plugin: &apos;com.android.application&apos;   应用的插件，有两种值可以选，com.android.application 表示这是一个应用程序模块，com.android.library表示这是一个库模块。
+                                         应用程序模块和库模块的最大区别是应用程序模块是可以直接运行的，而库模块只能作为代码库依赖于其他应用程序模块来运行。
+android
+   compileSdkVersion 25   项目编译的版本
+   buildToolsVersion &quot;25.0.2&quot;   项目构建工具的版本
+   defaultConfig {  对项目的更多细节进行配置
+       applicationId &quot;com.example.dimple.alertdialog&quot;   指定项目的包名
+       minSdkVersion 25    指定项目最低兼容的安卓版本
+       targetSdkVersion 25    表示Android25上已经做了充分的测试，
+       versionCode 1      指定项目的版本号
+       versionName &quot;1.0&quot;    指定项目的版本名
+       testInstrumentationRunner &quot;android.support.test.runner.AndroidJUnitRunner&quot;
+   }
+   buildTypes { 用于指定安装文件的相关配置
+       release {
+           minifyEnabled false   表示是否对项目进行代码混淆
+           proguardFiles getDefaultProguardFile(&apos;proguard-android.txt&apos;), &apos;proguard-rules.pro&apos;  指定混淆的时候使用的规则文件
+       }
+   }
+}
+​
+dependencies {  指定当前项目的依赖关系，Android中一共有三种依赖方式：本地依赖、库依赖、远程依赖。
+                本地依赖可以对本地的jar包或者目录添加依赖关系，库依赖可以对项目中的库模块进行添加依赖关系。
+                远程依赖可以对jcenter库上的开源项目添加依赖关系。
+   compile fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])   本地依赖声明，表示将lib目录下的所有的jar文件添加到项目的构建路径中
+   androidTestCompile(&apos;com.android.support.test.espresso:espresso-core:2.2.2&apos;, {
+       exclude group: &apos;com.android.support&apos;, module: &apos;support-annotations&apos;
+   })
+   compile &apos;com.android.support:appcompat-v7:25.3.0&apos;   标准的远程依赖库格式，其中“com.android.support”是域名部分，用于和其他公司的库作区分。
+                                                        “appcompat-v7”是组名称，用于和同一个公司的不同的库作区分。“25.3.0”是版本号，用于和同一个库的不同版本作区分。
+   compile &apos;com.android.support.constraint:constraint-layout:1.0.1&apos;
+   testCompile &apos;junit:junit:4.12&apos;
+}
+</code></pre><h1 id="第二章-先从看得到的入手——探究活动"><a href="#第二章-先从看得到的入手——探究活动" class="headerlink" title="第二章 先从看得到的入手——探究活动"></a>第二章 先从看得到的入手——探究活动</h1><h2 id="1、Genenate-Layout-File-是表示自动为Activity创建一个布局，Launcher-Activity表示将当前活动设置为主活动。"><a href="#1、Genenate-Layout-File-是表示自动为Activity创建一个布局，Launcher-Activity表示将当前活动设置为主活动。" class="headerlink" title="1、Genenate Layout File 是表示自动为Activity创建一个布局，Launcher Activity表示将当前活动设置为主活动。"></a>1、Genenate Layout File 是表示自动为Activity创建一个布局，Launcher Activity表示将当前活动设置为主活动。</h2><h2 id="2、配置主活动的方法：在Manifest中的Activity标签中添加标签，并在这个标签中添加"><a href="#2、配置主活动的方法：在Manifest中的Activity标签中添加标签，并在这个标签中添加" class="headerlink" title="2、配置主活动的方法：在Manifest中的Activity标签中添加标签，并在这个标签中添加"></a>2、配置主活动的方法：在Manifest中的Activity标签中添加<intent-filter>标签，并在这个标签中添加</intent-filter></h2><pre><code>&lt;action android:name=&quot;android.intent.action.MAIN&quot;/&gt;
 &lt;category android:name-&quot;android.intent.category.LAUNCHER&quot;/&gt;  
 </code></pre><h2 id="3、在活动中使用Menu"><a href="#3、在活动中使用Menu" class="headerlink" title="3、在活动中使用Menu"></a>3、在活动中使用Menu</h2><p>在res中新建Menu文件夹，创建XML文件，然后在相应的Java代码中重写onCreateOptionMenu()和onOptionItemSelect()方法。  </p>
 <pre><code>在onCreateOptionMenu()：  
@@ -220,21 +324,21 @@ public class FruitAdapter extends RecyclerView.Adapter&lt;FruitAdapter.ViewHolde
 <p>  IntentInfilter intentInfliter =new IntentInfliter();//创建IntentFilter实例<br>  intentInfilter.addAction(“android.net.conn.CONNECTIVITY_CHANGE”);//为这个IntentFilter添加action<br>  registerReceiver(networkChageReceiver,interFilter);//动态注册广播，这样networkChangeReceiver就会接收到所有值为android.net.conn.CONNECTIVITY_CHANGE的广播   </p>
 </li>
 </ul>
-<p>动态注册的广播需要取消注册，在onDestory中调用unRegisterReceiver()方法来实现的。</p>
+<p><strong>动态注册的广播需要取消注册，在onDestory中调用unRegisterReceiver()方法来实现的。</strong></p>
 <h2 id="5、静态注册广播的方法"><a href="#5、静态注册广播的方法" class="headerlink" title="5、静态注册广播的方法"></a>5、静态注册广播的方法</h2><p>使用android Studio的快捷键创建一个广播接收器，点击包名——New——Other——Broadcast Receiver，Exported表示是否允许广播接收器接收本程序以外的广播，Enable表示是否启用这个广播。  </p>
 <p>（静态注册的广播接收器必须要在AndroidManifest中注册才能使用，使用Android Studio创建的广播接收器已经在AndroidManifest中注册了）<br>注册方式信息如下：</p>
 <pre><code>       &lt;receiver
            android:name=&quot;.MyReceiver&quot;
-           android:enabled=&quot;true&quot;
-           android:exported=&quot;true&quot;&gt;
-           &lt;intent-filter  android:priority=&quot;100&quot;&gt;
-               &lt;action android:name=&quot;android.intent.action.BATTERY_LOW&quot;
+           android:enabled=&quot;true&quot;//是否启用该广播接收器
+           android:exported=&quot;true&quot;&gt;//是否允许接受本程序之外的广播
+           &lt;intent-filter  android:priority=&quot;100&quot;&gt;//priority是设置广播的优先级，优先级越高系统响应越快
+               &lt;action android:name=&quot;android.intent.action.BATTERY_LOW&quot;/&gt;//当系统低电量的时候就会发出这个广播
            &lt;/intent-filter&gt;
        &lt;/receiver&gt;
    &lt;/application&gt;
 
-在&lt;intent-filter&gt;标签中添加相应的Action
-</code></pre><p>注意某些操作需要用到权限，需要在Manifest中添加权限。</p>
+在&lt;intent-filter&gt;标签中添加相应的Action标签
+</code></pre><p><strong>注意某些操作需要用到权限，需要在Manifest中添加权限。</strong></p>
 <p>此外，在onReceive中不能添加太多的逻辑以及耗时操作，在广播接收器中是不允许多开线程的，当此方法运行了太长时间而没有结束，程序会报错。</p>
 <p>发送动态广播的方法：  </p>
 <pre><code>Intent intent=new Intent(&quot;android.net.conn.CONNECTIVITY_CHANGE&quot;);
@@ -261,7 +365,13 @@ sendBroadcast(intent);
       localBroadcastManager.registerReceiver(new MyReceiver(),intentFilter);
 </code></pre><p>本地广播只能通过动态注册。</p>
 <p>通过LocalBroadcastMaager的getInstance()方法得到实例。<br>然后注册广播的时候就调用LocalBroadcastManager()的registerRecriver()方法.<br>在发送广播的时候就调用LocalBroadcastManager的sendBroadcastManager()方法。</p>
-<h1 id="第六章-存储"><a href="#第六章-存储" class="headerlink" title="第六章 存储"></a>第六章 存储</h1><h2 id="1、使用SharedPreferences"><a href="#1、使用SharedPreferences" class="headerlink" title="1、使用SharedPreferences"></a>1、使用SharedPreferences</h2><p>SharedPreferences是采用键值对的方式来存储数据的。<br>要使用SharedPreferences需要首先获得SharedPreferences对象。获取该对象的方式有：<br>Context类中的getSharedPreferences()方法<br>Activity类中的getPreferences()方法<br>PrederencesManager类中的getDefaultSharedPreferences()方法<br><strong>使用步骤</strong><br>调用sharedPreferences对象的editor()方法来获得一个sharedPerferences.Editor()对象<br>向sharedPerferences.Editor()对象添加数据。调用editor的putString()等些列方法<br>调用editor的apply()方法提交数据。  </p>
+<h1 id="第六章-存储"><a href="#第六章-存储" class="headerlink" title="第六章 存储"></a>第六章 存储</h1><h2 id="1、使用SharedPreferences"><a href="#1、使用SharedPreferences" class="headerlink" title="1、使用SharedPreferences"></a>1、使用SharedPreferences</h2><p>SharedPreferences是采用键值对的方式来存储数据的。<br>要使用SharedPreferences需要首先获得SharedPreferences对象。获取该对象的方式有：  </p>
+<ul>
+<li>Context类中的getSharedPreferences()方法，接收两个参数，第一个参数是文件的名称，第二个参数指定操作模式MODE，目前只能选择MODE_PRIVATE。  </li>
+<li>Activity类中的getPreferences()方法，和getSharePreferences差不多，区别是使用getPreferences会使用当前的类名作为文件名。  </li>
+<li>PrederencesManager类中的getDefaultSharedPreferences()方法 ，这是一个静态方法，接收一个context参数，会自动将当前的应用程序的包名作为前缀来命名SharePreferences文件 </li>
+</ul>
+<p><strong>使用步骤</strong><br>调用sharedPreferences对象的editor()方法来获得一个 sharedPerferences.Editor()对象<br>向sharedPerferences.Editor()对象添加数据。调用editor的putString()等些列方法<br>调用editor的apply()方法提交数据。  </p>
 <p><strong>读取SharedPreferences的方法</strong>  </p>
 <p>获取SharedPreferences对象，通过getString()系列方法得到数据。注意这里有两个参数，第一个是要读取的数据的键，第二个参数是没有找到这个数据返回的值。</p>
 <h2 id="2、使用SQLite数据库进行存储"><a href="#2、使用SQLite数据库进行存储" class="headerlink" title="2、使用SQLite数据库进行存储"></a>2、使用SQLite数据库进行存储</h2><p>android中为了更好的管理数据库，提供了一个SQLiteOpenHelper的帮助类（抽象类），需要实现SQLiteOpenHelper抽象方法中的抽象方法onCreate()（在数据库被创建的时候会调用），onUpgrade()（在数据库版本被升级的时候被调用）  </p>

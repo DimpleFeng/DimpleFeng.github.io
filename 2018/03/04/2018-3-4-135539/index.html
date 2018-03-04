@@ -163,7 +163,7 @@
 
 
 
-  <title>Android Studio 优化2017年12月24日更新 | Dimple's Blog</title>
+  <title>Android BroadcastReceiver 的静态动态注册及区别 | Dimple's Blog</title>
   
 
 
@@ -368,7 +368,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.bianxiaofeng.com/2017/12/04/2017-12-04 212731/">
+    <link itemprop="mainEntityOfPage" href="http://www.bianxiaofeng.com/2018/03/04/2018-3-4-135539/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dimple">
@@ -385,7 +385,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Android Studio 优化2017年12月24日更新</h1>
+          <h1 class="post-title" itemprop="name headline">Android BroadcastReceiver 的静态动态注册及区别</h1>
         
 
         <div class="post-meta">
@@ -397,7 +397,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-04T21:27:31+08:00">2017-12-04</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-04T13:56:09+08:00">2018-03-04</time>
             
 
             
@@ -406,28 +406,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -435,7 +413,7 @@
 
           
           
-             <span id="/2017/12/04/2017-12-04 212731/" class="leancloud_visitors" data-flag-title="Android Studio 优化2017年12月24日更新">
+             <span id="/2018/03/04/2018-3-4-135539/" class="leancloud_visitors" data-flag-title="Android BroadcastReceiver 的静态动态注册及区别">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -457,7 +435,7 @@
 					<i class="fa fa-calendar-o"></i>
 				  </span>
 				  <span class="post-meta-item-text">总字数:</span>
-				  <span class="post-meta-item-text">765</span>
+				  <span class="post-meta-item-text">1,448</span>
 				</span>
 				
 				<span class="post-count">
@@ -466,7 +444,7 @@
 					<i class="fa fa-calendar-o"></i>
 				  </span>
 				  <span class="post-meta-item-text">阅读时长≈</span>
-				  <span class="post-meta-item-text">3&nbsp;分</span>
+				  <span class="post-meta-item-text">6&nbsp;分</span>
 				</span>
 				
 				
@@ -484,52 +462,65 @@
 
       
       
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox"
-                 href="https://i0.wp.com/picjumbo.com/wp-content/uploads/DSC09018.jpg?w=2210&quality=50" rel="gallery_cjech1vv80000sshx1f2ac69i"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/DSC09018.jpg?w=2210&quality=50" itemprop="contentUrl"/>
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
 
       
-        <blockquote>
-<p><em>安装好Android Studio之后需要根据自己的习惯进行一些设置，下载些插件、设置下软件的相关属性等等。刚好重装了下系统，针对这个Android Studio进行了相关的设置，在这里将经历说一下，避免自己以后晚了相关设置也方便一些需要帮助的朋友</em>  </p>
-</blockquote>
-<p>更新记录：2017年12月24日22:32:37更新</p>
-<p>本文主要分为设置篇和插件篇： </p>
-<h1 id="技巧篇"><a href="#技巧篇" class="headerlink" title="技巧篇"></a>技巧篇</h1><p>##快速查找以及快捷键搜索<br>在AS的面板上双击<code>shift</code>键，即可调出全局搜索。<img src="http://img.blog.csdn.net/20171224213924058?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>AS有很多的快捷键，对于这些快捷键你不一定随时都能记得，这个时候可以使用<code>Win+Shift+A</code>键输入你想用的功能。后面会提示相关的快捷键的。<br><img src="http://img.blog.csdn.net/20171224214158337?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"> </p>
-<h2 id="恢复默认布局"><a href="#恢复默认布局" class="headerlink" title="恢复默认布局"></a>恢复默认布局</h2><p>当你各种乱动默认的面板布局的时候，有的面板你想找的时候却发现找不到了，这个时候按住 <code>Shift+F12</code>就可以重置默认面板。<br><img src="http://img.blog.csdn.net/20171224214521926?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述">  </p>
-<h2 id="Tip-of-the-day"><a href="#Tip-of-the-day" class="headerlink" title="Tip of the day"></a>Tip of the day</h2><p>打开软件的时候随机显示关于Android Studio的相关使用提示。（很有用的，别关）</p>
-<p><img src="http://img.blog.csdn.net/20171224215949578?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<h2 id="Android-Studio相关网站"><a href="#Android-Studio相关网站" class="headerlink" title="Android Studio相关网站"></a>Android Studio相关网站</h2><ul>
-<li><a href="http://www.android-studio.org/" target="_blank" rel="noopener">Android Studio 中文社区</a> </li>
-<li><a href="https://stackoverflow.com/" target="_blank" rel="noopener">优质的问答社区（英文的）</a> </li>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>为了方便Android系统各个应用程序及程序内部进行通信，Android系统引入了一套广播机制。各个应用程序可以对感兴趣的广播进行注册，当系统或者其他程序发出这条广播的时候，对发出的广播进行注册的程序便能够收到这条广播。为此，Android系统中有一套完整的API，允许程序只有的发送和接受广播。<br>本文会分别介绍静态注册广播和动态注册广播的方法并比较这两种的区别。   </p>
+<p><strong>在此会先说明发送广播的两种方法</strong></p>
+<h1 id="广播两种基本类型"><a href="#广播两种基本类型" class="headerlink" title="广播两种基本类型"></a>广播两种基本类型</h1><p>在一个程序中，可以发送广播供当前程序的广播接收器收到。首先我们来看下两种方式的发送广播。<br>在Android系统中，主要有两种基本的广播类型：  </p>
+<ul>
+<li>标准广播（Normal Broadcasts）  </li>
+<li>有序广播（Ordered Broadcasts）  <h2 id="标准广播"><a href="#标准广播" class="headerlink" title="标准广播"></a>标准广播</h2></li>
 </ul>
-<h1 id="设置篇"><a href="#设置篇" class="headerlink" title="设置篇"></a>设置篇</h1><blockquote>
-<p>Android Studio到底是外国人开发的，这个东西拿到手感觉和我们日常使用的IDE有点···· </p>
-</blockquote>
-<h2 id="鼠标滚轮滑动调整字体大小"><a href="#鼠标滚轮滑动调整字体大小" class="headerlink" title="鼠标滚轮滑动调整字体大小"></a>鼠标滚轮滑动调整字体大小</h2><p>打开<code>File</code>里的<code>Setting</code> 勾选<code>Change font size(Zoom)with Ctrl——Mouse Wheel</code><br><img src="http://img.blog.csdn.net/20171224214754310?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述">  </p>
-<h2 id="查看参数定义"><a href="#查看参数定义" class="headerlink" title="查看参数定义"></a>查看参数定义</h2><p>使用快捷键<code>Ctrl+P</code>可以查看当前鼠标所在位置的方法的参数定义。<br><img src="http://img.blog.csdn.net/20171224222531022?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"> </p>
-<h2 id="鼠标移动显示API文档"><a href="#鼠标移动显示API文档" class="headerlink" title="鼠标移动显示API文档"></a>鼠标移动显示API文档</h2><p>设置当鼠标移动到方法上的时候显示API文档。<code>Editor-&gt;General-&gt;show quick document on mouse move</code>  后面那个Delay Time 是设置延时的，单位为毫秒。但是建议电脑性能差一点的不要开，会很卡。<br><img src="http://img.blog.csdn.net/20171224222926874?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<h2 id="设置默认的字体大小"><a href="#设置默认的字体大小" class="headerlink" title="设置默认的字体大小"></a>设置默认的字体大小</h2><p>打开AS的时候发现蚊子一样大小的代码，密密麻麻的密集恐惧症受不了。<code>Editor-&gt;Colors&amp;Fonts-&gt;Font</code><br>一般设置到18就行了<br><img src="http://img.blog.csdn.net/20171224215037079?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述">  </p>
-<h2 id="更改快捷键"><a href="#更改快捷键" class="headerlink" title="更改快捷键"></a>更改快捷键</h2><p>设置<code>Keymap</code>，快捷键太多，可以使用搜索框搜索 </p>
-<p><img src="http://img.blog.csdn.net/20171224220232053?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<h2 id="设置代码提示"><a href="#设置代码提示" class="headerlink" title="设置代码提示"></a>设置代码提示</h2><h2 id="代码提示的时候匹配所有字符"><a href="#代码提示的时候匹配所有字符" class="headerlink" title="代码提示的时候匹配所有字符"></a>代码提示的时候匹配所有字符</h2><p>选择None就可以匹配到很多方法或者关键字，这个在你忘了这个方法怎么写的时候非常有用。<br><img src="http://img.blog.csdn.net/20171224220954002?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<h1 id="插件篇"><a href="#插件篇" class="headerlink" title="插件篇"></a>插件篇</h1><h2 id="AndroidAccessors"><a href="#AndroidAccessors" class="headerlink" title="AndroidAccessors"></a>AndroidAccessors</h2><p>快速生成<code>get</code>和<code>set</code>系列方法。这个在你定义<code>JavaBean</code>的时候非常有用。<br><img src="http://img.blog.csdn.net/20171224221252982?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述">  </p>
-<h2 id="ButterKnifeZelezny-插件"><a href="#ButterKnifeZelezny-插件" class="headerlink" title="ButterKnifeZelezny 插件"></a>ButterKnifeZelezny 插件</h2><p>如果你厌倦了findViewById这样的写法，那么这个插件是你的选择。这个配合ButterKnife使用的。</p>
-<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>这里我推荐一个<code>MaterialDesign AS UI Theme</code> 这个主题比较好用，尤其是配合黑色的AS主题的时候。</p>
-<p>顺便推荐一个<a href="http://color-themes.com/" target="_blank" rel="noopener">http://color-themes.com/</a> 这个网站下载你喜欢的主题，然后导入主题即可。<br><img src="http://img.blog.csdn.net/20171224222110962?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>插件及常用的快捷键请看我之前的博客：<a href="http://blog.csdn.net/qq_32454537/article/details/77870200" target="_blank" rel="noopener">http://blog.csdn.net/qq_32454537/article/details/77870200</a></p>
+<p>是一种完全异步执行的广播，在广播发出之后，所有的广播接收器会在同一时间接收到这条广播，广播无法被截断。   </p>
+<p>发送广播的方式十分简单，只需要实例化一个<strong>Intent</strong>对象，然后调用<strong>context</strong>的<strong> sendBroadcast() </strong>方法。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//intent中的参数为action</span><br><span class="line">Intent intent=new Intent(&quot;com.example.dimple.BROADCAST_TEST&quot;);</span><br><span class="line">sendBroadcast(intent);</span><br></pre></td></tr></table></figure>
+<p>这样就完成了广播的发送，至于接收呢，需要用到广播接收器，这个下面会写到。  </p>
+<h2 id="有序广播"><a href="#有序广播" class="headerlink" title="有序广播"></a>有序广播</h2><p>是一种同步执行的广播，在广播发出之后，优先级高的广播接收器可以优先接收到这条广播，并可以在优先级较低的广播接收器之前截断停止发送这条广播。    </p>
+<p>至于有序广播：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">        //intent中的参数为action</span><br><span class="line">        Intent intent=new Intent(&quot;com.example.dimple.BROADCAST_TEST&quot;);</span><br><span class="line">        sendOrderBroadcast(intent，null);//第二个参数是与权限相关的字符串。</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">到此时，如果你的程序中只有一个广播接收器的话，是体现不出有序广播的特点的，</span><br><span class="line">右击包名——New——Other——BroadcastReceiver多创建几个广播接收器。 </span><br><span class="line"></span><br><span class="line">此时你还是会发现，所有的广播接收器是同时接收到广播消息的。注意上面介绍的时候说到优先级，这个时候我们需要设置优先级，在AndroidManifest文件中的Receiver标签中设置广播接收器的优先级。</span><br></pre></td></tr></table></figure></p>
+<pre><code>&lt;receiver
+    android:name=&quot;.MyReceiver&quot;
+    android:enabled=&quot;true&quot;
+    android:exported=&quot;true&quot;&gt;
+    &lt;!--注意此时有一个Priority属性--&gt;
+    &lt;intent-filter android:priority=&quot;100&quot;&gt;
+        &lt;action android:name=&quot;android.intent.action.BROADCAST_TEST&quot;&gt;&lt;/action&gt;
+    &lt;/intent-filter&gt;
+&lt;/receiver&gt;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">优先级越高的广播接收器可以先收到广播，也可以在收到广播的时候调用**abortBroadcast()**方法截断广播。优先级低的广播接收器就无法接收到广播了。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 注册广播   </span><br><span class="line"></span><br><span class="line">## 自定义BroadcastReceiver  </span><br><span class="line">在Android的广播接收机制中，如果需要接收广播，就需要创建广播接收器。而创建广播接收器的方法就是**新建一个类（可以是单独新建类，也可以是内部类（public））** 继承自**BroadcastReceiver**   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```  </span><br><span class="line">   class myBroadcastReceiver extends BroadcastReceiver&#123;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public void onReceive(Context context, Intent intent) &#123;</span><br><span class="line">            //接收到广播的处理，注意不能有耗时操作，当此方法长时间未结束，会报错。</span><br><span class="line">            //同时，广播接收器中不能开线程。</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="两种注册方法"><a href="#两种注册方法" class="headerlink" title="两种注册方法"></a>两种注册方法</h2><h3 id="动态注册"><a href="#动态注册" class="headerlink" title="动态注册"></a>动态注册</h3><p>所谓动态注册是指在代码中注册。步骤如下 ：  </p>
+<ul>
+<li>实例化自定义的广播接收器。</li>
+<li>创建<strong>IntentFilter</strong>实例。  </li>
+<li>调用<strong>IntentFilter</strong>实例的<strong>addAction()</strong>方法添加监听的广播类型。 </li>
+<li>最后调用<strong>Context</strong>的<strong>registerReceiver(BroadcastReceiver,IntentFilter)</strong>动态的注册广播。  </li>
+</ul>
+<p>此时，已经为我们自定义的广播接收器绑定了广播，当收到和绑定的广播一直的广播的时候，就会调用广播接收器中的<strong>onReceiver</strong>方法。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MyBroadcastReceiver myBroadcastReceiver=new MyBroadcastReceiver();</span><br><span class="line">IntentFilter intentFilter=new IntentFilter();</span><br><span class="line">intentFilter.addAction(&quot;com.example.dimple.MY_BROADCAST&quot;);</span><br><span class="line">registerReceiver(myBroadcastReceiver,intentFilter);</span><br></pre></td></tr></table></figure>
+<p>PS:这里提醒一点，如果需要接收系统的广播（比如电量变化，网络变化等等），别忘记在AndroidManifest配置文件中加上权限。  </p>
+<p>另外，动态注册的广播在活动结束的时候需要取消注册：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">protected void onDestroy() &#123;</span><br><span class="line">    super.onDestroy();</span><br><span class="line">    unregisterReceiver(myBroadcastReceiver);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="静态注册"><a href="#静态注册" class="headerlink" title="静态注册"></a>静态注册</h3><p>这里我们使用静态注册来接收开机广播。<br>使用Android Studio 中的快捷方法来创建广播接收器。  </p>
+<p>右击包名——New——Other——BroadcastReceiver。  </p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-20183414490.png" alt="{mdFileName}-20183414490">  </p>
+<p>PS：静态注册的广播接收器需要在AndroidManifest文件中注册，由于使用的AS的快捷方式，所以已经创建好了。<br>如图所示：  </p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201834145034.png" alt="{mdFileName}-201834145034">  </p>
+<p>在创建好的广播接收器中添加一个Toast提示。代码如下：    </p>
+<figure class="highlight plain"><figcaption><span>class MyReceiver extends BroadcastReceiver &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    @Override</span><br><span class="line">    public void onReceive(Context context, Intent intent) &#123;</span><br><span class="line">        Toast.makeText(context,&quot;开机启动！&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后在AndroidManifest文件中添加：  </p>
+<ul>
+<li><p>权限<br><code>&lt;uses-permission android:name=&quot;android.permission.RECEIVE_BOOT_COMPLETED&quot;&gt;&lt;/uses-permission&gt;</code>    </p>
+</li>
+<li><p>Intent-filter  </p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;receiver</span><br><span class="line">    android:name=&quot;.MyReceiver&quot;</span><br><span class="line">    android:enabled=&quot;true&quot;</span><br><span class="line">    android:exported=&quot;true&quot;&gt;</span><br><span class="line">    &lt;!--添加以下3行--&gt;</span><br><span class="line">    &lt;intent-filter&gt;</span><br><span class="line">        &lt;action android:name=&quot;android.intent.action.BOOT_COMPLETED&quot;&gt;&lt;/action&gt;</span><br><span class="line">    &lt;/intent-filter&gt;</span><br><span class="line">&lt;/receiver&gt;</span><br></pre></td></tr></table></figure>
+<p>此时重启Android系统就可以收到开机提示了。  </p>
+<h3 id="两种注册方式的区别"><a href="#两种注册方式的区别" class="headerlink" title="两种注册方式的区别"></a>两种注册方式的区别</h3><ul>
+<li><p>动态注册的广播接收器可以自由的控制注册和取消，有很大的灵活性。但是只能在程序启动之后才能收到广播，此外，不知道你注意到了没，广播接收器的注销是在onDestroy()方法中的。所以广播接收器的生命周期是和当前活动的生命周期一样。  </p>
+</li>
+<li><p>静态注册的广播不受程序是否启动的约束，当应用程序关闭之后，还是可以接收到广播。</p>
+</li>
+</ul>
 
       
     </div>
@@ -588,7 +579,7 @@
       <ul class="post-copyright">
 		<li class="post-copyright-link">
           <strong>本文标题：</strong>
-          <a href="http://www.bianxiaofeng.com/2017/12/04/2017-12-04 212731/" title="Android Studio 优化2017年12月24日更新">Android Studio 优化2017年12月24日更新</a>
+          <a href="http://www.bianxiaofeng.com/2018/03/04/2018-3-4-135539/" title="Android BroadcastReceiver 的静态动态注册及区别">Android BroadcastReceiver 的静态动态注册及区别</a>
         </li>
          <li class="post-copyright-link">
           <strong>本文作者：</strong>
@@ -596,12 +587,12 @@
         </li>
 
         <li class="post-copyright-date">
-            <strong>发布时间：</strong>2017年12月4日 - 21时12分
+            <strong>发布时间：</strong>2018年3月4日 - 13时03分
         </li>  
 
         <li class="post-copyright-link">
           <strong>本文链接：</strong>
-          <a href="http://www.bianxiaofeng.com/2017/12/04/2017-12-04 212731/" title="Android Studio 优化2017年12月24日更新">http://www.bianxiaofeng.com/2017/12/04/2017-12-04 212731/</a>
+          <a href="http://www.bianxiaofeng.com/2018/03/04/2018-3-4-135539/" title="Android BroadcastReceiver 的静态动态注册及区别">http://www.bianxiaofeng.com/2018/03/04/2018-3-4-135539/</a>
         </li>
 
         
@@ -768,7 +759,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#技巧篇"><span class="nav-number">1.</span> <span class="nav-text">技巧篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#恢复默认布局"><span class="nav-number">1.1.</span> <span class="nav-text">恢复默认布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tip-of-the-day"><span class="nav-number">1.2.</span> <span class="nav-text">Tip of the day</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Studio相关网站"><span class="nav-number">1.3.</span> <span class="nav-text">Android Studio相关网站</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置篇"><span class="nav-number">2.</span> <span class="nav-text">设置篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#鼠标滚轮滑动调整字体大小"><span class="nav-number">2.1.</span> <span class="nav-text">鼠标滚轮滑动调整字体大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看参数定义"><span class="nav-number">2.2.</span> <span class="nav-text">查看参数定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#鼠标移动显示API文档"><span class="nav-number">2.3.</span> <span class="nav-text">鼠标移动显示API文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置默认的字体大小"><span class="nav-number">2.4.</span> <span class="nav-text">设置默认的字体大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改快捷键"><span class="nav-number">2.5.</span> <span class="nav-text">更改快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置代码提示"><span class="nav-number">2.6.</span> <span class="nav-text">设置代码提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码提示的时候匹配所有字符"><span class="nav-number">2.7.</span> <span class="nav-text">代码提示的时候匹配所有字符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插件篇"><span class="nav-number">3.</span> <span class="nav-text">插件篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AndroidAccessors"><span class="nav-number">3.1.</span> <span class="nav-text">AndroidAccessors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ButterKnifeZelezny-插件"><span class="nav-number">3.2.</span> <span class="nav-text">ButterKnifeZelezny 插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题"><span class="nav-number">3.3.</span> <span class="nav-text">主题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#广播两种基本类型"><span class="nav-number">2.</span> <span class="nav-text">广播两种基本类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#标准广播"><span class="nav-number">2.1.</span> <span class="nav-text">标准广播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有序广播"><span class="nav-number">2.2.</span> <span class="nav-text">有序广播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#两种注册方法"><span class="nav-number">2.3.</span> <span class="nav-text">两种注册方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#动态注册"><span class="nav-number">2.3.1.</span> <span class="nav-text">动态注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态注册"><span class="nav-number">2.3.2.</span> <span class="nav-text">静态注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两种注册方式的区别"><span class="nav-number">2.3.3.</span> <span class="nav-text">两种注册方式的区别</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
