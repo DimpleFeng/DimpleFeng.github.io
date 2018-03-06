@@ -4,6 +4,52 @@
 
     
   <url>
+    <loc>http://www.bianxiaofeng.com/2018/03/05/2018-3-5-121345/</loc>
+    <lastmod>2018-03-06T08:01:40.224Z</lastmod>
+    <data>
+        <display>
+        <title>Android Activity生命周期</title>
+        <pubTime>2018-03-05T04:13:56.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Android Activity</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/01/17/2018-01-17%20102253/</loc>
+    <lastmod>2018-03-06T08:01:35.497Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo-NexT主题添加评论功能（来必力、Hypercomments、畅言、友言）</title>
+        <pubTime>2018-01-17T02:22:53.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>next优化</tag>
+         
+        <tag>Comment</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.bianxiaofeng.com/2018/03/04/2018-3-4-135539/</loc>
     <lastmod>2018-03-05T01:46:59.233Z</lastmod>
     <data>
@@ -253,30 +299,6 @@
         <tag>hexo</tag>
          
         <tag>博文置顶</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/17/2018-01-17%20102253/</loc>
-    <lastmod>2018-01-17T07:17:56.797Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo-NexT主题添加评论功能（来必力、Hypercomments、畅言、友言）</title>
-        <pubTime>2018-01-17T02:22:53.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>next优化</tag>
-         
-        <tag>Comment</tag>
          
          
            

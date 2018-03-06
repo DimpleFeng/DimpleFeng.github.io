@@ -115,17 +115,17 @@
 
 
 
-<meta name="description" content="少年心事当拿云   Reputation2016年—2017年：国家励志奖学金2015年—2016年：国家励志奖学金四川省大学生“综合素质A级证书”全国大学生物联网竞赛（TI杯） 一等奖“中星杯”四川省大学生计算机作品赛 二等奖中华人民共和国实用新型专利证书中华人民共和国计算机软件著作权……  ContactQQ：7265677707WeChat：Dimple_MeEmail：bianxiaof">
+<meta name="description" content="Dimple is an attitude">
 <meta property="og:type" content="website">
-<meta property="og:title" content="About">
-<meta property="og:url" content="http://www.bianxiaofeng.com/about/index.html">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://www.bianxiaofeng.com/categories/index.html">
 <meta property="og:site_name" content="Dimple&#39;s Blog">
-<meta property="og:description" content="少年心事当拿云   Reputation2016年—2017年：国家励志奖学金2015年—2016年：国家励志奖学金四川省大学生“综合素质A级证书”全国大学生物联网竞赛（TI杯） 一等奖“中星杯”四川省大学生计算机作品赛 二等奖中华人民共和国实用新型专利证书中华人民共和国计算机软件著作权……  ContactQQ：7265677707WeChat：Dimple_MeEmail：bianxiaof">
+<meta property="og:description" content="Dimple is an attitude">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-04T07:36:25.590Z">
+<meta property="og:updated_time" content="2018-01-05T11:55:30.635Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="About">
-<meta name="twitter:description" content="少年心事当拿云   Reputation2016年—2017年：国家励志奖学金2015年—2016年：国家励志奖学金四川省大学生“综合素质A级证书”全国大学生物联网竞赛（TI杯） 一等奖“中星杯”四川省大学生计算机作品赛 二等奖中华人民共和国实用新型专利证书中华人民共和国计算机软件著作权……  ContactQQ：7265677707WeChat：Dimple_MeEmail：bianxiaof">
+<meta name="twitter:title" content="categories">
+<meta name="twitter:description" content="Dimple is an attitude">
 
 
 
@@ -157,7 +157,7 @@
 
 
 
-  <link rel="canonical" href="http://www.bianxiaofeng.com/about/"/>
+  <link rel="canonical" href="http://www.bianxiaofeng.com/categories/"/>
 
 
 
@@ -392,6 +392,34 @@
 
 
       
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/01/17/2018-01-17 102253/" itemprop="url">
+              
+                <span itemprop="name">Hexo-NexT主题添加评论功能（来必力、Hypercomments、畅言、友言）</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-01-17T10:22:53+08:00"
+              content="2018-01-17" >
+          01-17
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
     </div>
 
   </div>
@@ -448,7 +476,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -470,7 +498,7 @@
                 
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
-                    <span class="site-state-item-count">30</span>
+                    <span class="site-state-item-count">31</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1199,57 +1227,7 @@ var OriginTitile = document.title;
  </script>
 </body>
 </html>
-{
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
+on.protocol.split(':')[0];
     if (curProtocol === 'https') {
         bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
     }
