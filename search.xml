@@ -3,6 +3,41 @@
   
     
     <entry>
+      <title><![CDATA[Activity的启动模式]]></title>
+      <url>/2018/03/07/2018-3-7-104145/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>当用户多次启动同一个Activity的时候，系统默认会一直为这个Activity创建实例，并将实例放入任务栈中，在用户按back键的时候会一一回退，每按一次任务栈的时候，栈顶的任务就会出栈，当任务栈为空的时候系统会回收这个任务栈。这就是在默认的情况下，系统对于Activity的处理方式。而这种默认的方式在某些时候可能不太符合开发者的意图。所以Android出现了多种的启动模式和标志位来更改这一默认的行为。  </p>
+<h1 id="Activity的LaunchMode"><a href="#Activity的LaunchMode" class="headerlink" title="Activity的LaunchMode"></a>Activity的LaunchMode</h1><p>目前有四种LaunchMode，分别是：standard、singleTop、singleTask以及singleInstance。<br>为了方便说明和解释，我这里写了一个Demo，以上传到GitHub，详情请<a href="https://github.com/DimpleFeng/Android-Activity-LaunchMode" target="_blank" rel="noopener">点击</a>。界面如下：<br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201837155052.png" alt="{mdFileName}-201837155052"><br>分别对应4种状态的LaunchMode。</p>
+<h2 id="standard-LaunchMode"><a href="#standard-LaunchMode" class="headerlink" title="standard LaunchMode"></a>standard LaunchMode</h2><p>标准模式，这是系统默认的模式，每次启动的Activity的时候会默认创建一个实例，不管这个实例是不是存在。被创建的Activity实例符合典型情况下的生命周期。<br>在这种情况下，谁启动了这个Activity，那么这个Activity就属于启动它的Activity的任务栈中。比如： A启动了B，那么B就属于A的任务栈的成员。  </p>
+<p>Demo点击第一项按钮4下结果如下：<br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201837123217.png" alt="{mdFileName}-201837123217"><br>可以看到：<br>这里依次调用了4次的onCreate，且每次的hashcode都不一样。说明分别创建了4次Activity实例。而且任务栈的ID一直都是88.这也就说明了<strong>谁启动Activity，该Activity就位于哪个任务栈中的说法</strong>。</p>
+<h2 id="singleTop-LaunchMode"><a href="#singleTop-LaunchMode" class="headerlink" title="singleTop LaunchMode"></a>singleTop LaunchMode</h2><p>栈顶复用模式。在这种模式下，如果新的Activity已经处于任务栈的栈顶，那么这个Activity将不会被创建。同时，它的onNewIntent方法会被回调，通过此方法就可以取出当前请求的信息。但是如果新的Activity不是位于栈顶，那么这个Activity会被实例化。<br>比如： 一个任务栈中从栈顶到栈底的Activity顺序是：ABCD，如果需要启动任务A，任务A的启动模式为singleTop，那么这个A不会被实例化，而是会调用onNewIntent方法。如果需要启动B，任务B的启动模式为singleTop，那么由于B不在栈顶，那么依然会实例化B，此时任务栈的顺序是：BABCD。  </p>
+<p>Demo第二项点击4下Log如图所示：<br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201837155237.png" alt="{mdFileName}-201837155237"><br>这里的操作步骤是：点击进入到SingleTop界面，这个时候出现第一次onCreate，随后又点击了一次，这时候由于是singleTop处于栈顶，这个时候只是回调onNewIntent方法。然后又启动其他Activity，出现第二次onCreate，并在其他Activity启动返回到singletop界面，这个时候出现第三次onCreate。<br>可以看到：<br>只第一次点击的时候调用了onCreate方法，之后便是调用的onNewIntent方法。而且hashcode都是一样的。这就说明：<strong>新的Activity如果位于栈顶，那么新的Activity不会被实例化。</strong></p>
+<h2 id="singleTask-LaunchMode"><a href="#singleTask-LaunchMode" class="headerlink" title="singleTask LaunchMode"></a>singleTask LaunchMode</h2><p>栈内复用模式。在这种模式下，只要Activity在任务栈中存在，那么就不会重新创建实例，和singleTop一样，系统会自动回调onNewIntent方法。<br>比如：当前任务栈中有ABCD四个Activity，需要启动一个Activity C，这个时候任务栈中有Activity C，那么会直接将Activity C调到栈顶，同时回调onNewIntent方法，<strong>由于singleTask具有cleanTop的效果</strong>，所以此时的任务栈的Activity为CD。如果需要启动Activity F，而Activity F不存在，所以会直接实例化Activity F，并压入栈顶。  </p>
+<p>log截图如下：  </p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201837155659.png" alt="{mdFileName}-201837155659">  </p>
+<p>这里的操作步骤是：<br>点击进入到singleTask界面，此时出现第一个onCreate，然后点击进入到其他Activity，出现第二个onCrete。此时应该注意到，任务栈的栈顶是其他Activity，这个时候在其他Activity点击返回到singTask。由于采用的是singleTask模式，singleTask已经在任务栈中，所以是直接调用，回调onNewIntent。  </p>
+<p><strong>而且由于cleanTop效果，按返回键的时候，其他Activity是不会再出现的。</strong>这一点的话，在BaseActivity.java中重写生命周期的方法就能看出来。  </p>
+<h2 id="singleInstance-LaunchMode"><a href="#singleInstance-LaunchMode" class="headerlink" title="singleInstance LaunchMode"></a>singleInstance LaunchMode</h2><p>单实例模式。这是一种加强的singleTask模式，具有singleTask的所有特性（cleanTop等），还有一点：使用这种模式的Activity只能单独的位于一个单独的任务栈中。<br>比如：Activity A是singleInstance模式，当A启动后，系统会单独为这个A创建一个任务栈，由于栈内复用的原因，不会再创建新的Activity A的实例。<br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-2018371622.png" alt="{mdFileName}-2018371622"><br>由于这个是单实例模式，对于同一个Activity来说，是直接复用。  </p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>TaskAffinity，任务相关性，这个参数标识了一个Activity需要的任务栈的名字，在默认情况下，这个任务栈的名字为应用的包名。任务栈分为前台任务栈和后台任务栈。位于后台任务栈的Activity是处于暂停状态。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Android </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> Activity </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Android Activity生命周期]]></title>
       <url>/2018/03/05/2018-3-5-121345/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在Android开发的过程中，有一个特别重要的组件：Activity，它是除了Windows、Dialog和Toast之外我们用户可以直接看到的界面。本文主要记录下研究Activity中的一些感悟。<br>首先Activity的生命周期总体来说可以分为两种：  </p>
