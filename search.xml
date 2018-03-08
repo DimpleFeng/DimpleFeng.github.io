@@ -3,7 +3,50 @@
   
     
     <entry>
-      <title><![CDATA[Activity的启动模式]]></title>
+      <title><![CDATA[Android InterFilter 匹配]]></title>
+      <url>/2018/03/08/2018-3-8-084846/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一般来说，启动Activity的方法有两种，显式启动和隐式启动。对于显示启动来说，只需要实例化一个Intent对象，指明被启动对象的组件信息，包括包名以及类名。例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Intent intent=new Intent(MainActivity.this,OtherActivity.class);</span><br></pre></td></tr></table></figure></p>
+<p>原则上是单独的使用隐式启动和显式启动，如果两者并存的话，以显式启动为准。<br>隐式调用需要Intent能够匹配目标组件的IntentFilter设置的过滤信息，如果不匹配的话是不能正常的启动Activity。Intent中需要过滤的信息包括：action、category和data。  </p>
+<h1 id="IntentFilter的匹配规则"><a href="#IntentFilter的匹配规则" class="headerlink" title="IntentFilter的匹配规则"></a>IntentFilter的匹配规则</h1><p>一个过滤列表中的action，category，data可以有多个，所有的action，category，data分别构成不同的类别。只要有一个Intent能够同时匹配action、category、data类别才能匹配成功。一个Activity可以有多个IntentFilter，只要成功的符合一组IntentFilter就可以启动相应的Activity。  </p>
+<h2 id="action的匹配规则"><a href="#action的匹配规则" class="headerlink" title="action的匹配规则"></a>action的匹配规则</h2><p>action是一个字符串，系统定义了一些，同时也支持自定义此字符串。action<strong>严格区分大小写</strong>。  </p>
+<p>一个过滤规则中可以有多个action，只要有一个action和intent匹配，就可以匹配成功。   </p>
+<p><strong>IntentFilter必须存在，否则不能启动Activity。</strong>  </p>
+<h2 id="category匹配规则"><a href="#category匹配规则" class="headerlink" title="category匹配规则"></a>category匹配规则</h2><p>category也是字符串，系统也有默认的字符串，和action匹配规则不同的是，在intent中可以不用特别指明category属性。  </p>
+<p><strong>IntentFilter中必须要有</strong><code>&lt;category android:name=&quot;android.intent.category.DEFAULT&quot;/&gt;</code> 无论intent是否调用addCategory()方法。  </p>
+<p>在Manifest文件中也可以像action一样设置多个category标签，只要有一个匹配就可以。    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = new Intent();</span><br><span class="line">    intent.setAction(&quot;com.example.dimple.action.activity2&quot;);</span><br><span class="line">    intent.addCategory(&quot;com.example.dimple.category.activity2&quot;);</span><br><span class="line">   //判断是否有Activity能够匹配intent。防止启动报错！</span><br><span class="line">    if (intent.resolveActivity(getPackageManager()) != null) &#123;</span><br><span class="line">        startActivity(intent);</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="data的匹配规则"><a href="#data的匹配规则" class="headerlink" title="data的匹配规则"></a>data的匹配规则</h2><p>data的匹配规则和action类似，如果过滤规则中定义了data，那么在Intent中也需要有可以与之匹配的data。但data可以省略不写。  </p>
+<p>语法如下：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;data android:scheme=&quot;string&quot; </span><br><span class="line">android:host=&quot;string&quot; </span><br><span class="line">android:port=&quot;number&quot; </span><br><span class="line">android:path=&quot;/string&quot; </span><br><span class="line">android:pathPattern=&quot;string&quot; </span><br><span class="line">android:pathPrefix=&quot;/string&quot; </span><br><span class="line">android:mimeType=&quot;string&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<p>data 由两部分组成，mimeType和URL（mimeType表示媒体类型，比如image/jpg、audio/mp3等，可以表示图，文本等不同格式），URL的格式如下：  </p>
+<p><code>&lt;scheme&gt;://&lt;host&gt;:&lt;port&gt;/[&lt;path&gt;|&lt;pathPrefix&gt;|&lt;pathPattern&gt;]</code> </p>
+<ul>
+<li>scheme:URL的模式，比如http、file、content，如果URL中没有scheme，那么URL无效。  </li>
+<li>host：主机名称，比如www.bianxiaofeng.com，如果没有host，则URL无效。  </li>
+<li>port：端口<br>-path、pathPattern、pathPrefix：表示路径信息  </li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>在通过隐式启动Activity的时候，最好是通过PackageManager的resolveActivity方法或者Intent的resolveActivity方法来判断下是不是有能够负责匹配规则的Activity存在，防止异常出错。 </p>
+]]></content>
+      
+        <categories>
+            
+            <category> Android </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> InterFilter </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Android Activity的启动模式]]></title>
       <url>/2018/03/07/2018-3-7-104145/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>当用户多次启动同一个Activity的时候，系统默认会一直为这个Activity创建实例，并将实例放入任务栈中，在用户按back键的时候会一一回退，每按一次任务栈的时候，栈顶的任务就会出栈，当任务栈为空的时候系统会回收这个任务栈。这就是在默认的情况下，系统对于Activity的处理方式。而这种默认的方式在某些时候可能不太符合开发者的意图。所以Android出现了多种的启动模式和标志位来更改这一默认的行为。  </p>
 <h1 id="Activity的LaunchMode"><a href="#Activity的LaunchMode" class="headerlink" title="Activity的LaunchMode"></a>Activity的LaunchMode</h1><p>目前有四种LaunchMode，分别是：standard、singleTop、singleTask以及singleInstance。<br>为了方便说明和解释，我这里写了一个Demo，以上传到GitHub，详情请<a href="https://github.com/DimpleFeng/Android-Activity-LaunchMode" target="_blank" rel="noopener">点击</a>。界面如下：<br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201837155052.png" alt="{mdFileName}-201837155052"><br>分别对应4种状态的LaunchMode。</p>
