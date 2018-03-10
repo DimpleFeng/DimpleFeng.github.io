@@ -5,14 +5,23 @@
     
   <url>
     <loc>http://www.bianxiaofeng.com/2018/03/09/2018-3-9-165439/</loc>
-    <lastmod>2018-03-09T08:54:45.577Z</lastmod>
+    <lastmod>2018-03-10T01:46:48.578Z</lastmod>
     <data>
         <display>
-        <title>2018-3-9 165439</title>
+        <title>Qt实现串口通信控制51单片机（上下位机）</title>
         <pubTime>2018-03-09T08:54:45.000Z</pubTime>
         
+        <tag>Qt</tag>
+         
+        <tag>串口通信</tag>
+         
+        <tag>51单片机</tag>
+         
          
            
+             
+              <breadCrumb title="Qt" url="http://www.bianxiaofeng.com/categories/Qt/"/>
+          
         </display>
     </data>
     </url>
