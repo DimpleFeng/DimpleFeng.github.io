@@ -4,23 +4,8 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/03/09/2018-3-9-135602/</loc>
-    <lastmod>2018-03-13T05:09:16.360Z</lastmod>
-    <data>
-        <display>
-        <title>常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言</title>
-        <pubTime>2018-03-09T05:56:33.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.bianxiaofeng.com/2017/12/04/2017-12-04%20212731/</loc>
-    <lastmod>2018-03-13T04:10:28.016Z</lastmod>
+    <lastmod>2018-03-17T08:03:48.680Z</lastmod>
     <data>
         <display>
         <title>Android Studio 优化2017年12月24日更新</title>
@@ -35,6 +20,21 @@
              
               <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/03/09/2018-3-9-135602/</loc>
+    <lastmod>2018-03-13T05:09:16.360Z</lastmod>
+    <data>
+        <display>
+        <title>常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言</title>
+        <pubTime>2018-03-09T05:56:33.000Z</pubTime>
+        
+         
+           
         </display>
     </data>
     </url>
