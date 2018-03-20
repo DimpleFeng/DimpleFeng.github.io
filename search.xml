@@ -1893,7 +1893,7 @@ else return b.date - a.date; // 都没定义按照文章日期降序排
     </entry>
     
     <entry>
-      <title><![CDATA[Android Studio 优化2017年12月24日更新]]></title>
+      <title><![CDATA[Android Studio 优化]]></title>
       <url>/2017/12/04/2017-12-04%20212731/</url>
       <content type="html"><![CDATA[<blockquote>
 <p><em>安装好Android Studio之后需要根据自己的习惯进行一些设置，下载些插件、设置下软件的相关属性等等。刚好重装了下系统，针对这个Android Studio进行了相关的设置，在这里将经历说一下，避免自己以后晚了相关设置也方便一些需要帮助的朋友</em>  </p>
