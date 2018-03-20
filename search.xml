@@ -3,6 +3,39 @@
   
     
     <entry>
+      <title><![CDATA[Error:Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug'的解决办法]]></title>
+      <url>/2018/03/20/2018-3-20-153425/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在Android的开源环境下，也就多出来很多优秀的第三方的项目，但是因为很多第三方的项目和目前你正在开发的APP使用的Lib有些是重复的，这样会导致<strong>transformClassesWithDexForDebug</strong>  </p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/20180320154257.png" alt="20180320154257">  </p>
+<p>本文介绍年两种方法来处理这个问题。</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><h2 id="添加“multiDexEnabled-true”到-defaultConfig"><a href="#添加“multiDexEnabled-true”到-defaultConfig" class="headerlink" title="添加“multiDexEnabled true”到 defaultConfig"></a>添加“multiDexEnabled true”到 defaultConfig</h2><p>在app的build.gradle文件中的 defaultConfig添加：  </p>
+<p><code>multiDexEnabled true</code><br>如图所示：</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180320154214.png" alt="QQ截图20180320154214"></p>
+<p>这样的设置只能解决一部分的问题，而更加难受的情况是在项目中引入了很多的第三方库，这个时候鬼知道哪个库出了问题，一个一个试可能能够找出来，但是找出来黄花菜都凉了。  </p>
+<p>这个时候请移步解决方法二  </p>
+<h2 id="根据Message信息找到重复的包"><a href="#根据Message信息找到重复的包" class="headerlink" title="根据Message信息找到重复的包"></a>根据Message信息找到重复的包</h2><p>在Setting-&gt;Build,Execution,Deployment-&gt;Compiler中的Command-line Opptions中输入<strong>–stacktrace</strong>启用堆栈跟踪  </p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180320155125.png" alt="QQ截图20180320155125"></p>
+<p> 接着运行APP，就能够在Message上面输出：  </p>
+<p> <img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180320155325.png" alt="QQ截图20180320155325">  </p>
+<p> 这样我根据上面消息找到了butterknife重复包。  </p>
+]]></content>
+      
+        <categories>
+            
+            <category> Android </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Android </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Qt实现串口通信控制51单片机（上下位机）]]></title>
       <url>/2018/03/09/2018-3-9-165439/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Qt是我在大一下学期开始接触的，当时刚学完C++，然后每天对着黑漆漆的console窗口，在偶然的机会接触到Qt这个跨平台的C++应用程序开发框架。又在老师的怂恿下（单片机老师说如果做出上下位机实验成绩就是满分），使用Qt来进行上下位机的开发。当然实现的功能很简单，控制LED灯的明灭，输入数字显示在数码管上，控制继电器和蜂鸣器以及定时器。</p>
