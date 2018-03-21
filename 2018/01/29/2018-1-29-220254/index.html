@@ -457,7 +457,7 @@
 					<i class="fa fa-calendar-o"></i>
 				  </span>
 				  <span class="post-meta-item-text">总字数:</span>
-				  <span class="post-meta-item-text">10,414</span>
+				  <span class="post-meta-item-text">10,902</span>
 				</span>
 				
 				<span class="post-count">
@@ -466,7 +466,7 @@
 					<i class="fa fa-calendar-o"></i>
 				  </span>
 				  <span class="post-meta-item-text">阅读时长≈</span>
-				  <span class="post-meta-item-text">42&nbsp;分</span>
+				  <span class="post-meta-item-text">45&nbsp;分</span>
 				</span>
 				
 				
@@ -600,43 +600,7 @@ editor.apply();
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**读取SharedPreferences的方法**  </span><br><span class="line"></span><br><span class="line">获取SharedPreferences对象，通过getString()系列方法得到数据。注意这里有两个参数，第一个是要读取的数据的键，第二个参数是没有找到这个数据返回的值。</span><br></pre></td></tr></table></figure>
 <pre><code>SharedPreferences sharedPreferences=getSharedPreferences(&quot;test&quot;,MODE_PRIVATE);
 sharedPreferences.getString(&quot;name&quot;,&quot;没有找到name属性的值&quot;);
-</code></pre><p>```</p>
-<h2 id="2、使用SQLite数据库进行存储"><a href="#2、使用SQLite数据库进行存储" class="headerlink" title="2、使用SQLite数据库进行存储"></a>2、使用SQLite数据库进行存储</h2><p>android中为了更好的管理数据库，提供了一个SQLiteOpenHelper的帮助类（抽象类），需要实现SQLiteOpenHelper抽象方法中的抽象方法onCreate()（在数据库被创建的时候会调用），onUpgrade()（在数据库版本被升级的时候被调用）  </p>
-<p>获取实例的方法：(都可以打开或者创建数据库)<br>getReadableDatebase()只能是通过只读的方式来打开数据库。<br>getWritableDatebase()使用读写的方式打开数据库。  </p>
-<p><strong>使用方法：</strong><br>新建一个JAVA类继承自SQLiteOpenHelper，实现两个抽象方法onCreate()和onUpgrade()，创建构造器（使用参数较少的那一个构造器），其参数有  </p>
-<pre><code>Context context, String name, SQLiteDatabase.CursorFactory factory, int version
-</code></pre><p>/<em><br>第一个参数是context上下文<br>第二个参数是数据库名<br>第三个参数允许在查询的时候返回一个自定义的Cursor，一般为null<br>第四个参数是当前数据库的版本号，可用于对数据库的更新操作
-</em>/</p>
-<p>构建出SQLiteOpenHelper实例（new）以后，调用getReadableDatebase()或者getWritableDatebase()就可以创建数据库了。<br>创建的数据库的名字一般放在 /data/data/<package name="">/datebase目录下。</package></p>
-<p>配置adb 在安卓SDK的目录下有一个platform-tools文件夹，将这个文件夹配置到系统的环境变量中，使用adb shell进入控制台终端</p>
-<p>使用sqlite3 +数据库名称 打开数据库<br>使用.table 查看数据库中的表、<br>使用 .schema 查看建表语句  </p>
-<p>3、向SQLite数据库中添加数据<br>调用SQLiteOpenHelper的getReadableDatebase()或者getWritableDatebase()创建数据库后会返回一个SQLiteDatabase对象，借助这个对象就可以对数据库进行CRUD操作<br><strong>添加数据</strong><br>    SQLiteDatabase提供一个insert()方法用于添加数据。这个方法有三个参数。第一个参数是数据库表名称，第二个是用于指定在未添加数据的情况下给某些数据项自动赋值为null，第三个参数是ContentValues对象，它提供一系列的put()方法重载，用于向contentValues添加数据。使用此方法的时候需要创建ContentValues对象。  </p>
-<pre><code>sqLiteDatabase.insert(&quot;Book&quot;,null,contentValues);//插入信息到Book
-</code></pre><p><strong>更新数据</strong><br>    SQLiteDatabase提供一个update()的方法，第一个参数是表名，第二个参数是ContentValues对象，第三四个参数用于约定更新某一行或者某几行的数据。  </p>
-<pre><code>sqLiteDatabase.update(&quot;Book&quot;,contentValues,&quot;id=?&quot;,new String[]{&quot;1&quot;});//更新id为1的书的信息
-第三个参数对应的是SQL的where语句，第四个提供约束的具体信息。
-</code></pre><p><strong>删除数据</strong></p>
-<pre><code>SQLiteDatabase提供一个delete()的方法，第一个参数是表名，第二三个参数用于约定删除某一行或者某几行的数据。   
-
- sqLiteDatabase.delete(&quot;Book&quot;,&quot;pages&gt;?&quot;,new String[]{&quot;500&quot;});//删除页数超过500页的书的信息  
-</code></pre><p><strong>查询数据</strong>  </p>
-<pre><code>query(table, columns, selection, selectionArgs, groupBy, having, orderBy, limit)方法各参数的含义：
-</code></pre><ul>
-<li><p>table：表名。相当于select语句from关键字后面的部分。如果是多表联合查询，可以用逗号将两个表名分开。</p>
-</li>
-<li><p>columns：要查询出来的列名。相当于select语句select关键字后面的部分。</p>
-</li>
-<li><p>selection：查询条件子句，相当于select语句where关键字后面的部分，在条件子句允许使用占位符“?”</p>
-</li>
-<li><p>selectionArgs：对应于selection语句中占位符的值，值在数组中的位置与占位符在语句中的位置必须一致，否则就会有异常。</p>
-</li>
-<li><p>groupBy：相当于select语句group by关键字后面的部分</p>
-</li>
-<li><p>having：相当于select语句having关键字后面的部分</p>
-</li>
-<li><p>orderBy：相当于select语句order by关键字后面的部分，如：personid desc, age asc;</p>
-</li>
-<li><p>limit：指定偏移量和获取的记录数，相当于select语句limit关键字后面的部分。  </p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 2、使用SQLite数据库进行存储  </span><br><span class="line"></span><br><span class="line">android中为了更好的管理数据库，提供了一个SQLiteOpenHelper的帮助类（抽象类），需要实现SQLiteOpenHelper抽象方法中的抽象方法**onCreate()**（在数据库被创建的时候会调用），**onUpgrade()**（在数据库版本被升级的时候被调用）  </span><br><span class="line"></span><br><span class="line">获取实例的方法：(都可以打开或者创建数据库)  </span><br><span class="line">getReadableDatebase()只能是通过只读的方式来打开数据库。  </span><br><span class="line">getWritableDatebase()使用读写的方式打开数据库。  </span><br><span class="line"></span><br><span class="line">**使用方法：**  </span><br><span class="line">新建一个JAVA类继承自SQLiteOpenHelper，实现两个抽象方法**onCreate()**和**onUpgrade()**，创建构造器（使用参数较少的那一个构造器），其参数有  </span><br><span class="line"></span><br><span class="line">    Context context, String name, SQLiteDatabase.CursorFactory factory, int version</span><br><span class="line">/*</span><br><span class="line">第一个参数是context上下文</span><br><span class="line">第二个参数是数据库名</span><br><span class="line">第三个参数允许在查询的时候返回一个自定义的Cursor，一般为null</span><br><span class="line">第四个参数是当前数据库的版本号，可用于对数据库的更新操作</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">构建出SQLiteOpenHelper实例（new）以后，调用**getReadableDatebase()**或者**getWritableDatebase()**就可以创建数据库了。</span><br><span class="line">创建的数据库的名字一般放在 /data/data/&lt;package name&gt;/datebase目录下。</span><br><span class="line"></span><br><span class="line">配置adb 在安卓SDK的目录下有一个platform-tools文件夹，将这个文件夹配置到系统的环境变量中，使用adb shell进入控制台终端</span><br><span class="line"></span><br><span class="line">使用sqlite3 +数据库名称 打开数据库  </span><br><span class="line">使用.table 查看数据库中的表、  </span><br><span class="line">使用 .schema 查看建表语句  </span><br><span class="line"></span><br><span class="line">3、向SQLite数据库中添加数据</span><br><span class="line">调用SQLiteOpenHelper的getReadableDatebase()或者getWritableDatebase()创建数据库后会返回一个SQLiteDatabase对象，借助这个对象就可以对数据库进行CRUD操作  </span><br><span class="line">**添加数据**  </span><br><span class="line">    SQLiteDatabase提供一个insert()方法用于添加数据。这个方法有三个参数。第一个参数是数据库表名称，第二个是用于指定在未添加数据的情况下给某些数据项自动赋值为null，第三个参数是ContentValues对象，它提供一系列的put()方法重载，用于向contentValues添加数据。使用此方法的时候需要创建ContentValues对象。  </span><br><span class="line"></span><br><span class="line">    sqLiteDatabase.insert(&quot;Book&quot;,null,contentValues);//插入信息到Book</span><br><span class="line"></span><br><span class="line">**更新数据**  </span><br><span class="line">    SQLiteDatabase提供一个update()的方法，第一个参数是表名，第二个参数是ContentValues对象，第三四个参数用于约定更新某一行或者某几行的数据。  </span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">        sqLiteDatabase.update(&quot;Book&quot;,contentValues,&quot;id=?&quot;,new String[]&#123;&quot;1&quot;&#125;);//更新id为1的书的信息</span><br><span class="line">        第三个参数对应的是SQL的where语句，第四个提供约束的具体信息。</span><br><span class="line"></span><br><span class="line">**删除数据**</span><br><span class="line"></span><br><span class="line">    SQLiteDatabase提供一个delete()的方法，第一个参数是表名，第二三个参数用于约定删除某一行或者某几行的数据。   </span><br><span class="line"></span><br><span class="line">     sqLiteDatabase.delete(&quot;Book&quot;,&quot;pages&gt;?&quot;,new String[]&#123;&quot;500&quot;&#125;);//删除页数超过500页的书的信息  </span><br><span class="line"></span><br><span class="line">**查询数据**  </span><br><span class="line"></span><br><span class="line">    query(table, columns, selection, selectionArgs, groupBy, having, orderBy, limit)方法各参数的含义：</span><br><span class="line"> </span><br><span class="line">- table：表名。相当于select语句from关键字后面的部分。如果是多表联合查询，可以用逗号将两个表名分开。</span><br><span class="line"> </span><br><span class="line">- columns：要查询出来的列名。相当于select语句select关键字后面的部分。</span><br><span class="line"> </span><br><span class="line">- selection：查询条件子句，相当于select语句where关键字后面的部分，在条件子句允许使用占位符“?”</span><br><span class="line"> </span><br><span class="line">- selectionArgs：对应于selection语句中占位符的值，值在数组中的位置与占位符在语句中的位置必须一致，否则就会有异常。</span><br><span class="line"> </span><br><span class="line">- groupBy：相当于select语句group by关键字后面的部分</span><br><span class="line"> </span><br><span class="line">- having：相当于select语句having关键字后面的部分</span><br><span class="line"> </span><br><span class="line">- orderBy：相当于select语句order by关键字后面的部分，如：personid desc, age asc;</span><br><span class="line"> </span><br><span class="line">- limit：指定偏移量和获取的记录数，相当于select语句limit关键字后面的部分。</span><br></pre></td></tr></table></figure>
 <pre><code>               sqLiteDatabase=mySqlite.getWritableDatabase();
                Cursor cursor=sqLiteDatabase.query(&quot;Book&quot;,null,null,null,null,null,null);//查询完毕后得到一个游标Cursor对象，通过这个对象去访问数据
                if (cursor.moveToFirst()){//将游标移动到第一行的位置
@@ -651,11 +615,8 @@ sharedPreferences.getString(&quot;name&quot;,&quot;没有找到name属性的值&
                    }while (cursor.moveToNext());
                    textView.setText(builder);
                }
-</code></pre></li>
-</ul>
-<h2 id="4、使用LitePal操作数据库"><a href="#4、使用LitePal操作数据库" class="headerlink" title="4、使用LitePal操作数据库"></a>4、使用LitePal操作数据库</h2><p><strong>配置过程</strong><br>    编辑app/build.gradle文件，在dependencies闭包中加入  </p>
-<pre><code>compile &apos;org.litepal.android:core:1.3.2&apos;
-</code></pre><p>然后在app/src/main目录新建一个assets目录，在此目录下创建一个litepal.xml文件  </p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">## 4、使用LitePal操作数据库</span><br><span class="line">**配置过程**  </span><br><span class="line"></span><br><span class="line">    编辑app/build.gradle文件，在dependencies闭包中加入</span><br></pre></td></tr></table></figure>
+<p>compile ‘org.litepal.android:core:1.3.2’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">然后在app/src/main目录新建一个assets目录，在此目录下创建一个litepal.xml文件</span><br></pre></td></tr></table></figure></p>
 <pre><code>&lt;litepal&gt;  
     &lt;!--dbname标签用于指定数据库名，version标签用于指定数据库版本号，list标签用于指定所有的映射模型--&gt;  
     &lt;dbname value=&quot;BookStore&quot;&gt;&lt;/dbname&gt;
@@ -665,50 +626,18 @@ sharedPreferences.getString(&quot;name&quot;,&quot;没有找到name属性的值&
         &lt;mapping class=&quot;com.example.dimple.sharedpreferencestest.Category&quot;&gt;&lt;/mapping&gt;
     &lt;/list&gt;
 &lt;/litepal&gt;
-</code></pre><p>最后需要在AndroidManifest中将项目的application配置为  </p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">最后需要在AndroidManifest中将项目的application配置为</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;application
     android:name=&quot;org.litepal.LitePalApplication&quot;
     android:allowBackup=&quot;true&quot;
     android:icon=&quot;@mipmap/ic_launcher&quot;
-</code></pre><p><strong>创建数据库：</strong><br>    使用面向对象的思想，定义一个Book类JavaBean类。<br>    将关系模型添加到映射模型列表中  </p>
-<pre><code>&lt;mapping class=&quot;com.example.dimple.sharedpreferencestest.Book&quot;&gt;&lt;/mapping&gt;
-</code></pre><p>注：不管需要多少关系模型，注意要使用完整的类名，不管需要多少模型类映射，都需要用同样的方式在<list>标签下配置。  </list></p>
-<p>在代码中使用Connector.getDatabase()；创建数据库。  </p>
-<p>升级版本号，就可以直接修改litepal.xml中的version即可。此升级不会删除数据库。  </p>
-<p><strong>添加数据</strong><br>    需要将JavaBean类继承自DataSupport类。<br>    在java代码中，直接new一个JavaBean类的对象出来，然后调用set系列方法，最后调用DataSupport父类传下来的save()方法即可。</p>
-<p><strong>更新数据</strong><br>直接new一个JavaBean对象出来，调用要修该的数据项的set函数，然后updataAll();  此方法可以设置约束条件  </p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**创建数据库：**  </span><br><span class="line"></span><br><span class="line">    使用面向对象的思想，定义一个Book类JavaBean类。  </span><br><span class="line">    将关系模型添加到映射模型列表中</span><br></pre></td></tr></table></figure>
+<p><mapping class="com.example.dimple.sharedpreferencestest.Book"></mapping><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">注：不管需要多少关系模型，注意要使用完整的类名，不管需要多少模型类映射，都需要用同样的方式在&lt;list&gt;标签下配置。  </span><br><span class="line"></span><br><span class="line">在代码中使用**Connector.getDatabase()；**创建数据库。  </span><br><span class="line"></span><br><span class="line">升级版本号，就可以直接修改litepal.xml中的version即可。此升级不会删除数据库。  </span><br><span class="line"></span><br><span class="line">**添加数据**  </span><br><span class="line"></span><br><span class="line">    需要将JavaBean类继承自DataSupport类。  </span><br><span class="line">    在java代码中，直接new一个JavaBean类的对象出来，然后调用set系列方法，最后调用DataSupport父类传下来的save()方法即可。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**更新数据**  </span><br><span class="line"></span><br><span class="line">直接new一个JavaBean对象出来，调用要修该的数据项的set函数，然后**updataAll()**;  此方法可以设置约束条件</span><br></pre></td></tr></table></figure></p>
 <pre><code>book.updateAll(&quot;name=?&quot;,&quot;the da vinvi code &quot;);//修改所有name=the da vinvi code的数据项。
-</code></pre><p><strong>删除数据</strong>  </p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**删除数据**</span><br></pre></td></tr></table></figure>
 <pre><code> DataSupport.deleteAll(Book.class,&quot;price&gt;?&quot;,&quot;17&quot;);
 第一个参数是指定表，后面的参数是指定参数的数据项的属性。
-</code></pre><p><strong>查询数据</strong><br>注：<br> for (Book book:bookList)的意思是循环bookList集合，每次取得的实例就给Book book；</p>
-<p>List<book> bookList=DataSupport.findAll(Book.class);<br>findAll()返回的是一个List集合。  </book></p>
-<p><strong>常用的查询API</strong></p>
-<ul>
-<li><p>查询第一条数据  </p>
-<pre><code>Book book =DataSupport.findFirst(Book.class);  
-</code></pre></li>
-<li><p>查询最后一条数据  </p>
-<pre><code>Book book =DataSupport.findLast(Book.class);  
-</code></pre></li>
-<li><p>select()方法可以指定查询那几列的数据。  </p>
-<pre><code>List&lt;Book&gt; bookList =DataSupport.select(&quot;name&quot;,&quot;pages&quot;).find(Book.class);
-</code></pre></li>
-<li><p>where()方法可以指定查询的约束条件   </p>
-<pre><code>List&lt;Book&gt; bookList =DataSupport.where(&quot;name=?&quot;,&quot;bianxiaofeng&quot;).find(Book.class);  
-</code></pre></li>
-<li><p>order()方法可以指定结果的排序方式  </p>
-<pre><code>List&lt;Book&gt; bookList =DataSupport.order(&quot;pages desc&quot;).find(Book.class);
-</code></pre></li>
-<li><p>limit()方法可以指定结果的数量  </p>
-<pre><code>List&lt;Book&gt; bookList =DataSupport.limit(3).find(Book.class);
-</code></pre></li>
-</ul>
-<p>还可以对所有的方法进行连缀组合操作。  </p>
-<h1 id="第七章-内容提供器"><a href="#第七章-内容提供器" class="headerlink" title="第七章 内容提供器"></a>第七章 内容提供器</h1><h2 id="1、内容提供器主要在不同的应用程序之间实现数据共享的功能。使用内容提供器是Android跨程序共享数据的标准方式。"><a href="#1、内容提供器主要在不同的应用程序之间实现数据共享的功能。使用内容提供器是Android跨程序共享数据的标准方式。" class="headerlink" title="1、内容提供器主要在不同的应用程序之间实现数据共享的功能。使用内容提供器是Android跨程序共享数据的标准方式。"></a>1、内容提供器主要在不同的应用程序之间实现数据共享的功能。使用内容提供器是Android跨程序共享数据的标准方式。</h2><h2 id="2、运行时权限"><a href="#2、运行时权限" class="headerlink" title="2、运行时权限"></a>2、运行时权限</h2><pre><code>权限分为普通权限和危险权限。危险权限分为9组24个。每一个危险权限都属于一个权限组，一旦用户同意了某个权限组的一个权限，则对应的权限组都可以被获得权限。  
-</code></pre><p><strong>步骤：</strong><br>第一步需要判断用户是不是已经授权了。借助的是ContextCompat.setSelfPermission()方法。此方法接收两个参数：第一个是Context上下文，第二个是具体的权限名。<br> Manifest.permission.```。使用方法的返回值和PackageManager.PERMISSION_GEANTED作比较，相等就表示已经授权。不相等就表示没有授权。</p>
-<p>如果授权的话就执行具体的逻辑。如果不等的话就说明还没有得到用户的权限的同意，这个时候需要申请用户的权限。</p>
-<p>调用ActivityCompat.requestPermission()方法来向用户申请权限。requrestPermission接受三个参数，第一个参数是要求的Activity实例，第二个参数是String数组，这里需要把要申请的权限名写在里面，第三个是请求码，需要唯一。在这个方法中判断是否得到授权。</p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**查询数据**  </span><br><span class="line"></span><br><span class="line">注：     </span><br><span class="line"> for (Book book:bookList)的意思是循环bookList集合，每次取得的实例就给Book book；</span><br><span class="line"></span><br><span class="line">List&lt;Book&gt; bookList=DataSupport.findAll(Book.class);    </span><br><span class="line"></span><br><span class="line">findAll()返回的是一个List集合。  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**常用的查询API**</span><br><span class="line"></span><br><span class="line">- 查询第一条数据  </span><br><span class="line"></span><br><span class="line">      Book book =DataSupport.findFirst(Book.class);  </span><br><span class="line"></span><br><span class="line">- 查询最后一条数据  </span><br><span class="line"></span><br><span class="line">        Book book =DataSupport.findLast(Book.class);  </span><br><span class="line"></span><br><span class="line">- select()方法可以指定查询那几列的数据。  </span><br><span class="line"></span><br><span class="line">        List&lt;Book&gt; bookList =DataSupport.select(&quot;name&quot;,&quot;pages&quot;).find(Book.class);</span><br><span class="line"></span><br><span class="line">- where()方法可以指定查询的约束条件   </span><br><span class="line"></span><br><span class="line">         List&lt;Book&gt; bookList =DataSupport.where(&quot;name=?&quot;,&quot;bianxiaofeng&quot;).find(Book.class);  </span><br><span class="line"></span><br><span class="line">- order()方法可以指定结果的排序方式  </span><br><span class="line"></span><br><span class="line">        List&lt;Book&gt; bookList =DataSupport.order(&quot;pages desc&quot;).find(Book.class);</span><br><span class="line"></span><br><span class="line">- limit()方法可以指定结果的数量  </span><br><span class="line"></span><br><span class="line">        List&lt;Book&gt; bookList =DataSupport.limit(3).find(Book.class);</span><br><span class="line"></span><br><span class="line">还可以对所有的方法进行连缀组合操作。  </span><br><span class="line"></span><br><span class="line"># 第七章 内容提供器</span><br><span class="line"></span><br><span class="line">## 1、内容提供器主要在不同的应用程序之间实现数据共享的功能。使用内容提供器是Android跨程序共享数据的标准方式。  </span><br><span class="line">## 2、运行时权限  </span><br><span class="line">    权限分为普通权限和危险权限。危险权限分为9组24个。每一个危险权限都属于一个权限组，一旦用户同意了某个权限组的一个权限，则对应的权限组都可以被获得权限。  </span><br><span class="line">    </span><br><span class="line">**步骤：**  </span><br><span class="line"></span><br><span class="line">- 第一步需要判断用户是不是已经授权了。借助的是**ContextCompat.setSelfPermission(Context context,String permission)**方法。此方法接收两个参数：第一个是Context上下文，第二个是具体的权限名。   </span><br><span class="line"> Manifest.permission.···。使用方法的返回值和**PackageManager.PERMISSION_GRANTED**作比较，相等就表示已经授权。不相等就表示没有授权(相当于：**PackageManager.PERMISSION_DENIED**)。</span><br><span class="line"></span><br><span class="line">如果授权的话就执行具体的逻辑。如果不等的话就说明还没有得到用户的权限的同意，这个时候需要申请用户的权限。</span><br><span class="line"></span><br><span class="line">调用**ActivityCompat.requestPermission(Activity activity,String[] permissions,int requestCode)**方法来向用户申请权限。requrestPermission接受三个参数，第一个参数是要求的Activity实例，第二个参数是String数组，这里需要把要申请的权限名写在里面，第三个是请求码，需要唯一。在这个方法中判断是否得到授权。</span><br></pre></td></tr></table></figure>
 <pre><code>//申请权限
 if (ContextCompat.checkSelfPermission(MainActivity.this,Manifest.permission
                        .CALL_PHONE)!=PackageManager.PERMISSION_GRANTED){
@@ -721,7 +650,7 @@ if (ContextCompat.checkSelfPermission(MainActivity.this,Manifest.permission
    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                           @NonNull int[] grantResults) {
            switch (requestCode){
-               case 1:
+               case 1:ssss
                    if (grantResults[0]==PackageManager.PERMISSION_GRANTED){
                        //do something else.
                    }else{
@@ -729,27 +658,19 @@ if (ContextCompat.checkSelfPermission(MainActivity.this,Manifest.permission
                    }
            }
    }
-</code></pre><h2 id="3、contentResolver的基本用法"><a href="#3、contentResolver的基本用法" class="headerlink" title="3、contentResolver的基本用法"></a>3、contentResolver的基本用法</h2><p>对于一个应用程序来说，如果访问内容提供器中的共享的数据，就一定要借助ContentResolver类。可以通过getContentReslover来获取该类的实例。  </p>
-<p>使用inset()用于添加数据。update()用于更新数据。delete()用户删除数据。queny()用于查询数据。ContentReslover的增删查改需要接受Uri对象作为参数。  </p>
-<p>和数据库的操作一样是使用ContentValues作为中转传数据。调用CRUD函数进行操作。</p>
-<h1 id="第八章-运用手机多媒体"><a href="#第八章-运用手机多媒体" class="headerlink" title="第八章 运用手机多媒体"></a>第八章 运用手机多媒体</h1><h2 id="1、使用通知Notification"><a href="#1、使用通知Notification" class="headerlink" title="1、使用通知Notification"></a>1、使用通知Notification</h2><p>使用通知的步骤<br>首先需要一个NotificationManager来对通过通知进行管理，可以调用Context的getSystemService()方法来获取到。<br>getSystemService()方法接受一个字符串参数用于确定获取系统的哪一个服务。这里传入Context.NOTIFICATION_SERVICE即可。 </p>
-<pre><code>NotificationManger manager=(NitificationManager)getSystemSerice(Context.NOTIFICATION_SERVICE);
-</code></pre><p>接下来需要一个Builder构造器来创建Notification对象（为了实现兼容，使用v4包的NotificationCompat类）  </p>
-<pre><code>Notification notification =new NotificationCompat.Builer(context);  
-</code></pre><p>然后调用一系列的set方法对这个实体类进行设置。最后调用manager的notify()方法，该方法接收两个参数，第一个参数是Notification的id，第二个参数是Notification的类。<br>以上功能实现后就可以发送通知了，不过通知不可点击。如果需要点击需要PendingIntent</p>
-<p>注：PendingIntent和Intent的异同点：</p>
-<ul>
-<li><p>都可以指明一个意图，都可以用于启动活动，服务，以及发送广播。</p>
-</li>
-<li><p>Intent倾向于立即去执行某个动作，PendingIntent更加倾向在合适的时机去执行某个动作。</p>
-</li>
-</ul>
-<p><strong>pendingIntent的使用方法：</strong><br>使用静态方法获得PendingIntent的实例，getActivity()、getBroadcast()、getService()。  </p>
-<p>四个参数：content，0，Intent对象、0</p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 3、contentResolver的基本用法</span><br><span class="line">对于一个应用程序来说，如果访问内容提供器中的共享的数据，就一定要借助ContentResolver类。可以通过getContentReslover来获取该类的实例。  </span><br><span class="line"></span><br><span class="line">使用inset()用于添加数据。update()用于更新数据。delete()用户删除数据。queny()用于查询数据。ContentReslover的增删查改需要接受Uri对象作为参数。  </span><br><span class="line"></span><br><span class="line">和数据库的操作一样是使用ContentValues作为中转传数据。调用CRUD函数进行操作。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## contentProvider内容提供者</span><br><span class="line">&gt; Android 的ContentProvider的底层是Binder机制。</span><br><span class="line"></span><br><span class="line">### 统一资源标识符（URI）</span><br><span class="line"></span><br><span class="line">URL：Uniform Resource Identifier  </span><br><span class="line">作用：  </span><br><span class="line">唯一标识ContentProvider中的数据。其他进程通过URI找到对应的ContentProvider其中的数据，再进行数据操作。  </span><br><span class="line"></span><br><span class="line">自定义</span><br><span class="line"></span><br><span class="line">&lt;pre&gt;</span><br><span class="line">URI=content：//com.dimple.provider/user/1</span><br><span class="line">    -------    ------------------  ---  --</span><br><span class="line">    主题名          授权信息        表名 记录</span><br><span class="line">&lt;/pre&gt;</span><br><span class="line"></span><br><span class="line">- 主题名（Schema）：ContentProvider的URL前缀</span><br><span class="line">- 授权信息（Authority）：ContentProvider的唯一标识符,用于区分不同的ContentProvider。  </span><br><span class="line">- 表名（Path）：ContentProvider指向数据库中的某个表名用于区分ContentProvider的不同的数据表。  </span><br><span class="line">- 记录（ID）：表中的某个记录，用于区分表中的不同数据。  </span><br><span class="line"></span><br><span class="line">### 主要方法：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"># 第八章 运用手机多媒体</span><br><span class="line">## 1、使用通知Notification  </span><br><span class="line">使用通知的步骤  </span><br><span class="line">首先需要一个NotificationManager来对通过通知进行管理，可以调用Context的**getSystemService(String name)**方法来获取到。  </span><br><span class="line">**getSystemService(String name)**方法接受一个字符串参数用于确定获取系统的哪一个服务。这里传入**Context.NOTIFICATION_SERVICE**即可</span><br></pre></td></tr></table></figure>
+<pre><code>NotificationManger manager=(NotificationManager)Context.getSystemSerice(Context.NOTIFICATION_SERVICE);
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">接下来需要一个Builder构造器来创建Notification对象（为了实现兼容，使用v4包的NotificationCompat类)</span><br></pre></td></tr></table></figure>
+<pre><code>Notification notification=new NotificationCompat.Builder(this)
+        .setContentTitle(&quot;Titile&quot;)
+        .setContentText(&quot;content&quot;)
+        .build();
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">然后调用一系列的set方法对这个实体类进行设置。最后调用manager的**notify(int id,Notification notification)**方法，该方法接收两个参数，第一个参数是Notification的id，第二个参数是Notification的类。</span><br><span class="line">以上功能实现后就可以发送通知了，不过通知不可点击。如果需要点击需要PendingIntent</span><br><span class="line"></span><br><span class="line">注：PendingIntent和Intent的异同点：</span><br><span class="line"></span><br><span class="line">- 都可以指明一个意图，都可以用于启动活动，服务，以及发送广播。</span><br><span class="line"></span><br><span class="line">- Intent倾向于立即去执行某个动作，PendingIntent更加倾向在合适的时机去执行某个动作。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**pendingIntent的使用方法：**  </span><br><span class="line">使用静态方法获得PendingIntent的实例，**getActivity()**、**getBroadcast()**、**getService()**。  </span><br><span class="line"></span><br><span class="line">四个参数：content，0，Intent对象、0</span><br></pre></td></tr></table></figure>
 <pre><code>Intent intent=new Intent(MainActivity.this,nextActivity.class);
 PendingIntent pi=PendingIntent.getActivity(MainActivity.this,0,intent,0);
-</code></pre><p><strong>不能这个通知写在OnClickListener的匿名内部类</strong></p>
-<h2 id="2、调用摄像头"><a href="#2、调用摄像头" class="headerlink" title="2、调用摄像头"></a>2、调用摄像头</h2><pre><code>private void camera() {
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**不能这个通知写在OnClickListener的匿名内部类**</span><br><span class="line"></span><br><span class="line">## 2、调用摄像头</span><br></pre></td></tr></table></figure>
+<pre><code>private void camera() {
        /**
         * 首先创建了一个File对象，用于存放摄像头拍下的图片，这里将图像命名为outputImage.jpg，并将它存放在手机的关联目录下、
         * 接着进行一个判断，如果设备系统的版本低于7.0 的话就，就调用Uri的fromFile()方法将File转化为Uri对象，这个Uri对象标识着outputImage这张图片的真实路径，否则
@@ -792,7 +713,7 @@ PendingIntent pi=PendingIntent.getActivity(MainActivity.this,0,intent,0);
            default:
                break;
        }
-</code></pre><p>因为用到了ContentProvider，所以需要在Manifest中注册</p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">因为用到了ContentProvider，所以需要在Manifest中注册</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;provider
             android:authorities=&quot;com.example.dimple.test619.fileProvider&quot;
             android:name=&quot;android.support.v4.content.FileProvider&quot;
@@ -805,40 +726,17 @@ PendingIntent pi=PendingIntent.getActivity(MainActivity.this,0,intent,0);
     &lt;/application&gt;
 ​
 &lt;/manifest&gt;
-</code></pre><p>新建XML文件  </p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">新建XML文件</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;?xml version =&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
     &lt;path xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
     &lt;external-path name=&quot;my_images&quot; path=&quot;&quot;/&gt;
 &lt;/path&gt;  
-</code></pre><h2 id="3、播放音频"><a href="#3、播放音频" class="headerlink" title="3、播放音频"></a>3、播放音频</h2><p>在Android中播放音频文件一般都是使用MediaPayer来实现的，它对多种格式的音频文件提供了非常全面的控制方法，使得音频播放比较简单。</p>
-<pre><code>方法名            功能描述          备注    
-setDataSource()        设置要播放的文件的地址        
-prepare()        在开始播放之前调用这个方法完成准备工作        
-start()        开始播放视频        
-pause()        暂停播放音频        
-reset()        将Mediaplayer对象重置为刚开始创建的状态        
-seekTo()        从指定的位置开始播放音频        
-stop()        停止播放音频        
-release()        释放掉与MediaPlyer相关的资源        
-isPlaying()        判断当前MediaPlayer是否在播放        
-getDuration()    获取之路的音频文件的时长    
-</code></pre><h2 id="4、播放视频"><a href="#4、播放视频" class="headerlink" title="4、播放视频"></a>4、播放视频</h2><pre><code>方法名               功能描述          备注    
-setVideoPat()   设置要播放的视频文件的地址            
-start()        开始或继续播放视频        
-pause()        暂停播放视频        
-resume()        将视频从头播放        
-isPlaying()        是否正在播放        
-getDuration()        获取时长    
-seekTo()        从指定的位置开始播放    
-XML中包含VideoView。
-通过VideoView来进行操作。
-</code></pre><h1 id="第九章-使用网络技术"><a href="#第九章-使用网络技术" class="headerlink" title="第九章 使用网络技术"></a>第九章 使用网络技术</h1><h2 id="1、WebView-的用法"><a href="#1、WebView-的用法" class="headerlink" title="1、WebView 的用法"></a>1、WebView 的用法</h2><p>获取WebView的实例，通过getSetting()方法对浏览的相关属性进行设置。调用setJavaScriptEnabled()方法来让WebView支持JavaScript脚本。调用wenViewClient()方法。是希望网页依然在本程序中，不然就会跳转出去。</p>
-<h2 id="2、使用HTTP协议访问网络"><a href="#2、使用HTTP协议访问网络" class="headerlink" title="2、使用HTTP协议访问网络"></a>2、使用HTTP协议访问网络</h2><p>首先开启一个子线程，在子线程中进行网络数据请求操作，获取HttpRULConnection实例。  </p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 3、播放音频</span><br><span class="line">在Android中播放音频文件一般都是使用MediaPayer来实现的，它对多种格式的音频文件提供了非常全面的控制方法，使得音频播放比较简单。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    方法名        	功能描述    	  备注    </span><br><span class="line">    setDataSource()    	设置要播放的文件的地址    	</span><br><span class="line">    prepare()    	在开始播放之前调用这个方法完成准备工作    	</span><br><span class="line">    start()    	开始播放视频    	</span><br><span class="line">    pause()    	暂停播放音频    	</span><br><span class="line">    reset()    	将Mediaplayer对象重置为刚开始创建的状态    	</span><br><span class="line">    seekTo()    	从指定的位置开始播放音频    	</span><br><span class="line">    stop()    	停止播放音频    	</span><br><span class="line">    release()    	释放掉与MediaPlyer相关的资源    	</span><br><span class="line">    isPlaying()    	判断当前MediaPlayer是否在播放    	</span><br><span class="line">    getDuration()    获取之路的音频文件的时长	</span><br><span class="line"></span><br><span class="line">## 4、播放视频</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    方法名	           功能描述    	  备注    </span><br><span class="line">    setVideoPat()   设置要播放的视频文件的地址        	</span><br><span class="line">    start()    	开始或继续播放视频    	</span><br><span class="line">    pause()    	暂停播放视频    	</span><br><span class="line">    resume()    	将视频从头播放    	</span><br><span class="line">    isPlaying()    	是否正在播放    	</span><br><span class="line">    getDuration()    	获取时长	</span><br><span class="line">    seekTo()    	从指定的位置开始播放	</span><br><span class="line">    XML中包含VideoView。</span><br><span class="line">    通过VideoView来进行操作。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 第九章 使用网络技术</span><br><span class="line">## 1、WebView 的用法</span><br><span class="line"></span><br><span class="line">获取WebView的实例，通过getSetting()方法对浏览的相关属性进行设置。调用setJavaScriptEnabled()方法来让WebView支持JavaScript脚本。调用wenViewClient()方法。是希望网页依然在本程序中，不然就会跳转出去。</span><br><span class="line"></span><br><span class="line">## 2、使用HTTP协议访问网络</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">首先开启一个子线程，在子线程中进行网络数据请求操作，获取HttpRULConnection实例。</span><br></pre></td></tr></table></figure>
 <pre><code>URL url=new URL(&quot;https://www.baidu.com&quot;);
 HttpURLConnection connection==(HttpURLConnection)url.openConnection();
 connection.setConnectionTimeOut(8000);//设置链接超时
 connection.setReadTimeOut(8000);//设置读取超时
-</code></pre><p>之后再调用getInputStream()方法获取到服务器返回的流，然后进行流读取。  </p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">之后再调用getInputStream()方法获取到服务器返回的流，然后进行流读取。</span><br></pre></td></tr></table></figure>
 <pre><code>ImputStream in=connection.getInputStream();
 //下面进行流读取
 BufferedReader reader=new BufferedReader(new InputStreamReader(in));
@@ -850,42 +748,36 @@ while((line=reader.readerLine())!=null){
 
 最后关闭链接
 connection.disconnect();
-</code></pre><h2 id="3、使用OkHttp"><a href="#3、使用OkHttp" class="headerlink" title="3、使用OkHttp"></a>3、使用OkHttp</h2><p>在app/build.grade中dependencies中添加如下内容：  </p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 3、使用OkHttp  </span><br><span class="line"></span><br><span class="line">在app/build.grade中dependencies中添加如下内容：</span><br></pre></td></tr></table></figure>
 <pre><code>compile &apos;com.squareup.okhttp3:okhttp:3.4.1&apos;
-</code></pre><p>具体使用步骤：<br>创建一个OkHttpClient实例  </p>
-<pre><code>OkHttpClient client=new OkHttpClient();  
-</code></pre><p>接下来如果需要发起一条Http请求，需要创建一个Request对象  </p>
-<pre><code>Request request=new Request.Builder().build();  
-</code></pre><p>以上代码创建了一个空的Request对象，没有什么实际作用，在build()方法之前加入很多连缀来丰富这个request对象，可以使用uri()方法来设置目标网络地址。  </p>
-<p>之后调用OkHttpClient的newCall()方法来创建一个Call对象，并调用它的execute()方法来发送请求并获得服务器的数据。  </p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">具体使用步骤：  </span><br><span class="line">创建一个OkHttpClient实例</span><br></pre></td></tr></table></figure>
+<pre><code>OkHttpClient client=new OkHttpClient();
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">接下来如果需要发起一条Http请求，需要创建一个Request对象</span><br></pre></td></tr></table></figure>
+<pre><code>Request request=new Request.Builder().build();
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">以上代码创建了一个空的Request对象，没有什么实际作用，在build()方法之前加入很多连缀来丰富这个request对象，可以使用uri()方法来设置目标网络地址。  </span><br><span class="line"></span><br><span class="line">之后调用OkHttpClient的newCall()方法来创建一个Call对象，并调用它的execute()方法来发送请求并获得服务器的数据.</span><br></pre></td></tr></table></figure>
 <pre><code>Response response=client.newCall(request).execute();
-</code></pre><p>其中Resopnse就是服务器返回的数据了，以下方法可以得到具体的内容</p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">其中Resopnse就是服务器返回的数据了，以下方法可以得到具体的内容</span><br></pre></td></tr></table></figure>
 <pre><code>String responseData=response.body().string();
-</code></pre><p>发送数据：  </p>
-<p>首先需要构建出一个RequestBody对象来存放待提交的数据。</p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">发送数据：  </span><br><span class="line"></span><br><span class="line">首先需要构建出一个RequestBody对象来存放待提交的数据。</span><br></pre></td></tr></table></figure>
 <pre><code>ResquestBody requestBody=new FormBody.Builder().add(&quot;username&quot;,&quot;admin&quot;).add(&quot;password&quot;,&quot;123456&quot;).build();
-</code></pre><p>接下来就和Get请求一样了，调用execute()方法来获得服务器返回的数据。</p>
-<h2 id="4、解析JOSN数据"><a href="#4、解析JOSN数据" class="headerlink" title="4、解析JOSN数据"></a>4、解析JOSN数据</h2><p><a href="http://mobileapi.72g.com/index.php?tp=andv4/quan&amp;op=qinfo" target="_blank" rel="noopener">http://mobileapi.72g.com/index.php?tp=andv4/quan&amp;op=qinfo</a></p>
-<h2 id="5、解析Json数据"><a href="#5、解析Json数据" class="headerlink" title="5、解析Json数据"></a>5、解析Json数据</h2><p>首先配置服务器：电脑端访问网址为127.0.0.1 模拟器访问端网址：10.0.2.2</p>
-<p><strong>使用JsonObject：</strong><br>首先将从服务器中的数据放在JSONArray中，然后循环遍历这个Json数组，从中取出的每一个元素都是JSONObject对象，调用getString()方法就可以取出数据。  </p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">接下来就和Get请求一样了，调用execute()方法来获得服务器返回的数据。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 4、解析JOSN数据</span><br><span class="line"></span><br><span class="line">http://mobileapi.72g.com/index.php?tp=andv4/quan&amp;op=qinfo</span><br><span class="line"></span><br><span class="line">## 5、解析Json数据</span><br><span class="line"></span><br><span class="line">首先配置服务器：电脑端访问网址为127.0.0.1 模拟器访问端网址：10.0.2.2</span><br><span class="line"> </span><br><span class="line">**使用JsonObject：**  </span><br><span class="line">首先将从服务器中的数据放在JSONArray中，然后循环遍历这个Json数组，从中取出的每一个元素都是JSONObject对象，调用getString()方法就可以取出数据。</span><br></pre></td></tr></table></figure>
 <pre><code>JSONArray jsonArray=new JSONArray(response);
     for (int i=0;i&lt;jsonArray.length();i++){
         JSONObject jsonObject=jsonArray.getJSONObject(i);
         Log.d(&quot;TAG&quot;, &quot;Data :&quot;+jsonObject.getString(&quot;name&quot;)+jsonObject.getString(&quot;id&quot;)+jsonObject.getString(&quot;version&quot;));
-    }
-</code></pre><p><strong>使用Gson</strong><br>首先需要添加依赖  </p>
+ }
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">**使用Gson**  </span><br><span class="line">首先需要添加依赖</span><br></pre></td></tr></table></figure>
 <pre><code>compile &apos;com.google.code.gson:gson:2.8.1&apos;
-</code></pre><p>Gson可以将一段Json格式的字符串自动映射成为一个对象，从而不需要我们编写代码进行解析。</p>
-<p>比如：一段json格式的数据如下<br>{“name”：”Tom”，”age”:”20”}<br>我们可以定义 一个Person类，并加入name和age两个字段。只需要简单的调用如下代码就可以将JSON数据自动解析成一个Person对象了。 </p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Gson可以将一段Json格式的字符串自动映射成为一个对象，从而不需要我们编写代码进行解析。</span><br><span class="line"></span><br><span class="line">比如：一段json格式的数据如下  </span><br><span class="line">&#123;&quot;name&quot;：&quot;Tom&quot;，&quot;age&quot;:&quot;20&quot;&#125;  </span><br><span class="line">我们可以定义 一个Person类，并加入name和age两个字段。只需要简单的调用如下代码就可以将JSON数据自动解析成一个Person对象了。</span><br></pre></td></tr></table></figure>
 <pre><code>Gson gson=new Gson();
 Person person=gson.fromJson(jsonData,Person.class)  
-</code></pre><p>如果解析的是一段json数组就需要借助TypeToken将期望解析成的数据类型传入到fromJson中。  </p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果解析的是一段json数组就需要借助TypeToken将期望解析成的数据类型传入到fromJson中。</span><br></pre></td></tr></table></figure>
 <pre><code>Gson gson=new Gson();
  List&lt;App&gt;appList=gson.fromJson(response,new TypeToken&lt;List&lt;App&gt;&gt;(){}.getType());
 for (App app:appList){
   Log.d(&quot;TAG&quot;, &quot;run: &quot;+app.getId()+&quot;\n&quot;+app.getName()+&quot;\n&quot;+app.getVersion());
  }
-</code></pre><p>定义Okhttp工具类  </p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">定义Okhttp工具类</span><br></pre></td></tr></table></figure>
 <pre><code>public class HttpUtility {
    public static void senOkHttpRequest(String address,okhttp3.Callback callback){
        OkHttpClient client=new OkHttpClient();
@@ -893,8 +785,7 @@ for (App app:appList){
        client.newCall(request).enqueue(callback);
    }
 }
-​
-</code></pre><p>在调用工具类的时候就这样写：</p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在调用工具类的时候就这样写：</span><br></pre></td></tr></table></figure>
 <pre><code>HttpUtility.senOkHttpRequest(&quot;http://10.0.2.2/me.json&quot;, new okhttp3.Callback() {
            @Override
            public void onFailure(Call call, IOException e) {
@@ -908,7 +799,8 @@ for (App app:appList){
                showResponse(responseData);
            }
        });
-</code></pre><h1 id="第12章-Material-Design"><a href="#第12章-Material-Design" class="headerlink" title="第12章 Material Design"></a>第12章 Material Design</h1><h2 id="1、ToolBar代替ActionBar"><a href="#1、ToolBar代替ActionBar" class="headerlink" title="1、ToolBar代替ActionBar"></a>1、ToolBar代替ActionBar</h2><p> 需要在Manifest中设置主题为NoActionBar  </p>
+</code></pre><p>```</p>
+<h1 id="第12章-Material-Design"><a href="#第12章-Material-Design" class="headerlink" title="第12章 Material Design"></a>第12章 Material Design</h1><h2 id="1、ToolBar代替ActionBar"><a href="#1、ToolBar代替ActionBar" class="headerlink" title="1、ToolBar代替ActionBar"></a>1、ToolBar代替ActionBar</h2><p> 需要在Manifest中设置主题为NoActionBar  </p>
 <pre><code>&lt;android.support.v7.widget.Toolbar
        android:layout_width=&quot;match_parent&quot;
        android:layout_height=&quot;?attr/actionBarSize&quot;
@@ -1249,7 +1141,7 @@ compile &apos;com.github.bumptech.glide:glide:4.0.0-RC1&apos;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章：了解全貌——Android王国简介"><span class="nav-number">1.</span> <span class="nav-text">第一章：了解全貌——Android王国简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章-先从看得到的入手——探究活动"><span class="nav-number">2.</span> <span class="nav-text">第二章 先从看得到的入手——探究活动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、Genenate-Layout-File-是表示自动为Activity创建一个布局，Launcher-Activity表示将当前活动设置为主活动。"><span class="nav-number">2.1.</span> <span class="nav-text">1、Genenate Layout File 是表示自动为Activity创建一个布局，Launcher Activity表示将当前活动设置为主活动。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、配置主活动的方法：在Manifest中的Activity标签中添加标签，并在这个标签中添加"><span class="nav-number">2.2.</span> <span class="nav-text">2、配置主活动的方法：在Manifest中的Activity标签中添加标签，并在这个标签中添加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、在活动中使用Menu"><span class="nav-number">2.3.</span> <span class="nav-text">3、在活动中使用Menu</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、销毁一个活动使用finish-函数，效果和按下back键是一样的"><span class="nav-number">2.4.</span> <span class="nav-text">4、销毁一个活动使用finish()函数，效果和按下back键是一样的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、使用Intent"><span class="nav-number">2.5.</span> <span class="nav-text">5、使用Intent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、Intent向上一个活动传递数据。"><span class="nav-number">2.6.</span> <span class="nav-text">6、Intent向上一个活动传递数据。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、活动的生命周期"><span class="nav-number">2.7.</span> <span class="nav-text">7、活动的生命周期</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章-常用控件的使用方法"><span class="nav-number">3.</span> <span class="nav-text">第三章 常用控件的使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ListView的使用"><span class="nav-number">3.1.</span> <span class="nav-text">ListView的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#listView-的简单用法"><span class="nav-number">3.1.1.</span> <span class="nav-text">listView 的简单用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ListView之自定义适配器"><span class="nav-number">3.1.2.</span> <span class="nav-text">ListView之自定义适配器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RecyclerView使用"><span class="nav-number">3.2.</span> <span class="nav-text">RecyclerView使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章-碎片"><span class="nav-number">4.</span> <span class="nav-text">第四章 碎片</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#碎片的静态加载"><span class="nav-number">4.1.</span> <span class="nav-text">碎片的静态加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#碎片的动态加载"><span class="nav-number">4.2.</span> <span class="nav-text">碎片的动态加载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fragment常用的API："><span class="nav-number">4.2.1.</span> <span class="nav-text">Fragment常用的API：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、使用SQLite数据库进行存储"><span class="nav-number">4.3.</span> <span class="nav-text">2、使用SQLite数据库进行存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、使用LitePal操作数据库"><span class="nav-number">4.4.</span> <span class="nav-text">4、使用LitePal操作数据库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第七章-内容提供器"><span class="nav-number">5.</span> <span class="nav-text">第七章 内容提供器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、内容提供器主要在不同的应用程序之间实现数据共享的功能。使用内容提供器是Android跨程序共享数据的标准方式。"><span class="nav-number">5.1.</span> <span class="nav-text">1、内容提供器主要在不同的应用程序之间实现数据共享的功能。使用内容提供器是Android跨程序共享数据的标准方式。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、运行时权限"><span class="nav-number">5.2.</span> <span class="nav-text">2、运行时权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、contentResolver的基本用法"><span class="nav-number">5.3.</span> <span class="nav-text">3、contentResolver的基本用法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第八章-运用手机多媒体"><span class="nav-number">6.</span> <span class="nav-text">第八章 运用手机多媒体</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、使用通知Notification"><span class="nav-number">6.1.</span> <span class="nav-text">1、使用通知Notification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、调用摄像头"><span class="nav-number">6.2.</span> <span class="nav-text">2、调用摄像头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、播放音频"><span class="nav-number">6.3.</span> <span class="nav-text">3、播放音频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、播放视频"><span class="nav-number">6.4.</span> <span class="nav-text">4、播放视频</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第九章-使用网络技术"><span class="nav-number">7.</span> <span class="nav-text">第九章 使用网络技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、WebView-的用法"><span class="nav-number">7.1.</span> <span class="nav-text">1、WebView 的用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、使用HTTP协议访问网络"><span class="nav-number">7.2.</span> <span class="nav-text">2、使用HTTP协议访问网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、使用OkHttp"><span class="nav-number">7.3.</span> <span class="nav-text">3、使用OkHttp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、解析JOSN数据"><span class="nav-number">7.4.</span> <span class="nav-text">4、解析JOSN数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、解析Json数据"><span class="nav-number">7.5.</span> <span class="nav-text">5、解析Json数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第12章-Material-Design"><span class="nav-number">8.</span> <span class="nav-text">第12章 Material Design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、ToolBar代替ActionBar"><span class="nav-number">8.1.</span> <span class="nav-text">1、ToolBar代替ActionBar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、滑动菜单——DrawerLayout"><span class="nav-number">8.2.</span> <span class="nav-text">2、滑动菜单——DrawerLayout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、NavigationView"><span class="nav-number">8.3.</span> <span class="nav-text">3、NavigationView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、悬浮按钮和可交互提示"><span class="nav-number">8.4.</span> <span class="nav-text">4、悬浮按钮和可交互提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、卡片式布局"><span class="nav-number">8.5.</span> <span class="nav-text">5、卡片式布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、下拉刷新"><span class="nav-number">8.6.</span> <span class="nav-text">6、下拉刷新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、可折叠标题栏ColapsingToolbarLayout"><span class="nav-number">8.7.</span> <span class="nav-text">7、可折叠标题栏ColapsingToolbarLayout</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">9.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章：了解全貌——Android王国简介"><span class="nav-number">1.</span> <span class="nav-text">第一章：了解全貌——Android王国简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章-先从看得到的入手——探究活动"><span class="nav-number">2.</span> <span class="nav-text">第二章 先从看得到的入手——探究活动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、Genenate-Layout-File-是表示自动为Activity创建一个布局，Launcher-Activity表示将当前活动设置为主活动。"><span class="nav-number">2.1.</span> <span class="nav-text">1、Genenate Layout File 是表示自动为Activity创建一个布局，Launcher Activity表示将当前活动设置为主活动。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、配置主活动的方法：在Manifest中的Activity标签中添加标签，并在这个标签中添加"><span class="nav-number">2.2.</span> <span class="nav-text">2、配置主活动的方法：在Manifest中的Activity标签中添加标签，并在这个标签中添加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、在活动中使用Menu"><span class="nav-number">2.3.</span> <span class="nav-text">3、在活动中使用Menu</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、销毁一个活动使用finish-函数，效果和按下back键是一样的"><span class="nav-number">2.4.</span> <span class="nav-text">4、销毁一个活动使用finish()函数，效果和按下back键是一样的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、使用Intent"><span class="nav-number">2.5.</span> <span class="nav-text">5、使用Intent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、Intent向上一个活动传递数据。"><span class="nav-number">2.6.</span> <span class="nav-text">6、Intent向上一个活动传递数据。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、活动的生命周期"><span class="nav-number">2.7.</span> <span class="nav-text">7、活动的生命周期</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章-常用控件的使用方法"><span class="nav-number">3.</span> <span class="nav-text">第三章 常用控件的使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ListView的使用"><span class="nav-number">3.1.</span> <span class="nav-text">ListView的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#listView-的简单用法"><span class="nav-number">3.1.1.</span> <span class="nav-text">listView 的简单用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ListView之自定义适配器"><span class="nav-number">3.1.2.</span> <span class="nav-text">ListView之自定义适配器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RecyclerView使用"><span class="nav-number">3.2.</span> <span class="nav-text">RecyclerView使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章-碎片"><span class="nav-number">4.</span> <span class="nav-text">第四章 碎片</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#碎片的静态加载"><span class="nav-number">4.1.</span> <span class="nav-text">碎片的静态加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#碎片的动态加载"><span class="nav-number">4.2.</span> <span class="nav-text">碎片的动态加载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fragment常用的API："><span class="nav-number">4.2.1.</span> <span class="nav-text">Fragment常用的API：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第12章-Material-Design"><span class="nav-number">5.</span> <span class="nav-text">第12章 Material Design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、ToolBar代替ActionBar"><span class="nav-number">5.1.</span> <span class="nav-text">1、ToolBar代替ActionBar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、滑动菜单——DrawerLayout"><span class="nav-number">5.2.</span> <span class="nav-text">2、滑动菜单——DrawerLayout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、NavigationView"><span class="nav-number">5.3.</span> <span class="nav-text">3、NavigationView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、悬浮按钮和可交互提示"><span class="nav-number">5.4.</span> <span class="nav-text">4、悬浮按钮和可交互提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、卡片式布局"><span class="nav-number">5.5.</span> <span class="nav-text">5、卡片式布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、下拉刷新"><span class="nav-number">5.6.</span> <span class="nav-text">6、下拉刷新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、可折叠标题栏ColapsingToolbarLayout"><span class="nav-number">5.7.</span> <span class="nav-text">7、可折叠标题栏ColapsingToolbarLayout</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
