@@ -3,6 +3,88 @@
   
     
     <entry>
+      <title><![CDATA[JavaEE Async 异步支持]]></title>
+      <url>/2018/03/26/2018-3-26-193844/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p> Async技术是Servlet3.0 之后添加的，用于处理异步请求。在此之前，大多为同步请求，客户端向服务器提交请求，假设请求很耗时，那么按照之前同步的处理办法，servlet在接收到这个请求之后，会调用去处理这个耗时操作，如果这个耗时操作长时间没有返回，那么就造成了服务器的阻塞，服务器资源得不到有效利用，这样的结果显然对于服务器的高并发是非常不利的。<br> 服务器可以异步执行，在等待长时间的过程完成期间，控制容器执行其他任务，当耗时操作完成返回后，再调用资源处理这个返回请求。   </p>
+</blockquote>
+<h1 id="使用Async的步骤"><a href="#使用Async的步骤" class="headerlink" title="使用Async的步骤"></a>使用Async的步骤</h1><h2 id="启用async"><a href="#启用async" class="headerlink" title="启用async"></a>启用async</h2><p>异步行为需要在Servlet中显式启用 ，其方法有两种：  </p>
+<ul>
+<li>添加@WebServlet的<strong>asyncSupported</strong>属性实现  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@WebServlet(urlPatterns = &quot;/async&quot;, asyncSupported = true)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在<strong>web.xml</strong>文件中实现  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;servlet&gt;</span><br><span class="line">    &lt;servlet-name&gt;AsyncServlet&lt;/servlet-name&gt;</span><br><span class="line">    &lt;servlet-class&gt;com.dimple.servlet.AsyncServlet&lt;/servlet-class&gt;</span><br><span class="line">    &lt;async-supported&gt;true&lt;/async-supported&gt; &lt;!--设置启用Async--&gt;</span><br><span class="line">&lt;/servlet&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="在Servlet中开启async"><a href="#在Servlet中开启async" class="headerlink" title="在Servlet中开启async"></a>在Servlet中开启async</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@WebServlet(name = &quot;AsyncServlet&quot;, urlPatterns = &quot;/async&quot;,asyncSupported = true)</span><br><span class="line">public class AsyncServlet extends HttpServlet &#123;</span><br><span class="line">    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123;</span><br><span class="line">        doGet(request, response);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123;</span><br><span class="line">        PrintWriter out = response.getWriter();</span><br><span class="line">        //输出Servlet开始的时候的系统时间</span><br><span class="line">        out.println(&quot;Servlet is starting：&quot;+new Date());</span><br><span class="line">        //创建AsyncContext，开始异步调用</span><br><span class="line">        AsyncContext asyncContext=request.startAsync();</span><br><span class="line">        //设置超时时长,单位为毫秒</span><br><span class="line">        asyncContext.setTimeout(60*1000);</span><br><span class="line">        //启动异步调用的线程</span><br><span class="line">        asyncContext.start(new MyTask(asyncContext));</span><br><span class="line">        //输出Servlet结束的时间</span><br><span class="line">        out.println(&quot;Servlet is ending ：&quot;+new Date());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>MyTask内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class MyTask implements Runnable &#123;</span><br><span class="line">    AsyncContext context;</span><br><span class="line"></span><br><span class="line">    public MyTask(AsyncContext context) &#123;</span><br><span class="line">        this.context = context;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 此处单开一个线程进行耗时操作，为了模拟耗时操作，这里先让线程Sleep5秒。</span><br><span class="line">     */</span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            Thread.sleep(5*1000);</span><br><span class="line">            context.getResponse().getWriter().print(&quot;async is ending : &quot;+new Date());</span><br><span class="line">        &#125; catch (InterruptedException | IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>执行结果如下：</strong></p>
+<p><img src="https://img-blog.csdn.net/20180326183601303?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyNDU0NTM3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述">  </p>
+<p>注意：这是采用IDEA开发的，可能采用Eclipse的小伙伴的开发的和我这边的url不一样。  </p>
+<h1 id="AsyncListener-异步监听器"><a href="#AsyncListener-异步监听器" class="headerlink" title="AsyncListener 异步监听器"></a>AsyncListener 异步监听器</h1><p>为了更加清晰的看到异步操作的各种细节，可以借助异步监听器实现。<br>异步监听器需要实现AsyncListener接口，该接口需要实现如下方法：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public void onComplete(AsyncEvent asyncEvent) throws IOException &#123;</span><br><span class="line">    //当异步调用完成后被调用</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Override</span><br><span class="line">public void onTimeout(AsyncEvent asyncEvent) throws IOException &#123;</span><br><span class="line">    //超时被调用</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Override</span><br><span class="line">public void onError(AsyncEvent asyncEvent) throws IOException &#123;</span><br><span class="line">    //出现错误的时候被调用</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Override</span><br><span class="line">public void onStartAsync(AsyncEvent asyncEvent) throws IOException &#123;</span><br><span class="line">    //启动Async的时候被调用</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>添加监听器的方法：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">asyncContext.addListener(new MyAsyncListener);</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>使用Servlet3.0的Async异步支持，步骤总结如下：    </p>
+<ul>
+<li>首先先声明异步支持（web.xml或者注解@webServlet）  </li>
+<li>在相应的Servlet中获取AsyncContext实例。一般采用<code>request.startAsync();</code>该方法发挥一个AsyncContext对象。  </li>
+<li>设置超时<code>context.setTimeout();</code>    </li>
+<li>启动线程<code>context.start(Runable runable);</code></li>
+<li>在相应的实现Runable接口的方法里进行耗时操作。  </li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> JavaEE </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> JavaEE </tag>
+            
+            <tag> Async </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[JavaEE之Session理解]]></title>
+      <url>/2018/03/26/2018-3-26-193523/</url>
+      <content type="html"><![CDATA[<h1 id="Session应用场景"><a href="#Session应用场景" class="headerlink" title="Session应用场景"></a>Session应用场景</h1><blockquote>
+<p>在互联网生活中，通常大家在使用浏览器的时候会接触到session。由于HTTP的无状态性，也就是说，当打开浏览器输入<a href="http://www.bianxiaofeng.com网址，然后该请求会被服务器处理后，返回所请求的网页的内容，至此，整个Request/Response过程已经完全结束了。当你接下来访问网站的时候，网站服务器端是不认识你的。这就是无状态性。为了解决这个问题（比如在某个需要输入密码的网页登录，不能说每一次打开该网站的新的网页就要输入一次密码。对吧？）。此时session的作用就体现出来了。简单的说。就是让服务器知道你就是你。" target="_blank" rel="noopener">http://www.bianxiaofeng.com网址，然后该请求会被服务器处理后，返回所请求的网页的内容，至此，整个Request/Response过程已经完全结束了。当你接下来访问网站的时候，网站服务器端是不认识你的。这就是无状态性。为了解决这个问题（比如在某个需要输入密码的网页登录，不能说每一次打开该网站的新的网页就要输入一次密码。对吧？）。此时session的作用就体现出来了。简单的说。就是让服务器知道你就是你。</a>  </p>
+</blockquote>
+<h1 id="面对无状态性的解决方案"><a href="#面对无状态性的解决方案" class="headerlink" title="面对无状态性的解决方案"></a>面对无状态性的解决方案</h1><p>Java Servlet 通过引入session机制来跟踪客户端的状态。当用户访问网站的时候，网站会分配给该客户端一个sessionID用于标识该客户端，至此，在接下来的一段时间内，用户可以请求不同的服务器资源。当网页被关闭的时候，服务器会释放掉这个ID。比如在线购物的过程，浏览物品，到添加购物车到付款完成关闭页面这整个过程就是一个session。</p>
+<h1 id="Session的使用"><a href="#Session的使用" class="headerlink" title="Session的使用"></a>Session的使用</h1><p>session的使用方式很多，常见的方式是使用jsp和servlet。  </p>
+<p>jsp的9大内置对象中就有session，所以在jsp页面可以直接使用。在servlet中，需要构建出session实例，然后才能使用。构建方式有两种：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HttpSession session=request.getSession();</span><br><span class="line">HttpSession session=request.getSession(Boolean b);</span><br><span class="line">//参数为true：若会话存在就返回该对话，如果不存在就创建一个对话；</span><br><span class="line">//参数为false：若会话存在就返回该对话，如果不存在就返回null</span><br></pre></td></tr></table></figure>
+<p><strong>常用方法</strong>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">session.isNew();//返回值为Boolean，判断是不是新创建的session</span><br><span class="line">session.setAttribute(String s,Object o);//在session范围内保存对象</span><br><span class="line">session.getAttribute(String s);//获取在session范围内保存的对象，一般涉及到cast强转</span><br><span class="line">session.removeAttribute(String s);//去除session范围内的键为s的对象</span><br><span class="line">session.getId();//返回sessionID，返回值为String</span><br><span class="line">session.invalidate();//使session立即失效，包括保存在session范围内的对象</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>Session将信息保存在服务器端，而cookie保存在客户端，session比cookie安全，但是session更加占用资源。如果客户端禁用了cookie，那么服务器端的session也无法使用。这种问题的解决方案是重写url。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> JavaEE </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> JavaEE </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Error:Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug'的解决办法]]></title>
       <url>/2018/03/20/2018-3-20-153425/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在Android的开源环境下，也就多出来很多优秀的第三方的项目，但是因为很多第三方的项目和目前你正在开发的APP使用的Lib有些是重复的，这样会导致<strong>transformClassesWithDexForDebug</strong>  </p>
