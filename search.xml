@@ -3,6 +3,92 @@
   
     
     <entry>
+      <title><![CDATA[JavaWeb获取表单数据的三种方式（属性封装，表达式封装，模型驱动封装）]]></title>
+      <url>/2018/03/31/2018-3-31-194919/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在JavaWeb中，常常会遇到用户注册、提交表单数据等等，这个时候使用Struts2框架怎么获取页面的数据呢？传统的有通过域对象的方法来挨个使用getParameter方法来获取表单数据再进行操作（比如封装到一个JavaBean等等），本文主要使用Struts2框架来获取表单数据。</p>
+<p>在首先会通过最传统的方法通过Servlet来获取表单数据，接着会介绍三种获取表单数据的方式，最后会对这几种方式来进行比较。</p>
+<p>本文各类环境如下：  </p>
+<p>Struts2版本：struts-2.5.16-all<br>IDE：Intellij IDEA 2018.1    </p>
+<p>此外关于添加Struts2 jar包不再叙述。</p>
+<h1 id="Servlet域对象获取表单数据"><a href="#Servlet域对象获取表单数据" class="headerlink" title="Servlet域对象获取表单数据"></a>Servlet域对象获取表单数据</h1><p>此处使用的是最原始的方式获取表单数据，主要是操作request域来获取数据的。</p>
+<h2 id="方法步骤"><a href="#方法步骤" class="headerlink" title="方法步骤"></a>方法步骤</h2><ul>
+<li>编写一个JavaBean（User），属性值为username、password。</li>
+<li>新建一个JSP页面。</li>
+<li>在action中通过ServletActionContext来获取request对象，通过request的getParameter方法来获取数据。 </li>
+<li>将属性值封装到JavaBean中。  </li>
+</ul>
+<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><p>1、编写JavaBean  User<br>新建一个包：com.dimple.entity,然后新建一个Class，名为User。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class User &#123;</span><br><span class="line">    private String username;</span><br><span class="line">    private String password;</span><br><span class="line">    /**</span><br><span class="line">    * 省略部分get和set方法。</span><br><span class="line">    */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2、新建一个JSP页面，名为login<br>导入标签库：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix=&quot;s&quot; uri=&quot;/struts-tags&quot; %&gt;</span><br></pre></td></tr></table></figure></p>
+<p>新建一个form表单，body内容如下： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;s:form label=&quot;登陆&quot; action=&quot;login&quot;&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;</span><br><span class="line">            账号：</span><br><span class="line">        &lt;/td&gt;</span><br><span class="line">        &lt;td&gt;</span><br><span class="line">            &lt;input type=&quot;text&quot; name=&quot;username&quot;/&gt;</span><br><span class="line">        &lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;</span><br><span class="line">            密码：</span><br><span class="line">        &lt;/td&gt;</span><br><span class="line">        &lt;td&gt;</span><br><span class="line">            &lt;input type=&quot;text&quot; name=&quot;password&quot;/&gt;</span><br><span class="line">        &lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td colspan=&quot;2&quot;&gt;</span><br><span class="line">            &lt;input type=&quot;submit&quot; value=&quot;登陆&quot;/&gt;</span><br><span class="line">        &lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/s:form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>3、新建一个包名为：com.dimple.actin，新建一个LoginAction类。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class LoginAction extends ActionSupport &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String execute() throws Exception &#123;</span><br><span class="line">        //获取Request对象</span><br><span class="line">        HttpServletRequest request = ServletActionContext.getRequest();</span><br><span class="line">        //获取表单属性</span><br><span class="line">        String password = request.getParameter(&quot;password&quot;);</span><br><span class="line">        String username = request.getParameter(&quot;username&quot;);</span><br><span class="line">        //将表单数据封装到JavaBean中</span><br><span class="line">        User user = new User();</span><br><span class="line">        user.setPassword(password);</span><br><span class="line">        user.setUsername(username);</span><br><span class="line">        //输出获取到的内容</span><br><span class="line">        System.out.println(user.toString());</span><br><span class="line">        return NONE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>4、配置struts.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;struts&gt;</span><br><span class="line">    &lt;package name=&quot;login&quot; extends=&quot;struts-default&quot; namespace=&quot;/&quot;&gt;</span><br><span class="line">        &lt;action name=&quot;login&quot; class=&quot;com.dimple.action.LoginAction&quot;&gt;</span><br><span class="line">            &lt;!--因为设置的返回值为none，所以不需要配置result标签--&gt;</span><br><span class="line">        &lt;/action&gt;</span><br><span class="line">    &lt;/package&gt;</span><br><span class="line">&lt;/struts&gt;</span><br></pre></td></tr></table></figure></p>
+<p>PS:别忘了还有web.xml的filter标签哦。 </p>
+<p>结果如下：<br>输入账号密码后：</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180331202250.png" alt="QQ截图20180331202250"></p>
+<p>output页面显示：  </p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180331202307.png" alt="QQ截图20180331202307">  </p>
+<h1 id="属性封装"><a href="#属性封装" class="headerlink" title="属性封装"></a>属性封装</h1><p>属性封装是一种比原始方式好一点的一种做法，但是在实际工作中的使用和原始方式一样，用的不是特别多。是一种直接将表单属性封装到action属性的一种方法。  </p>
+<h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><ul>
+<li>在action类中定义属性变量（注意：必须和jsp页面的属性值保持一致）  </li>
+<li>生成get和set方法  </li>
+</ul>
+<h2 id="具体实现-1"><a href="#具体实现-1" class="headerlink" title="具体实现"></a>具体实现</h2><p>PS:直接在上一个示例上修改。  </p>
+<p>修改loginAction代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class LoginAction extends ActionSupport &#123;</span><br><span class="line">    //定义变量</span><br><span class="line">    private String username;</span><br><span class="line">    private String password;</span><br><span class="line">    //生成对应的get和set方法</span><br><span class="line">/**</span><br><span class="line">* 省略get和set方法</span><br><span class="line">*/</span><br><span class="line">    @Override</span><br><span class="line">    public String execute() throws Exception &#123;</span><br><span class="line">        //将变量值封装到对象中</span><br><span class="line">        User user=new User();</span><br><span class="line">        user.setUsername(getUsername());</span><br><span class="line">        user.setPassword(getPassword());</span><br><span class="line">        System.out.println(user.toString());</span><br><span class="line">        return NONE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果如下：  </p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180331203115.png" alt="QQ截图20180331203115">  </p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180331203100.png" alt="QQ截图20180331203100">  </p>
+<h2 id="框架实现原理分析"><a href="#框架实现原理分析" class="headerlink" title="框架实现原理分析"></a>框架实现原理分析</h2><p>只能是最简单的白话文的分析：<br>在action类中通过request域对象来获取变量名称和值，然后与action类中的成员变量名称进行比对，如果属性名一样，那么就调用set方法将值写入。  </p>
+<h1 id="模型驱动封装"><a href="#模型驱动封装" class="headerlink" title="模型驱动封装"></a>模型驱动封装</h1><p>模型驱动封装是要实现Model Driven接口。  </p>
+<h2 id="实现步骤-1"><a href="#实现步骤-1" class="headerlink" title="实现步骤"></a>实现步骤</h2><ul>
+<li>让action类继承Model Driven接口</li>
+<li>实现接口中的方法getModel();</li>
+<li>在action中创建JavaBean类对象</li>
+</ul>
+<h2 id="具体实现-2"><a href="#具体实现-2" class="headerlink" title="具体实现"></a>具体实现</h2><p>action中代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class LoginAction extends ActionSupport implements ModelDriven&lt;User&gt; &#123;</span><br><span class="line">    //创建实体类对象</span><br><span class="line">    User user=new User();</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String execute() throws Exception &#123;</span><br><span class="line">        System.out.println(user.toString());</span><br><span class="line">        return NONE;</span><br><span class="line">    &#125;</span><br><span class="line">    //实现接口中的方法，返回user</span><br><span class="line">    @Override</span><br><span class="line">    public User getModel() &#123;</span><br><span class="line">        return user;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="实现截图"><a href="#实现截图" class="headerlink" title="实现截图"></a>实现截图</h2><p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180331204004.png" alt="QQ截图20180331204004"><br><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180331203952.png" alt="QQ截图20180331203952">  </p>
+<h1 id="表达式封装"><a href="#表达式封装" class="headerlink" title="表达式封装"></a>表达式封装</h1><p>表达式封装是用的比较多的，具体的原因后面的比较会说到。  </p>
+<h2 id="实现步骤-2"><a href="#实现步骤-2" class="headerlink" title="实现步骤"></a>实现步骤</h2><ul>
+<li>在action类中声明JavaBean【注意只是声明，没有实现】</li>
+<li>生成实体类的get和set方法</li>
+<li>在JSP页面的form表单中使用表达式形式</li>
+</ul>
+<h2 id="具体实现-3"><a href="#具体实现-3" class="headerlink" title="具体实现"></a>具体实现</h2><p>action类代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class LoginAction extends ActionSupport  &#123;</span><br><span class="line">    //只是声明并不实现</span><br><span class="line">    User user;</span><br><span class="line"></span><br><span class="line">    public User getUser() &#123;</span><br><span class="line">        return user;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setUser(User user) &#123;</span><br><span class="line">        this.user = user;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String execute() throws Exception &#123;</span><br><span class="line">        System.out.println(user.toString());</span><br><span class="line">        return NONE;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Jsp页面中的body部分(注意和前面的进行比较)：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:form label=&quot;登陆&quot; action=&quot;login&quot;&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;</span><br><span class="line">            账号：</span><br><span class="line">        &lt;/td&gt;</span><br><span class="line">        &lt;td&gt;</span><br><span class="line">            &lt;input type=&quot;text&quot; name=&quot;user.username&quot;/&gt;</span><br><span class="line">        &lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;</span><br><span class="line">            密码：</span><br><span class="line">        &lt;/td&gt;</span><br><span class="line">        &lt;td&gt;</span><br><span class="line">            &lt;input type=&quot;text&quot; name=&quot;user.password&quot;/&gt;</span><br><span class="line">        &lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td colspan=&quot;2&quot;&gt;</span><br><span class="line">            &lt;input type=&quot;submit&quot; value=&quot;登陆&quot;/&gt;</span><br><span class="line">        &lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/s:form&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="实现截图-1"><a href="#实现截图-1" class="headerlink" title="实现截图"></a>实现截图</h2><p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180331204604.png" alt="QQ截图20180331204604"></p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180331204556.png" alt="QQ截图20180331204556"></p>
+<h1 id="模型封装和表达式封装比较"><a href="#模型封装和表达式封装比较" class="headerlink" title="模型封装和表达式封装比较"></a>模型封装和表达式封装比较</h1><p>共同点：这两种方式都能够将数据直接封装到实体类中去。  </p>
+<p>不同点： </p>
+<ul>
+<li>使用模型驱动封装的方式，由于在实现接口的时候，就指明了泛型为user，这样就只能够将数据封装到一个实体类中。</li>
+<li>使用表达式封装，在JSP页面就已经设置了该数据传入的对象，所以是可以将数据封装到多个实体类中的，只不过是在action方法中再多生成几个get和set方法而已。  </li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>获取表单数据，这样就能与用户进行数据交互。同时，表达式封装还可以封装List、Map等等。其实方法都一样，生成对应的额get和set方法，区别主要是在JSP页面中的写法，比如封装到List中，那么JSp页面可能就要这样写了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; name=&quot;list[0].password&quot;/&gt;</span><br></pre></td></tr></table></figure></p>
+<p>同理，封装到Map呢？map是键值对的结构，那么肯定是不能按照list（类似于数组）的方式来。通过使用键来获得值：<br>```</p>
+<p><input type="text" name="map['key'].password"><br>``</p>
+]]></content>
+      
+        <categories>
+            
+            <category> JavaEE </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> JavaWeb </tag>
+            
+            <tag> 属性封装，表达式封装，模型驱动封装 </tag>
+            
+            <tag> Struts2 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[JavaEE Async 异步支持]]></title>
       <url>/2018/03/26/2018-3-26-193844/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
