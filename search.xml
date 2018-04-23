@@ -3,6 +3,38 @@
   
     
     <entry>
+      <title><![CDATA[20180411213901]]></title>
+      <url>/2018/04/11/20180411213901/</url>
+      <content type="html"></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Struts2 拦截器]]></title>
+      <url>/2018/03/31/2018-3-31-210627/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1>]]></content>
+      
+        <categories>
+            
+            <category> JavaEE </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> JavaWeb </tag>
+            
+            <tag> Struts2 </tag>
+            
+            <tag> 拦截器 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[JavaWeb获取表单数据的三种方式（属性封装，表达式封装，模型驱动封装）]]></title>
       <url>/2018/03/31/2018-3-31-194919/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在JavaWeb中，常常会遇到用户注册、提交表单数据等等，这个时候使用Struts2框架怎么获取页面的数据呢？传统的有通过域对象的方法来挨个使用getParameter方法来获取表单数据再进行操作（比如封装到一个JavaBean等等），本文主要使用Struts2框架来获取表单数据。</p>
