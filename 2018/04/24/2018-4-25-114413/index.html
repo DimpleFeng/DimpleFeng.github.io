@@ -163,7 +163,7 @@
 
 
 
-  <title>20180411213901 | Dimple's Blog</title>
+  <title>JavaEE-SSH框架整合（Spring5.04+Struts2.5.16+Hibernate5.3） | Dimple's Blog</title>
   
 
 
@@ -368,7 +368,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.bianxiaofeng.com/2018/04/11/20180411213901/">
+    <link itemprop="mainEntityOfPage" href="http://www.bianxiaofeng.com/2018/04/24/2018-4-25-114413/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dimple">
@@ -385,7 +385,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">20180411213901</h1>
+          <h1 class="post-title" itemprop="name headline">JavaEE-SSH框架整合（Spring5.04+Struts2.5.16+Hibernate5.3）</h1>
         
 
         <div class="post-meta">
@@ -397,7 +397,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T21:39:01+08:00">2018-04-11</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-24T17:31:13+08:00">2018-04-24</time>
             
 
             
@@ -406,6 +406,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaEE/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaEE</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -413,7 +435,7 @@
 
           
           
-             <span id="/2018/04/11/20180411213901/" class="leancloud_visitors" data-flag-title="20180411213901">
+             <span id="/2018/04/24/2018-4-25-114413/" class="leancloud_visitors" data-flag-title="JavaEE-SSH框架整合（Spring5.04+Struts2.5.16+Hibernate5.3）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -435,7 +457,7 @@
 					<i class="fa fa-calendar-o"></i>
 				  </span>
 				  <span class="post-meta-item-text">总字数:</span>
-				  <span class="post-meta-item-text">0</span>
+				  <span class="post-meta-item-text">2,947</span>
 				</span>
 				
 				<span class="post-count">
@@ -444,7 +466,7 @@
 					<i class="fa fa-calendar-o"></i>
 				  </span>
 				  <span class="post-meta-item-text">阅读时长≈</span>
-				  <span class="post-meta-item-text">1&nbsp;分</span>
+				  <span class="post-meta-item-text">12&nbsp;分</span>
 				</span>
 				
 				
@@ -462,9 +484,84 @@
 
       
       
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="http://p2sj58chj.bkt.clouddn.com/2018-4-25-114413/20180425114719720.png" rel="gallery_cjgek7pbo0000ikvthbvbeak7"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="http://p2sj58chj.bkt.clouddn.com/2018-4-25-114413/20180425114719720.png" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
 
       
-        
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本文主要是通过一个简单的注册登录来说明SSH框架的整合过程。在项目中，可以使用注解或者是XML的方式来配置依赖。</p>
+<p>首先时Struts2和Spring和整合。</p>
+<h1 id="导入的Jar包"><a href="#导入的Jar包" class="headerlink" title="导入的Jar包"></a>导入的Jar包</h1><h2 id="Struts2基本Jar包"><a href="#Struts2基本Jar包" class="headerlink" title="Struts2基本Jar包"></a>Struts2基本Jar包</h2><p><img src="http://p2sj58chj.bkt.clouddn.com/JavaEE-SSH框架整合（Spring）/20180424061215929.png" alt=""></p>
+<h2 id="Spring基本Jar包"><a href="#Spring基本Jar包" class="headerlink" title="Spring基本Jar包"></a>Spring基本Jar包</h2><p><img src="http://p2sj58chj.bkt.clouddn.com/JavaEE-SSH框架整合（Spring）/20180424061255398.png" alt=""></p>
+<h2 id="Hibernate基本Jar包"><a href="#Hibernate基本Jar包" class="headerlink" title="Hibernate基本Jar包"></a>Hibernate基本Jar包</h2><p><img src="http://p2sj58chj.bkt.clouddn.com/JavaEE-SSH框架整合（Spring）/20180424061327015.png" alt=""></p>
+<h2 id="Spring-Struts2整合需要的Jar包"><a href="#Spring-Struts2整合需要的Jar包" class="headerlink" title="Spring+Struts2整合需要的Jar包"></a>Spring+Struts2整合需要的Jar包</h2><p><img src="http://p2sj58chj.bkt.clouddn.com/JavaEE-SSH框架整合（Spring）/20180424061407119.png" alt=""><br>PS：此Jar的位置在Struts的lib文件夹内。</p>
+<h2 id="Spring-HIbernate整合需要的Jar包"><a href="#Spring-HIbernate整合需要的Jar包" class="headerlink" title="Spring+HIbernate整合需要的Jar包"></a>Spring+HIbernate整合需要的Jar包</h2><p><img src="http://p2sj58chj.bkt.clouddn.com/JavaEE-SSH框架整合（Spring）/20180424061619096.png" alt=""></p>
+<p>PS:此jar包在Spring的lib文件夹中。</p>
+<h1 id="Spring整合Web项目"><a href="#Spring整合Web项目" class="headerlink" title="Spring整合Web项目"></a>Spring整合Web项目</h1><p>首先明确一个概念，现在我们学习的单个Spring，它是需要在代码中手动的进行启动，不能说web项目一启动就能够把Spring容器加载进来。在使用单个的Spring框架的时候，一般是采用的以下的方式来进行加载：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(&quot;applicationConfig.xml&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>这样的加载方式，无论怎样，都是需要时间的，需要时间就导致效率受到影响，这个时候一个比较折中的解决方案是把这个加载过程丢给服务器，就算服务器启动的时候任务多一点也没关系。</p>
+<p>所以将这个过程丢给服务器。</p>
+<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p>1、在服务器启动的时候，会为每一个项目创建一个<strong>ServletContext</strong>对象。</p>
+<p>2、<strong>ServletContextListener</strong>监听器可以监听Web应用的启动和关闭。（此处说一下：监听Web事件的监听器，比如说到的<strong>ServletContextListener</strong>，还有<strong>HttpSessionListener</strong>等等，都是需要在<strong>web.xml</strong>进行配置的（使用xml不是唯一的方式，你也可以使用注解<strong>@WebListener</strong>在监听器接口时间的类上面））</p>
+<p>3、监听到Web应用启动的时候就让它加载Spring容器。</p>
+<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><p>在Spring中可以通过<strong>ServletContextListener</strong>监听器，<strong>ServletContextListener</strong>监听器可以再Web应用启动的时候自动回调方法。</p>
+<p>在Spring容器中有一个监听器类：<strong>ContextLoaderListener</strong>，该监听器类实现了<strong>ServletContextListener</strong>接口：<br><img src="http://p2sj58chj.bkt.clouddn.com/JavaEE-SSH框架整合（Spring）/20180424060513437.png" alt=""><br>该类可以作为<strong>Listener</strong>使用，在创建的时候自动加载在WEB——INF下面自动加载<strong>applicationConfig.xml</strong>文件，如果有多个配置文件需要加入(或者<strong>applicationConfig.xml</strong>文件在src目录下)，使用<strong>context-param</strong>标签来设置<strong>name</strong> 和<strong>value</strong>。其中name值为<strong>contextConfigLocation</strong>（这个值的位置在<strong>ContextLoaderListener</strong>的父类中有定义（截图如下）：）。<br><img src="http://p2sj58chj.bkt.clouddn.com/JavaEE-SSH框架整合（Spring）/20180424060744311.png" alt=""><br>所以在web.xml中的配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;context-param&gt;</span><br><span class="line">       &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">       &lt;param-value&gt;classpath:applicationConfig.xml&lt;/param-value&gt;</span><br><span class="line"> &lt;/context-param&gt;</span><br><span class="line">   &lt;listener&gt;</span><br><span class="line">       &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;</span><br><span class="line">   &lt;/listener&gt;</span><br></pre></td></tr></table></figure>
+<p>到此，Web应用启动的时候就会自动加载Spring容器。</p>
+<h1 id="Struts2-Spring整合"><a href="#Struts2-Spring整合" class="headerlink" title="Struts2+Spring整合"></a>Struts2+Spring整合</h1><p>当然，使用Struts2，得首先掏出一个很关键的拦截器<strong>StrutsPrepareAndExecuteFilter</strong>拦截掉用户的所有请求。具体的配置当然是在web.xml中。<br>配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;filter&gt;</span><br><span class="line">    &lt;filter-name&gt;struts2&lt;/filter-name&gt;</span><br><span class="line">    &lt;filter-class&gt;org.apache.struts2.dispatcher.filter.StrutsPrepareA迟早dExecuteFilter&lt;/filter-class&gt;</span><br><span class="line">&lt;/filter&gt;</span><br><span class="line">&lt;filter-mapping&gt;</span><br><span class="line">    &lt;filter-name&gt;struts2&lt;/filter-name&gt;</span><br><span class="line">    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;</span><br><span class="line">&lt;/filter-mapping&gt;</span><br></pre></td></tr></table></figure></p>
+<p>接下来是要创建做一个<strong>Action</strong>来接收用户的请求。<br>代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">@Scope(&quot;prototype&quot;)</span><br><span class="line">public class LoginAndRegistAction extends ActionSupport &#123;</span><br><span class="line">    @Autowired</span><br><span class="line">    private UserService userService;</span><br><span class="line">    private User user;</span><br><span class="line">    public void setUser(User user) &#123;</span><br><span class="line">        this.user = user;</span><br><span class="line">    &#125;</span><br><span class="line">    public User getUser() &#123;</span><br><span class="line">        return user;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * 处理登录</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public String login() &#123;</span><br><span class="line">        System.out.println(&quot;In Action:&quot; + user.toString());</span><br><span class="line">        return userService.loginService(user)==true?SUCCESS:ERROR;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * 处理注册</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public String regist() &#123;</span><br><span class="line">        System.out.println(&quot;In Action:&quot; + user.toString());</span><br><span class="line">        return userService.registService(user)==true?SUCCESS:ERROR;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里顺带提一笔，在使用的时候都是<strong>面向接口</strong>的开发，即开发接口的实现类，这样能够达到一种<strong>高内聚低耦合</strong>，这样的设计能够更加的抽象，也更加的面向对象。关于面向接口的编程的一些具体原因请参看其他资料。</p>
+<p>当然接下来还需要做的一件事就是修改<strong>struts.xml</strong>文件，我们需要在这个文件中配置逻辑视图和物理视图的相互连接关系。</p>
+<p>贴下代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE struts PUBLIC</span><br><span class="line">        &quot;-//Apache Software Foundation//DTD Struts Configuration 2.5//EN&quot;</span><br><span class="line">        &quot;http://struts.apache.org/dtds/struts-2.5.dtd&quot;&gt;</span><br><span class="line">&lt;struts&gt;</span><br><span class="line">    &lt;package name=&quot;myLogin&quot; namespace=&quot;/&quot; extends=&quot;struts-default&quot; strict-method-invocation=&quot;false&quot;&gt;</span><br><span class="line">        &lt;action name=&quot;Login_*&quot; class=&quot;userAction&quot; method=&quot;&#123;1&#125;&quot;&gt;</span><br><span class="line">            &lt;result name=&quot;success&quot;&gt;success.jsp&lt;/result&gt;</span><br><span class="line">            &lt;result name=&quot;error&quot;&gt;error.jsp&lt;/result&gt;</span><br><span class="line">        &lt;/action&gt;</span><br><span class="line">    &lt;/package&gt;</span><br><span class="line">&lt;/struts&gt;</span><br></pre></td></tr></table></figure></p>
+<p>由于本项目是实现了登录和注册的（其实在Dao层以前的东西都差不多，大可以当作同一个东西来看）。</p>
+<p>虽然只是一个简单的登录注册，但也是麻雀虽小五脏俱全，使用了SSH框架，又进行了分层开发（Controller、Repository、Service），又是面向接口的程序设计。  </p>
+<p>这里还要提一点的就是，注意到<strong>上面的action标签的class属性，这个属性的值为Spring的配置文件中action的bean的id</strong>。为什么要这么做，我们可以将所有的实体的创建全部交给spring帮助我们进行管理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;userAction&quot; class=&quot;com.dimple.action.LoginAndRegistAction&quot; scope=&quot;prototype&quot;&gt;&lt;/bean&gt;</span><br></pre></td></tr></table></figure></p>
+<p>注意了：Action是多例的，这就是说，每当用户请求一次这个Action，那么这个Action就会创建一个实例。对比Servlet，这是一个单例，即在Web应用的整个生命周期中都只会创建一次。在Spring中，通过scope属性能够设置该bean是多实例（prototype）的还是单实例的(sington)。</p>
+<p>这里还是顺手插一脚：<br>可能你会在项目中遇到这样的问题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.apache.catalina.core.StandardContext.listenerStart Exception sending context initialized event to listener instance of class [org.springframework.web.context.ContextLoaderListener]</span><br></pre></td></tr></table></figure>
+<p>网上的解释：什么xml配置错误啊，什么applicationConfig配置错误啊，确实，可能会是这些问题，但都没一个提到是因为mysql没开启的吗？然后一群人跟风在那里说嗯，对，然后看到的博文都是一模一样···</p>
+<p>解决方式很简单：如果你在仔细检查了xml文件，applicationConfig文件没有问题，其他地方也没有问题的时候，请看看数据库是不是处于启动的状态。如果没有启动，请手动开启(CMD )：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
+<p>关于mysql的环境变量还是需要配置好的。当然你可以cd进bin开启。</p>
+<h1 id="Spring-HIbernate整合"><a href="#Spring-HIbernate整合" class="headerlink" title="Spring+HIbernate整合"></a>Spring+HIbernate整合</h1><p>前面说了那么多，接下来的工作就很简单了。</p>
+<p>导JAR包的过程省略，在文章开头已经说明了需要哪些JAR包。</p>
+<h2 id="回忆Hibernate相关知识点"><a href="#回忆Hibernate相关知识点" class="headerlink" title="回忆Hibernate相关知识点"></a>回忆Hibernate相关知识点</h2><p>HIbernate是对象关系映射的模式（ORM），使用Hibenate框架可以通过直接操作实体类的属性来操作数据库的字段。  </p>
+<p>首先回忆下单独使用Hibernate框架的时候的操作步骤：</p>
+<p>1、创建实体类，这个实体类对应到数据库的表单。<br>2、创建了实体类，就需要配置实体类和数据库表单的映射关系。一般文件命名为：实体类名称.hbm.xml。在这个文件中，需要将实体类的属性和数据库表单的字段对应起来。当然还有设置什么主键映射策略的等等。<br>3、最后还有一个核心配置文件，一般命名为：hibernate.cfg.xml。在这个文件中，主要用来配置数据库的连接信息，配置hibernate，最后是把映射文件给包含进来。  </p>
+<p>再来回忆下使用Hibernate的步骤：</p>
+<p>1、首先需要加载配置文件文件，主要是通过Configuration这个类来实现的。代码贴在下面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Configuration configure = new Configuration().configure(&quot;hibernate.cfg.xml&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>2、通过Configuration对象，获取到SessionFactory对象。SessionFactory是线程安全的类，一般来说，在一个数据库表单中，只有一个SessionFactory对象。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SessionFactory sessionFactory = configure.buildSessionFactory();</span><br></pre></td></tr></table></figure></p>
+<p>3、最终进行CRUD操作的是Session对象，Session是线程不安全的。所以在使用完了之后应该尽快关闭资源，一般是在Finally语句块中进行关闭。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Session session = sessionFactory.openSession();</span><br></pre></td></tr></table></figure></p>
+<p>4、为了保证数据的安全性，一般还是会使用事务来包裹着这个session操作。所以还需要开启事务，开启事务就要涉及到出现异常回滚(rollback)，最后还是需要提交事务(commit)。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Transaction transaction = session.beginTransaction();</span><br></pre></td></tr></table></figure></p>
+<p>5、对数据进行CRUD操作，这里还涉及到实体类的三种状态（瞬时态、持久态、托管态）。当然hibernate还有一对多，多对多等的映射关系。还有为了增加hibernate的并发，会在一定数量后的操作之后，手动提交保存，然后刷新缓冲区等等。</p>
+<p>OK，上面只是简单的思维发散了一下：接下来进入正题。</p>
+<h2 id="Spring-Hibernate整合的步骤"><a href="#Spring-Hibernate整合的步骤" class="headerlink" title="Spring+Hibernate整合的步骤"></a>Spring+Hibernate整合的步骤</h2><p>当然，实体类还是要创建，映射文件信息还是要写（一般来说映射文件和实体类在一起）。</p>
+<p>我们要做的，是将SessionFactory的创建来交给Spring进行管理。如果之前有进行过Hibernate的开发会发现，当使用数据库的时候，第一次访问会有点耗时，通过Spring配置管理可以解决这个问题。</p>
+<p>1、去掉Hibernate核心配置文件中的数据库连接信息，然后交给Spring，在Spring的配置文件中进行以下配置（主要是配置连接池，一般来说有C3P0，当然也可以使用Spring提供的）。使用IDEA双击Shift就可以搜索到DriverManagerDataSource。然后复制类路径。在DriverManagerDataSource的父类可以看到是存在着name、password、url、driver等的set方法，可以使用Spring的属性注入：</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/JavaEE-SSH框架整合（Spring）/20180425113015735.png" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--配置连接池--&gt;</span><br><span class="line">&lt;bean class=&quot;org.springframework.jdbc.datasource.DriverManagerDataSource&quot; id=&quot;dataSource&quot;&gt;</span><br><span class="line">    &lt;property name=&quot;username&quot; value=&quot;root&quot;/&gt;</span><br><span class="line">    &lt;property name=&quot;password&quot; value=&quot;123456&quot;/&gt;</span><br><span class="line">    &lt;property name=&quot;driverClassName&quot; value=&quot;com.mysql.jdbc.Driver&quot;/&gt;</span><br><span class="line">    &lt;property name=&quot;url&quot; value=&quot;jdbc:mysql:///test&quot;/&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure></p>
+<p>2、把SessionFactory交给Spring。在这里，可以看到将Hibenate.cfg.xml的三部分中的后两部分都已经在SessionFactory中记性了配置。（三部分分别为：数据库配置部分，Hibenate配置部分，映射文件配置部分），同样的，Spring是已经封装了SessionFactory的，可以通过搜索获取到LocalSessionFactoryBean的全路径。在这个源码里面可以看见，是存在dataSource的set方法的，这样就可以属性注入。</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/JavaEE-SSH框架整合（Spring）/20180425112754274.png" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--配置SessionFactory--&gt;</span><br><span class="line">   &lt;bean id=&quot;sessionFactory&quot; class=&quot;org.springframework.orm.hibernate5.LocalSessionFactoryBean&quot;&gt;</span><br><span class="line">       &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;</span><br><span class="line">       &lt;property name=&quot;hibernateProperties&quot;&gt;</span><br><span class="line">           &lt;props&gt;</span><br><span class="line">               &lt;prop key=&quot;show_sql&quot;&gt;true&lt;/prop&gt;</span><br><span class="line">               &lt;prop key=&quot;format_sql&quot;&gt;true&lt;/prop&gt;</span><br><span class="line">               &lt;prop key=&quot;hibernate.hbm2ddl.auto&quot;&gt;update&lt;/prop&gt;</span><br><span class="line">           &lt;/props&gt;</span><br><span class="line">       &lt;/property&gt;</span><br><span class="line">       &lt;property name=&quot;mappingResources&quot;&gt;</span><br><span class="line">           &lt;list&gt;</span><br><span class="line">               &lt;value&gt;com/dimple/entity/User.hbm.xml&lt;/value&gt;</span><br><span class="line">           &lt;/list&gt;</span><br><span class="line">   &lt;/property&gt;</span><br><span class="line">   &lt;/bean&gt;</span><br></pre></td></tr></table></figure></p>
+<p>3、在Dao层使用HibernateTemplate。Spring是封装了HIbernate的CRUD操作的，通过HibernateTemplate就可以操作数据。<br>在Spring的配置文件中，还需要配置bean。还需要在HibernateTemplate中注入一个SessionFactory。同样也是可以通过查看源码看到。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--配置HibernateTemplate--&gt;</span><br><span class="line">&lt;bean id=&quot;hibernateTemplate&quot; class=&quot;org.springframework.orm.hibernate5.HibernateTemplate&quot;&gt;</span><br><span class="line">    &lt;property name=&quot;sessionFactory&quot; ref=&quot;sessionFactory&quot;/&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<p>4、在Spring中进行操作还是需要事务的支持，如果没有事务会报错。所以接下来为Dao层配置事务。在Spring中，配置事务有两种方式，一种是通过XML配置AOP，还有一种是声明式。接下来采用声明式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--配置事务管理器--&gt;</span><br><span class="line">&lt;bean id=&quot;hibernateTransactionManager&quot; class=&quot;org.springframework.orm.hibernate5.HibernateTransactionManager&quot;&gt;</span><br><span class="line">    &lt;property name=&quot;sessionFactory&quot; ref=&quot;sessionFactory&quot;/&gt;</span><br><span class="line">&lt;/bean&gt;</span><br><span class="line">&lt;!--配置事务注解--&gt;</span><br><span class="line">&lt;tx:annotation-driven transaction-manager=&quot;hibernateTransactionManager&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<p>到此，SSH框架的整合已经完成。还是贴图说明下：<br><img src="http://p2sj58chj.bkt.clouddn.com/JavaEE-SSH框架整合（Spring）/20180425113950454.png" alt=""></p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/JavaEE-SSH框架整合（Spring）/20180425114001880.png" alt=""></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>在写这个Web项目的时候，之前只是听说了有面向接口编程的这样一种说法，并没有实际操作过。Java本身也是一个不断完善的语言，它也在频繁的改动它的系统API来完善，它的API是一个庞大的体系，互相关联，如果不采用接口，而都是用实现类的话，那么API的改动就会给整个体系带来不稳定。</p>
+
       
     </div>
     
@@ -522,7 +619,7 @@
       <ul class="post-copyright">
 		<li class="post-copyright-link">
           <strong>本文标题：</strong>
-          <a href="http://www.bianxiaofeng.com/2018/04/11/20180411213901/" title="20180411213901">20180411213901</a>
+          <a href="http://www.bianxiaofeng.com/2018/04/24/2018-4-25-114413/" title="JavaEE-SSH框架整合（Spring5.04+Struts2.5.16+Hibernate5.3）">JavaEE-SSH框架整合（Spring5.04+Struts2.5.16+Hibernate5.3）</a>
         </li>
          <li class="post-copyright-link">
           <strong>本文作者：</strong>
@@ -530,12 +627,12 @@
         </li>
 
         <li class="post-copyright-date">
-            <strong>发布时间：</strong>2018年4月11日 - 21时04分
+            <strong>发布时间：</strong>2018年4月24日 - 17时04分
         </li>  
 
         <li class="post-copyright-link">
           <strong>本文链接：</strong>
-          <a href="http://www.bianxiaofeng.com/2018/04/11/20180411213901/" title="20180411213901">http://www.bianxiaofeng.com/2018/04/11/20180411213901/</a>
+          <a href="http://www.bianxiaofeng.com/2018/04/24/2018-4-25-114413/" title="JavaEE-SSH框架整合（Spring5.04+Struts2.5.16+Hibernate5.3）">http://www.bianxiaofeng.com/2018/04/24/2018-4-25-114413/</a>
         </li>
 
         
@@ -596,8 +693,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -683,6 +789,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#导入的Jar包"><span class="nav-number">2.</span> <span class="nav-text">导入的Jar包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Struts2基本Jar包"><span class="nav-number">2.1.</span> <span class="nav-text">Struts2基本Jar包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring基本Jar包"><span class="nav-number">2.2.</span> <span class="nav-text">Spring基本Jar包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hibernate基本Jar包"><span class="nav-number">2.3.</span> <span class="nav-text">Hibernate基本Jar包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-Struts2整合需要的Jar包"><span class="nav-number">2.4.</span> <span class="nav-text">Spring+Struts2整合需要的Jar包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-HIbernate整合需要的Jar包"><span class="nav-number">2.5.</span> <span class="nav-text">Spring+HIbernate整合需要的Jar包</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring整合Web项目"><span class="nav-number">3.</span> <span class="nav-text">Spring整合Web项目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实现原理"><span class="nav-number">3.1.</span> <span class="nav-text">实现原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具体操作"><span class="nav-number">3.2.</span> <span class="nav-text">具体操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Struts2-Spring整合"><span class="nav-number">4.</span> <span class="nav-text">Struts2+Spring整合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-HIbernate整合"><span class="nav-number">5.</span> <span class="nav-text">Spring+HIbernate整合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#回忆Hibernate相关知识点"><span class="nav-number">5.1.</span> <span class="nav-text">回忆Hibernate相关知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-Hibernate整合的步骤"><span class="nav-number">5.2.</span> <span class="nav-text">Spring+Hibernate整合的步骤</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
