@@ -3,6 +3,8 @@
 
 
     
+    
+    
   <url>
     <loc>http://www.bianxiaofeng.com/2018/04/24/2018-4-25-114413/</loc>
     <lastmod>2018-04-25T03:48:07.285Z</lastmod>
@@ -31,11 +33,11 @@
         <title>Struts2 拦截器</title>
         <pubTime>2018-03-31T13:06:33.000Z</pubTime>
         
-        <tag>JavaWeb</tag>
-         
         <tag>Struts2</tag>
          
         <tag>拦截器</tag>
+         
+        <tag>JavaWeb</tag>
          
          
            
@@ -55,11 +57,11 @@
         <title>JavaWeb获取表单数据的三种方式（属性封装，表达式封装，模型驱动封装）</title>
         <pubTime>2018-03-31T11:49:29.000Z</pubTime>
         
+        <tag>Struts2</tag>
+         
         <tag>JavaWeb</tag>
          
         <tag>属性封装，表达式封装，模型驱动封装</tag>
-         
-        <tag>Struts2</tag>
          
          
            
