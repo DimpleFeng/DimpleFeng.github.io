@@ -3,6 +3,28 @@
 
 
     
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/01/19/2018-1-19%20153336/</loc>
+    <lastmod>2018-05-29T04:39:40.930Z</lastmod>
+    <data>
+        <display>
+        <title>使用VSCode+七牛云图床插件+自定义快捷键配置Hexo博文编写环境</title>
+        <pubTime>2018-01-19T07:33:36.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>七牛云图床，VSCode</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
     
   <url>
@@ -241,28 +263,6 @@
            
              
               <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/19/2018-1-19%20153336/</loc>
-    <lastmod>2018-03-20T00:51:19.330Z</lastmod>
-    <data>
-        <display>
-        <title>使用VSCode+七牛云图床插件+自定义快捷键配置Hexo博文编写环境</title>
-        <pubTime>2018-01-19T07:33:36.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>七牛云图床，VSCode</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
           
         </display>
     </data>
