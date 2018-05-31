@@ -3,6 +3,64 @@
   
     
     <entry>
+      <title><![CDATA[Java异常]]></title>
+      <url>/2018/05/31/2018-5-31-15-40-24/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在面试的过程中一般会问道关于Java的异常处理相关的内容，异常处理是一般容易被忽略的，但是确是很考验一个程序员功底的方面。本文会介绍关于异常，以及关于异常的面试会问到的一些问题。</p>
+<h1 id="异常的分类"><a href="#异常的分类" class="headerlink" title="异常的分类"></a>异常的分类</h1><blockquote>
+<p>异常：程序在运行的过程中，如果程序执行出错，阻止了程序的正常运行，那么就会产生异常。而在Java中有一套解决方案，这就是异常处理机制。Java中的异常机制是针对正常运行程序的一个必要补充，一般来说没有加入异常机制，程序也能正常运行，但是，由于入参、程序逻辑的严谨度，总会有期望之外的结果生成，因此加入异常机制的补充，就是为了更好的处理意料之外的结果。</p>
+</blockquote>
+<p>首先说第一点：</p>
+<p><strong>所有的异常类的父类是throwable</strong>，这个出现在我的笔试题上面，是一道判断题，但是当时没有回答正确。</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180531155359.png" alt="QQ截图20180531155359"><br><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180531155458.png" alt="QQ截图20180531155458"></p>
+<p>通过以上两张图就能看到Exception和Error的直接父类是Throwable，而Throwable是实现了Serializable接口，Object的子类。</p>
+<p>以上就是它们三者的关系。</p>
+<p>首先具体说下Exception。</p>
+<h1 id="Exception的分类"><a href="#Exception的分类" class="headerlink" title="Exception的分类"></a>Exception的分类</h1><p>Java中的异常分为两大类：</p>
+<ul>
+<li>Checked Exception （受检异常，也叫非运行时异常）</li>
+<li>Unchecked Exception （也叫RuntimeException，运行时异常）</li>
+</ul>
+<p>所有的运行时异常都是直接或者间接的继承自RuntimeException类的，比如下面图中的空指针异常。<br><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180531160546.png" alt="QQ截图20180531160546">  </p>
+<p>凡是没有继承RuntimeException而是直接继承的Exception的，叫做受检异常。<br>比如IO异常。</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180531160737.png" alt="QQ截图20180531160737"></p>
+<p>接下来具体的说明这些异常：</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/858860-20170911125844719-1230755033.png" alt="858860-20170911125844719-1230755033"></p>
+<p>其他要说的：</p>
+<h2 id="Checked-Exception"><a href="#Checked-Exception" class="headerlink" title="Checked Exception"></a>Checked Exception</h2><p>对于Checked Exception ，Java要求程序员对这样的操作进行预处理。即用try、catch、finally或者throws，要么在方法中使用TCF三连，或者直接抛出交给他的上一级进行处理。</p>
+<p>对于这样的情况是必须要进行处理的，如果不进行处理，程序都不能被编译。</p>
+<p>比如常见的加载驱动：<br><code>Class.forName(&quot;xxx&quot;)</code>就必须要进行处理，否则会抛出ClassNotFoundException受检异常，不处理是不能通过编译的。</p>
+<h2 id="Unchecked-Exception"><a href="#Unchecked-Exception" class="headerlink" title="Unchecked Exception"></a>Unchecked Exception</h2><p>对于Unchecked Exception来说，一般是不需要进行处理的，程序能正常的通过编译。但是为了程序的严谨性，一般还是会在可能发生异常的地方进行TCF三连处理。这类异常常见的如下：</p>
+<ul>
+<li>ArithmeticException 算术异常</li>
+<li>NullPointerException 空指针异常</li>
+<li>ClassCastException 类转换异常</li>
+<li>ArrayIndexOutOfBoundsException 数组索引越界异常</li>
+</ul>
+<p>OK，再说下异常的捕获，关于异常，<strong>一般是先捕获小的异常（子类），再捕获大的异常（父类）</strong>。一般是不建议直接用Exception来全给捕获了。</p>
+<p>最后加一个面试题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">public void testException1() &#123;</span><br><span class="line">       try &#123;</span><br><span class="line">           System.out.println(&quot;In try first&quot;);</span><br><span class="line">           int i = 3 / 0;</span><br><span class="line">           System.out.println(&quot;In try&quot;);</span><br><span class="line">           return;</span><br><span class="line">       &#125; catch (ArithmeticException a) &#123;</span><br><span class="line">           System.out.println(&quot;In catch&quot;);</span><br><span class="line">       &#125;finally &#123;</span><br><span class="line">           System.out.println(&quot;In finally&quot;);</span><br><span class="line">       &#125;</span><br><span class="line">        System.out.println(&quot;In end&quot;);</span><br><span class="line">   &#125;</span><br><span class="line">   public void testException2() &#123;</span><br><span class="line">       try &#123;</span><br><span class="line">           int i = 3 / 0;</span><br><span class="line">           System.out.println(&quot;In try&quot;);</span><br><span class="line">           return;</span><br><span class="line">       &#125; catch (ArithmeticException a) &#123;</span><br><span class="line">           System.out.println(&quot;In catch&quot;);</span><br><span class="line">       &#125;finally &#123;</span><br><span class="line">           System.out.println(&quot;In finally&quot;);</span><br><span class="line">           return;</span><br><span class="line">       &#125;</span><br><span class="line">        System.out.println(&quot;In end&quot;);        </span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>关于以上的代码，可以自己打断点看一下运行过程：</p>
+<p>结论如下：</p>
+<p>1、在TCF语句中，try部分的代码如果产生了异常，会被catch到然后转入catch语句块中进行处理，最后调用finally语句块（如果有的话）进行最后的资源清理等等工作。</p>
+<p>2、但是如果在finally语句块中有return语句，那么是不会再执行下面的语句的。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Java基础 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Java中的内存回收与内存泄漏的防治]]></title>
       <url>/2018/05/31/2018-5-31-10-00-19/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>对于JVM（Java虚拟机）的GC（垃圾回收机制）来说，是否回收一个对象的标准是：是否还有引用变量指向该对象。只有有引用变量指向该对象，那么JVM就不会考虑去回收它。</p>
