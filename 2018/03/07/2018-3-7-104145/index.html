@@ -515,7 +515,7 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>当用户多次启动同一个Activity的时候，系统默认会一直为这个Activity创建实例，并将实例放入任务栈中，在用户按back键的时候会一一回退，每按一次任务栈的时候，栈顶的任务就会出栈，当任务栈为空的时候系统会回收这个任务栈。这就是在默认的情况下，系统对于Activity的处理方式。而这种默认的方式在某些时候可能不太符合开发者的意图。所以Android出现了多种的启动模式和标志位来更改这一默认的行为。<br> <a id="more"></a></p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>当用户多次启动同一个Activity的时候，系统默认会一直为这个Activity创建实例，并将实例放入任务栈中，在用户按back键的时候会一一回退，每按一次任务栈的时候，栈顶的任务就会出栈，当任务栈为空的时候系统会回收这个任务栈。这就是在默认的情况下，系统对于Activity的处理方式。而这种默认的方式在某些时候可能不太符合开发者的意图。所以Android出现了多种的启动模式和标志位来更改这一默认的行为。  </p>
 <h1 id="Activity的LaunchMode"><a href="#Activity的LaunchMode" class="headerlink" title="Activity的LaunchMode"></a>Activity的LaunchMode</h1><p>目前有四种LaunchMode，分别是：standard、singleTop、singleTask以及singleInstance。<br>为了方便说明和解释，我这里写了一个Demo，以上传到GitHub，详情请<a href="https://github.com/DimpleFeng/Android-Activity-LaunchMode" target="_blank" rel="noopener">点击</a>。界面如下：<br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201837155052.png" alt="{mdFileName}-201837155052"><br>分别对应4种状态的LaunchMode。</p>
 <h2 id="standard-LaunchMode"><a href="#standard-LaunchMode" class="headerlink" title="standard LaunchMode"></a>standard LaunchMode</h2><p>标准模式，这是系统默认的模式，每次启动的Activity的时候会默认创建一个实例，不管这个实例是不是存在。被创建的Activity实例符合典型情况下的生命周期。<br>在这种情况下，谁启动了这个Activity，那么这个Activity就属于启动它的Activity的任务栈中。比如： A启动了B，那么B就属于A的任务栈的成员。  </p>
 <p>Demo点击第一项按钮4下结果如下：<br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201837123217.png" alt="{mdFileName}-201837123217"><br>可以看到：<br>这里依次调用了4次的onCreate，且每次的hashcode都不一样。说明分别创建了4次Activity实例。而且任务栈的ID一直都是88.这也就说明了<strong>谁启动Activity，该Activity就位于哪个任务栈中的说法</strong>。</p>

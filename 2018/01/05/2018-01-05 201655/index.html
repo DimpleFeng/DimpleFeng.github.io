@@ -515,7 +515,7 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><img src="https://i.imgur.com/3Ewq7e1.gif" alt=""><br>在没有遇到这个坑之前我是完全不知道原来markdown里面是可以嵌入html或者js代码运行的。好吧是我孤陋寡闻了。在了解了原来还有这种操作的时候，整个人是惊呆了。<img src="https://i.imgur.com/DxDVkwv.gif" alt="">，但想想也是，不然一个博客里面随随便便冒出一个<code>button</code>还能点击是怎么做出来的。<br> <a id="more"></a></p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><img src="https://i.imgur.com/3Ewq7e1.gif" alt=""><br>在没有遇到这个坑之前我是完全不知道原来markdown里面是可以嵌入html或者js代码运行的。好吧是我孤陋寡闻了。在了解了原来还有这种操作的时候，整个人是惊呆了。<img src="https://i.imgur.com/DxDVkwv.gif" alt="">，但想想也是，不然一个博客里面随随便便冒出一个<code>button</code>还能点击是怎么做出来的。  </p>
 <h1 id="进坑过程"><a href="#进坑过程" class="headerlink" title="进坑过程"></a>进坑过程</h1><p><code>&lt;script type=&quot;text/javascript&quot;  alert(&quot;hello world！&quot;);&gt;</code></p>
 <p>比如上面一段代码，写出来了，在<code>markdownpad</code>上面还是可以看到的，但是在<code>hexo</code>中就看不到了。此时脸上笑嘻嘻，心里<em>*</em>。（以上代码我是直接用``括起来的，如果没有扩起来的话，博文后面的内容是完全看不到的。）也是很奇怪这个东西，好像是因为hexo把MD文档全部按照它自己的语法编译了一次，这样就导致编译看起来效果不错，发布出去到处是坑。</p>
 <p>昨晚上我写了一篇博文，<code>hexo g</code>的时候就宝一大堆错，我尝试在其报错的位置进行解决，但是左看右看确实没错。原来是因为hexo文档中的有js代码，引起了连锁反应。毕竟hexo到现在虽然很不错了，但是还有些问题。  </p>

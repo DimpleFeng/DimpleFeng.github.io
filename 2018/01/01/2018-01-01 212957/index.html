@@ -519,7 +519,20 @@
 <p>HEXO默认是按照时间顺序排一条线，然后按照时间顺序来决定显示的顺序的。按照网上的教程整理了一份方法。</p>
 </blockquote>
 <h1 id="Hexo博文置顶（自定义排序）"><a href="#Hexo博文置顶（自定义排序）" class="headerlink" title="Hexo博文置顶（自定义排序）"></a>Hexo博文置顶（自定义排序）</h1><p>使用的是<code>top</code>属性，<code>top</code>值越高，排序越在前，不设置<code>top</code>值得博文按照时间顺序排序。<br>修改Hexo文件夹下的node_modules/hexo-generator-index/lib/generator.js  </p>
-<p>打开在最后添加如下<code>javascript</code>代码<br> <a id="more"></a><br>    posts.data = posts.data.sort(function(a, b) {<br>    if(a.top &amp;&amp; b.top) { // 两篇文章top都有定义<br>        if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排<br>        else return b.top - a.top; // 否则按照top值降序排<br>    }<br>    else if(a.top &amp;&amp; !b.top) { // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）<br>        return -1;<br>    }<br>    else if(!a.top &amp;&amp; b.top) {<br>        return 1;<br>    }<br>    else return b.date - a.date; // 都没定义按照文章日期降序排<br>}); </p>
+<p>打开在最后添加如下<code>javascript</code>代码  </p>
+<pre><code>posts.data = posts.data.sort(function(a, b) {
+if(a.top &amp;&amp; b.top) { // 两篇文章top都有定义
+    if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排
+    else return b.top - a.top; // 否则按照top值降序排
+}
+else if(a.top &amp;&amp; !b.top) { // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）
+    return -1;
+}
+else if(!a.top &amp;&amp; b.top) {
+    return 1;
+}
+else return b.date - a.date; // 都没定义按照文章日期降序排
+</code></pre><p>}); </p>
 <p>在写文章的时候添加top属性就行了。 </p>
 <p>文章有多种属性，一个一个添加是不是很麻烦呢？  </p>
 <p>这个时候可以修改：HEXO博客的<code>scaffolds\post.md</code>  </p>

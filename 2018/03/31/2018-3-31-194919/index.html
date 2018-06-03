@@ -516,7 +516,8 @@
 
       
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在JavaWeb中，常常会遇到用户注册、提交表单数据等等，这个时候使用Struts2框架怎么获取页面的数据呢？传统的有通过域对象的方法来挨个使用getParameter方法来获取表单数据再进行操作（比如封装到一个JavaBean等等），本文主要使用Struts2框架来获取表单数据。</p>
-<p>在首先会通过最传统的方法通过Servlet来获取表单数据，接着会介绍三种获取表单数据的方式，最后会对这几种方式来进行比较。<br> <a id="more"></a><br>本文各类环境如下：  </p>
+<p>在首先会通过最传统的方法通过Servlet来获取表单数据，接着会介绍三种获取表单数据的方式，最后会对这几种方式来进行比较。</p>
+<p>本文各类环境如下：  </p>
 <p>Struts2版本：struts-2.5.16-all<br>IDE：Intellij IDEA 2018.1    </p>
 <p>此外关于添加Struts2 jar包不再叙述。</p>
 <h1 id="Servlet域对象获取表单数据"><a href="#Servlet域对象获取表单数据" class="headerlink" title="Servlet域对象获取表单数据"></a>Servlet域对象获取表单数据</h1><p>此处使用的是最原始的方式获取表单数据，主要是操作request域来获取数据的。</p>

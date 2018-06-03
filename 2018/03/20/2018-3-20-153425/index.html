@@ -515,7 +515,8 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在Android的开源环境下，也就多出来很多优秀的第三方的项目，但是因为很多第三方的项目和目前你正在开发的APP使用的Lib有些是重复的，这样会导致<strong>transformClassesWithDexForDebug</strong><br> <a id="more"></a><br><img src="http://p2sj58chj.bkt.clouddn.com/20180320154257.png" alt="20180320154257">  </p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在Android的开源环境下，也就多出来很多优秀的第三方的项目，但是因为很多第三方的项目和目前你正在开发的APP使用的Lib有些是重复的，这样会导致<strong>transformClassesWithDexForDebug</strong>  </p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/20180320154257.png" alt="20180320154257">  </p>
 <p>本文介绍年两种方法来处理这个问题。</p>
 <h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><h2 id="添加“multiDexEnabled-true”到-defaultConfig"><a href="#添加“multiDexEnabled-true”到-defaultConfig" class="headerlink" title="添加“multiDexEnabled true”到 defaultConfig"></a>添加“multiDexEnabled true”到 defaultConfig</h2><p>在app的build.gradle文件中的 defaultConfig添加：  </p>
 <p><code>multiDexEnabled true</code><br>如图所示：</p>

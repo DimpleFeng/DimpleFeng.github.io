@@ -519,9 +519,9 @@
 
       
         
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在面试的过程中一般会问道关于Java的异常处理相关的内容，异常处理是一般容易被忽略的，但是确是很考验一个程序员功底的方面。本文会介绍关于异常，以及关于异常的面试会问到的一些问题。</p>
-<h1 id="异常的分类"><a href="#异常的分类" class="headerlink" title="异常的分类"></a>异常的分类</h1><blockquote>
-<p>异常：程序在运行的过程中，如果程序执行出错，阻止了程序的正常运行，那么就会产生异常。而在Java中有一套解决方案，这就是异常处理机制。Java中的异常机制是针对正常运行程序的一个必要补充，一般来说没有加入异常机制，程序也能正常运行，但是，由于入参、程序逻辑的严谨度，总会有期望之外的结果生成，因此加入异常机制的补充，就是为了更好的处理意料之外的结果。<br>
+          
+          前言在面试的过程中一般会问道关于Java的异常处理相关的内容，异常处理是一般容易被忽略的，但是确是很考验一个程序员功底的方面。本文会介绍关于异常，以及关于异常的
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/31/2018-5-31-15-40-24/#more" rel="contents">
@@ -711,9 +711,9 @@
 
       
         
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>对于JVM（Java虚拟机）的GC（垃圾回收机制）来说，是否回收一个对象的标准是：是否还有引用变量指向该对象。只有有引用变量指向该对象，那么JVM就不会考虑去回收它。</p>
-<p>而在学习Java的时候，一般都是会说：Java有一套完整的垃圾回收机制，程序员可以不需要考虑内存。但是在实际应用中，还是会出现“内存泄漏”的情况。  </p>
-<h1 id="对象在内存中的状态"><a href="#对象在内存中的状态" class="headerlink" title="对象在内存中的状态"></a>对象在内存中的状态</h1><p>基本上可以将JVM中的对象引用理解为离散中学到的有向图。<br>
+          
+          前言对于JVM（Java虚拟机）的GC（垃圾回收机制）来说，是否回收一个对象的标准是：是否还有引用变量指向该对象。只有有引用变量指向该对象，那么JVM就不会考虑
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/31/2018-5-31-10-00-19/#more" rel="contents">
@@ -903,9 +903,10 @@
 
       
         
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本文主要是通过一个简单的注册登录来说明SSH框架的整合过程。在项目中，可以使用注解或者是XML的方式来配置依赖。</p>
-<p>首先时Struts2和Spring和整合。</p>
-<h1 id="导入的Jar包"><a href="#导入的Jar包" class="headerlink" title="导入的Jar包"></a>导入的Jar包</h1><h2 id="Struts2基本Jar包"><a href="#Struts2基本Jar包" class="headerlink" title="Struts2基本Jar包"></a>Struts2基本Jar包</h2>
+          
+          前言本文主要是通过一个简单的注册登录来说明SSH框架的整合过程。在项目中，可以使用注解或者是XML的方式来配置依赖。
+首先时Struts2和Spring和整合。
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/04/24/2018-4-25-114413/#more" rel="contents">
@@ -1287,8 +1288,9 @@
 
       
         
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在JavaWeb中，常常会遇到用户注册、提交表单数据等等，这个时候使用Struts2框架怎么获取页面的数据呢？传统的有通过域对象的方法来挨个使用getParameter方法来获取表单数据再进行操作（比如封装到一个JavaBean等等），本文主要使用Struts2框架来获取表单数据。</p>
-<p>在首先会通过最传统的方法通过Servlet来获取表单数据，接着会介绍三种获取表单数据的方式，最后会对这几种方式来进行比较。<br>
+          
+          前言在JavaWeb中，常常会遇到用户注册、提交表单数据等等，这个时候使用Struts2框架怎么获取页面的数据呢？传统的有通过域对象的方法来挨个使用getPar
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/31/2018-3-31-194919/#more" rel="contents">
@@ -1478,10 +1480,10 @@
 
       
         
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p> Async技术是Servlet3.0 之后添加的，用于处理异步请求。在此之前，大多为同步请求，客户端向服务器提交请求，假设请求很耗时，那么按照之前同步的处理办法，servlet在接收到这个请求之后，会调用去处理这个耗时操作，如果这个耗时操作长时间没有返回，那么就造成了服务器的阻塞，服务器资源得不到有效利用，这样的结果显然对于服务器的高并发是非常不利的。<br> 服务器可以异步执行，在等待长时间的过程完成期间，控制容器执行其他任务，当耗时操作完成返回后，再调用资源处理这个返回请求。   </p>
-</blockquote>
-<h1 id="使用Async的步骤"><a href="#使用Async的步骤" class="headerlink" title="使用Async的步骤"></a>使用Async的步骤</h1>
+          
+          前言
+ Async技术是Servlet3.0 之后添加的，用于处理异步请求。在此之前，大多为同步请求，客户端向服务器提交请求，假设请求很耗时，那么按照之前同步的
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/26/2018-3-26-193844/#more" rel="contents">
@@ -1671,8 +1673,10 @@
 
       
         
-          <h1 id="Session应用场景"><a href="#Session应用场景" class="headerlink" title="Session应用场景"></a>Session应用场景</h1><blockquote>
-<p>在互联网生活中，通常大家在使用浏览器的时候会接触到session。由于HTTP的无状态性，也就是说，当打开浏览器输入<a href="http://www.bianxiaofeng.com网址，然后该请求会被服务器处理后，返回所请求的网页的内容，至此，整个Request/Response过程已经完全结束了。当你接下来访问网站的时候，网站服务器端是不认识你的。这就是无状态性。为了解决这个问题（比如在某个需要输入密码的网页登录，不能说每一次打开该网站的新的网页就要输入一次密码。对吧？）。此时session的作用就体现出来了。简单的说。就是让服务器知道你就是你。" target="_blank" rel="noopener">http://www.bianxiaofeng.com网址，然后该请求会被服务器处理后，返回所请求的网页的内容，至此，整个Request/Response过程已经完全结束了。当你接下来访问网站的时候，网站服务器端是不认识你的。这就是无状态性。为了解决这个问题（比如在某个需要输入密码的网页登录，不能说每一次打开该网站的新的网页就要输入一次密码。对吧？）。此时session的作用就体现出来了。简单的说。就是让服务器知道你就是你。</a><br>
+          
+          Session应用场景
+在互联网生活中，通常大家在使用浏览器的时候会接触到session。由于HTTP的无状态性，也就是说，当打开浏览器输入http://www
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/26/2018-3-26-193523/#more" rel="contents">
@@ -1862,7 +1866,9 @@
 
       
         
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在Android的开源环境下，也就多出来很多优秀的第三方的项目，但是因为很多第三方的项目和目前你正在开发的APP使用的Lib有些是重复的，这样会导致<strong>transformClassesWithDexForDebug</strong><br>
+          
+          前言在Android的开源环境下，也就多出来很多优秀的第三方的项目，但是因为很多第三方的项目和目前你正在开发的APP使用的Lib有些是重复的，这样会导致tran
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/20/2018-3-20-153425/#more" rel="contents">
@@ -2052,8 +2058,9 @@
 
       
         
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Qt是我在大一下学期开始接触的，当时刚学完C++，然后每天对着黑漆漆的console窗口，在偶然的机会接触到Qt这个跨平台的C++应用程序开发框架。又在老师的怂恿下（单片机老师说如果做出上下位机实验成绩就是满分），使用Qt来进行上下位机的开发。当然实现的功能很简单，控制LED灯的明灭，输入数字显示在数码管上，控制继电器和蜂鸣器以及定时器。</p>
-<h1 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h1><p>首先是界面截图<br>
+          
+          前言Qt是我在大一下学期开始接触的，当时刚学完C++，然后每天对着黑漆漆的console窗口，在偶然的机会接触到Qt这个跨平台的C++应用程序开发框架。又在老师
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/09/2018-3-9-165439/#more" rel="contents">
@@ -2221,8 +2228,9 @@
 
       
         
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>排序算法是最基本的算法之一，为此衍生出很多种的排序算法，而不同的排序算法具有不同的使用环境，为此掌握几种常见的排序算法是作为一个精致的程序员必不可少的技能。本文主要是介绍常见的四种排序算法的思想以及Java实现。  </p>
-<h1 id="常见算法"><a href="#常见算法" class="headerlink" title="常见算法"></a>常见算法</h1><h2 id="冒泡排序-Bubble-Sort"><a href="#冒泡排序-Bubble-Sort" class="headerlink" title="冒泡排序(Bubble Sort)"></a>冒泡排序(Bubble Sort)</h2>
+          
+          前言排序算法是最基本的算法之一，为此衍生出很多种的排序算法，而不同的排序算法具有不同的使用环境，为此掌握几种常见的排序算法是作为一个精致的程序员必不可少的技能。
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/09/2018-3-9-135602/#more" rel="contents">

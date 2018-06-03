@@ -518,8 +518,7 @@
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
 <p> Async技术是Servlet3.0 之后添加的，用于处理异步请求。在此之前，大多为同步请求，客户端向服务器提交请求，假设请求很耗时，那么按照之前同步的处理办法，servlet在接收到这个请求之后，会调用去处理这个耗时操作，如果这个耗时操作长时间没有返回，那么就造成了服务器的阻塞，服务器资源得不到有效利用，这样的结果显然对于服务器的高并发是非常不利的。<br> 服务器可以异步执行，在等待长时间的过程完成期间，控制容器执行其他任务，当耗时操作完成返回后，再调用资源处理这个返回请求。   </p>
 </blockquote>
-<h1 id="使用Async的步骤"><a href="#使用Async的步骤" class="headerlink" title="使用Async的步骤"></a>使用Async的步骤</h1> <a id="more"></a>
-<h2 id="启用async"><a href="#启用async" class="headerlink" title="启用async"></a>启用async</h2><p>异步行为需要在Servlet中显式启用 ，其方法有两种：  </p>
+<h1 id="使用Async的步骤"><a href="#使用Async的步骤" class="headerlink" title="使用Async的步骤"></a>使用Async的步骤</h1><h2 id="启用async"><a href="#启用async" class="headerlink" title="启用async"></a>启用async</h2><p>异步行为需要在Servlet中显式启用 ，其方法有两种：  </p>
 <ul>
 <li>添加@WebServlet的<strong>asyncSupported</strong>属性实现  </li>
 </ul>
