@@ -357,7 +357,7 @@
       <title><![CDATA[JavaEE之Session理解]]></title>
       <url>/2018/03/26/2018-3-26-193523/</url>
       <content type="html"><![CDATA[<h1 id="Session应用场景"><a href="#Session应用场景" class="headerlink" title="Session应用场景"></a>Session应用场景</h1><blockquote>
-<p>在互联网生活中，通常大家在使用浏览器的时候会接触到session。由于HTTP的无状态性，也就是说，当打开浏览器输入<a href="http://www.bianxiaofeng.com网址，然后该请求会被服务器处理后，返回所请求的网页的内容，至此，整个Request/Response过程已经完全结束了。当你接下来访问网站的时候，网站服务器端是不认识你的。这就是无状态性。为了解决这个问题（比如在某个需要输入密码的网页登录，不能说每一次打开该网站的新的网页就要输入一次密码。对吧？）。此时session的作用就体现出来了。简单的说。就是让服务器知道你就是你。" target="_blank" rel="noopener">http://www.bianxiaofeng.com网址，然后该请求会被服务器处理后，返回所请求的网页的内容，至此，整个Request/Response过程已经完全结束了。当你接下来访问网站的时候，网站服务器端是不认识你的。这就是无状态性。为了解决这个问题（比如在某个需要输入密码的网页登录，不能说每一次打开该网站的新的网页就要输入一次密码。对吧？）。此时session的作用就体现出来了。简单的说。就是让服务器知道你就是你。</a>  </p>
+<p>在互联网生活中，通常大家在使用浏览器的时候会接触到session。由于HTTP的无状态性，也就是说，当打开浏览器输入<a href="http://www.bianxiaofeng.com">http://www.bianxiaofeng.com</a> 网址，然后该请求会被服务器处理后，返回所请求的网页的内容，至此，整个Request/Response过程已经完全结束了。当你接下来访问网站的时候，网站服务器端是不认识你的。这就是无状态性。为了解决这个问题（比如在某个需要输入密码的网页登录，不能说每一次打开该网站的新的网页就要输入一次密码。对吧？）。此时session的作用就体现出来了。简单的说。就是让服务器知道你就是你。  </p>
 </blockquote>
 <h1 id="面对无状态性的解决方案"><a href="#面对无状态性的解决方案" class="headerlink" title="面对无状态性的解决方案"></a>面对无状态性的解决方案</h1><p>Java Servlet 通过引入session机制来跟踪客户端的状态。当用户访问网站的时候，网站会分配给该客户端一个sessionID用于标识该客户端，至此，在接下来的一段时间内，用户可以请求不同的服务器资源。当网页被关闭的时候，服务器会释放掉这个ID。比如在线购物的过程，浏览物品，到添加购物车到付款完成关闭页面这整个过程就是一个session。</p>
 <h1 id="Session的使用"><a href="#Session的使用" class="headerlink" title="Session的使用"></a>Session的使用</h1><p>session的使用方式很多，常见的方式是使用jsp和servlet。  </p>
