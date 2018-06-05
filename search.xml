@@ -3,6 +3,177 @@
   
     
     <entry>
+      <title><![CDATA[AJAX异步请求和JQuery的post,get,getJSON,ajax函数的使用]]></title>
+      <url>/2018/06/05/2018-6-5-10-29-56/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>ajax:是一种与服务器交互的技术，在不刷新全部网页的情况下，更新某些表单项的数据。实现对部分网页的刷新。<br>常用场景：百度或者谷歌的时候，输入的时候给出具体的提示。</p>
+</blockquote>
+<h1 id="关于XHR（XMLHttpRequest）"><a href="#关于XHR（XMLHttpRequest）" class="headerlink" title="关于XHR（XMLHttpRequest）"></a>关于XHR（XMLHttpRequest）</h1><p>XHR时AJAX的基础，所有的浏览器都支持XMLHTTPRequest对象，老年版本的IE5/6使用的是ActiveXObject。所以一般来说，为了兼容性，还是会做一个判断，判断用户的浏览器支不支持XHR。检测的方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var xhr;</span><br><span class="line">if(window.XMLHttpRequest)&#123;</span><br><span class="line">    xhr=new XMLHttpRequest();</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    xhr=new ActiveXObject(&quot;Mircosoft.XMLHTTP);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建XHR：<br><code>xhr=new XMLHttpRequest</code></p>
+<p>老年IE：<br><code>xhr=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;)</code></p>
+<h1 id="XHR请求"><a href="#XHR请求" class="headerlink" title="XHR请求"></a>XHR请求</h1><p>如果需要将请求发送到服务器，需要使用到XMLHttpRequest对象的open()和send()方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xhr.open(method,url,async);</span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure></p>
+<h2 id="open"><a href="#open" class="headerlink" title="open()"></a>open()</h2><p> 相当于设置参数。</p>
+<p> 原型如下：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open(method,url,async);</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>method: 请求的类型，GET和POST。<br><em>注意：使用POST还是GET需要根据具体的情况，下面是一张比对图：</em><br><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180605110537.png" alt="QQ截图20180605110537"></p>
+</li>
+<li><p>url：在服务器上访问的地址</p>
+</li>
+<li>async：Boolean，true（异步），false（同步，注意，如果为false，那么在加载数据的时候会直接禁止掉当前窗口，不能再做其他交互）</li>
+</ul>
+<h2 id="send-方法"><a href="#send-方法" class="headerlink" title="send()方法"></a>send()方法</h2><p>将请求发送到服务器。</p>
+<p>当使用的是GET方法的时候，直接使用send()。如果使用的是POST方法，send(String string)。一般string的内容为要发送的数据。</p>
+<h2 id="POST和GET请求服务器方式对比："><a href="#POST和GET请求服务器方式对比：" class="headerlink" title="POST和GET请求服务器方式对比："></a>POST和GET请求服务器方式对比：</h2><h3 id="不带参数："><a href="#不带参数：" class="headerlink" title="不带参数："></a>不带参数：</h3><p>POST：  </p>
+<p>xhr.open(“POST”,”/test”,true);<br>xhr.send();</p>
+<p>GET:</p>
+<p>xhr.open(“GET’,”/test”,true);<br>xhr.send();</p>
+<p>可以看到在不带参数的时候都一样的，区别在于，使用GET可能会导致查询到缓存数据，解决的办法是添加唯一标识，比如当前的时间或者随机数等。</p>
+<h3 id="带参数"><a href="#带参数" class="headerlink" title="带参数"></a>带参数</h3><p>POST:</p>
+<p>xhr.open(“POST”,”/test”,true);<br>xhr.send(“name=test&amp;age=19”);</p>
+<p>GET:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xhr=open(&quot;GET&quot;,&quot;/test?name=test&amp;age=19&quot;,true);</span><br><span class="line">xhr=send();</span><br></pre></td></tr></table></figure>
+<p>可以看到，这里的区别是使用GET是直接将参数添加到url中，使用POST是直接将参数添加到send()的形参中。</p>
+<h1 id="XHR响应"><a href="#XHR响应" class="headerlink" title="XHR响应"></a>XHR响应</h1><p>使用XMLHttpRequest对象的responseText或responseXML属性。</p>
+<ul>
+<li>responseText：获取字符串形式的响应数据。</li>
+<li>responseXML:获取XML形式的响应数据。</li>
+</ul>
+<h1 id="onreadystatechange事件"><a href="#onreadystatechange事件" class="headerlink" title="onreadystatechange事件"></a>onreadystatechange事件</h1><p>当请求被发送到服务器的时候，需要做一个基于响应的任务。<br>每当readyState改变时，就会触发onreadystatechange事件。</p>
+<p>readyState属性存有XMLHTTPRequest的状态信息。</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180605113646.png" alt="QQ截图20180605113646"></p>
+<p>readyState有五个状态（0-4）：</p>
+<ul>
+<li>0：请求未初始化</li>
+<li>1：服务器连接已建立</li>
+<li>2：请求接收</li>
+<li>3：请求处理</li>
+<li>4：请求处理完成</li>
+</ul>
+<p>当readyState == 4的时候，表示后台已经处理完成了request，status == 200,表示返回的结果是OK的。（注：onreadystatechange事件被触发5次，对应着状态0-4）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">xhr=function()&#123;</span><br><span class="line">    if(xhr.readyState==4&amp;&amp;xhr.status==200)&#123;</span><br><span class="line">        /*执行操作*/</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Jquery使用AJAX"><a href="#Jquery使用AJAX" class="headerlink" title="Jquery使用AJAX"></a>Jquery使用AJAX</h1><p>一般来说，JQuery中有\$.get、\$.post、\$.getJSON以及最原始的ajax()函数等。</p>
+<h2 id="get"><a href="#get" class="headerlink" title="get()"></a>get()</h2><p>写法如下：<code>$(selector).get(url,data,success(response,status,xhr),dataType)</code></p>
+<p>等价于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;  </span><br><span class="line">  url: url,  </span><br><span class="line">  data: data,  </span><br><span class="line">  success: callback,  </span><br><span class="line">  dataType: dataType  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>关于参数含义如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">是否必须</th>
+<th style="text-align:right">解释 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td style="text-align:center">是</td>
+<td style="text-align:right">表示请求的url </td>
+</tr>
+<tr>
+<td>data</td>
+<td style="text-align:center">否</td>
+<td style="text-align:right">表示连同请求发送到服务器的数据 </td>
+</tr>
+<tr>
+<td>success(response,status,xhr)</td>
+<td style="text-align:center">否</td>
+<td style="text-align:right">表示当请求成功后运行的函数。respose表示包含来回请求的结果数据。status表示请求的状态，xhr表示XMLHttpRequest对象。</td>
+</tr>
+<tr>
+<td>dataType</td>
+<td style="text-align:center">否</td>
+<td style="text-align:right">表示预计的服务器响应的数据类型，默认JQuery会自动判断。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="post"><a href="#post" class="headerlink" title="post()"></a>post()</h2><p>函数原型：<code>￥（selector）.post(url,data,success(response,status,xhr),dataType)</code></p>
+<p>等价于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;  </span><br><span class="line">  url: url,  </span><br><span class="line">  data: data,  </span><br><span class="line">  success: callback,  </span><br><span class="line">  dataType: dataType  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>关于参数含义如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">是否必须</th>
+<th style="text-align:right">解释 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td style="text-align:center">是</td>
+<td style="text-align:right">表示请求的url </td>
+</tr>
+<tr>
+<td>data</td>
+<td style="text-align:center">否</td>
+<td style="text-align:right">表示连同请求发送到服务器的数据 </td>
+</tr>
+<tr>
+<td>success(response,status,xhr)</td>
+<td style="text-align:center">否</td>
+<td style="text-align:right">表示当请求成功后运行的函数。respose表示包含来回请求的结果数据。status表示请求的状态，xhr表示XMLHttpRequest对象。</td>
+</tr>
+<tr>
+<td>dataType</td>
+<td style="text-align:center">否</td>
+<td style="text-align:right">表示预计的服务器响应的数据类型，默认JQuery会自动判断。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="getJSON"><a href="#getJSON" class="headerlink" title="getJSON()"></a>getJSON()</h2><p>函数原型：<code>$(selector).getJSON(url,data,success(data,status,xhr))</code><br>等价于：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;  </span><br><span class="line">  url: url,  </span><br><span class="line">  data: data,  </span><br><span class="line">  success: callback,  </span><br><span class="line">  dataType: json  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">是否必须</th>
+<th style="text-align:right">解释 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td style="text-align:center">是</td>
+<td style="text-align:right">表示请求的url </td>
+</tr>
+<tr>
+<td>data</td>
+<td style="text-align:center">否</td>
+<td style="text-align:right">表示连同请求发送到服务器的数据 </td>
+</tr>
+<tr>
+<td>success(response,status,xhr)</td>
+<td style="text-align:center">否</td>
+<td style="text-align:right">表示当请求成功后运行的函数。respose表示包含来回请求的结果数据。status表示请求的状态，xhr表示XMLHttpRequest对象。</td>
+</tr>
+</tbody>
+</table>
+<p>函数没有type参数，返回的结果默认为json类型。</p>
+<h2 id="ajax"><a href="#ajax" class="headerlink" title="ajax()"></a>ajax()</h2><p>ajax主要是执行异步请求，是JQUery的底层AKAX封装的实现，高层封装为$.get(),$.post()等。另外ajax()方法返回一个XMLHTTPRequest对象。</p>
+<p>比如下面代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var xmlHttpRequest=$.ajax(&#123;url:&quot;test&quot;,async:false&#125;)</span><br></pre></td></tr></table></figure></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>在进行前端代码编写的时候，如果只是更改小规模的数据的时候，采用ajax的方式能更好的方便用户体验，而使用JS的底层的代码显得相对复杂，JQuery能够帮助我们更好的进行开发。同时\$.get()和\$.post()方法返回的都是字符串（不设置dataType的情况）,\$.getJSON()返回的是JSON数据。使用\$.ajax()，返回的是一个XMLHttpRequest对象。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Java基础 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> JavaEE </tag>
+            
+            <tag> JQuery </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Java异常]]></title>
       <url>/2018/05/31/2018-5-31-15-40-24/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在面试的过程中一般会问道关于Java的异常处理相关的内容，异常处理是一般容易被忽略的，但是确是很考验一个程序员功底的方面。本文会介绍关于异常，以及关于异常的面试会问到的一些问题。</p>
@@ -206,11 +377,11 @@
         
         <tags>
             
-            <tag> JavaWeb </tag>
-            
             <tag> Struts2 </tag>
             
             <tag> 拦截器 </tag>
+            
+            <tag> JavaWeb </tag>
             
         </tags>
         
@@ -291,11 +462,11 @@
         
         <tags>
             
+            <tag> Struts2 </tag>
+            
             <tag> JavaWeb </tag>
             
             <tag> 属性封装，表达式封装，模型驱动封装 </tag>
-            
-            <tag> Struts2 </tag>
             
         </tags>
         

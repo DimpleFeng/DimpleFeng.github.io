@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://www.bianxiaofeng.com/2018/06/05/2018-6-5-10-29-56/</loc>
+    <lastmod>2018-06-05T06:50:32.432Z</lastmod>
+    <data>
+        <display>
+        <title>AJAX异步请求和JQuery的post,get,getJSON,ajax函数的使用</title>
+        <pubTime>2018-06-05T02:30:01.000Z</pubTime>
+        
+        <tag>JavaEE</tag>
+         
+        <tag>JQuery</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.bianxiaofeng.com/2018/03/26/2018-3-26-193523/</loc>
     <lastmod>2018-06-04T02:49:37.179Z</lastmod>
     <data>
@@ -135,11 +157,11 @@
         <title>JavaWeb获取表单数据的三种方式（属性封装，表达式封装，模型驱动封装）</title>
         <pubTime>2018-03-31T11:49:29.000Z</pubTime>
         
+        <tag>Struts2</tag>
+         
         <tag>JavaWeb</tag>
          
         <tag>属性封装，表达式封装，模型驱动封装</tag>
-         
-        <tag>Struts2</tag>
          
          
            
@@ -176,26 +198,6 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/03/20/2018-3-20-153425/</loc>
-    <lastmod>2018-06-03T13:01:23.725Z</lastmod>
-    <data>
-        <display>
-        <title>Error:Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug'的解决办法</title>
-        <pubTime>2018-03-20T07:34:34.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.bianxiaofeng.com/2018/01/05/2018-01-05%20201655/</loc>
     <lastmod>2018-06-03T13:01:23.725Z</lastmod>
     <data>
@@ -213,6 +215,26 @@
            
              
               <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/03/20/2018-3-20-153425/</loc>
+    <lastmod>2018-06-03T13:01:23.725Z</lastmod>
+    <data>
+        <display>
+        <title>Error:Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug'的解决办法</title>
+        <pubTime>2018-03-20T07:34:34.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
           
         </display>
     </data>
@@ -321,28 +343,6 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/07/2018-01-07%20121946/</loc>
-    <lastmod>2018-06-03T13:01:23.542Z</lastmod>
-    <data>
-        <display>
-        <title>2018React-Native环境安装及运行第一个demo</title>
-        <pubTime>2018-01-07T04:19:46.000Z</pubTime>
-        
-        <tag>react-native</tag>
-         
-        <tag>Android混合开发</tag>
-         
-         
-           
-             
-              <breadCrumb title="react-native学习" url="http://www.bianxiaofeng.com/categories/react-native%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.bianxiaofeng.com/2018/01/19/2018-1-19%20153336/</loc>
     <lastmod>2018-06-03T13:01:23.542Z</lastmod>
     <data>
@@ -358,6 +358,28 @@
            
              
               <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/01/07/2018-01-07%20121946/</loc>
+    <lastmod>2018-06-03T13:01:23.542Z</lastmod>
+    <data>
+        <display>
+        <title>2018React-Native环境安装及运行第一个demo</title>
+        <pubTime>2018-01-07T04:19:46.000Z</pubTime>
+        
+        <tag>react-native</tag>
+         
+        <tag>Android混合开发</tag>
+         
+         
+           
+             
+              <breadCrumb title="react-native学习" url="http://www.bianxiaofeng.com/categories/react-native%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>
@@ -419,18 +441,16 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/17/2018-01-17%20102253/</loc>
+    <loc>http://www.bianxiaofeng.com/2018/01/01/2018-01-01%20212957/</loc>
     <lastmod>2018-06-03T13:01:21.245Z</lastmod>
     <data>
         <display>
-        <title>Hexo-NexT主题添加评论功能（来必力、Hypercomments、畅言、友言）</title>
-        <pubTime>2018-01-17T02:22:53.000Z</pubTime>
+        <title>Hexo博文置顶（自定义排序）</title>
+        <pubTime>2018-01-01T13:29:57.000Z</pubTime>
         
         <tag>hexo</tag>
          
-        <tag>next优化</tag>
-         
-        <tag>Comment</tag>
+        <tag>博文置顶</tag>
          
          
            
@@ -469,16 +489,18 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/01/2018-01-01%20212957/</loc>
+    <loc>http://www.bianxiaofeng.com/2018/01/17/2018-01-17%20102253/</loc>
     <lastmod>2018-06-03T13:01:21.245Z</lastmod>
     <data>
         <display>
-        <title>Hexo博文置顶（自定义排序）</title>
-        <pubTime>2018-01-01T13:29:57.000Z</pubTime>
+        <title>Hexo-NexT主题添加评论功能（来必力、Hypercomments、畅言、友言）</title>
+        <pubTime>2018-01-17T02:22:53.000Z</pubTime>
         
         <tag>hexo</tag>
          
-        <tag>博文置顶</tag>
+        <tag>next优化</tag>
+         
+        <tag>Comment</tag>
          
          
            
@@ -570,11 +592,11 @@
         <title>Struts2 拦截器</title>
         <pubTime>2018-03-31T13:06:33.000Z</pubTime>
         
-        <tag>JavaWeb</tag>
-         
         <tag>Struts2</tag>
          
         <tag>拦截器</tag>
+         
+        <tag>JavaWeb</tag>
          
          
            
