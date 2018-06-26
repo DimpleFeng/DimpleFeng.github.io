@@ -3,6 +3,48 @@
   
     
     <entry>
+      <title><![CDATA[关于REST风格的编程]]></title>
+      <url>/2018/06/26/2018-6-26-09-47-10/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>表现层状态转换（REST，英文：Representational State Transfer）是Roy Thomas Fielding博士于2000年在他的博士论文 中提出来的一种万维网软件架构风格，目的是便于不同软件/程序在网络（例如互联网）中互相传递信息。</p>
+</blockquote>
+<p>REST本身不是架构，只是一种架构风格，理解它的时候要参考这个架构风格出现的环境所施加的约束条件。<br>REST的目的是“建立十年内不会过时的软件系统架构”，所以它具备三个特点：</p>
+<ol>
+<li>状态无关 —— 确保系统的横向拓展能力  </li>
+<li>超文本驱动，Fielding的原话是”hypertext-driven” —— 确保系统的演化能力</li>
+<li>对 resource 相关的模型建立统一的原语，例如：uri、http的method定义等 —— 确保系统能够接纳多样而又标准的客户端。</li>
+</ol>
+<p>这样对URL进行了限制，用于定义资源。简单来说就是定义了<strong>如何设计系统来对外提供服务</strong>。使用HTTP+JSON就可以搞定一切。</p>
+<h1 id="REST详解"><a href="#REST详解" class="headerlink" title="REST详解"></a>REST详解</h1><p>REST究竟是什么？因为REST的内涵非常丰富，所以很难用一两句话解释清楚这个问题。</p>
+<p>首先，REST是Web自身的架构风格。REST也是Web之所以取得成功的技术架构方面因素的总结。REST是世界上最成功的分布式应用架构风格（成功案例：Web，还不够吗？）。它是为 运行在互联网环境 的 分布式 超媒体系统量身定制的。互联网环境与企业内网环境有非常大的差别，最主要的差别是两个方面：</p>
+<p>可伸缩性需求无法控制：并发访问量可能会暴涨，也可能会暴跌。</p>
+<p>安全性需求无法控制：无法控制客户端发来的请求的格式，很可能会是恶意的请求。</p>
+<p>而所谓的“超媒体系统”，即，使用了超文本的系统。可以把“超媒体”理解为超文本+媒体内容。</p>
+<p>REST是HTTP/1.1协议等Web规范的设计指导原则，HTTP/1.1协议正是为实现REST风格的架构而设计的。新的Web规范，其设计必须符合REST的要求，否则整个Web的体系架构会因为引入严重矛盾而崩溃。这句话不是危言耸听，做个类比，假如苏州市政府同意在市区著名园林的附近大型土木，建造大量具有后现代风格的摩天大楼，那么不久之后世界闻名的苏州园林美景将不复存在。</p>
+<p>上述这些关于“REST是什么”的描述，可以总结为一句话：REST是所有Web应用都应该遵守的架构设计指导原则。当然，REST并不是法律，违反了REST的指导原则，仍然能够实现应用的功能。但是违反了REST的指导原则，会付出很多代价，特别是对于大流量的网站而言。</p>
+<h1 id="SpringMVC的REST风格请求"><a href="#SpringMVC的REST风格请求" class="headerlink" title="SpringMVC的REST风格请求"></a>SpringMVC的REST风格请求</h1><p>在HTTP协议里面，有以下几个表示操作方式的动词：<br>GET、POST、PUT、DELETE，分别对应着查询、增加、修改、删除操作。</p>
+<p>在SpringMVC中可以使用rest风格占位符的方式，使用注解@PAthVariable实现将URL中的数据复制到Java的具体变量上。</p>
+<p>比如以下：<br>路径 | HTTP方式 | 解释 </p>
+<ul>
+<li>| :-: | -:<br><a href="http://localhost:8080/stu/1" target="_blank" rel="noopener">http://localhost:8080/stu/1</a> | GET| 获取id为1的数据（这里假设要取的是学生数据）<br><a href="http://localhost:8080/stu" target="_blank" rel="noopener">http://localhost:8080/stu</a> | GET | 获取所有的学生数据<br><a href="http://localhost:8080/stu/1" target="_blank" rel="noopener">http://localhost:8080/stu/1</a> | DELETE | 删除id为1的学生的数据信息<br><a href="http://localhost:8080/stu/1" target="_blank" rel="noopener">http://localhost:8080/stu/1</a> | PUT | 修改id为1的学生的数据信息<br><a href="http://localhost:8080/stu" target="_blank" rel="noopener">http://localhost:8080/stu</a> | POST | 新增一条学生数据</li>
+</ul>
+<p>对于以上的URL可以采用以下controller处理：</p>
+<h2 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h2><p>对应URL：<a href="http://localhost:8080/stu" target="_blank" rel="noopener">http://localhost:8080/stu</a> 获取所有的学生的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@responseBody//表示返回的JSON数据</span><br><span class="line">@RequestMapping(value=&quot;/stu&quot;,method=RequestMethod.GET)</span><br><span class="line">public Msg toAddPage()&#123;//这里的Msg是自己封装的utils，封装了返回给client端的数据</span><br><span class="line">    //获取到service端处理的数据</span><br><span class="line">    return Msg.success().add(&quot;students&quot;,studentService.getStudents());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对应URL：<a href="http://localhost:8080/stu/1" target="_blank" rel="noopener">http://localhost:8080/stu/1</a> 获取学生id为1的学生数据</p>
+<h2 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h2><p>对应URL：<a href="http://localhost:8080/stu" target="_blank" rel="noopener">http://localhost:8080/stu</a> 新增一条数据</p>
+<p>所有的数据都在formData中（可以F12查看网络请求）,使用SpringMVC自动封装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@responseBody//表示返回的JSON数据</span><br><span class="line">@RequestMapping(value=&quot;/stu&quot;,method=RequestMethod.POST)</span><br><span class="line">public Msg toAddPage(Student student)&#123;//这里的Msg是自己封装的utils，封装了返回给client端的数据</span><br><span class="line">    studentSe</span><br></pre></td></tr></table></figure>
+<p>@responseBody//表示返回的JSON数据<br>@RequestMapping(value=”/stu{id}”,method=RequestMethod.DELETE)<br>public Msg toAddPage(@pathVariable(value=”id”Integer id)){//这里的Msg是自己封装的utils，封装了返回给client端的数据<br>   Student student studentService.getStudentById(id);<br>    return Msg.success().add(“student”,student);<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    return Msg.success();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="PUT"><a href="#PUT" class="headerlink" title="PUT"></a>PUT</h2><p>对应的URL：<a href="http://localhost:8080/stu/1" target="_blank" rel="noopener">http://localhost:8080/stu/1</a> 更新学生id为1的数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@responseBody//表示返回的JSON数据</span><br><span class="line">@RequestMapping(value=&quot;/stu&#123;id&#125;&quot;,method=RequestMethod.PUT)</span><br><span class="line">public Msg toAddPage(Student student)&#123;//这里的Msg是自己封装的utils，封装了返回给client端的数据</span><br><span class="line">    studentService.updateStudentById(id);//此时student中是有id的，是SpringMVC封装好了的</span><br><span class="line">    return Msg.success().add(&quot;student&quot;,student);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用PUT、DELETE方法的时候，还需要注意一点就是，底层的Tomcat容器是只支持POST方式的，为了方便的使用rest风格的URL,在SpringMVC中提供一个过滤器：HiddenHttpMethodFilter，配置好此过滤器就可以使用PUT这些方法了。</p>
+<h2 id="DELETE"><a href="#DELETE" class="headerlink" title="DELETE"></a>DELETE</h2><p>对应的URL：<a href="http://localhost:8080/stu/1" target="_blank" rel="noopener">http://localhost:8080/stu/1</a> 删除id为1的学生的数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@responseBody//表示返回的JSON数据</span><br><span class="line">@RequestMapping(value=&quot;/stu&#123;id&#125;&quot;,method=RequestMethod.PUT)</span><br><span class="line">public Msg toAddPage(@pathVariable(value=&quot;id&quot;Integer id))&#123;//这里的Msg是自己封装的utils，封装了返回给client端的数据</span><br><span class="line">    studentService.deleteStudentById(id);</span><br><span class="line">    return Msg.success();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[在线考试系统——项目说明]]></title>
       <url>/2018/06/13/2018-6-13-15-09-50/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这是一篇关于JavaEE的课程设计项目的部分文档部分。项目的名称为《学生在线考试系统》。</p>
