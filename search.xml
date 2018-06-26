@@ -41,6 +41,20 @@
 <h2 id="DELETE"><a href="#DELETE" class="headerlink" title="DELETE"></a>DELETE</h2><p>对应的URL：<a href="http://localhost:8080/stu/1" target="_blank" rel="noopener">http://localhost:8080/stu/1</a> 删除id为1的学生的数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@responseBody//表示返回的JSON数据</span><br><span class="line">@RequestMapping(value=&quot;/stu&#123;id&#125;&quot;,method=RequestMethod.PUT)</span><br><span class="line">public Msg toAddPage(@pathVariable(value=&quot;id&quot;Integer id))&#123;//这里的Msg是自己封装的utils，封装了返回给client端的数据</span><br><span class="line">    studentService.deleteStudentById(id);</span><br><span class="line">    return Msg.success();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 ]]></content>
       
+        <categories>
+            
+            <category> JavaEE </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> JavaEE </tag>
+            
+            <tag> RESt </tag>
+            
+        </tags>
         
     </entry>
     
