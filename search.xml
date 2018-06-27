@@ -7,7 +7,7 @@
       <url>/2018/06/27/2018-6-27-09-22-28/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在jQuery中有许多的功能能够简化开发流程，jQuery是一个JavaScript的库，封装了许多方法，很多时候，你会发现，在实现某个功能的时候，会发现这个功能的实现可以使用多种方法。</p>
 <p>本文主要是介绍jQuery设置属性的两个方法：attr（attributes）和prop（properties）。</p>
-<h1 id="官方介绍"><a href="#官方介绍" class="headerlink" title="官方介绍"></a>官方介绍</h1><p>我们知道有的浏览器在<input>表单项中写disabled或者checked就可以了，但是有的浏览器需要写成disabled=”disabled”或者checked=”checked”才可以，比如用attr(“checked”)获取checkbox的checked属性时选中的时候可以取到值,值为”checked”但没选中获取值就是undefined。</p>
+<h1 id="官方介绍"><a href="#官方介绍" class="headerlink" title="官方介绍"></a>官方介绍</h1><p>我们知道有的浏览器在input表单项中写disabled或者checked就可以了，但是有的浏览器需要写成disabled=”disabled”或者checked=”checked”才可以，比如用attr(“checked”)获取checkbox的checked属性时选中的时候可以取到值,值为”checked”但没选中获取值就是undefined。</p>
 <p>jQuery1.6之后，使用prop来获取这些属性就能解决问题，使用统一的返回true或者false。</p>
 <p>在jQuery的3.3.1中有以下说明，截图如下：</p>
 <h2 id="attr"><a href="#attr" class="headerlink" title="attr"></a>attr</h2><p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180627093125.png" alt="QQ截图20180627093125"></p>
