@@ -3,6 +3,60 @@
   
     
     <entry>
+      <title><![CDATA[Jquery的attr()和prop()方法]]></title>
+      <url>/2018/06/27/2018-6-27-09-22-28/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在jQuery中有许多的功能能够简化开发流程，jQuery是一个JavaScript的库，封装了许多方法，很多时候，你会发现，在实现某个功能的时候，会发现这个功能的实现可以使用多种方法。</p>
+<p>本文主要是介绍jQuery设置属性的两个方法：attr（attributes）和prop（properties）。</p>
+<h1 id="官方介绍"><a href="#官方介绍" class="headerlink" title="官方介绍"></a>官方介绍</h1><p>我们知道有的浏览器在<input>表单项中写disabled或者checked就可以了，但是有的浏览器需要写成disabled=”disabled”或者checked=”checked”才可以，比如用attr(“checked”)获取checkbox的checked属性时选中的时候可以取到值,值为”checked”但没选中获取值就是undefined。</p>
+<p>jQuery1.6之后，使用prop来获取这些属性就能解决问题，使用统一的返回true或者false。</p>
+<p>在jQuery的3.3.1中有以下说明，截图如下：</p>
+<h2 id="attr"><a href="#attr" class="headerlink" title="attr"></a>attr</h2><p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180627093125.png" alt="QQ截图20180627093125"></p>
+<h2 id="prop"><a href="#prop" class="headerlink" title="prop"></a>prop</h2><p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180627093151.png" alt="QQ截图20180627093151"></p>
+<h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><p>对于以上，官方文档上说到：</p>
+<p>对于prop：</p>
+<blockquote>
+<p>获取在匹配的元素集中的第一个元素的属性值。<br>随着一些内置属性的DOM元素或window对象，如果试图将删除该属性，浏览器可能会产生错误。jQuery第一次分配undefined值的属性，而忽略了浏览器生成的任何错误</p>
+</blockquote>
+<p>对于attr：</p>
+<blockquote>
+<p>设置或返回被选元素的属性值。</p>
+</blockquote>
+<h2 id="代码对比"><a href="#代码对比" class="headerlink" title="代码对比"></a>代码对比</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;嘿咻&lt;/title&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;%--此处的库需要换成你自己的或者是cdn--%&gt;</span><br><span class="line">    &lt;script src=&quot;jquery/jquery-3.3.1.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">c1:&lt;input id=&quot;c1&quot; name=&quot;checkbox&quot; type=&quot;checkbox&quot; checked=&quot;checked&quot; /&gt;&lt;/br&gt;</span><br><span class="line">c2:&lt;input id=&quot;c2&quot; name=&quot;checkbox&quot; type=&quot;checkbox&quot; checked=true/&gt;&lt;/br&gt;</span><br><span class="line">c3:&lt;input id=&quot;c3&quot; name=&quot;checkbox&quot; type=&quot;checkbox&quot; checked=&quot;&quot;/&gt;&lt;/br&gt;</span><br><span class="line">c4:&lt;input id=&quot;c4&quot; name=&quot;checkbox&quot; type=&quot;checkbox&quot; checked/&gt;&lt;/br&gt;</span><br><span class="line">c5:&lt;input id=&quot;c5&quot; name=&quot;checkbox&quot; type=&quot;checkbox&quot; /&gt;&lt;/br&gt;</span><br><span class="line">c6:&lt;input id=&quot;c6&quot; name=&quot;checkbox&quot; type=&quot;checkbox&quot; checked=false/&gt;&lt;/br&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var a1=$(&quot;#c1&quot;).attr(&quot;checked&quot;);</span><br><span class="line">    var a2=$(&quot;#c2&quot;).attr(&quot;checked&quot;);</span><br><span class="line">    var a3=$(&quot;#c3&quot;).attr(&quot;checked&quot;);</span><br><span class="line">    var a4=$(&quot;#c4&quot;).attr(&quot;checked&quot;);</span><br><span class="line">    var a5=$(&quot;#c5&quot;).attr(&quot;checked&quot;);</span><br><span class="line">    var a6=$(&quot;#c6&quot;).attr(&quot;checked&quot;);</span><br><span class="line"></span><br><span class="line">    var p1=$(&quot;#c1&quot;).prop(&quot;checked&quot;);</span><br><span class="line">    var p2=$(&quot;#c2&quot;).prop(&quot;checked&quot;);</span><br><span class="line">    var p3=$(&quot;#c3&quot;).prop(&quot;checked&quot;);</span><br><span class="line">    var p4=$(&quot;#c4&quot;).prop(&quot;checked&quot;);</span><br><span class="line">    var p5=$(&quot;#c5&quot;).prop(&quot;checked&quot;);</span><br><span class="line">    var p6=$(&quot;#c6&quot;).prop(&quot;checked&quot;);</span><br><span class="line"></span><br><span class="line">    console.log(&quot;a1:&quot;+a1);</span><br><span class="line">    console.log(&quot;a2:&quot;+a2);</span><br><span class="line">    console.log(&quot;a3:&quot;+a3);</span><br><span class="line">    console.log(&quot;a4:&quot;+a4);</span><br><span class="line">    console.log(&quot;a5:&quot;+a5);</span><br><span class="line">    console.log(&quot;a6:&quot;+a6);</span><br><span class="line"></span><br><span class="line">    console.log(&quot;p1:&quot;+p1);</span><br><span class="line">    console.log(&quot;p2:&quot;+p2);</span><br><span class="line">    console.log(&quot;p3:&quot;+p3);</span><br><span class="line">    console.log(&quot;p4:&quot;+p4);</span><br><span class="line">    console.log(&quot;p5:&quot;+p5);</span><br><span class="line">    console.log(&quot;p6:&quot;+p6);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>结果如下：</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180627095316.png" alt="QQ截图20180627095316"></p>
+<p>可以看到使用attr去获取标签的固有属性的时候，返回的是undefined。而prop返回的是true或者false。</p>
+<p>那么什么时候使用atrr什么时候使用prop呢：</p>
+<p>总结如下：</p>
+<ul>
+<li><p>添加属性名称就能够生效的时候使用prop，比如checked和selected</p>
+</li>
+<li><p>具有true和false两个返回值的属性使用prop方法</p>
+</li>
+<li><p>对于HTML元素本身就带有的固有属性，在处理时，使用prop方法</p>
+</li>
+<li><p>对于HTML元素我们自己自定义的DOM属性，在处理时，使用attr方法</p>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> Jquery </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> jQuery </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[关于REST风格的编程]]></title>
       <url>/2018/06/26/2018-6-26-09-47-10/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
