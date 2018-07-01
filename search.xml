@@ -23,6 +23,20 @@
 <p>但是如果前置方法返回false，那么后面的prehandler方法也不会执行了，而控制器和所有的postHandler也不会执行。执行过preHandler方法且方法返回为true的拦截器的完成方法afterCompletion会按照配置顺序的逆序执行。</p>
 ]]></content>
       
+        <categories>
+            
+            <category> JavaEE </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> javaEE </tag>
+            
+            <tag> springMVC </tag>
+            
+        </tags>
         
     </entry>
     
