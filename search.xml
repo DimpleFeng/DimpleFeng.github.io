@@ -3,7 +3,7 @@
   
     
     <entry>
-      <title><![CDATA[记一次实际项目从**Eclipse**转到IDEA的经历]]></title>
+      <title><![CDATA[记一次实际项目从Eclipse转到IDEA的经历]]></title>
       <url>/2018/07/07/2018-7-7-16-35-54/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在我的印象中，<strong>Eclipse</strong>是所有从事与Java开发相关的人员都熟知的一个IDE，在C/C++领域有微软的VS，VS也是号称宇宙第一IDE，足见它的强大。IDEA作为一个更好用的IDE工具，也是饱饱的吸引了我们的眼球。</p>
 <p>此文会一个完整的项目作为引子，逐步讲解如何将一个<strong>Eclipse</strong>的JavaWeb项目转到IDEA上面，本文不会像到某度上面搜到的东西那样千篇一律，而是会完完整整的介绍该如何操作，也包括了IDEA和<strong>Eclipse</strong>的URL的问题。</p>
