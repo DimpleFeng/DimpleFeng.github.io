@@ -3,6 +3,60 @@
   
     
     <entry>
+      <title><![CDATA[记一次实际项目从**Eclipse**转到IDEA的经历]]></title>
+      <url>/2018/07/07/2018-7-7-16-35-54/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在我的印象中，<strong>Eclipse</strong>是所有从事与Java开发相关的人员都熟知的一个IDE，在C/C++领域有微软的VS，VS也是号称宇宙第一IDE，足见它的强大。IDEA作为一个更好用的IDE工具，也是饱饱的吸引了我们的眼球。</p>
+<p>此文会一个完整的项目作为引子，逐步讲解如何将一个<strong>Eclipse</strong>的JavaWeb项目转到IDEA上面，本文不会像到某度上面搜到的东西那样千篇一律，而是会完完整整的介绍该如何操作，也包括了IDEA和<strong>Eclipse</strong>的URL的问题。</p>
+<h1 id="具体实施步骤"><a href="#具体实施步骤" class="headerlink" title="具体实施步骤"></a>具体实施步骤</h1><h2 id="Eclipse环境"><a href="#Eclipse环境" class="headerlink" title="Eclipse环境"></a><strong>Eclipse</strong>环境</h2><p>在这里首先说一下<strong>Eclipse</strong>的项目的相关环境，项目是采用直接配置<strong>Jar</strong>包的，所有的<strong>Jar</strong>包在<strong>Eclipse</strong>的<strong>WEB-INF</strong>的<strong>lib</strong>文件夹中。项目是采用的是主机名+端口号+项目名称作为首页的这种配置方式的，即<a href="http://localhost:8080/special" target="_blank" rel="noopener">http://localhost:8080/special</a> 这样的方式。</p>
+<p>1、首先打开IDEA，来到欢迎页面，选择<strong>import Project</strong></p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707164640.png" alt="QQ截图20180707164640"></p>
+<p>2、选择项目所在的文件夹，选择<strong>OK</strong>打开</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707164801.png" alt="QQ截图20180707164801"></p>
+<p>3、打开后界面如下，选择<strong>Eclipse</strong>项目</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707164952.png" alt="QQ截图20180707164952"></p>
+<p>4、选择<strong>Eclipse</strong>项目的位置，这里保持默认即可</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707165053.png" alt="QQ截图20180707165053"></p>
+<p>5、然后一路next保持默认，此处省略图。</p>
+<p>6、项目加载完成后，一般来说会在右下角有一个绿色的<strong>FrameWords Detected</strong>的提示，点击进去，IDEA会自动配置好相关的<strong>Facets</strong>，如果没有的不要慌，后面会介绍二般的情况。<br><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707165544.png" alt="QQ截图20180707165544"></p>
+<p>点击后会自动加载Hibernate和Web的Facets，这里说一句，根据不同的项目架构，会有不同的Facets，但是可能存在不全的情况。比如这里是SSH架构的，只提示配置Hibernate的，这样肯定是不行的。</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707165942.png" alt="QQ截图20180707165942"></p>
+<p>7、<strong>Ctrl+Alt+Shift+S</strong> 进入到项目结构，然后侧边栏选择<strong>Facets</strong>，添加其他的<strong>Facet</strong>，这里添加的是<strong>Spring</strong>，以及<strong>Struts2</strong>的。</p>
+<p>这里以Spring的为例：<br><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707170143.png" alt="QQ截图20180707170143"></p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707170220.png" alt="QQ截图20180707170220"></p>
+<p>选中项目中<strong>Spring</strong>的配置文件就可</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707170305.png" alt="QQ截图20180707170305"></p>
+<p><strong>Struts2</strong>也是一样，这里省略。<br>这里提示下，<strong>Struts2</strong>的配置文件，需要在Web的目录下，不是在项目的文件下，注意！</p>
+<p>完整的Facets如下：</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707170623.png" alt="QQ截图20180707170623"></p>
+<p>8、配置<strong>Artifacts</strong></p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707170900.png" alt="QQ截图20180707170900"></p>
+<p>选择该项目<strong>Modules</strong>即可：</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707170955.png" alt="QQ截图20180707170955"></p>
+<p>9、配置输出路径（这里很重要，尤其是一些项目是将spring的配置文件这些东西，全部放在<strong>Eclipse</strong>的默认输出路径的，如果你的项目是没有一些比较奇葩的操作的，可以这里不用改）</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707171612.png" alt="QQ截图20180707171612"></p>
+<p>注意还需要配置一处：</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707171654.png" alt="QQ截图20180707171654"></p>
+<p>9、配置<strong>Web</strong>容器</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707170713.png" alt="QQ截图20180707170713"></p>
+<p>选择<strong>Add Configuration</strong></p>
+<p>选择<strong>Tomcat</strong></p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707170759.png" alt="QQ截图20180707170759"></p>
+<p>然后将Artifact添加到该容器中</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707171753.png" alt="QQ截图20180707171753"></p>
+<p>如果，项目比较大，且很多路径已经写死了，这里就需要修改一下URL，因为IDEA是默认的localhost:8080就能访问到项目的。如果你的项目运行404或者在<strong>Eclipse</strong>的时候就是localhost:8080/projectname，就在这里修改一下。</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707171945.png" alt="QQ截图20180707171945"></p>
+<p>10、删除一些没用的东西</p>
+<p>这里可以删除<strong>Eclipse</strong>的一些配置文件<br>如图：</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707172257.png" alt="QQ截图20180707172257"></p>
+<p>同时 ，一般来说，IDEA中<strong>resource</strong>目录中存的都是一些配置文件，这个时候，更希望是将文件夹标记为<strong>resource</strong></p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707172433.png" alt="QQ截图20180707172433"></p>
+<p>到此本文完···</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[SpringMVC拦截器]]></title>
       <url>/2018/07/01/2018-7-1-20-55-35/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>拦截器是Spring MVC中强大的控件，它可以在处理器之前做一些操作，或者是在处理器完成后做一个操作，甚至是在渲染视图，也就是viewResolver之后做一些操作。我们知道，在web.xml网站描述文件中，我们会配置DispatchServlet，然后SpringMVC启动的时候就回通过@requestMapping的注解解析统一资源定位符URI和处理器handler之间的关系，在运行的时候，通过URL请求找到对应的HandlerMapping，然后构建HandlerExecuteChain对象，再交给handleradapter执行。</p>
@@ -663,11 +717,11 @@
         
         <tags>
             
-            <tag> JavaWeb </tag>
-            
             <tag> Struts2 </tag>
             
             <tag> 拦截器 </tag>
+            
+            <tag> JavaWeb </tag>
             
         </tags>
         
@@ -748,11 +802,11 @@
         
         <tags>
             
+            <tag> Struts2 </tag>
+            
             <tag> JavaWeb </tag>
             
             <tag> 属性封装，表达式封装，模型驱动封装 </tag>
-            
-            <tag> Struts2 </tag>
             
         </tags>
         
