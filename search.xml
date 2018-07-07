@@ -18,12 +18,12 @@
 <p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707165053.png" alt="QQ截图20180707165053"></p>
 <h2 id="5、然后一路next保持默认，此处省略图。"><a href="#5、然后一路next保持默认，此处省略图。" class="headerlink" title="5、然后一路next保持默认，此处省略图。"></a>5、然后一路next保持默认，此处省略图。</h2><h2 id="6、Facets配置"><a href="#6、Facets配置" class="headerlink" title="6、Facets配置"></a>6、Facets配置</h2><p>项目加载完成后，一般来说会在右下角有一个绿色的<strong>FrameWords Detected</strong>的提示，点击进去，IDEA会自动配置好相关的<strong>Facets</strong>，如果没有的不要慌，后面会介绍二般的情况。<br><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707165544.png" alt="QQ截图20180707165544"></p>
 <p>点击后会自动加载Hibernate和Web的Facets，这里说一句，根据不同的项目架构，会有不同的Facets，但是可能存在不全的情况。比如这里是SSH架构的，只提示配置Hibernate的，这样肯定是不行的。</p>
-<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707165942.png" alt="QQ截图20180707165942"></p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707173845.png" alt="QQ截图20180707173845"></p>
 <h2 id="7、添加Facets"><a href="#7、添加Facets" class="headerlink" title="7、添加Facets"></a>7、添加Facets</h2><p><strong>Ctrl+Alt+Shift+S</strong> 进入到项目结构，然后侧边栏选择<strong>Facets</strong>，添加其他的<strong>Facet</strong>，这里添加的是<strong>Spring</strong>，以及<strong>Struts2</strong>的。</p>
 <p>这里以Spring的为例：<br><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707170143.png" alt="QQ截图20180707170143"></p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707170220.png" alt="QQ截图20180707170220"></p>
 <p>选中项目中<strong>Spring</strong>的配置文件就可</p>
-<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707170305.png" alt="QQ截图20180707170305"></p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707173948.png" alt="QQ截图20180707173948"></p>
 <p><strong>Struts2</strong>也是一样，这里省略。<br>这里提示下，<strong>Struts2</strong>的配置文件，需要在Web的目录下，不是在项目的文件下，注意！</p>
 <p>完整的Facets如下：</p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707170623.png" alt="QQ截图20180707170623"></p>
@@ -43,9 +43,8 @@
 <p>如果，项目比较大，且很多路径已经写死了，这里就需要修改一下URL，因为IDEA是默认的localhost:8080就能访问到项目的。如果你的项目运行404或者在<strong>Eclipse</strong>的时候就是localhost:8080/projectname，就在这里修改一下。</p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707171945.png" alt="QQ截图20180707171945"></p>
 <h2 id="10、删除一些没用的东西"><a href="#10、删除一些没用的东西" class="headerlink" title="10、删除一些没用的东西"></a>10、删除一些没用的东西</h2><p>这里可以删除<strong>Eclipse</strong>的一些配置文件<br>如图：</p>
-<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707172257.png" alt="QQ截图20180707172257"></p>
-<p>同时 ，一般来说，IDEA中<strong>resource</strong>目录中存的都是一些配置文件，这个时候，更希望是将文件夹标记为<strong>resource</strong></p>
-<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707172433.png" alt="QQ截图20180707172433"></p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707174116.png" alt="QQ截图20180707174116"><br>同时 ，一般来说，IDEA中<strong>resource</strong>目录中存的都是一些配置文件，这个时候，更希望是将文件夹标记为<strong>resource</strong></p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707174047.png" alt="QQ截图20180707174047"></p>
 <p>到此本文完···</p>
 ]]></content>
       
