@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://www.bianxiaofeng.com/2018/07/22/2018-7-22-19-04-46/</loc>
+    <lastmod>2018-07-22T11:10:38.240Z</lastmod>
+    <data>
+        <display>
+        <title>线程相关总结</title>
+        <pubTime>2018-07-22T11:05:01.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.bianxiaofeng.com/2018/07/07/2018-7-7-16-35-54/</loc>
     <lastmod>2018-07-07T09:42:12.096Z</lastmod>
     <data>
@@ -307,26 +322,6 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/03/20/2018-3-20-153425/</loc>
-    <lastmod>2018-06-03T13:01:23.725Z</lastmod>
-    <data>
-        <display>
-        <title>Error:Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug'的解决办法</title>
-        <pubTime>2018-03-20T07:34:34.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.bianxiaofeng.com/2018/03/09/2018-3-9-165439/</loc>
     <lastmod>2018-06-03T13:01:23.725Z</lastmod>
     <data>
@@ -344,6 +339,26 @@
            
              
               <breadCrumb title="Qt" url="http://www.bianxiaofeng.com/categories/Qt/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/03/20/2018-3-20-153425/</loc>
+    <lastmod>2018-06-03T13:01:23.725Z</lastmod>
+    <data>
+        <display>
+        <title>Error:Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug'的解决办法</title>
+        <pubTime>2018-03-20T07:34:34.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
           
         </display>
     </data>
@@ -498,6 +513,28 @@
 
     
   <url>
+    <loc>http://www.bianxiaofeng.com/2018/01/07/2018-01-07%20121946/</loc>
+    <lastmod>2018-06-03T13:01:23.542Z</lastmod>
+    <data>
+        <display>
+        <title>2018React-Native环境安装及运行第一个demo</title>
+        <pubTime>2018-01-07T04:19:46.000Z</pubTime>
+        
+        <tag>react-native</tag>
+         
+        <tag>Android混合开发</tag>
+         
+         
+           
+             
+              <breadCrumb title="react-native学习" url="http://www.bianxiaofeng.com/categories/react-native%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.bianxiaofeng.com/2018/01/17/2018-1-17%20162928/</loc>
     <lastmod>2018-06-03T13:01:23.542Z</lastmod>
     <data>
@@ -528,28 +565,6 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/07/2018-01-07%20121946/</loc>
-    <lastmod>2018-06-03T13:01:23.542Z</lastmod>
-    <data>
-        <display>
-        <title>2018React-Native环境安装及运行第一个demo</title>
-        <pubTime>2018-01-07T04:19:46.000Z</pubTime>
-        
-        <tag>react-native</tag>
-         
-        <tag>Android混合开发</tag>
-         
-         
-           
-             
-              <breadCrumb title="react-native学习" url="http://www.bianxiaofeng.com/categories/react-native%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.bianxiaofeng.com/2018/01/04/2018-01-04%20212731/</loc>
     <lastmod>2018-06-03T13:01:23.529Z</lastmod>
     <data>
@@ -562,32 +577,6 @@
         <tag>博客从零搭建</tag>
          
         <tag>最新</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/02/2018-01-02%20120748/</loc>
-    <lastmod>2018-06-03T13:01:21.245Z</lastmod>
-    <data>
-        <display>
-        <title>站点被百度谷歌收录</title>
-        <pubTime>2018-01-02T04:07:48.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>google</tag>
-         
-        <tag>baidu</tag>
-         
-        <tag>收录</tag>
          
          
            
@@ -656,6 +645,32 @@
         <tag>hexo</tag>
          
         <tag>博文置顶</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/01/02/2018-01-02%20120748/</loc>
+    <lastmod>2018-06-03T13:01:21.245Z</lastmod>
+    <data>
+        <display>
+        <title>站点被百度谷歌收录</title>
+        <pubTime>2018-01-02T04:07:48.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>google</tag>
+         
+        <tag>baidu</tag>
+         
+        <tag>收录</tag>
          
          
            
