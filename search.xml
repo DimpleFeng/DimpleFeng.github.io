@@ -3,6 +3,57 @@
   
     
     <entry>
+      <title><![CDATA[Java中接口和抽象类]]></title>
+      <url>/2018/08/01/2018-8-1-20-35-28/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>经常看到关于Java中的接口和抽象类的比较，看着这两难兄难弟确实还是有些像，又有些不想，借此，想好好总结下他们两。</p>
+<h1 id="关于抽象类"><a href="#关于抽象类" class="headerlink" title="关于抽象类"></a>关于抽象类</h1><p>在Java中，抽象类是以abstract关键字修饰的。有抽象方法的一定是抽象类，反之，抽象类不一定有抽象方法，这句话是《Java编程思想》这本书中提到的，说的是只要是被关键字abstract修饰的类都叫抽象类，而不管这个类中是否含有抽象方法。抽象类的定义格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abstaract class ClassName&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>抽象方法： 抽象方法是一种特殊的方法，只有方法的声明，但是没有方法的实现。抽象方法的声明格式为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abstract void function();</span><br></pre></td></tr></table></figure></p>
+<p>抽象类是为了继承而存在的，抽象出子类共有的一些特点，然后交给其具体的实现。</p>
+<p>抽象类并不一定包含抽象方法，它和普通的类一样，也是可以拥有成员变量和普通的成员方法。</p>
+<p>抽象类和普通的类的三点区别：</p>
+<ul>
+<li><p>抽象方法必须为public或者protected，缺省默认为public。</p>
+</li>
+<li><p>抽象方法不能用来创建对象。</p>
+</li>
+<li><p>如果一个类继承自一个抽象类，那么需要实现这个类的所有方法，如果没有实现这个类的所有方法，那么该类也需要被定义为abstract。<br><img src="http://p2sj58chj.bkt.clouddn.com/TIM截图20180801205707.png" alt="TIM截图20180801205707"></p>
+</li>
+</ul>
+<p><strong>另外抽象类是可以有构造器的。</strong></p>
+<h1 id="关于接口"><a href="#关于接口" class="headerlink" title="关于接口"></a>关于接口</h1><p>接口（interface）是对行为的抽象。在java 中定义一个接口的方式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">interface InterfaceName&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>接口中可以含有方法和变量。其中变量会被隐式的指定为public final static 类型。其中的方法会被隐式的指定为public abstract，且不能有方法的实现（“Interface abstract methods cannot have body”）。</p>
+<p>实现一个接口需要用到implements关键字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class ClassName implements InterfaceA,InterfaceB&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>一个类可以实现多个接口。如果一个抽象类implements某个接口，可以不实现这个接口中的方法。非抽象类implements某个结构就必须要实现该接口中的所有方法。</p>
+<h1 id="抽象类和接口的区别"><a href="#抽象类和接口的区别" class="headerlink" title="抽象类和接口的区别"></a>抽象类和接口的区别</h1><p>区别之处：</p>
+<p>1、接口中的所有方法都是隐含的abstract的，而抽象类亦可以同时包含抽象和非抽象的方法。</p>
+<p>2、一个类可以实现很多接口，但是只能继承自一个抽象类。</p>
+<p>3、类可以不实现抽象类和接口中的所有方法，这种情况下的类需要被声明为abstract。</p>
+<p>4、接口中的变量都是被默认声明为public static final的，而抽象类中的成员变量可以是各种类型的。</p>
+<p>5、Java接口中的成员函数默认都是public的，抽象类中的成员函数可以是private、protected、public的。</p>
+<p>其他：</p>
+<p>1、接口是可以被接口继承的，通过extends关键字声明一个接口是一个接口的子接口，由于接口中的方法和常量都是public的，子接口将继承胡接口的全部方法和常量。</p>
+<p>2、抽象类可以继承自实体类。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Java基础 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 接口 </tag>
+            
+            <tag> 抽象类 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Jacoco服务器代码覆盖率测试工具使用（二）（远程Tomcat Web部署的方式）]]></title>
       <url>/2018/08/01/2018-8-1-16-37-56/</url>
       <content type="html"><![CDATA[<p>本文为系列文章：</p>
