@@ -888,11 +888,11 @@
         
         <tags>
             
+            <tag> JavaWeb </tag>
+            
             <tag> Struts2 </tag>
             
             <tag> 拦截器 </tag>
-            
-            <tag> JavaWeb </tag>
             
         </tags>
         
@@ -973,11 +973,11 @@
         
         <tags>
             
-            <tag> Struts2 </tag>
-            
             <tag> JavaWeb </tag>
             
             <tag> 属性封装，表达式封装，模型驱动封装 </tag>
+            
+            <tag> Struts2 </tag>
             
         </tags>
         
