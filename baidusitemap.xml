@@ -4,6 +4,45 @@
 
     
   <url>
+    <loc>http://www.bianxiaofeng.com/2018/08/01/2018-8-1-15-32-13/</loc>
+    <lastmod>2018-08-01T08:15:37.125Z</lastmod>
+    <data>
+        <display>
+        <title>Jacoco服务器代码覆盖率测试工具使用（IDEA插件的方式）（一）</title>
+        <pubTime>2018-08-01T07:32:20.000Z</pubTime>
+        
+        <tag>JavaWeb</tag>
+         
+        <tag>Jacoco</tag>
+         
+        <tag>代码覆盖率</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/07/23/2018-7-23-09-36-27/</loc>
+    <lastmod>2018-07-23T01:45:53.192Z</lastmod>
+    <data>
+        <display>
+        <title>Intellij IDEA 优化配置</title>
+        <pubTime>2018-07-23T01:37:07.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.bianxiaofeng.com/2018/07/22/2018-7-22-21-20-34/</loc>
     <lastmod>2018-07-22T14:13:48.946Z</lastmod>
     <data>
@@ -360,40 +399,16 @@
         <title>JavaWeb获取表单数据的三种方式（属性封装，表达式封装，模型驱动封装）</title>
         <pubTime>2018-03-31T11:49:29.000Z</pubTime>
         
+        <tag>Struts2</tag>
+         
         <tag>JavaWeb</tag>
          
         <tag>属性封装，表达式封装，模型驱动封装</tag>
-         
-        <tag>Struts2</tag>
          
          
            
              
               <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/03/09/2018-3-9-165439/</loc>
-    <lastmod>2018-06-03T13:01:23.725Z</lastmod>
-    <data>
-        <display>
-        <title>Qt实现串口通信控制51单片机（上下位机）</title>
-        <pubTime>2018-03-09T08:54:45.000Z</pubTime>
-        
-        <tag>Qt</tag>
-         
-        <tag>串口通信</tag>
-         
-        <tag>51单片机</tag>
-         
-         
-           
-             
-              <breadCrumb title="Qt" url="http://www.bianxiaofeng.com/categories/Qt/"/>
           
         </display>
     </data>
@@ -438,6 +453,30 @@
            
              
               <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/03/09/2018-3-9-165439/</loc>
+    <lastmod>2018-06-03T13:01:23.725Z</lastmod>
+    <data>
+        <display>
+        <title>Qt实现串口通信控制51单片机（上下位机）</title>
+        <pubTime>2018-03-09T08:54:45.000Z</pubTime>
+        
+        <tag>Qt</tag>
+         
+        <tag>串口通信</tag>
+         
+        <tag>51单片机</tag>
+         
+         
+           
+             
+              <breadCrumb title="Qt" url="http://www.bianxiaofeng.com/categories/Qt/"/>
           
         </display>
     </data>
@@ -504,6 +543,28 @@
 
     
   <url>
+    <loc>http://www.bianxiaofeng.com/2018/01/29/2018-1-29-220254/</loc>
+    <lastmod>2018-06-03T13:01:23.596Z</lastmod>
+    <data>
+        <display>
+        <title>Android学习之路笔记</title>
+        <pubTime>2018-01-29T14:03:08.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Android笔记</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.bianxiaofeng.com/2018/03/04/2018-3-4-135539/</loc>
     <lastmod>2018-06-03T13:01:23.596Z</lastmod>
     <data>
@@ -524,21 +585,43 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/29/2018-1-29-220254/</loc>
-    <lastmod>2018-06-03T13:01:23.596Z</lastmod>
+    <loc>http://www.bianxiaofeng.com/2018/01/19/2018-1-19%20153336/</loc>
+    <lastmod>2018-06-03T13:01:23.542Z</lastmod>
     <data>
         <display>
-        <title>Android学习之路笔记</title>
-        <pubTime>2018-01-29T14:03:08.000Z</pubTime>
+        <title>使用VSCode+七牛云图床插件+自定义快捷键配置Hexo博文编写环境</title>
+        <pubTime>2018-01-19T07:33:36.000Z</pubTime>
         
-        <tag>Android</tag>
+        <tag>Hexo</tag>
          
-        <tag>Android笔记</tag>
+        <tag>七牛云图床，VSCode</tag>
          
          
            
              
-              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
+              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/01/07/2018-01-07%20121946/</loc>
+    <lastmod>2018-06-03T13:01:23.542Z</lastmod>
+    <data>
+        <display>
+        <title>2018React-Native环境安装及运行第一个demo</title>
+        <pubTime>2018-01-07T04:19:46.000Z</pubTime>
+        
+        <tag>react-native</tag>
+         
+        <tag>Android混合开发</tag>
+         
+         
+           
+             
+              <breadCrumb title="react-native学习" url="http://www.bianxiaofeng.com/categories/react-native%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>
@@ -576,50 +659,6 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/07/2018-01-07%20121946/</loc>
-    <lastmod>2018-06-03T13:01:23.542Z</lastmod>
-    <data>
-        <display>
-        <title>2018React-Native环境安装及运行第一个demo</title>
-        <pubTime>2018-01-07T04:19:46.000Z</pubTime>
-        
-        <tag>react-native</tag>
-         
-        <tag>Android混合开发</tag>
-         
-         
-           
-             
-              <breadCrumb title="react-native学习" url="http://www.bianxiaofeng.com/categories/react-native%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/19/2018-1-19%20153336/</loc>
-    <lastmod>2018-06-03T13:01:23.542Z</lastmod>
-    <data>
-        <display>
-        <title>使用VSCode+七牛云图床插件+自定义快捷键配置Hexo博文编写环境</title>
-        <pubTime>2018-01-19T07:33:36.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>七牛云图床，VSCode</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.bianxiaofeng.com/2018/01/04/2018-01-04%20212731/</loc>
     <lastmod>2018-06-03T13:01:23.529Z</lastmod>
     <data>
@@ -632,30 +671,6 @@
         <tag>博客从零搭建</tag>
          
         <tag>最新</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/17/2018-01-17%20102253/</loc>
-    <lastmod>2018-06-03T13:01:21.245Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo-NexT主题添加评论功能（来必力、Hypercomments、畅言、友言）</title>
-        <pubTime>2018-01-17T02:22:53.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>next优化</tag>
-         
-        <tag>Comment</tag>
          
          
            
@@ -704,6 +719,30 @@
         <tag>baidu</tag>
          
         <tag>收录</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/01/17/2018-01-17%20102253/</loc>
+    <lastmod>2018-06-03T13:01:21.245Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo-NexT主题添加评论功能（来必力、Hypercomments、畅言、友言）</title>
+        <pubTime>2018-01-17T02:22:53.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>next优化</tag>
+         
+        <tag>Comment</tag>
          
          
            
@@ -771,11 +810,11 @@
         <title>Struts2 拦截器</title>
         <pubTime>2018-03-31T13:06:33.000Z</pubTime>
         
-        <tag>JavaWeb</tag>
-         
         <tag>Struts2</tag>
          
         <tag>拦截器</tag>
+         
+        <tag>JavaWeb</tag>
          
          
            
