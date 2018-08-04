@@ -3,6 +3,52 @@
   
     
     <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>/2018/08/04/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Error running 'Tomcat'Unable to open debugger port (127.0.0.1:2148)的解决办法]]></title>
+      <url>/2018/08/03/2018-8-3-20-36-12/</url>
+      <content type="html"><![CDATA[<p>在Web项目运行的时候，IDEA可能会报Error running ‘Tomcat’: Unable to open debugger port (127.0.0.1:2148): java.net.SocketException “socket closed”错误，启动不了Tomcat，在这种时候，网上的解决办法大多都是修改端口的这种方式，但是这种方式治标不治本。</p>
+<p>错误截图如下：</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180803144001.png" alt="QQ截图20180803144001"></p>
+<p>解决办法：</p>
+<p>打开CMD命令行界面：</p>
+<p>输入以下命令，查看1099端口号的占用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano | find &quot;1099&quot;</span><br></pre></td></tr></table></figure></p>
+<p>这里看到的是PID为5440的进程占用1099端口，所以输入以下命令终止进程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill -f -pid 5440</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180803210031.png" alt="QQ截图20180803210031"></p>
+<p>重新启动Web项目就不会报错了</p>
+]]></content>
+      
+        <categories>
+            
+            <category> JavaEE </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Tomcat </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Java中接口和抽象类]]></title>
       <url>/2018/08/01/2018-8-1-20-35-28/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>经常看到关于Java中的接口和抽象类的比较，看着这两难兄难弟确实还是有些像，又有些不想，借此，想好好总结下他们两。</p>
@@ -67,7 +113,7 @@
 <p><a href="https://download.csdn.net/download/qq_32454537/10577733" target="_blank" rel="noopener">点击我</a></p>
 <h1 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h1><p>服务器端我分为两部分来说明，一个是Windows的服务器端，一个是Linux的服务器端，读者可以根据你自己的服务器系统来选择看哪部分的说明。服务器端使用的服务器环境统一为Tomcat。</p>
 <h2 id="Windows端"><a href="#Windows端" class="headerlink" title="Windows端"></a>Windows端</h2><h3 id="安装Jacoco"><a href="#安装Jacoco" class="headerlink" title="安装Jacoco"></a>安装Jacoco</h3><p>在合适的目录，比如我直接就在C盘，把Jacoco的文件夹拷贝到此处就行，当然你也可以选择其他地方。</p>
-<h3 id="修改服务器启动参数"><a href="#修改服务器启动参数" class="headerlink" title="修改服务器启动参数"></a>修改服务器启动参数</h3><p>首先打开tomcat的安装位置，找到bin目录下的catalina.bat文件，使用notepad++打开，添加以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set JAVA_OPTS=%JAVA_OPTS% -javaagent:C:\jacoco\lib\jacocoagent.jar=includes=*,output=tcpserver,address=192.168.73.130,port=4399,append=true,</span><br></pre></td></tr></table></figure></p>
+<h3 id="修改服务器启动参数"><a href="#修改服务器启动参数" class="headerlink" title="修改服务器启动参数"></a>修改服务器启动参数</h3><p>首先打开tomcat的安装位置，找到bin目录下的catalina.bat文件，使用notepad++打开，添加以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">···set JAVA_OPTS=%JAVA_OPTS% -javaagent:C:\jacoco\lib\jacocoagent.jar=includes=*,output=tcpserver,address=192.168.73.130,port=4399,append=true,</span><br></pre></td></tr></table></figure></p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/TIM截图20180801171253.png" alt="TIM截图20180801171253"></p>
 <p>说明如下（只说关键配置）：</p>
 <p>A： 这段需要注意的是，写的是实际的Jacoco的jacocoagent.jar的位置，如果你是放在其他地方的，一定要保证其在服务器本地是可达状态的。  </p>
@@ -109,6 +155,32 @@
             <tag> 代码覆盖率 </tag>
             
             <tag> 远程Tomcat部署 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo 出现 “unable to access ''OpenSSL SSL_connectSSL_ERROR_SYSCALL in connection to github.com” 的解决办法]]></title>
+      <url>/2018/08/01/2018-8-1-16-23-49/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天写了一篇博客，然后准备推到GitHub的时候发现报以下错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unable to access &apos;https://github.com/DimpleFeng/dimplefeng.github.io.git/&apos;: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443</span><br></pre></td></tr></table></figure>
+<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>Git支持三种协议，分别是：git://、ssh://和http://<br>因为HEXO也是将博文编译为静态的文件,然后再push到Git 上的。解决方法是取消http代理。</p>
+<p>打开Git Bash输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br></pre></td></tr></table></figure>
+<p>然后再提交HEXO博文就没问题了。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> hexo个人博客搭建之路 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Git </tag>
             
         </tags>
         
@@ -1002,11 +1074,11 @@
         
         <tags>
             
+            <tag> JavaWeb </tag>
+            
             <tag> Struts2 </tag>
             
             <tag> 拦截器 </tag>
-            
-            <tag> JavaWeb </tag>
             
         </tags>
         
@@ -1087,11 +1159,11 @@
         
         <tags>
             
-            <tag> Struts2 </tag>
-            
             <tag> JavaWeb </tag>
             
             <tag> 属性封装，表达式封装，模型驱动封装 </tag>
+            
+            <tag> Struts2 </tag>
             
         </tags>
         
