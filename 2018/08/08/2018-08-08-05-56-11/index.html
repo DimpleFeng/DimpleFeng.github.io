@@ -470,7 +470,7 @@
 					<i class="fa fa-calendar-o"></i>
 				  </span>
 				  <span class="post-meta-item-text">总字数:</span>
-				  <span class="post-meta-item-text">2,049</span>
+				  <span class="post-meta-item-text">2,105</span>
 				</span>
 				
 				<span class="post-count">
@@ -479,7 +479,7 @@
 					<i class="fa fa-calendar-o"></i>
 				  </span>
 				  <span class="post-meta-item-text">阅读时长≈</span>
-				  <span class="post-meta-item-text">9&nbsp;分</span>
+				  <span class="post-meta-item-text">10&nbsp;分</span>
 				</span>
 				
 				
@@ -516,6 +516,24 @@
 
       
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>文件上传是一个很常用的功能，比如头像上传，视频上传等等，本文主要使用SpringMVC+Ajax实现文件上传，下载，删除等操作，同时重写CommonsMultipartResolver添加监听器ProgressListener，通过客户端轮询的方式来获取上传文件的进度。本文会首先介绍文件AJAX上传并获取进度的操作。</p>
+<ul>
+<li><a href="#前言">前言</a></li>
+<li><a href="#文件上传">文件上传</a><ul>
+<li><a href="#前端设计">前端设计</a></li>
+<li><a href="#java后端设计">Java后端设计</a></li>
+<li><a href="#commonsmultipartresolver文件上传解析器">CommonsMultipartResolver文件上传解析器</a></li>
+<li><a href="#监听器">监听器</a></li>
+<li><a href="#progress-bean">Progress Bean</a></li>
+<li><a href="#controller">controller</a></li>
+</ul>
+</li>
+<li><a href="#误区">误区</a><ul>
+<li><a href="#在spring的配置文件中的commonmutipartresolver配置的id名称">在Spring的配置文件中的CommonMutipartResolver配置的id名称</a></li>
+<li><a href="#轮询的方式">轮询的方式</a></li>
+<li><a href="#demo文件下载地址">Demo文件下载地址</a></li>
+</ul>
+</li>
+</ul>
 <h1 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h1><p>一般就文件上传的方式来说，有两种：</p>
 <ul>
 <li>第一种：使用FORM表单提交的方式，在这种提交的方式中，需要将FORM表单的==method==设置为POST方式，同时需要将==enctype==设置为multipart/form-data</li>
@@ -554,8 +572,8 @@
 <h1 id="误区"><a href="#误区" class="headerlink" title="误区"></a>误区</h1><h2 id="在Spring的配置文件中的CommonMutipartResolver配置的id名称"><a href="#在Spring的配置文件中的CommonMutipartResolver配置的id名称" class="headerlink" title="在Spring的配置文件中的CommonMutipartResolver配置的id名称"></a>在Spring的配置文件中的CommonMutipartResolver配置的id名称</h2><p>此处的id必须要为multipartResolver，因为在SpringMV的DispatcherServlet中有一个==initMultipartResolver==方法，方法源码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * Initialize the MultipartResolver used by this class.</span></span><br><span class="line"><span class="comment">	 * &lt;p&gt;If no bean is defined with the given name in the BeanFactory for this namespace,</span></span><br><span class="line"><span class="comment">	 * no multipart handling is provided.</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initMultipartResolver</span><span class="params">(ApplicationContext context)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">this</span>.multipartResolver = context.getBean(MULTIPART_RESOLVER_BEAN_NAME, MultipartResolver.class);</span><br><span class="line">			<span class="keyword">if</span> (logger.isDebugEnabled()) &#123;</span><br><span class="line">				logger.debug(<span class="string">"Using MultipartResolver ["</span> + <span class="keyword">this</span>.multipartResolver + <span class="string">"]"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span> (NoSuchBeanDefinitionException ex) &#123;</span><br><span class="line">			<span class="comment">// Default is no multipart resolver.</span></span><br><span class="line">			<span class="keyword">this</span>.multipartResolver = <span class="keyword">null</span>;</span><br><span class="line">			<span class="keyword">if</span> (logger.isDebugEnabled()) &#123;</span><br><span class="line">				logger.debug(<span class="string">"Unable to locate MultipartResolver with name '"</span> + MULTIPART_RESOLVER_BEAN_NAME +</span><br><span class="line">						<span class="string">"': no multipart request handling provided"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <p>在注释上就说明了如果不按照这个名字进行配置的话，就不会有multipart处理。</p>
-<p>2、轮询的方式<br>在这个例子中，使用的是普通的轮询方法，就是隔一段时间就向客户端发送请求，服务器收到请求后马上返回响应消息并马上关闭连接。这种写法很简单，但是带来的问题也是显而易见的，因为这样的请求中，就拿我们的文件上传的进度来说，如果文件足够大，500ms去请求服务器，可能很多次都是获取的同样的数据，这样的方式占用带宽比较严重，比较浪费服务器的资源。</p>
-<p>Demo文件下载地址：<a href="https://github.com/DimpleFeng/FileUploadSSM" target="_blank" rel="noopener">Click Me</a></p>
+<h2 id="轮询的方式"><a href="#轮询的方式" class="headerlink" title="轮询的方式"></a>轮询的方式</h2><p>在这个例子中，使用的是普通的轮询方法，就是隔一段时间就向客户端发送请求，服务器收到请求后马上返回响应消息并马上关闭连接。这种写法很简单，但是带来的问题也是显而易见的，因为这样的请求中，就拿我们的文件上传的进度来说，如果文件足够大，500ms去请求服务器，可能很多次都是获取的同样的数据，这样的方式占用带宽比较严重，比较浪费服务器的资源。</p>
+<h2 id="Demo文件下载地址"><a href="#Demo文件下载地址" class="headerlink" title="Demo文件下载地址"></a>Demo文件下载地址</h2><p><a href="https://github.com/DimpleFeng/FileUploadSSM" target="_blank" rel="noopener">Click Me</a></p>
 
       
     </div>
@@ -794,7 +812,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件上传"><span class="nav-number">2.</span> <span class="nav-text">文件上传</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前端设计"><span class="nav-number">2.1.</span> <span class="nav-text">前端设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java后端设计"><span class="nav-number">2.2.</span> <span class="nav-text">Java后端设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CommonsMultipartResolver文件上传解析器"><span class="nav-number">2.3.</span> <span class="nav-text">CommonsMultipartResolver文件上传解析器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监听器"><span class="nav-number">2.4.</span> <span class="nav-text">监听器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Progress-Bean"><span class="nav-number">2.5.</span> <span class="nav-text">Progress Bean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#controller"><span class="nav-number">2.6.</span> <span class="nav-text">controller</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#误区"><span class="nav-number">3.</span> <span class="nav-text">误区</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在Spring的配置文件中的CommonMutipartResolver配置的id名称"><span class="nav-number">3.1.</span> <span class="nav-text">在Spring的配置文件中的CommonMutipartResolver配置的id名称</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件上传"><span class="nav-number">2.</span> <span class="nav-text">文件上传</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前端设计"><span class="nav-number">2.1.</span> <span class="nav-text">前端设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java后端设计"><span class="nav-number">2.2.</span> <span class="nav-text">Java后端设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CommonsMultipartResolver文件上传解析器"><span class="nav-number">2.3.</span> <span class="nav-text">CommonsMultipartResolver文件上传解析器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监听器"><span class="nav-number">2.4.</span> <span class="nav-text">监听器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Progress-Bean"><span class="nav-number">2.5.</span> <span class="nav-text">Progress Bean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#controller"><span class="nav-number">2.6.</span> <span class="nav-text">controller</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#误区"><span class="nav-number">3.</span> <span class="nav-text">误区</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在Spring的配置文件中的CommonMutipartResolver配置的id名称"><span class="nav-number">3.1.</span> <span class="nav-text">在Spring的配置文件中的CommonMutipartResolver配置的id名称</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#轮询的方式"><span class="nav-number">3.2.</span> <span class="nav-text">轮询的方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Demo文件下载地址"><span class="nav-number">3.3.</span> <span class="nav-text">Demo文件下载地址</span></a></li></ol></li></ol></div>
             
 
           </div>
