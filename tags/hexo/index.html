@@ -115,17 +115,17 @@
 
 
 
-<meta name="description" content="少年心事当拿云   Reputation2016年—2017年：国家励志奖学金2015年—2016年：国家励志奖学金四川省大学生“综合素质A级证书”全国大学生物联网竞赛（TI杯） 一等奖“中星杯”四川省大学生计算机作品赛 二等奖中华人民共和国实用新型专利证书中华人民共和国计算机软件著作权……  ContactQQ：7265677707WeChat：Dimple_MeEmail：bianxiaof">
+<meta name="description" content="Dimple is an attitude">
 <meta property="og:type" content="website">
-<meta property="og:title" content="About">
-<meta property="og:url" content="http://www.bianxiaofeng.com/about/index.html">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://www.bianxiaofeng.com/categories/index.html">
 <meta property="og:site_name" content="Dimple&#39;s Blog">
-<meta property="og:description" content="少年心事当拿云   Reputation2016年—2017年：国家励志奖学金2015年—2016年：国家励志奖学金四川省大学生“综合素质A级证书”全国大学生物联网竞赛（TI杯） 一等奖“中星杯”四川省大学生计算机作品赛 二等奖中华人民共和国实用新型专利证书中华人民共和国计算机软件著作权……  ContactQQ：7265677707WeChat：Dimple_MeEmail：bianxiaof">
+<meta property="og:description" content="Dimple is an attitude">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-04T07:36:25.590Z">
+<meta property="og:updated_time" content="2018-01-05T11:55:30.635Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="About">
-<meta name="twitter:description" content="少年心事当拿云   Reputation2016年—2017年：国家励志奖学金2015年—2016年：国家励志奖学金四川省大学生“综合素质A级证书”全国大学生物联网竞赛（TI杯） 一等奖“中星杯”四川省大学生计算机作品赛 二等奖中华人民共和国实用新型专利证书中华人民共和国计算机软件著作权……  ContactQQ：7265677707WeChat：Dimple_MeEmail：bianxiaof">
+<meta name="twitter:title" content="categories">
+<meta name="twitter:description" content="Dimple is an attitude">
 
 
 
@@ -157,7 +157,7 @@
 
 
 
-  <link rel="canonical" href="http://www.bianxiaofeng.com/about/"/>
+  <link rel="canonical" href="http://www.bianxiaofeng.com/categories/"/>
 
 
 
@@ -1078,6 +1078,140 @@
                 $element.find('.leancloud-visitors-count').text(counter.get('time'));
               },
               error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+<!-- 页面点击小红心 start--> 
+  <script type="text/javascript" src="/js/src/love.js"></script>
+<!-- 页面点击小红心 end--> 
+
+<!--崩溃欺骗-->
+<script>
+var OriginTitile = document.title;
+ var titleTime;
+ document.addEventListener('visibilitychange', function () {
+     if (document.hidden) {
+        // $('[rel="icon"]').attr('href', "/img/TEP.ico");
+         document.title = '╭(°A°`)╮ 页面崩溃啦 ~ ';
+         clearTimeout(titleTime);
+     }
+     else {
+       //  $('[rel="icon"]').attr('href', "/favicon.ico");
+         document.title = '(ฅ>ω<*ฅ) 噫又好了~' + OriginTitile;
+         titleTime = setTimeout(function () {
+             document.title = OriginTitile;
+         }, 2000);
+     }
+ });
+ </script>
+</body>
+</html>
+{
                 console.log('Failed to save Visitor num, with error message: ' + error.message);
               }
             });
