@@ -574,6 +574,26 @@
 
     
   <url>
+    <loc>http://www.bianxiaofeng.com/2018/03/20/2018-3-20-153425/</loc>
+    <lastmod>2018-06-03T13:01:23.725Z</lastmod>
+    <data>
+        <display>
+        <title>Error:Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug'的解决办法</title>
+        <pubTime>2018-03-20T07:34:34.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.bianxiaofeng.com/2018/01/05/2018-01-05%20201655/</loc>
     <lastmod>2018-06-03T13:01:23.725Z</lastmod>
     <data>
@@ -591,26 +611,6 @@
            
              
               <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/03/20/2018-3-20-153425/</loc>
-    <lastmod>2018-06-03T13:01:23.725Z</lastmod>
-    <data>
-        <display>
-        <title>Error:Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug'的解决办法</title>
-        <pubTime>2018-03-20T07:34:34.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
           
         </display>
     </data>
@@ -719,36 +719,6 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/17/2018-1-17%20162928/</loc>
-    <lastmod>2018-06-03T13:01:23.542Z</lastmod>
-    <data>
-        <display>
-        <title>大学期间的视频文档</title>
-        <pubTime>2018-01-17T08:29:09.000Z</pubTime>
-        
-        <tag>成都大学信工学院迎新晚会视频</tag>
-         
-        <tag>成都大学</tag>
-         
-        <tag>基于无线传感器网的物联网智慧农业系统</tag>
-         
-        <tag>来影——一款基于AR与3D的旅游软件项目展示</tag>
-         
-        <tag>OFFICE使用手册</tag>
-         
-        <tag>IT来袭策划书</tag>
-         
-         
-           
-             
-              <breadCrumb title="大学资料" url="http://www.bianxiaofeng.com/categories/%E5%A4%A7%E5%AD%A6%E8%B5%84%E6%96%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.bianxiaofeng.com/2018/01/19/2018-1-19%20153336/</loc>
     <lastmod>2018-06-03T13:01:23.542Z</lastmod>
     <data>
@@ -793,6 +763,36 @@
 
     
   <url>
+    <loc>http://www.bianxiaofeng.com/2018/01/17/2018-1-17%20162928/</loc>
+    <lastmod>2018-06-03T13:01:23.542Z</lastmod>
+    <data>
+        <display>
+        <title>大学期间的视频文档</title>
+        <pubTime>2018-01-17T08:29:09.000Z</pubTime>
+        
+        <tag>成都大学信工学院迎新晚会视频</tag>
+         
+        <tag>成都大学</tag>
+         
+        <tag>基于无线传感器网的物联网智慧农业系统</tag>
+         
+        <tag>来影——一款基于AR与3D的旅游软件项目展示</tag>
+         
+        <tag>OFFICE使用手册</tag>
+         
+        <tag>IT来袭策划书</tag>
+         
+         
+           
+             
+              <breadCrumb title="大学资料" url="http://www.bianxiaofeng.com/categories/%E5%A4%A7%E5%AD%A6%E8%B5%84%E6%96%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.bianxiaofeng.com/2018/01/04/2018-01-04%20212731/</loc>
     <lastmod>2018-06-03T13:01:23.529Z</lastmod>
     <data>
@@ -805,6 +805,30 @@
         <tag>博客从零搭建</tag>
          
         <tag>最新</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/01/17/2018-01-17%20102253/</loc>
+    <lastmod>2018-06-03T13:01:21.245Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo-NexT主题添加评论功能（来必力、Hypercomments、畅言、友言）</title>
+        <pubTime>2018-01-17T02:22:53.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>next优化</tag>
+         
+        <tag>Comment</tag>
          
          
            
@@ -853,30 +877,6 @@
         <tag>hexo</tag>
          
         <tag>博文置顶</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/17/2018-01-17%20102253/</loc>
-    <lastmod>2018-06-03T13:01:21.245Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo-NexT主题添加评论功能（来必力、Hypercomments、畅言、友言）</title>
-        <pubTime>2018-01-17T02:22:53.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>next优化</tag>
-         
-        <tag>Comment</tag>
          
          
            
