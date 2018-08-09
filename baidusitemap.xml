@@ -464,6 +464,28 @@
 
     
   <url>
+    <loc>http://www.bianxiaofeng.com/2018/03/26/2018-3-26-193844/</loc>
+    <lastmod>2018-06-03T13:01:23.814Z</lastmod>
+    <data>
+        <display>
+        <title>JavaEE Async 异步支持</title>
+        <pubTime>2018-03-26T11:38:49.000Z</pubTime>
+        
+        <tag>JavaEE</tag>
+         
+        <tag>Async</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.bianxiaofeng.com/2018/04/24/2018-4-25-114413/</loc>
     <lastmod>2018-06-03T13:01:23.814Z</lastmod>
     <data>
@@ -504,28 +526,6 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/03/26/2018-3-26-193844/</loc>
-    <lastmod>2018-06-03T13:01:23.814Z</lastmod>
-    <data>
-        <display>
-        <title>JavaEE Async 异步支持</title>
-        <pubTime>2018-03-26T11:38:49.000Z</pubTime>
-        
-        <tag>JavaEE</tag>
-         
-        <tag>Async</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.bianxiaofeng.com/2018/03/31/2018-3-31-194919/</loc>
     <lastmod>2018-06-03T13:01:23.795Z</lastmod>
     <data>
@@ -550,6 +550,26 @@
 
     
   <url>
+    <loc>http://www.bianxiaofeng.com/2018/03/20/2018-3-20-153425/</loc>
+    <lastmod>2018-06-03T13:01:23.725Z</lastmod>
+    <data>
+        <display>
+        <title>Error:Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug'的解决办法</title>
+        <pubTime>2018-03-20T07:34:34.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.bianxiaofeng.com/2018/03/09/2018-3-9-165439/</loc>
     <lastmod>2018-06-03T13:01:23.725Z</lastmod>
     <data>
@@ -567,26 +587,6 @@
            
              
               <breadCrumb title="Qt" url="http://www.bianxiaofeng.com/categories/Qt/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/03/20/2018-3-20-153425/</loc>
-    <lastmod>2018-06-03T13:01:23.725Z</lastmod>
-    <data>
-        <display>
-        <title>Error:Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug'的解决办法</title>
-        <pubTime>2018-03-20T07:34:34.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
           
         </display>
     </data>
@@ -817,30 +817,6 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/17/2018-01-17%20102253/</loc>
-    <lastmod>2018-06-03T13:01:21.245Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo-NexT主题添加评论功能（来必力、Hypercomments、畅言、友言）</title>
-        <pubTime>2018-01-17T02:22:53.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>next优化</tag>
-         
-        <tag>Comment</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.bianxiaofeng.com/2018/01/02/2018-01-02%20120748/</loc>
     <lastmod>2018-06-03T13:01:21.245Z</lastmod>
     <data>
@@ -877,6 +853,30 @@
         <tag>hexo</tag>
          
         <tag>博文置顶</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/01/17/2018-01-17%20102253/</loc>
+    <lastmod>2018-06-03T13:01:21.245Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo-NexT主题添加评论功能（来必力、Hypercomments、畅言、友言）</title>
+        <pubTime>2018-01-17T02:22:53.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>next优化</tag>
+         
+        <tag>Comment</tag>
          
          
            
