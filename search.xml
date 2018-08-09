@@ -3,6 +3,109 @@
   
     
     <entry>
+      <title><![CDATA[对HashMap的思考]]></title>
+      <url>/2018/08/09/2018-08-09-09-29-20/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>HashMap是一个散列表，它存储的内容是==Key-Value==键值对的映射。</p>
+<p>类原型如下：</p>
+<p>继承自抽象类AbstractMap<k,v>，实现Map接口，Cloneable主要是用于clone方法，以及序列化接口。</k,v></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HashMap</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractMap</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">Map</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;, <span class="title">Cloneable</span>, <span class="title">Serializable</span> </span>&#123;</span><br></pre></td></tr></table></figure>
+<h1 id="Map的常用类型"><a href="#Map的常用类型" class="headerlink" title="Map的常用类型"></a>Map的常用类型</h1><p><img src="http://p2sj58chj.bkt.clouddn.com/blog/java.util.map类图.png" alt="enter description here"><br>继承Map接口的有以下几种：</p>
+<ul>
+<li>HashMap：根据键的HashCode值进行数据的存储，可以直接根据键获取值，访问速度很快。是非同步的，即线程不安全。==key和value都可以为null，但是只能有一个为null的key，value无限制。==</li>
+<li>TreeMap：能够根据底层的红黑二叉树来对插入的数据按照==key==进行从小到大的排序。且其key不能为null，value可以为null。==key为null时，在代码编写阶段不会报错，但运行时报NullPointerException。==同时TreeMap非同步的，线程不安全。</li>
+<li>HashTable：HashTable的key与value是不能为null，且和HashMap最大的区别是HashTable是线程安全的，其方法都是有==synchronized==关键字修饰的，其继承自==Dictionary==。但是不建议使用，因为并发不如ConcurrentHashMap，因为ConcurrentHashMap引入了分段锁。</li>
+<li>LinkHashMap：采用的是链表的方式存储数据，使用Iterator进行遍历的时候，先得到的是最先插入的，即==保留了记录的插入顺序==，和HashMap的底层实现不同，导致使用LinkHashMap的时候的遍历效率比HashMap慢。同时key和value都可以为null，非同步，线程不安全。</li>
+</ul>
+<h1 id="HashMap的JDK1-6-1-7实现"><a href="#HashMap的JDK1-6-1-7实现" class="headerlink" title="HashMap的JDK1.6\1.7实现"></a>HashMap的JDK1.6\1.7实现</h1><p>在JDK1.6,1.7中，HashMap采用的是数组+链表的方式，即使用数组存放链表。同一个HashCode值的元素都是存储在一个链表里面，但是如果位于同一个链表的元素（就是HashCode值相等的元素）增多的时候，查找元素的时候就不能很好的发挥HashMap的功效了。</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/blog/QQ截图20180809101056.png" alt="enter description here"></p>
+<p>如图：</p>
+<p>当调用map的put方法放入key-value键值对，那么首先会根据key的hashCode值，计算出在给定的key在数组中的位置，然后放在其后的单链表中。</p>
+<p>这样的设计的好处是减少了Hash碰撞，即HashCode值相同并不一定意味着对象是相同的。那么这些HashCode怎么转化为数组空间的呢？一般是hash(key)%length来得到的。</p>
+<h2 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h2><p>1、如果多个key通过hashCode%length这样的算法得到的index都是相同的，会不会被覆盖？</p>
+<p>不会。当A通过计算得到index=1，放在链表中，如果接下来来了一个B，B通过计算得到的index也=1，那么做的事情就是使用头插法将新来的元素插入到链表的头结点。为什么使用头插法呢？可能是觉得新来的元素被查找的概率要高一点吧，毕竟查找是从头开始。</p>
+<p>2、HashMap是允许存入key-value为null的Entry的，那么他们在什么位置呢？</p>
+<p>null key总是放在entry的第一个元素。</p>
+<p>3、get操作原理</p>
+<p>get的函数原型如下：<code>public V get(Object key)</code>，先根据key的HashCode定位到数组的index，然后在这个index位置的链表进行遍历。</p>
+<h1 id="HashMap在JDK1-8的实现"><a href="#HashMap在JDK1-8的实现" class="headerlink" title="HashMap在JDK1.8的实现"></a>HashMap在JDK1.8的实现</h1><p>在JDK1.8之后，也许是意识到了当链表长度过长带来的遍历效率的问题，因此，在JDK1.8中最重要的变化之一就是引入了红黑树，当同一个hash值的节点数不小于8时，不再采用单链表形式存储，而是采用红黑树。</p>
+<p>Node是HashMap的一个内部类，实现了Map.Entry接口，本质是就是一个映射(键值对)。</p>
+<p>有时两个key会定位到相同的位置，表示发生了Hash碰撞。当然Hash算法计算结果越分散均匀，Hash碰撞的概率就越小，map的存取效率就会越高。</p>
+<p>HashMap类中有一个非常重要的字段，就是 Node[] table，即哈希桶数组，明显它是一个Node的数组。</p>
+<p>如果哈希桶数组很大，即使较差的Hash算法也会比较分散，如果哈希桶数组数组很小，即使好的Hash算法也会出现较多碰撞，所以就需要在空间成本和时间成本之间权衡，其实就是在根据实际情况确定哈希桶数组的大小，并在此基础上设计好的hash算法减少Hash碰撞。那么通过什么方式来控制map使得Hash碰撞的概率又小，哈希桶数组（Node[] table）占用空间又少呢？答案就是好的Hash算法和扩容机制。</p>
+<h1 id="常用API"><a href="#常用API" class="headerlink" title="常用API"></a>常用API</h1><table>
+<thead>
+<tr>
+<th>clear()</th>
+<th>从 Map 中删除所有映射</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>remove(Object key)</td>
+<td>从 Map 中删除键和关联的值</td>
+</tr>
+<tr>
+<td>put(Object key, Object value)</td>
+<td>将指定值与指定键相关联</td>
+</tr>
+<tr>
+<td>putAll(Map t)</td>
+<td>将指定 Map 中的所有映射复制到此 map</td>
+</tr>
+<tr>
+<td>entrySet()</td>
+<td>返回 Map 中所包含映射的 Set 视图。Set 中的每个元素都是一个 Map.Entry 对象，可以使用 getKey() 和 getValue() 方法（还有一个 setValue() 方法）访问后者的键元素和值元素</td>
+</tr>
+<tr>
+<td>keySet()</td>
+<td>返回 Map 中所包含键的 Set 视图。删除 Set 中的元素还将删除 Map 中相应的映射（键和值）</td>
+</tr>
+<tr>
+<td>values()</td>
+<td>返回 map 中所包含值的 Collection 视图。删除 Collection 中的元素还将删除 Map 中相应的映射（键和值）</td>
+</tr>
+<tr>
+<td>get(Object key)</td>
+<td>返回与指定键关联的值</td>
+</tr>
+<tr>
+<td>containsKey(Object key)</td>
+<td>如果 Map 包含指定键的映射，则返回 true</td>
+</tr>
+<tr>
+<td>containsValue(Object value)</td>
+<td>如果此 Map 将一个或多个键映射到指定值，则返回 true</td>
+</tr>
+<tr>
+<td>isEmpty()</td>
+<td>如果 Map 不包含键-值映射，则返回 true</td>
+</tr>
+<tr>
+<td>size()</td>
+<td>返回 Map 中的键-值映射的数目</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      
+        <categories>
+            
+            <category> Java基础 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> HashMap </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[SpringMVC文件AJAX上传+JQuery文件进度条]]></title>
       <url>/2018/08/08/2018-08-08-05-56-11/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>文件上传是一个很常用的功能，比如头像上传，视频上传等等，本文主要使用SpringMVC+Ajax实现文件上传，下载，删除等操作，同时重写CommonsMultipartResolver添加监听器ProgressListener，通过客户端轮询的方式来获取上传文件的进度。本文会首先介绍文件AJAX上传并获取进度的操作。</p>
