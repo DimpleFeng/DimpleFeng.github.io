@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -76,8 +76,6 @@
   
 
   
-
-  
     
       
     
@@ -95,8 +93,16 @@
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -130,7 +136,7 @@
     root: '/',
     scheme: 'Muse',
     version: '6.4.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -158,7 +164,7 @@
 <meta property="og:url" content="http://www.bianxiaofeng.com/index.html">
 <meta property="og:site_name" content="Dimple&#39;s Blog">
 <meta property="og:description" content="Dimple is an attitude">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dimple&#39;s Blog">
 <meta name="twitter:description" content="Dimple is an attitude">
@@ -230,7 +236,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -263,7 +269,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -283,15 +289,7 @@
           
           <li class="menu-item menu-item-home menu-item-active">
     <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Startseite</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />Über</a>
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
   </li>
         
         
@@ -299,7 +297,7 @@
           
           <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags<span class="badge">62</span></a>
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">62</span></a>
   </li>
         
         
@@ -307,7 +305,7 @@
           
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Kategorien<span class="badge">8</span></a>
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">8</span></a>
   </li>
         
         
@@ -315,10 +313,26 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archiv<span class="badge">44</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">44</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
   </li>
 
       
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
       
     </ul>
   
@@ -328,6 +342,29 @@
 
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -405,14 +442,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
 
               
                 
               
 
-              <time title="Post created: 2018-08-09 09:29:20 / Updated at: 11:33:17" itemprop="dateCreated datePublished" datetime="2018-08-09T09:29:20+08:00">2018-08-09</time>
+              <time title="创建时间：2018-08-09 09:29:20 / 修改时间：11:33:17" itemprop="dateCreated datePublished" datetime="2018-08-09T09:29:20+08:00">2018-08-09</time>
             
 
             
@@ -431,7 +468,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java基础/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a></span>
@@ -454,7 +491,7 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">Views: </span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -482,7 +519,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://p2sj58chj.bkt.clouddn.com/blog/workspace-desk-from-above_free_stock_photos_picjumbo_HNCK3991-2210x1473.jpg" rel="gallery_cjkmem1dc000pusudqi0trnog"
+                 href="http://p2sj58chj.bkt.clouddn.com/blog/workspace-desk-from-above_free_stock_photos_picjumbo_HNCK3991-2210x1473.jpg" rel="gallery_cjkmlpskw000obgudrvtc1c1q"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://p2sj58chj.bkt.clouddn.com/blog/workspace-desk-from-above_free_stock_photos_picjumbo_HNCK3991-2210x1473.jpg" itemprop="contentUrl"/>
               </a>
@@ -505,7 +542,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/08/09/2018-08-09-09-29-20/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -607,14 +644,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
 
               
                 
               
 
-              <time title="Post created: 2018-08-08 05:56:11 / Updated at: 22:03:56" itemprop="dateCreated datePublished" datetime="2018-08-08T05:56:11+08:00">2018-08-08</time>
+              <time title="创建时间：2018-08-08 05:56:11 / 修改时间：22:03:56" itemprop="dateCreated datePublished" datetime="2018-08-08T05:56:11+08:00">2018-08-08</time>
             
 
             
@@ -633,7 +670,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaEE/" itemprop="url" rel="index"><span itemprop="name">JavaEE</span></a></span>
@@ -656,7 +693,7 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">Views: </span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -684,7 +721,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://p2sj58chj.bkt.clouddn.com/blog/colorful-donuts-free-photo-2210x1473.jpg" rel="gallery_cjkmem1d6000jusud0b37gfet"
+                 href="http://p2sj58chj.bkt.clouddn.com/blog/colorful-donuts-free-photo-2210x1473.jpg" rel="gallery_cjkmlpsku000nbgud9jk7o1dd"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://p2sj58chj.bkt.clouddn.com/blog/colorful-donuts-free-photo-2210x1473.jpg" itemprop="contentUrl"/>
               </a>
@@ -704,7 +741,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/08/08/2018-08-08-05-56-11/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -806,14 +843,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
 
               
                 
               
 
-              <time title="Post created: 2018-08-03 20:36:20" itemprop="dateCreated datePublished" datetime="2018-08-03T20:36:20+08:00">2018-08-03</time>
+              <time title="创建时间：2018-08-03 20:36:20" itemprop="dateCreated datePublished" datetime="2018-08-03T20:36:20+08:00">2018-08-03</time>
             
 
             
@@ -828,9 +865,9 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">Edited on</span>
+                  <span class="post-meta-item-text">更新于</span>
                 
-                <time title="Updated at: 2018-08-08 14:19:24" itemprop="dateModified" datetime="2018-08-08T14:19:24+08:00">2018-08-08</time>
+                <time title="修改时间：2018-08-08 14:19:24" itemprop="dateModified" datetime="2018-08-08T14:19:24+08:00">2018-08-08</time>
               
             
           </span>
@@ -844,7 +881,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaEE/" itemprop="url" rel="index"><span itemprop="name">JavaEE</span></a></span>
@@ -867,7 +904,7 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">Views: </span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -895,7 +932,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://p2sj58chj.bkt.clouddn.com/airport-bombardier-vintage-free-photo-2210x1473.jpg" rel="gallery_cjkmem1fc003qusudpdahn9i1"
+                 href="http://p2sj58chj.bkt.clouddn.com/airport-bombardier-vintage-free-photo-2210x1473.jpg" rel="gallery_cjkmlpsq4003qbgudwgdslgyj"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://p2sj58chj.bkt.clouddn.com/airport-bombardier-vintage-free-photo-2210x1473.jpg" itemprop="contentUrl"/>
               </a>
@@ -915,7 +952,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/08/03/2018-8-3-20-36-12/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1017,14 +1054,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
 
               
                 
               
 
-              <time title="Post created: 2018-08-01 20:35:34 / Updated at: 21:29:57" itemprop="dateCreated datePublished" datetime="2018-08-01T20:35:34+08:00">2018-08-01</time>
+              <time title="创建时间：2018-08-01 20:35:34 / 修改时间：21:29:57" itemprop="dateCreated datePublished" datetime="2018-08-01T20:35:34+08:00">2018-08-01</time>
             
 
             
@@ -1043,7 +1080,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java基础/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a></span>
@@ -1066,7 +1103,7 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">Views: </span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -1094,7 +1131,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://p2sj58chj.bkt.clouddn.com/beautiful-lavender-field-free-photo-2210x1473.jpg" rel="gallery_cjkmem1f9003nusud7qk0elij"
+                 href="http://p2sj58chj.bkt.clouddn.com/beautiful-lavender-field-free-photo-2210x1473.jpg" rel="gallery_cjkmlpsq0003nbgud0fcz5mi5"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://p2sj58chj.bkt.clouddn.com/beautiful-lavender-field-free-photo-2210x1473.jpg" itemprop="contentUrl"/>
               </a>
@@ -1115,7 +1152,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/08/01/2018-8-1-20-35-28/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1217,14 +1254,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
 
               
                 
               
 
-              <time title="Post created: 2018-08-01 16:37:58" itemprop="dateCreated datePublished" datetime="2018-08-01T16:37:58+08:00">2018-08-01</time>
+              <time title="创建时间：2018-08-01 16:37:58" itemprop="dateCreated datePublished" datetime="2018-08-01T16:37:58+08:00">2018-08-01</time>
             
 
             
@@ -1239,9 +1276,9 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">Edited on</span>
+                  <span class="post-meta-item-text">更新于</span>
                 
-                <time title="Updated at: 2018-08-04 13:12:23" itemprop="dateModified" datetime="2018-08-04T13:12:23+08:00">2018-08-04</time>
+                <time title="修改时间：2018-08-04 13:12:23" itemprop="dateModified" datetime="2018-08-04T13:12:23+08:00">2018-08-04</time>
               
             
           </span>
@@ -1255,7 +1292,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaEE/" itemprop="url" rel="index"><span itemprop="name">JavaEE</span></a></span>
@@ -1278,7 +1315,7 @@
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">Views: </span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -1306,7 +1343,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://p2sj58chj.bkt.clouddn.com/woman-on-carousel-swing-ride_free_stock_photos_picjumbo_HNCK8794-2210x1473.jpg" rel="gallery_cjkmem1f7003jusudcxh8gos2"
+                 href="http://p2sj58chj.bkt.clouddn.com/woman-on-carousel-swing-ride_free_stock_photos_picjumbo_HNCK8794-2210x1473.jpg" rel="gallery_cjkmlpspo003jbgud7zt5lj5j"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://p2sj58chj.bkt.clouddn.com/woman-on-carousel-swing-ride_free_stock_photos_picjumbo_HNCK8794-2210x1473.jpg" itemprop="contentUrl"/>
               </a>
@@ -1328,7 +1365,7 @@ Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式�
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/08/01/2018-8-1-16-37-56/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1430,14 +1467,14 @@ Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式�
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
 
               
                 
               
 
-              <time title="Post created: 2018-08-01 16:23:52" itemprop="dateCreated datePublished" datetime="2018-08-01T16:23:52+08:00">2018-08-01</time>
+              <time title="创建时间：2018-08-01 16:23:52" itemprop="dateCreated datePublished" datetime="2018-08-01T16:23:52+08:00">2018-08-01</time>
             
 
             
@@ -1452,9 +1489,9 @@ Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式�
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">Edited on</span>
+                  <span class="post-meta-item-text">更新于</span>
                 
-                <time title="Updated at: 2018-08-04 13:16:50" itemprop="dateModified" datetime="2018-08-04T13:16:50+08:00">2018-08-04</time>
+                <time title="修改时间：2018-08-04 13:16:50" itemprop="dateModified" datetime="2018-08-04T13:16:50+08:00">2018-08-04</time>
               
             
           </span>
@@ -1468,7 +1505,7 @@ Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式�
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/hexo个人博客搭建之路/" itemprop="url" rel="index"><span itemprop="name">hexo个人博客搭建之路</span></a></span>
@@ -1491,7 +1528,7 @@ Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式�
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">Views: </span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -1519,7 +1556,7 @@ Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式�
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="/(http:/p2sj58chj.bkt.clouddn.com/abstract-infrared-photography-of-sea-water-splash-on-the-rocks_free_stock_photos_picjumbo_DSC03954_free_stock_photos_picjumbo_com-2210x1473.jpg" rel="gallery_cjkmem1f5003gusudeazgaw2o"
+                 href="/(http:/p2sj58chj.bkt.clouddn.com/abstract-infrared-photography-of-sea-water-splash-on-the-rocks_free_stock_photos_picjumbo_DSC03954_free_stock_photos_picjumbo_com-2210x1473.jpg" rel="gallery_cjkmlpspk003gbgud8qyygtj2"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/(http:/p2sj58chj.bkt.clouddn.com/abstract-infrared-photography-of-sea-water-splash-on-the-rocks_free_stock_photos_picjumbo_DSC03954_free_stock_photos_picjumbo_com-2210x1473.jpg" itemprop="contentUrl"/>
               </a>
@@ -1540,7 +1577,7 @@ Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式�
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/08/01/2018-8-1-16-23-49/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1642,14 +1679,14 @@ Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式�
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
 
               
                 
               
 
-              <time title="Post created: 2018-08-01 15:32:20 / Updated at: 18:39:32" itemprop="dateCreated datePublished" datetime="2018-08-01T15:32:20+08:00">2018-08-01</time>
+              <time title="创建时间：2018-08-01 15:32:20 / 修改时间：18:39:32" itemprop="dateCreated datePublished" datetime="2018-08-01T15:32:20+08:00">2018-08-01</time>
             
 
             
@@ -1668,7 +1705,7 @@ Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式�
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaEE/" itemprop="url" rel="index"><span itemprop="name">JavaEE</span></a></span>
@@ -1691,7 +1728,7 @@ Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式�
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">Views: </span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -1719,7 +1756,7 @@ Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式�
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://p2sj58chj.bkt.clouddn.com/woman-on-carousel-swing-ride_free_stock_photos_picjumbo_HNCK8794-2210x1473.jpg" rel="gallery_cjkmem1f3003dusudw6hu1rp9"
+                 href="http://p2sj58chj.bkt.clouddn.com/woman-on-carousel-swing-ride_free_stock_photos_picjumbo_HNCK8794-2210x1473.jpg" rel="gallery_cjkmlpspi003dbgudbuju10o9"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://p2sj58chj.bkt.clouddn.com/woman-on-carousel-swing-ride_free_stock_photos_picjumbo_HNCK8794-2210x1473.jpg" itemprop="contentUrl"/>
               </a>
@@ -1741,7 +1778,7 @@ Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式�
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/08/01/2018-8-1-15-32-13/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1843,14 +1880,14 @@ Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式�
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
 
               
                 
               
 
-              <time title="Post created: 2018-07-23 09:37:07 / Updated at: 09:45:53" itemprop="dateCreated datePublished" datetime="2018-07-23T09:37:07+08:00">2018-07-23</time>
+              <time title="创建时间：2018-07-23 09:37:07 / 修改时间：09:45:53" itemprop="dateCreated datePublished" datetime="2018-07-23T09:37:07+08:00">2018-07-23</time>
             
 
             
@@ -1874,7 +1911,7 @@ Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式�
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">Views: </span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -1909,7 +1946,7 @@ https://mp.weixin
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/07/23/2018-7-23-09-36-27/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -2011,14 +2048,14 @@ https://mp.weixin
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
 
               
                 
               
 
-              <time title="Post created: 2018-07-22 21:20:37 / Updated at: 22:13:48" itemprop="dateCreated datePublished" datetime="2018-07-22T21:20:37+08:00">2018-07-22</time>
+              <time title="创建时间：2018-07-22 21:20:37 / 修改时间：22:13:48" itemprop="dateCreated datePublished" datetime="2018-07-22T21:20:37+08:00">2018-07-22</time>
             
 
             
@@ -2037,7 +2074,7 @@ https://mp.weixin
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java基础/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a></span>
@@ -2060,7 +2097,7 @@ https://mp.weixin
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">Views: </span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -2088,7 +2125,7 @@ https://mp.weixin
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://p2sj58chj.bkt.clouddn.com/google-analytics-free-photo-2210x1473.jpg" rel="gallery_cjkmem1ez0036usudtmwkk9yu"
+                 href="http://p2sj58chj.bkt.clouddn.com/google-analytics-free-photo-2210x1473.jpg" rel="gallery_cjkmlpsp40036bgudb6bco7lw"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://p2sj58chj.bkt.clouddn.com/google-analytics-free-photo-2210x1473.jpg" itemprop="contentUrl"/>
               </a>
@@ -2110,7 +2147,7 @@ https://mp.weixin
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/07/22/2018-7-22-21-20-34/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -2212,14 +2249,14 @@ https://mp.weixin
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
 
               
                 
               
 
-              <time title="Post created: 2018-07-22 19:05:01 / Updated at: 22:10:10" itemprop="dateCreated datePublished" datetime="2018-07-22T19:05:01+08:00">2018-07-22</time>
+              <time title="创建时间：2018-07-22 19:05:01 / 修改时间：22:10:10" itemprop="dateCreated datePublished" datetime="2018-07-22T19:05:01+08:00">2018-07-22</time>
             
 
             
@@ -2238,7 +2275,7 @@ https://mp.weixin
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java基础/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a></span>
@@ -2261,7 +2298,7 @@ https://mp.weixin
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">Views: </span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -2289,7 +2326,7 @@ https://mp.weixin
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://p2sj58chj.bkt.clouddn.com/lady-in-levander-field-free-photo-2210x1473.jpg" rel="gallery_cjkmem1ex0034usudn5xeat0f"
+                 href="http://p2sj58chj.bkt.clouddn.com/lady-in-levander-field-free-photo-2210x1473.jpg" rel="gallery_cjkmlpsp20034bgudfrz7g1wx"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://p2sj58chj.bkt.clouddn.com/lady-in-levander-field-free-photo-2210x1473.jpg" itemprop="contentUrl"/>
               </a>
@@ -2311,7 +2348,7 @@ Runnable
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/07/22/2018-7-22-19-04-46/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -2363,7 +2400,7 @@ Runnable
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2407,7 +2444,7 @@ Runnable
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">44</span>
-                    <span class="site-state-item-name">Artikel</span>
+                    <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
@@ -2436,7 +2473,7 @@ Runnable
                       
                     
                     <span class="site-state-item-count">8</span>
-                    <span class="site-state-item-name">Kategorien</span>
+                    <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
               
@@ -2573,7 +2610,7 @@ Runnable
                       
                     
                     <span class="site-state-item-count">62</span>
-                    <span class="site-state-item-name">Tags</span>
+                    <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
               
@@ -2640,7 +2677,7 @@ Runnable
       <div class="footer-inner">
         <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
   <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+    <i class="fas fa-angry"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Dimple</span>
 
@@ -2675,6 +2712,8 @@ Runnable
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
@@ -2713,12 +2752,11 @@ Runnable
 
 
 
-
-
-
-
   
-  
+
+
+
+
 
 
 
@@ -2745,12 +2783,7 @@ Runnable
 
   
   
-    <script type="text/javascript" src="/lib/three/three.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
   
 
 
@@ -2791,6 +2824,326 @@ Runnable
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 
@@ -2897,6 +3250,21 @@ Runnable
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 
