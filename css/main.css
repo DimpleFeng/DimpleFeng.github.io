@@ -2193,7 +2193,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff54b8;
+  background: #ed12ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2321,6 +2321,9 @@ img:hover {
 }
 .footer-inner {
   text-align: center;
+}
+#animate {
+  animation: iconAnimate 1.33s ease-in-out infinite;
 }
 .with-love {
   display: inline-block;
@@ -3006,4 +3009,10 @@ nav.site-nav {
 }
 .site-subtitle {
   margin-top: 30px;
+}
+.footer-inner {
+  font-family: 'Comic Sans MS', sans-serif;
+  text-align: center;
+  color: #4c618f;
+  font-size: 20px;
 }
