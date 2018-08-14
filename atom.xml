@@ -18,8 +18,8 @@
   
   <entry>
     <title>Java中的前置++和后置++的理解</title>
-    <link href="http://www.bianxiaofeng.com/2018/08/14/images/2018-08-14-04-38-57/"/>
-    <id>http://www.bianxiaofeng.com/2018/08/14/images/2018-08-14-04-38-57/</id>
+    <link href="http://www.bianxiaofeng.com/2018/08/14/2018-08-14-04-38-57/"/>
+    <id>http://www.bianxiaofeng.com/2018/08/14/2018-08-14-04-38-57/</id>
     <published>2018-08-13T20:38:57.000Z</published>
     <updated>2018-08-14T09:21:20.894Z</updated>
     
@@ -161,7 +161,7 @@
     <link href="http://www.bianxiaofeng.com/2018/08/01/2018-8-1-16-37-56/"/>
     <id>http://www.bianxiaofeng.com/2018/08/01/2018-8-1-16-37-56/</id>
     <published>2018-08-01T08:37:58.000Z</published>
-    <updated>2018-08-04T05:12:23.912Z</updated>
+    <updated>2018-08-14T10:30:12.561Z</updated>
     
     <content type="html"><![CDATA[<p>本文为系列文章：</p><p><a href="http://www.bianxiaofeng.com/2018/08/01/2018-8-1-15-32-13/">Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式）</a><br><a href="http://www.bianxiaofeng.com/2018/08/01/2018-8-1-16-37-56/">Jacoco服务器代码覆盖率测试工具使用（二）（远程Tomcat Web部署的方式）</a></p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前面介绍了使用IDEA的方式进行代码覆盖率测试，当然这种方式是有一种局限就是只能在本地跑，而且需要安装IDEA的插件（Eclipse貌似插件下不了，也就不能使用了），如果想要测试已经部署在服务器上的Web项目的代码覆盖率的话，就需要用到下面说到的方法。</p><p>远程的服务器有Tomcat，galssfish等等，也可能用到一些中间件，如金蝶中间件等等。所以不同的远程服务器可能配置方式不同，但原理一样。</p><h1 id="安装部署前的说明"><a href="#安装部署前的说明" class="headerlink" title="安装部署前的说明"></a>安装部署前的说明</h1><p>本文主要是用到ant + jacoco的方式进行部署的。分为服务器和客户端，分别需要安装的软件环境配置如下：</p><p>服务器端： Java环境（这个肯定是有的，因为部署Tomcat这些是需要用到Java的），Jacoco JAR包；</p><p>客户端： Java环境，Ant环境，Jacoco JAR包。</p><p>需要安装的东西打包下载：</p><p><a href="https://download.csdn.net/download/qq_32454537/10577733" target="_blank" rel="noopener">点击我</a></p><h1 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h1><p>服务器端我分为两部分来说明，一个是Windows的服务器端，一个是Linux的服务器端，读者可以根据你自己的服务器系统来选择看哪部分的说明。服务器端使用的服务器环境统一为Tomcat。</p><h2 id="Windows端"><a href="#Windows端" class="headerlink" title="Windows端"></a>Windows端</h2><h3 id="安装Jacoco"><a href="#安装Jacoco" class="headerlink" title="安装Jacoco"></a>安装Jacoco</h3><p>在合适的目录，比如我直接就在C盘，把Jacoco的文件夹拷贝到此处就行，当然你也可以选择其他地方。</p><h3 id="修改服务器启动参数"><a href="#修改服务器启动参数" class="headerlink" title="修改服务器启动参数"></a>修改服务器启动参数</h3><p>首先打开tomcat的安装位置，找到bin目录下的catalina.bat文件，使用notepad++打开，添加以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">···set JAVA_OPTS=%JAVA_OPTS% -javaagent:C:\jacoco\lib\jacocoagent.jar=includes=*,output=tcpserver,address=192.168.73.130,port=4399,append=true,</span><br></pre></td></tr></table></figure></p><p><img src="http://p2sj58chj.bkt.clouddn.com/TIM截图20180801171253.png" alt="TIM截图20180801171253"></p><p>说明如下（只说关键配置）：</p><p>A： 这段需要注意的是，写的是实际的Jacoco的jacocoagent.jar的位置，如果你是放在其他地方的，一定要保证其在服务器本地是可达状态的。  </p><p>B:  此处写的是服务器端的IP地址。</p><p>C： 此处是开放的端口，是指服务器上要开放给客户端的端口，只要是不被占用的端口号就可以。</p><p>服务器上的配置到此就结束了。</p><h2 id="Linux端"><a href="#Linux端" class="headerlink" title="Linux端"></a>Linux端</h2><p>Linux作为服务器是很多公司或者个人开发者的首选，Linux深度可配置，而且效率比Windows要高。</p><p>在Linux上也需要进行配置。</p><h3 id="Jacoco安装"><a href="#Jacoco安装" class="headerlink" title="Jacoco安装"></a>Jacoco安装</h3><p>首先是Jacoco的安装，同Windows的安装一样，放在合适的位置,示例是放在/home/dimple/Depo/jacoco目录下</p><h3 id="修改服务器启动参数-1"><a href="#修改服务器启动参数-1" class="headerlink" title="修改服务器启动参数"></a>修改服务器启动参数</h3><p>修改Tomcat的catalina.sh文件<br>加入如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-javaagent:home/dimple/Depo/jacoco/lib/jacocoagent.jar=includes=*,output=tcpserver,address=192.168.73.130,port=4399,append=true,</span><br></pre></td></tr></table></figure></p><p><img src="http://p2sj58chj.bkt.clouddn.com/TIM截图20180801174001.png" alt="TIM截图20180801174001"><br>代码含义如上。</p><h1 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h1><p>客户端也可以为Windows或者Linux，这里主要讲Windows的配置方式，Linux自测。</p><p>Windows需要配置Java环境，这里略过。</p><h2 id="下载Ant"><a href="#下载Ant" class="headerlink" title="下载Ant"></a>下载Ant</h2><p>下载Ant包：<a href="https://ant.apache.org/bindownload.cgi" target="_blank" rel="noopener">https://ant.apache.org/bindownload.cgi</a><br><img src="http://p2sj58chj.bkt.clouddn.com/101801.png" alt="101801"></p><p>下载解压到合适的目录，本示例解压到C:\work\apache-ant-1.10.5</p><h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><p>【计算机】——【属性】——【高级系统设置】——【环境变量】，在系统环境变量下新建ANT_HOME；</p><p>然后在系统变量的【PATH】后追加%ANT_HOME%\bin<br><img src="http://p2sj58chj.bkt.clouddn.com/TIM截图20180801174615.png" alt="TIM截图20180801174615"><br>测试安装成功：<br>CMD输入：ant -version<br> <img src="http://p2sj58chj.bkt.clouddn.com/TIM截图20180801180417.png" alt="TIM截图20180801180417"></p><h2 id="配置build-xml"><a href="#配置build-xml" class="headerlink" title="配置build.xml"></a>配置build.xml</h2><p>在ant的安装目录下的bin下新建一个buil.xml文件内容如下：</p><p><img src="http://p2sj58chj.bkt.clouddn.com/TIM截图20180801182919.png" alt="TIM截图20180801182919"></p><p>对应的目录结构如下：</p><p><img src="http://p2sj58chj.bkt.clouddn.com/TIM截图20180801183001.png" alt="TIM截图20180801183001"><br>在ant的bin目录下，打开命令行窗口，输入:ant dump生成jacoco.exec文件。<br><img src="http://p2sj58chj.bkt.clouddn.com/xyz.png" alt="xyz"><br> 输入ant report 生成测试报告。<br> <img src="http://p2sj58chj.bkt.clouddn.com/xyy.png" alt="xyy"><br>在build.xml文件中设置的report文件的保存地址中找到对应的report文件。</p><p>绿颜色表示代码被单元测试覆盖到<br>黄色表示部分覆盖<br>红色则表示完全没有覆盖到</p><p>到此教程结束。</p>]]></content>
     
@@ -193,7 +193,7 @@
     <link href="http://www.bianxiaofeng.com/2018/08/01/2018-8-1-16-23-49/"/>
     <id>http://www.bianxiaofeng.com/2018/08/01/2018-8-1-16-23-49/</id>
     <published>2018-08-01T08:23:52.000Z</published>
-    <updated>2018-08-14T10:23:36.134Z</updated>
+    <updated>2018-08-14T10:24:18.912Z</updated>
     
     <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天写了一篇博客，然后准备推到GitHub的时候发现报以下错误</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unable to access &apos;https://github.com/DimpleFeng/dimplefeng.github.io.git/&apos;: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443</span><br></pre></td></tr></table></figure><h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>Git支持三种协议，分别是：git://、ssh://和http://<br>因为HEXO也是将博文编译为静态的文件,然后再push到Git 上的。解决方法是取消http代理。</p><p>打开Git Bash输入以下命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br></pre></td></tr></table></figure><p>然后再提交HEXO博文就没问题了。</p>]]></content>
     
@@ -219,7 +219,7 @@
     <link href="http://www.bianxiaofeng.com/2018/08/01/2018-8-1-15-32-13/"/>
     <id>http://www.bianxiaofeng.com/2018/08/01/2018-8-1-15-32-13/</id>
     <published>2018-08-01T07:32:20.000Z</published>
-    <updated>2018-08-01T10:39:32.444Z</updated>
+    <updated>2018-08-14T10:24:13.882Z</updated>
     
     <content type="html"><![CDATA[<p>本文为系列文章：</p><p><a href="http://www.bianxiaofeng.com/2018/08/01/2018-8-1-15-32-13/">Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式）</a><br><a href="http://www.bianxiaofeng.com/2018/08/01/2018-8-1-16-37-56/">Jacoco服务器代码覆盖率测试工具使用（二）（远程Tomcat Web部署的方式）</a></p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本文主要以自己的实际项目经历写下一份Jacoco的使用总结，首先是IDEA的使用，在IDEA上有直接的插件可以使用。接下来的第二篇会说到远程Tomcat Web服务器的代码覆盖率测试。</p><p>代码覆盖（Code coverage）是软件测试中的一种度量，描述程式中源代码被测试的比例和程度，所得比例称为代码覆盖率。在做单元测试时，代码覆盖率常常被拿来作为衡量测试好坏的指标，甚至，用代码覆盖率来考核测试任务完成情况，比如，代码覆盖率必须达到80%或 90%。于是乎，测试人员费尽心思设计案例覆盖代码。用代码覆盖率来衡量，有利也有弊。</p><p>本文中，不会使用单元测试的方式来得到代码的覆盖率，因为IDEA有直接的插件（下面会顺手说明下这个插件）。一般来说，代码覆盖率这种东西应该是测试工程师做的工作，但是作为Java开发的我就是手痒想搞一搞呀···</p><h1 id="IDEA中的Coverage插件使用"><a href="#IDEA中的Coverage插件使用" class="headerlink" title="IDEA中的Coverage插件使用"></a>IDEA中的Coverage插件使用</h1><p>下载插件：<br><img src="http://p2sj58chj.bkt.clouddn.com/TIM截图20180801154145.png" alt="TIM截图20180801154145"></p><p>安装完成之后就可以在IDEA上看到：<br><img src="http://p2sj58chj.bkt.clouddn.com/TIM截图20180801154450.png" alt="TIM截图20180801154450"></p><p>点击这个按钮表示以代码覆盖统计的方式运行。（在此之前还是先进入到Tomcat的配置中设置为Jacoco的方式）<br><img src="http://p2sj58chj.bkt.clouddn.com/TIM截图20180801155443.png" alt="TIM截图20180801155443"></p><p>然后点击上述按钮进行运行。<br>运行完毕后关闭服务器，会在IDEA上弹出一个小框，如下，在下面的图片上就可以看到代码覆盖测试结果。<br><img src="http://p2sj58chj.bkt.clouddn.com/TIM截图20180801160739.png" alt="TIM截图20180801160739"></p>]]></content>
     
@@ -621,11 +621,11 @@
       <category term="JavaEE" scheme="http://www.bianxiaofeng.com/categories/JavaEE/"/>
     
     
+      <category term="JavaWeb" scheme="http://www.bianxiaofeng.com/tags/JavaWeb/"/>
+    
       <category term="Struts2" scheme="http://www.bianxiaofeng.com/tags/Struts2/"/>
     
       <category term="拦截器" scheme="http://www.bianxiaofeng.com/tags/%E6%8B%A6%E6%88%AA%E5%99%A8/"/>
-    
-      <category term="JavaWeb" scheme="http://www.bianxiaofeng.com/tags/JavaWeb/"/>
     
   </entry>
   
@@ -650,11 +650,11 @@
       <category term="JavaEE" scheme="http://www.bianxiaofeng.com/categories/JavaEE/"/>
     
     
-      <category term="Struts2" scheme="http://www.bianxiaofeng.com/tags/Struts2/"/>
-    
       <category term="JavaWeb" scheme="http://www.bianxiaofeng.com/tags/JavaWeb/"/>
     
       <category term="属性封装，表达式封装，模型驱动封装" scheme="http://www.bianxiaofeng.com/tags/%E5%B1%9E%E6%80%A7%E5%B0%81%E8%A3%85%EF%BC%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%B0%81%E8%A3%85%EF%BC%8C%E6%A8%A1%E5%9E%8B%E9%A9%B1%E5%8A%A8%E5%B0%81%E8%A3%85/"/>
+    
+      <category term="Struts2" scheme="http://www.bianxiaofeng.com/tags/Struts2/"/>
     
   </entry>
   

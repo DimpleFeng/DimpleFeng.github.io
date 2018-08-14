@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[Java中的前置++和后置++的理解]]></title>
-      <url>/2018/08/14/images/2018-08-14-04-38-57/</url>
+      <url>/2018/08/14/2018-08-14-04-38-57/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在C、C++等编程语言中都会存在i++，++i,在实际运用中我们总能记住一句话==i++(后置++)是先使用在+1，而++i(前置++)是先自增再使用==。但是在一些很烧脑的场合，这种规律就会“失效”。</p>
 <p>本文会首先简单的介绍下前置和后置++在一些场合的实际应用，可以看到的是合理的使用++会使得代码简洁不少。</p>
 <h1 id="前置后置的实际使用"><a href="#前置后置的实际使用" class="headerlink" title="++前置后置的实际使用"></a>++前置后置的实际使用</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dimple.javabase;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@program</span>: JavaSEProject</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 测试++运算符</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: Dimple</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span>: 2018-08-14 16:46</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AddOpt</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">		String[] people = &#123;<span class="string">"Dennis Ritchie"</span>, <span class="string">"Bjarne Stroustrup"</span>, <span class="string">"James Gosling"</span>&#125;;</span><br><span class="line">		System.out.println(Arrays.asList(people).toString());</span><br><span class="line">		System.out.println(<span class="string">"preposition ++"</span>);</span><br><span class="line">		System.out.println(<span class="string">"        before operation···"</span>);</span><br><span class="line">		System.out.println(<span class="string">"        i= "</span>+i);</span><br><span class="line">		System.out.println(<span class="string">"        "</span>+people[i++]);</span><br><span class="line">		System.out.println(<span class="string">"        after operation···"</span>);</span><br><span class="line">		System.out.println(<span class="string">"        i= "</span>+i);</span><br><span class="line">		System.out.println(<span class="string">"postposition ++"</span>);</span><br><span class="line">		i = <span class="number">0</span>;</span><br><span class="line">		System.out.println(<span class="string">"        before operation···"</span>);</span><br><span class="line">		System.out.println(<span class="string">"        i= "</span>+i);</span><br><span class="line">		System.out.println(<span class="string">"        "</span>+people[++i]);</span><br><span class="line">		System.out.println(<span class="string">"        after operation···"</span>);</span><br><span class="line">		System.out.println(<span class="string">"        i= "</span>+i);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1320,11 +1320,11 @@
         
         <tags>
             
+            <tag> JavaWeb </tag>
+            
             <tag> Struts2 </tag>
             
             <tag> 拦截器 </tag>
-            
-            <tag> JavaWeb </tag>
             
         </tags>
         
@@ -1405,11 +1405,11 @@
         
         <tags>
             
-            <tag> Struts2 </tag>
-            
             <tag> JavaWeb </tag>
             
             <tag> 属性封装，表达式封装，模型驱动封装 </tag>
+            
+            <tag> Struts2 </tag>
             
         </tags>
         
