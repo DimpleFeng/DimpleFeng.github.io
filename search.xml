@@ -484,14 +484,14 @@
     <entry>
       <title><![CDATA[Intellij IDEA 优化配置]]></title>
       <url>/2018/07/23/2018-7-23-09-36-27/</url>
-      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>好吧工欲善其事必先利其器，我平时比较喜欢使用IDEA，这个软件可以很大程度上提高工作效率。<a href="http://www.jetbrains.com/" target="_blank" rel="noopener">IDEA</a>全称IntelliJ IDEA，是用于java语言开发的集成环境（也可用于其他语言），IntelliJ在业界被公认为最好的java开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE支持、Ant、JUnit、CVS整合、代码审查、 创新的GUI设计等方面的功能可以说是超常的。IDEA是JetBrains公司的产品，这家公司总部位于捷克共和国的首都布拉格，开发人员以严谨著称的东欧程序员为主。<br>一直都有想过写一篇关于IDEA的设置优化的博文，因为确实网上的不是很适合我的风格。且晚上的优化教程不是很多，自己摸索出来一下，希望能够帮到大家。</p>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>好吧工欲善其事必先利其器，我平时比较喜欢使用IDEA，这个软件可以很大程度上提高工作效率。<a href="http://www.jetbrains.com/" target="_blank" rel="noopener">IDEA</a>全称IntelliJ IDEA，是用于java语言开发的集成环境（也可用于其他语言），IntelliJ在业界被公认为最好的java开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE支持、Ant、JUnit、CVS整合、代码审查、 创新的GUI设计等方面的功能可以说是超常的。IDEA是JetBrains公司的产品，这家公司总部位于捷克共和国的首都布拉格，开发人员以严谨著称的东欧程序员为主。<br>一直都有想过写一篇关于IDEA的设置优化的博文，因为确实网上的不是很适合我的风格。且网上的优化教程不是很多，自己摸索出来一下，希望能够帮到大家。</p>
 <p>本文呢，会分为一下三部分进行说明：</p>
 <ol>
 <li>IDEA设置优化</li>
 <li>IDEA的插件优化</li>
 <li>IDEA的快捷键优化<br>其中呢，会针对个别插件进行说明。</li>
 </ol>
-<h1 id="IDEA设置优化"><a href="#IDEA设置优化" class="headerlink" title="IDEA设置优化"></a>IDEA设置优化</h1><p>这里不合是的插一脚：<br>使用的是最新版的IDEA，破解方法是采用<a href="http://idea.lanyus.com/的方法。另外提供破解补丁的方法：" target="_blank" rel="noopener">http://idea.lanyus.com/的方法。另外提供破解补丁的方法：</a></p>
+<h1 id="IDEA设置优化"><a href="#IDEA设置优化" class="headerlink" title="IDEA设置优化"></a>IDEA设置优化</h1><p>这里不合适的插一脚：<br>使用的是最新版的IDEA，破解方法是采用<a href="http://idea.lanyus.com/的方法。另外提供破解补丁的方法：" target="_blank" rel="noopener">http://idea.lanyus.com/的方法。另外提供破解补丁的方法：</a></p>
 <p>JetBrains全系列破解补丁v1.0： <a href="https://www.ghpym.com/jetbrainspath.html" target="_blank" rel="noopener">https://www.ghpym.com/jetbrainspath.html</a></p>
 <h2 id="代码提示"><a href="#代码提示" class="headerlink" title="代码提示"></a>代码提示</h2><p>默认是区分大小写的，这样的代码提示不是很舒服，改！<br><img src="http://p2sj58chj.bkt.clouddn.com/blog/QQ截图20180814173153.png" alt="代码提示修改"></p>
 <h2 id="自动导包"><a href="#自动导包" class="headerlink" title="自动导包"></a>自动导包</h2><p>项目中的包只有很少数的时候是会冲突，那么，每次写代码的时候，每次都要手动导包？不行，改！<br><img src="http://p2sj58chj.bkt.clouddn.com/blog/QQ截图20180814173628.png" alt="自动导包"></p>
@@ -500,6 +500,12 @@
 <h2 id="自动保存文件"><a href="#自动保存文件" class="headerlink" title="自动保存文件"></a>自动保存文件</h2><p>还在ctrl+s保存文件？费时间，在编辑区失去鼠标焦点的时候进行自动保存岂不是更好？改！<br><img src="http://p2sj58chj.bkt.clouddn.com/blog/QQ截图20180814174724.png" alt="自动保存文件"></p>
 <h2 id="显示空白符，方法分隔符"><a href="#显示空白符，方法分隔符" class="headerlink" title="显示空白符，方法分隔符"></a>显示空白符，方法分隔符</h2><p><img src="http://p2sj58chj.bkt.clouddn.com/blog/QQ截图20180814175326.png" alt="显示空白符"></p>
 <h2 id="设置模板"><a href="#设置模板" class="headerlink" title="设置模板"></a>设置模板</h2><p>请<a href="https://blog.csdn.net/u013412790/article/details/52807102" target="_blank" rel="noopener">参考</a>这个博文。</p>
+<h2 id="设置只带的Terminal为Git-Bash"><a href="#设置只带的Terminal为Git-Bash" class="headerlink" title="设置只带的Terminal为Git Bash"></a>设置只带的Terminal为Git Bash</h2><p>Git是一定要使用的，使用的时候还需要单独切出去开一个Bash就太不方便了（个人不喜欢使用类似于小乌龟的Git GUI软件，认为减少了使用Git的乐趣）。</p>
+<p><img src="htpp://p2sj58chj.bkt.clouddn.com/QQ截图20180821113239-2018821.png" alt="QQ截图20180821113239-2018821"></p>
+<p>设置完成后正常情况下Terminal是要自动转换为unicode编码的。解决方案如下：</p>
+<p>打开Git的安目录下的etc目录：我的是在D:\Program Files\Git\etc下：，找到bash.bashrc文件在其最后面添加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 解决中文乱码</span><br><span class="line">export LANG=&quot;zh_CN.UTF-8&quot;</span><br><span class="line">export LC_ALL=&quot;zh_CN.UTF-8&quot;</span><br></pre></td></tr></table></figure>
+<p>重新启动IDEA即可！</p>
 <h1 id="插件篇"><a href="#插件篇" class="headerlink" title="插件篇"></a>插件篇</h1><h2 id="Custom-Postfix-Templates"><a href="#Custom-Postfix-Templates" class="headerlink" title="Custom Postfix Templates"></a>Custom Postfix Templates</h2><p><img src="http://p2sj58chj.bkt.clouddn.com/blog/640.gif" alt="图片来源网络，致谢"></p>
 <h2 id="RestfulToolkit"><a href="#RestfulToolkit" class="headerlink" title="RestfulToolkit"></a>RestfulToolkit</h2><p><img src="http://p2sj58chj.bkt.clouddn.com/blog/640 (1" alt="图片来源网络，致谢">.gif)<br><img src="http://p2sj58chj.bkt.clouddn.com/blog/640.webp" alt="图片来源网络，致谢"></p>
 <h2 id="Grep-Console"><a href="#Grep-Console" class="headerlink" title="Grep Console"></a>Grep Console</h2><p>彩色日志<br><img src="http://p2sj58chj.bkt.clouddn.com/blog/64012.webp" alt="图片来源网络，致谢"></p>
