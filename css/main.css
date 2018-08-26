@@ -2193,7 +2193,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9ed5de;
+  background: #225874;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3015,4 +3015,21 @@ nav.site-nav {
   text-align: center;
   color: #4c618f;
   font-size: 20px;
+}
+.post {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 25px;
+  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
+  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+}
+.btn {
+  border-radius: 30px;
+  border: 2px solid #fff0f0;
+  border-radius: 30px;
+  background: #9cc;
+}
+.post-body {
+  margin-top: -30px;
+  margin-bottom: -100px;
 }
