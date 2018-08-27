@@ -7,6 +7,7 @@
       <url>/2018/08/27/2018-8-27-09-57-25/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用IDEA进行开发的时候，难免会用到Git，两个窗口切换来切换去的很不方便，为了简单，我将IDEA自带的Terminal设置为Git的，这样就能达到在IDEA上敲Git命令的效果。</p>
 <p>这里简单的介绍下具体的配置流程以及使用Git会引起的Unicode的解决方案。</p>
+<p>更多IDEA配置参看 <a href="http://www.bianxiaofeng.com/2018/07/23/2018-7-23-09-36-27/">Intellij IDEA  2018.02 最新版 优化配置</a></p>
 <h1 id="配置IDEA使用Git的Terminal"><a href="#配置IDEA使用Git的Terminal" class="headerlink" title="配置IDEA使用Git的Terminal"></a>配置IDEA使用Git的Terminal</h1><p><img src="http://p2sj58chj.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20180827094225.png" alt="enter description here" title="IDEA配置Git Terminal"></p>
 <h1 id="解决使用IDEA-Terminal引起的中文-Unicode编码问题"><a href="#解决使用IDEA-Terminal引起的中文-Unicode编码问题" class="headerlink" title="解决使用IDEA Terminal引起的中文 Unicode编码问题"></a>解决使用IDEA Terminal引起的中文 Unicode编码问题</h1><p> 乱码现象如下：</p>
 <p> <img src="http://p2sj58chj.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20180827093139.png" alt="enter description here" title="乱码现象"></p>
