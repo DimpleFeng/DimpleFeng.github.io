@@ -4,6 +4,45 @@
 
     
   <url>
+    <loc>http://www.bianxiaofeng.com/2018/07/23/2018-7-23-09-36-27/</loc>
+    <lastmod>2018-08-27T02:01:36.148Z</lastmod>
+    <data>
+        <display>
+        <title>Intellij IDEA  2018.02 最新版 优化配置</title>
+        <pubTime>2018-07-23T01:37:07.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/08/27/2018-8-27-09-57-25/</loc>
+    <lastmod>2018-08-27T01:57:36.900Z</lastmod>
+    <data>
+        <display>
+        <title>解决IDEA下的Terminal 乱码（unicode 编码）问题</title>
+        <pubTime>2018-08-27T01:57:29.238Z</pubTime>
+        
+        <tag>IDEA</tag>
+         
+        <tag>Terminal</tag>
+         
+        <tag>乱码</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.bianxiaofeng.com/2018/08/24/2018-8-24-10-00-54/</loc>
     <lastmod>2018-08-24T03:03:43.214Z</lastmod>
     <data>
@@ -38,21 +77,6 @@
              
               <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/07/23/2018-7-23-09-36-27/</loc>
-    <lastmod>2018-08-21T03:52:57.191Z</lastmod>
-    <data>
-        <display>
-        <title>Intellij IDEA 优化配置</title>
-        <pubTime>2018-07-23T01:37:07.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
@@ -550,28 +574,6 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/03/26/2018-3-26-193844/</loc>
-    <lastmod>2018-06-03T13:01:23.814Z</lastmod>
-    <data>
-        <display>
-        <title>JavaEE Async 异步支持</title>
-        <pubTime>2018-03-26T11:38:49.000Z</pubTime>
-        
-        <tag>JavaEE</tag>
-         
-        <tag>Async</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.bianxiaofeng.com/2018/04/24/2018-4-25-114413/</loc>
     <lastmod>2018-06-03T13:01:23.814Z</lastmod>
     <data>
@@ -612,6 +614,28 @@
 
     
   <url>
+    <loc>http://www.bianxiaofeng.com/2018/03/26/2018-3-26-193844/</loc>
+    <lastmod>2018-06-03T13:01:23.814Z</lastmod>
+    <data>
+        <display>
+        <title>JavaEE Async 异步支持</title>
+        <pubTime>2018-03-26T11:38:49.000Z</pubTime>
+        
+        <tag>JavaEE</tag>
+         
+        <tag>Async</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.bianxiaofeng.com/2018/03/31/2018-3-31-194919/</loc>
     <lastmod>2018-06-03T13:01:23.795Z</lastmod>
     <data>
@@ -636,19 +660,23 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/03/20/2018-3-20-153425/</loc>
+    <loc>http://www.bianxiaofeng.com/2018/03/09/2018-3-9-165439/</loc>
     <lastmod>2018-06-03T13:01:23.725Z</lastmod>
     <data>
         <display>
-        <title>Error:Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug'的解决办法</title>
-        <pubTime>2018-03-20T07:34:34.000Z</pubTime>
+        <title>Qt实现串口通信控制51单片机（上下位机）</title>
+        <pubTime>2018-03-09T08:54:45.000Z</pubTime>
         
-        <tag>Android</tag>
+        <tag>Qt</tag>
+         
+        <tag>串口通信</tag>
+         
+        <tag>51单片机</tag>
          
          
            
              
-              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
+              <breadCrumb title="Qt" url="http://www.bianxiaofeng.com/categories/Qt/"/>
           
         </display>
     </data>
@@ -680,23 +708,19 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/03/09/2018-3-9-165439/</loc>
+    <loc>http://www.bianxiaofeng.com/2018/03/20/2018-3-20-153425/</loc>
     <lastmod>2018-06-03T13:01:23.725Z</lastmod>
     <data>
         <display>
-        <title>Qt实现串口通信控制51单片机（上下位机）</title>
-        <pubTime>2018-03-09T08:54:45.000Z</pubTime>
+        <title>Error:Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug'的解决办法</title>
+        <pubTime>2018-03-20T07:34:34.000Z</pubTime>
         
-        <tag>Qt</tag>
-         
-        <tag>串口通信</tag>
-         
-        <tag>51单片机</tag>
+        <tag>Android</tag>
          
          
            
              
-              <breadCrumb title="Qt" url="http://www.bianxiaofeng.com/categories/Qt/"/>
+              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
           
         </display>
     </data>
@@ -763,28 +787,6 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/29/2018-1-29-220254/</loc>
-    <lastmod>2018-06-03T13:01:23.596Z</lastmod>
-    <data>
-        <display>
-        <title>Android学习之路笔记</title>
-        <pubTime>2018-01-29T14:03:08.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Android笔记</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.bianxiaofeng.com/2018/03/04/2018-3-4-135539/</loc>
     <lastmod>2018-06-03T13:01:23.596Z</lastmod>
     <data>
@@ -805,21 +807,21 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/19/2018-1-19%20153336/</loc>
-    <lastmod>2018-06-03T13:01:23.542Z</lastmod>
+    <loc>http://www.bianxiaofeng.com/2018/01/29/2018-1-29-220254/</loc>
+    <lastmod>2018-06-03T13:01:23.596Z</lastmod>
     <data>
         <display>
-        <title>使用VSCode+七牛云图床插件+自定义快捷键配置Hexo博文编写环境</title>
-        <pubTime>2018-01-19T07:33:36.000Z</pubTime>
+        <title>Android学习之路笔记</title>
+        <pubTime>2018-01-29T14:03:08.000Z</pubTime>
         
-        <tag>Hexo</tag>
+        <tag>Android</tag>
          
-        <tag>七牛云图床，VSCode</tag>
+        <tag>Android笔记</tag>
          
          
            
              
-              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
+              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
           
         </display>
     </data>
@@ -850,6 +852,28 @@
            
              
               <breadCrumb title="大学资料" url="http://www.bianxiaofeng.com/categories/%E5%A4%A7%E5%AD%A6%E8%B5%84%E6%96%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/01/19/2018-1-19%20153336/</loc>
+    <lastmod>2018-06-03T13:01:23.542Z</lastmod>
+    <data>
+        <display>
+        <title>使用VSCode+七牛云图床插件+自定义快捷键配置Hexo博文编写环境</title>
+        <pubTime>2018-01-19T07:33:36.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>七牛云图床，VSCode</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
           
         </display>
     </data>
@@ -903,6 +927,28 @@
 
     
   <url>
+    <loc>http://www.bianxiaofeng.com/2018/01/01/2018-01-01%20212957/</loc>
+    <lastmod>2018-06-03T13:01:21.245Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo博文置顶（自定义排序）</title>
+        <pubTime>2018-01-01T13:29:57.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>博文置顶</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.bianxiaofeng.com/2018/01/02/2018-01-02%20120748/</loc>
     <lastmod>2018-06-03T13:01:21.245Z</lastmod>
     <data>
@@ -917,28 +963,6 @@
         <tag>baidu</tag>
          
         <tag>收录</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/01/2018-01-01%20212957/</loc>
-    <lastmod>2018-06-03T13:01:21.245Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo博文置顶（自定义排序）</title>
-        <pubTime>2018-01-01T13:29:57.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>博文置顶</tag>
          
          
            

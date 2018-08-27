@@ -3,6 +3,39 @@
   
     
     <entry>
+      <title><![CDATA[解决IDEA下的Terminal 乱码（unicode 编码）问题]]></title>
+      <url>/2018/08/27/2018-8-27-09-57-25/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用IDEA进行开发的时候，难免会用到Git，两个窗口切换来切换去的很不方便，为了简单，我将IDEA自带的Terminal设置为Git的，这样就能达到在IDEA上敲Git命令的效果。</p>
+<p>这里简单的介绍下具体的配置流程以及使用Git会引起的Unicode的解决方案。</p>
+<h1 id="配置IDEA使用Git的Terminal"><a href="#配置IDEA使用Git的Terminal" class="headerlink" title="配置IDEA使用Git的Terminal"></a>配置IDEA使用Git的Terminal</h1><p><img src="http://p2sj58chj.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20180827094225.png" alt="enter description here" title="IDEA配置Git Terminal"></p>
+<h1 id="解决使用IDEA-Terminal引起的中文-Unicode编码问题"><a href="#解决使用IDEA-Terminal引起的中文-Unicode编码问题" class="headerlink" title="解决使用IDEA Terminal引起的中文 Unicode编码问题"></a>解决使用IDEA Terminal引起的中文 Unicode编码问题</h1><p> 乱码现象如下：</p>
+<p> <img src="http://p2sj58chj.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20180827093139.png" alt="enter description here" title="乱码现象"></p>
+<p>解决方案：</p>
+<p>在Git的安装目录下的etc目录下bash.bashrc文件，在最后一行添加：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 解决IDEA下的terminal中文Unicode编码问题</span><br><span class="line">export LANG=<span class="string">"zh_CN.UTF-8"</span></span><br><span class="line">export LC_ALL=<span class="string">"zh_CN.UTF-8"</span></span><br></pre></td></tr></table></figure>
+<p>重启IDEA就可以了。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Java基础 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> IDEA </tag>
+            
+            <tag> Terminal </tag>
+            
+            <tag> 乱码 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Git常用个人备份笔记]]></title>
       <url>/2018/08/24/2018-8-24-10-00-54/</url>
       <content type="html"><![CDATA[<h1 id="一、新建代码库"><a href="#一、新建代码库" class="headerlink" title="一、新建代码库"></a>一、新建代码库</h1><p>1、在当前目录下创建一个Git代码库</p>
@@ -696,17 +729,24 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Intellij IDEA 优化配置]]></title>
+      <title><![CDATA[Intellij IDEA  2018.02 最新版 优化配置]]></title>
       <url>/2018/07/23/2018-7-23-09-36-27/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>好吧工欲善其事必先利其器，我平时比较喜欢使用IDEA，这个软件可以很大程度上提高工作效率。<a href="http://www.jetbrains.com/" target="_blank" rel="noopener">IDEA</a>全称IntelliJ IDEA，是用于java语言开发的集成环境（也可用于其他语言），IntelliJ在业界被公认为最好的java开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE支持、Ant、JUnit、CVS整合、代码审查、 创新的GUI设计等方面的功能可以说是超常的。IDEA是JetBrains公司的产品，这家公司总部位于捷克共和国的首都布拉格，开发人员以严谨著称的东欧程序员为主。<br>一直都有想过写一篇关于IDEA的设置优化的博文，因为确实网上的不是很适合我的风格。且网上的优化教程不是很多，自己摸索出来一下，希望能够帮到大家。</p>
-<p>本文呢，会分为一下三部分进行说明：</p>
+<p>本文呢，会分为一下四部分进行说明：</p>
 <ol>
-<li>IDEA设置优化</li>
-<li>IDEA的插件优化</li>
-<li>IDEA的快捷键优化<br>其中呢，会针对个别插件进行说明。</li>
+<li><p>IDEA设置优化</p>
+</li>
+<li><p>IDEA的插件优化</p>
+</li>
+<li><p>IDEA的快捷键优化</p>
+</li>
+<li><p>IDEA使用过程中的一些问题（不定期更新）</p>
+</li>
 </ol>
-<h1 id="IDEA设置优化"><a href="#IDEA设置优化" class="headerlink" title="IDEA设置优化"></a>IDEA设置优化</h1><p>这里不合适的插一脚：<br>使用的是最新版的IDEA，破解方法是采用<a href="http://idea.lanyus.com/的方法。另外提供破解补丁的方法：" target="_blank" rel="noopener">http://idea.lanyus.com/的方法。另外提供破解补丁的方法：</a></p>
-<p>JetBrains全系列破解补丁v1.0： <a href="https://www.ghpym.com/jetbrainspath.html" target="_blank" rel="noopener">https://www.ghpym.com/jetbrainspath.html</a></p>
+<p>其中呢，会针对个别插件进行说明。</p>
+<h1 id="IDEA设置优化"><a href="#IDEA设置优化" class="headerlink" title="IDEA设置优化"></a>IDEA设置优化</h1><p>这里不合适的插一脚：<br>使用的是最新版的IDEA，破解方法是采用<a href="http://idea.lanyus.com/" target="_blank" rel="noopener">http://idea.lanyus.com/</a> 的方法。另外提供破解补丁的方法：</p>
+<p>JetBrains全系列破解补丁v1.0： </p>
+<p><a href="https://www.ghpym.com/jetbrainspath.html" target="_blank" rel="noopener">https://www.ghpym.com/jetbrainspath.html</a></p>
 <h2 id="代码提示"><a href="#代码提示" class="headerlink" title="代码提示"></a>代码提示</h2><p>默认是区分大小写的，这样的代码提示不是很舒服，改！<br><img src="http://p2sj58chj.bkt.clouddn.com/blog/QQ截图20180814173153.png" alt="代码提示修改"></p>
 <h2 id="自动导包"><a href="#自动导包" class="headerlink" title="自动导包"></a>自动导包</h2><p>项目中的包只有很少数的时候是会冲突，那么，每次写代码的时候，每次都要手动导包？不行，改！<br><img src="http://p2sj58chj.bkt.clouddn.com/blog/QQ截图20180814173628.png" alt="自动导包"></p>
 <h2 id="启动的时候不自动进入到上一次的工程"><a href="#启动的时候不自动进入到上一次的工程" class="headerlink" title="启动的时候不自动进入到上一次的工程"></a>启动的时候不自动进入到上一次的工程</h2><p>项目运行的时候，想换一个工程？每次IDEA都要自动打开？不行，改！<br><img src="http://p2sj58chj.bkt.clouddn.com/blog/QQ截图20180814174055.png" alt="enter description here"></p>
@@ -736,6 +776,8 @@
 <h2 id="调试快捷键"><a href="#调试快捷键" class="headerlink" title="调试快捷键"></a>调试快捷键</h2><p>其实常用的 就是F8 F7 F9 最值得一提的 就是Drop Frame 可以让运行过的代码从头再来</p>
 <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">alt+F8 <span class="built_in">debug</span>时选中查看值 </span><br><span class="line">Alt+<span class="keyword">Shift+F9，选择 </span><span class="built_in">Debug</span> </span><br><span class="line">Alt+<span class="keyword">Shift+F10，选择 </span>Run </span><br><span class="line">Ctrl+<span class="keyword">Shift+F9，编译 </span></span><br><span class="line">Ctrl+<span class="keyword">Shift+F8，查看断点</span></span><br><span class="line"><span class="keyword">F7，步入 </span></span><br><span class="line"><span class="keyword">Shift+F7，智能步入 </span></span><br><span class="line">Alt+<span class="keyword">Shift+F7，强制步入 </span></span><br><span class="line">F8，步过 </span><br><span class="line"><span class="keyword">Shift+F8，步出 </span></span><br><span class="line">Alt+<span class="keyword">Shift+F8，强制步过</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">Alt+F9，运行至光标处 </span></span><br><span class="line">Ctrl+Alt+F9，强制运行至光标处 </span><br><span class="line">F9，恢复程序 </span><br><span class="line">Alt+F10，定位到断点</span><br></pre></td></tr></table></figure>
 <h2 id="重构"><a href="#重构" class="headerlink" title="重构"></a>重构</h2><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+Alt+Shift+T，弹出重构菜单 </span><br><span class="line">Shift+F6，重命名 </span><br><span class="line">F6，移动 </span><br><span class="line">F5，复制 </span><br><span class="line">Alt+<span class="keyword">Delete</span>，安全删除 </span><br><span class="line">Ctrl+Alt+<span class="keyword">N</span>，内联</span><br></pre></td></tr></table></figure>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><p>1、IDEA Terminal中文乱码：</p>
+<p><a href="http://www.bianxiaofeng.com/2018/08/27/2018-8-27-09-57-25/">http://www.bianxiaofeng.com/2018/08/27/2018-8-27-09-57-25/</a></p>
 ]]></content>
       
         
