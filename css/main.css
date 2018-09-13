@@ -2193,7 +2193,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a778ff;
+  background: #ff37c1;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3033,4 +3033,7 @@ nav.site-nav {
 .post-body {
   margin-top: -30px;
   margin-bottom: -100px;
+}
+.my_post_copyright {
+  margin: 150px auto 0;
 }

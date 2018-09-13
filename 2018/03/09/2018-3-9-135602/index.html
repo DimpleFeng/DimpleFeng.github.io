@@ -164,19 +164,20 @@
 
 
 
-  <meta name="description" content="前言排序算法是最基本的算法之一，为此衍生出很多种的排序算法，而不同的排序算法具有不同的使用环境，为此掌握几种常见的排序算法是作为一个精致的程序员必不可少的技能。本文主要是介绍常见的四种排序算法的思想以及Java实现。   常见算法冒泡排序(Bubble Sort) 冒泡排序（英语：Bubble Sort，台湾另外一种译名为：泡沫排序）是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元">
+  <meta name="description" content="前言排序算法是最基本的算法之一，为此衍生出很多种的排序算法，而不同的排序算法具有不同的使用环境，为此掌握几种常见的排序算法是作为一个精致的程序员必不可少的技能。本文主要是介绍常见的四种排序算法的思想以及Java实现。  2018年9月13日11:27:56更新： 更新内容： * 重置原有算法，按照一种更加容易理解的白话文说明各种算法的特点。 * 增加时间复杂度概念，分析时间复杂度。 序列文章：">
+<meta name="keywords" content="排序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言">
+<meta property="og:title" content="常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言（一）">
 <meta property="og:url" content="http://www.bianxiaofeng.com/2018/03/09/2018-3-9-135602/index.html">
 <meta property="og:site_name" content="Dimple&#39;s Blog">
-<meta property="og:description" content="前言排序算法是最基本的算法之一，为此衍生出很多种的排序算法，而不同的排序算法具有不同的使用环境，为此掌握几种常见的排序算法是作为一个精致的程序员必不可少的技能。本文主要是介绍常见的四种排序算法的思想以及Java实现。   常见算法冒泡排序(Bubble Sort) 冒泡排序（英语：Bubble Sort，台湾另外一种译名为：泡沫排序）是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元">
+<meta property="og:description" content="前言排序算法是最基本的算法之一，为此衍生出很多种的排序算法，而不同的排序算法具有不同的使用环境，为此掌握几种常见的排序算法是作为一个精致的程序员必不可少的技能。本文主要是介绍常见的四种排序算法的思想以及Java实现。  2018年9月13日11:27:56更新： 更新内容： * 重置原有算法，按照一种更加容易理解的白话文说明各种算法的特点。 * 增加时间复杂度概念，分析时间复杂度。 序列文章：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://picjumbo.com/wp-content/uploads/web-designer-sketching-a-wireframe-layout-ideas-in-a-notebook_free_stock_photos_picjumbo_hnck4880-2210x1474.jpg">
-<meta property="og:updated_time" content="2018-06-03T13:01:23.671Z">
+<meta property="og:image" content="http://p2sj58chj.bkt.clouddn.com/google-analytics-free-photo-1570x1047-2018913.jpg">
+<meta property="og:updated_time" content="2018-09-13T08:35:59.096Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言">
-<meta name="twitter:description" content="前言排序算法是最基本的算法之一，为此衍生出很多种的排序算法，而不同的排序算法具有不同的使用环境，为此掌握几种常见的排序算法是作为一个精致的程序员必不可少的技能。本文主要是介绍常见的四种排序算法的思想以及Java实现。   常见算法冒泡排序(Bubble Sort) 冒泡排序（英语：Bubble Sort，台湾另外一种译名为：泡沫排序）是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元">
-<meta name="twitter:image" content="https://picjumbo.com/wp-content/uploads/web-designer-sketching-a-wireframe-layout-ideas-in-a-notebook_free_stock_photos_picjumbo_hnck4880-2210x1474.jpg">
+<meta name="twitter:title" content="常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言（一）">
+<meta name="twitter:description" content="前言排序算法是最基本的算法之一，为此衍生出很多种的排序算法，而不同的排序算法具有不同的使用环境，为此掌握几种常见的排序算法是作为一个精致的程序员必不可少的技能。本文主要是介绍常见的四种排序算法的思想以及Java实现。  2018年9月13日11:27:56更新： 更新内容： * 重置原有算法，按照一种更加容易理解的白话文说明各种算法的特点。 * 增加时间复杂度概念，分析时间复杂度。 序列文章：">
+<meta name="twitter:image" content="http://p2sj58chj.bkt.clouddn.com/google-analytics-free-photo-1570x1047-2018913.jpg">
 
 
 
@@ -195,7 +196,7 @@
   };
 </script>
 
-  <title>常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言 | Dimple's Blog</title>
+  <title>常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言（一） | Dimple's Blog</title>
   
 
 
@@ -321,7 +322,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">49</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">50</span></a>
   </li>
         
         
@@ -428,7 +429,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言
+          <h2 class="post-title" itemprop="name headline">常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言（一）
               
             
           </h2>
@@ -470,7 +471,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-06-03 21:01:23" itemprop="dateModified" datetime="2018-06-03T21:01:23+08:00">2018-06-03</time>
+                <time title="修改时间：2018-09-13 16:35:59" itemprop="dateModified" datetime="2018-09-13T16:35:59+08:00">2018-09-13</time>
               
             
           </span>
@@ -483,7 +484,7 @@
 
           
           
-             <span id="/2018/03/09/2018-3-9-135602/" class="leancloud_visitors" data-flag-title="常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言">
+             <span id="/2018/03/09/2018-3-9-135602/" class="leancloud_visitors" data-flag-title="常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言（一）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -517,9 +518,9 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="https://picjumbo.com/wp-content/uploads/web-designer-sketching-a-wireframe-layout-ideas-in-a-notebook_free_stock_photos_picjumbo_hnck4880-2210x1474.jpg" rel="gallery_cjlbn03ff00237shxmr6197s8"
+                 href="http://p2sj58chj.bkt.clouddn.com/google-analytics-free-photo-1570x1047-2018913.jpg" rel="gallery_cjm0bnk7f0021jghxwb1x7gxu"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="https://picjumbo.com/wp-content/uploads/web-designer-sketching-a-wireframe-layout-ideas-in-a-notebook_free_stock_photos_picjumbo_hnck4880-2210x1474.jpg" itemprop="contentUrl"/>
+                <img src="http://p2sj58chj.bkt.clouddn.com/google-analytics-free-photo-1570x1047-2018913.jpg" itemprop="contentUrl"/>
               </a>
             
           
@@ -530,24 +531,59 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>排序算法是最基本的算法之一，为此衍生出很多种的排序算法，而不同的排序算法具有不同的使用环境，为此掌握几种常见的排序算法是作为一个精致的程序员必不可少的技能。本文主要是介绍常见的四种排序算法的思想以及Java实现。  </p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>排序算法是最基本的算法之一，为此衍生出很多种的排序算法，而不同的排序算法具有不同的使用环境，为此掌握几种常见的排序算法是作为一个精致的程序员必不可少的技能。本文主要是介绍常见的四种排序算法的思想以及Java实现。 </p>
+<p>2018年9月13日11:27:56更新：</p>
+<p>更新内容：</p>
+<pre><code>* 重置原有算法，按照一种更加容易理解的白话文说明各种算法的特点。
+* 增加时间复杂度概念，分析时间复杂度。
+</code></pre><p>序列文章：</p>
+<ul>
+<li><p><a href="http://www.bianxiaofeng.com/2018/03/09/2018-3-9-135602/">常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言（一）</a></p>
+</li>
+<li><p>常见排序算法总结（归并排序）——Java语言（二）</p>
+</li>
+</ul>
 <h1 id="常见算法"><a href="#常见算法" class="headerlink" title="常见算法"></a>常见算法</h1><h2 id="冒泡排序-Bubble-Sort"><a href="#冒泡排序-Bubble-Sort" class="headerlink" title="冒泡排序(Bubble Sort)"></a>冒泡排序(Bubble Sort)</h2><blockquote>
 <p>冒泡排序（英语：Bubble Sort，台湾另外一种译名为：泡沫排序）是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。 ——来源<a href="https://zh.wikipedia.org/wiki/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">《维基百科》</a></p>
 </blockquote>
-<h3 id="冒泡排序算法核心思想"><a href="#冒泡排序算法核心思想" class="headerlink" title="冒泡排序算法核心思想"></a>冒泡排序算法核心思想</h3><ul>
-<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
-<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</li>
-<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
-<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。  </li>
+<h3 id="冒泡排序算法核心思想"><a href="#冒泡排序算法核心思想" class="headerlink" title="冒泡排序算法核心思想"></a>冒泡排序算法核心思想</h3><p>假如有n个无序的数需要从小到大进行排序，那么使用冒泡排序一定是这样做的：</p>
+<ul>
+<li><p>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</p>
+</li>
+<li><p>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一（即为0和1比较，1和2比较，n-2和n-1比较）。这步做完后，最后的元素会是最大的数。</p>
+</li>
+<li><p>针对下标为 0-(n-2)重复以上的步骤。</p>
+</li>
+<li><p>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。  </p>
+</li>
 </ul>
+<p>图示例：</p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-20183914350.gif" alt="{mdFileName}-20183914350">    </p>
 <h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>比如对于8 4 9 2 5 这组无序序列来说：<br>算法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">	for (int j = i; j &lt; arr.length; j++) &#123;</span><br><span class="line">		if (arr[i]&gt;arr[j]) &#123;</span><br><span class="line">			int temp=arr[i];</span><br><span class="line">			arr[i]=arr[j];</span><br><span class="line">			arr[j]=temp;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>此算法的执行思想是：外层循环i是控制第1、2···个数，然后把这第1、2···个数依次与后面的数进行比较，如果后面的数不符合排序规则，那么就进行替换。这样一来，能够保证外层循环已经循环过的数始终是符合排序规则的。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">     * 冒泡函数</span><br><span class="line">     *</span><br><span class="line">     * @param array 目标数组</span><br><span class="line">     */</span><br><span class="line">    public static void bubbleSort(int array[]) &#123;</span><br><span class="line">        //输入合法性校验，如果是空数组或者数组只有一个数，那么不需要排序，直接返回</span><br><span class="line">        if (array == null || array.length &lt; 2) &#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        //外层循环控制需要排序的数列，从0到i</span><br><span class="line">        for (int i = array.length - 1; i &gt; 0; i--) &#123;</span><br><span class="line">            //内层循环进行比较</span><br><span class="line">            for (int j = 0; j &lt; i; j++) &#123;</span><br><span class="line">                if (array[j] &gt; array[j + 1]) &#123;</span><br><span class="line">                    swap(array, j, j + 1);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 交换函数</span><br><span class="line">     *</span><br><span class="line">     * @param array 目标数组</span><br><span class="line">     * @param i     交换的数组的下标</span><br><span class="line">     * @param j     交换的数组的下标</span><br><span class="line">     */</span><br><span class="line">    private static void swap(int[] array, int i, int j) &#123;</span><br><span class="line">        int temp = array[i];</span><br><span class="line">        array[i] = array[j];</span><br><span class="line">        array[j] = temp;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>此算法的执行思想是：</p>
+<p>外层循环控制的是这个数组中需要排序的序列，第一趟之后，需要排序的序列的下标就是从0到n-2。而内层循环通过j和j+1进行比较，如果array[j]&gt;array[j+1]，那么就进行交换，通过array.length次的遍历，每一次都能将最大的排列到数组序列的最后一个，这样就能够完成排序。</p>
 <p>当然，此类算法还有许多变形，比如下面：  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">for (int i = 0; i &lt; arr.length-1; i++) &#123;</span><br><span class="line">	for (int j = arr.length-1; j &gt;i ; j--) &#123;</span><br><span class="line">		if (arr[j]&gt;arr[j-1]) &#123;</span><br><span class="line">			int temp=arr[j];</span><br><span class="line">			arr[j]=arr[j-1];</span><br><span class="line">			arr[j-1]=temp;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>此算法的思想是：从后向前进行比较,外层循环只是控制循环的次数，内层循环控制交换。这样一来，始终能保持在最前面的数是符合排序规则的。  </p>
 <p>无论是怎样的变形，都是像吐泡泡一样，将符合条件的吐出来，然后没有吐出来的进行比较，直到找到合适的泡泡然后吐出来。  </p>
+<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>时间复杂度这个概念很复杂，是为一个算法流程中的，常数操作数量的指标。对于这样一个O(N)，是通过取极限的方式得到的，总的来说，忽略低阶项，忽略高阶项的系数项。</p>
+<p>在常数操作数量的表达式中，只要高阶项，不要低阶项，不要高阶项的系数，剩下的部分即为f(N),那么时间复杂度为O(f(N))。</p>
+<p>那么对于冒泡算法来说（ps：该算法基本已经绝迹，因为时间复杂度相对较高，消耗的系统资源较大），时间复杂度的计算方式如下：</p>
+<p>对于这样一个算法流程来说，需要遍历的次数为：n+(n-1)+(n-2)+···2+1，这是一个等差数列，对于等差数列进行求和，得到的是：aN^2 +bN+c (a,b,c)为常数项。这里用到了数学的取极限的方法，这里的bN+c可以忽略，对于N很大来说，a对aN^2的影响不是特别大，可以忽略，在这里得到的时间复杂度为O(N^2)，读作（big o N^2)。</p>
+<h2 id="选择排序（Selection-Sort）"><a href="#选择排序（Selection-Sort）" class="headerlink" title="选择排序（Selection Sort）"></a>选择排序（Selection Sort）</h2><blockquote>
+<p>选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理如下。首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。<br>选择排序的主要优点与数据移动有关。如果某个元素位于正确的最终位置上，则它不会被移动。选择排序每次交换一对元素，它们当中至少有一个将被移到其最终位置上，因此对 n个元素的表进行排序总共进行至多 n-1次交换。在所有的完全依靠交换去移动元素的排序方法中，选择排序属于非常好的一种。   ————来源<a href="https://zh.wikipedia.org/zh-cn/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">《维基百科》</a>  </p>
+</blockquote>
+<h3 id="实例介绍"><a href="#实例介绍" class="headerlink" title="实例介绍"></a>实例介绍</h3><p>图片动画演示   </p>
+<p> <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Selection-Sort-Animation.gif" alt="图片来源——维基百科"><br>红色表示当前最小值，黄色表示已排序序列，蓝色表示当前位置。<br> 以上动画演示的是数组：a[]={8, 5, 2, 6, 9, 3, 1, 4, 0, 7};接下来会结合动画进行说明：  </p>
+<ul>
+<li>遍历数组a[0,n] (n为数组的长度)，找到里面最小的数0，放到最前面，数组变为：a[]={0,5,2,6,9,3,1,4,8,7};</li>
+<li>遍历数组a[1,n]，找到最小的数1，放到数组下标为1的位置，数组变为a[]={0,1,2,6,9,3,5,4,8,7};</li>
+</ul>
+<p>重复以上步骤，最终数组变为：a[]={0,1,2,3,4,5,6,7,8,9}。  </p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 选择排序</span><br><span class="line"> *</span><br><span class="line"> * @param array 目标数组</span><br><span class="line"> */</span><br><span class="line">public static void selectionSort(int[] array) &#123;</span><br><span class="line">    //数组输入参数合法性校验</span><br><span class="line">    if (array == null || array.length &lt; 2) &#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    for (int i = 0; i &lt; array.length; i++) &#123;</span><br><span class="line">        int minIndex = i;</span><br><span class="line">        for (int j = i + 1; j &lt; array.length; j++) &#123;</span><br><span class="line">            minIndex = array[j] &lt; array[minIndex] ? j : minIndex;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(array, minIndex, i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 交换</span><br><span class="line"> * @param array 目标数组</span><br><span class="line"> * @param minIndex 当前找到的最小的数的下标</span><br><span class="line"> * @param i 要交换的数的下标</span><br><span class="line"> */</span><br><span class="line">private static void swap(int[] array, int minIndex, int i) &#123;</span><br><span class="line">    int temp = array[minIndex];</span><br><span class="line">    array[minIndex] = array[i];</span><br><span class="line">    array[i] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="时间复杂度-1"><a href="#时间复杂度-1" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>可以看下上面的图示，可以看到，每次都会去遍历这样一个数组，遍历的次数为（n-1+(n-2)+····2+1。这还是一个等差数列，由于这个算法是写死的，什么意思呢，就是说这样一个算法，如果这是一个完全有序的数组，要进行排序，它还是会对每一个数都遍历一次，找到这个序列中最小的，放到合适的位置上去。与数组是否有序无关。</p>
+<p>从上面的分析可以知道，这个时间复杂度还是一个等差数列，和上面的冒泡的分析一样，这里的时间复杂度为O(N^2)</p>
 <h2 id="快速排序-Quick-Sort"><a href="#快速排序-Quick-Sort" class="headerlink" title="快速排序(Quick Sort)"></a>快速排序(Quick Sort)</h2><blockquote>
 <p>快速排序使用分治法（Divide and conquer）策略来把一个序列（list）分为两个子序列（sub-lists）。快速排序采用“分而治之、各个击破”的观念。  ————来源<a href="https://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">《维基百科》</a></p>
 </blockquote>
@@ -565,21 +601,11 @@
 <h2 id="插入排序（Insertion-Sort）"><a href="#插入排序（Insertion-Sort）" class="headerlink" title="插入排序（Insertion Sort）"></a>插入排序（Insertion Sort）</h2><blockquote>
 <p>插入排序（英语：Insertion Sort）是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序，因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。  ————来源<a href="https://zh.wikipedia.org/wiki/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">《维基百科》</a>    </p>
 </blockquote>
-<h3 id="排序思想"><a href="#排序思想" class="headerlink" title="排序思想"></a>排序思想</h3><p>将一组数据分为两组，分别为有序组和无序组。每次从无序组中取出最前面的数和有序组的最后一个数进行比较，为这个数在有序组中找到一个合适的位置，这样始终保持着有序组中的数始终是有序的。  </p>
+<h3 id="排序思想"><a href="#排序思想" class="headerlink" title="排序思想"></a>排序思想</h3><p>将一组数据分为两组，分别为有序组和无序组。每次从无序组中取出最前面的数和有序组的最后一个数进行比较，为这个数在有序组中找到一个合适的位置，这样始终保持着有序组中的数始终是有序的，直到遍历到最后一个。</p>
+<p>想象下斗地主，摸牌的之前自己手中的牌是不是有序的，对吧，当你又摸起来了一张牌的时候，是不是要找它的合适位置，是不是就相当于要进行一次遍历，然后把牌插入到指定的位置。这就是插入排序。</p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-2018310111715.gif" alt="{mdFileName}-2018310111715"><br>图片来源于网络</p>
-<h3 id="举例-2"><a href="#举例-2" class="headerlink" title="举例"></a>举例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">static void InsertionSort(int num[]) &#123;</span><br><span class="line">	int j=0,temp=0;//定义变量，temp用于保存要进行比较的数（未排序队列的第一个数）</span><br><span class="line">	for (int i = 1; i &lt; num.length; i++) &#123;//遍历（之所以是从数组下标1开始是因为数组下标为0的数只有一个，本身就是一个有序组）</span><br><span class="line">		temp=num[i];//保存未排序队列的第一个数，这个时候相当于数组下标为i的位置为坑，需要找到一个合适的数来填这个坑</span><br><span class="line">		j=i-1;//j定位已经排序好了的队列的最后一个数的下标</span><br><span class="line">		while (j&gt;=0&amp;&amp;num[j]&gt;temp) &#123;//j&gt;=0防止数组越界。num[j]&gt;temp是交换条件 </span><br><span class="line">			num[j+1]=num[j];</span><br><span class="line">			j--;</span><br><span class="line">		&#125;</span><br><span class="line">		num[j+1]=temp;//这里是j+1不是j的原因是执行了上一步j--之后，j比本身应该在的位置少1，所以+1</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="选择排序（Selection-Sort）"><a href="#选择排序（Selection-Sort）" class="headerlink" title="选择排序（Selection Sort）"></a>选择排序（Selection Sort）</h2><blockquote>
-<p>选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理如下。首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。<br>选择排序的主要优点与数据移动有关。如果某个元素位于正确的最终位置上，则它不会被移动。选择排序每次交换一对元素，它们当中至少有一个将被移到其最终位置上，因此对 n个元素的表进行排序总共进行至多 n-1次交换。在所有的完全依靠交换去移动元素的排序方法中，选择排序属于非常好的一种。   ————来源<a href="https://zh.wikipedia.org/zh-cn/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">《维基百科》</a>  </p>
-</blockquote>
-<h3 id="实例介绍"><a href="#实例介绍" class="headerlink" title="实例介绍"></a>实例介绍</h3><p>图片动画演示   </p>
-<p> <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Selection-Sort-Animation.gif" alt="图片来源——维基百科"><br>红色表示当前最小值，黄色表示已排序序列，蓝色表示当前位置。<br> 以上动画演示的是数组：a[]={8, 5, 2, 6, 9, 3, 1, 4, 0, 7};接下来会结合动画进行说明：  </p>
-<ul>
-<li>遍历数组a[0,n] (n为数组的长度)，找到里面最小的数0，放到最前面，数组变为：a[]={0,5,2,6,9,3,1,4,8,7};</li>
-<li>遍历数组a[1,n]，找到最小的数1，放到数组下标为1的位置，数组变为a[]={0,1,2,6,9,3,5,4,8,7};</li>
-</ul>
-<p>重复以上步骤，最终数组变为：a[]={0,1,2,3,4,5,6,7,8,9}。  </p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">static void SelectionSort(int a[]) &#123;</span><br><span class="line">	int k = 0, temp = 0;// 其中k用于记录符合条件的数组的下标，temp用于交换数据作为中间变量</span><br><span class="line">	for (int i = 0; i &lt; a.length - 1; i++) &#123;// 这里减一的原因是，之前的数都是分别和这个最后一个数比较的，所以最后一个数一定是符合排序规则的</span><br><span class="line">		for (int j = i; j &lt; a.length - 1; j++) &#123;</span><br><span class="line">			if (a[j] &lt; a[i]) &#123;</span><br><span class="line">				k = j;// 记录下符合排序规则的数的下标</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		// 交换</span><br><span class="line">		temp = a[i];</span><br><span class="line">		a[i] = a[k];</span><br><span class="line">		a[k] = temp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>四种最常见的排序算法的相关指标如下：<br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201831012532.png" alt="{mdFileName}-201831012532"><br>不同的算法具有很多种的变形，比如冒泡，可以从序列前面开始，也可以从后面开始，其原理都一样。</p>
+<h3 id="举例-2"><a href="#举例-2" class="headerlink" title="举例"></a>举例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">     * 插入排序</span><br><span class="line">     *</span><br><span class="line">     * @param array 目标数组</span><br><span class="line">     */</span><br><span class="line">    public static void insertSort(int[] array) &#123;</span><br><span class="line">//        参数合法性校验</span><br><span class="line">        if (array == null || array.length &lt; 2) &#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        //外层循环，控制的需要进行插入的数的位置</span><br><span class="line">        for (int i = 1; i &lt; array.length; i++) &#123;</span><br><span class="line">            //内层循环，将当前这个数拿到有序祖列中进行遍历，找到它的合适位置</span><br><span class="line">            for (int j = i - 1; j &gt;= 0 &amp;&amp; array[j] &gt; array[j + 1]; j--) &#123;</span><br><span class="line">                swap(array, j, j + 1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 交换函数</span><br><span class="line">     *</span><br><span class="line">     * @param array 目标数组</span><br><span class="line">     * @param i     需要交换的下标位置</span><br><span class="line">     * @param j     需要交换的下标位置</span><br><span class="line">     */</span><br><span class="line">    private static void swap(int[] array, int i, int j) &#123;</span><br><span class="line">        int temp = array[i];</span><br><span class="line">        array[i] = array[j];</span><br><span class="line">        array[j] = temp;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>四种最常见的排序算法的相关指标如下：<br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201831012532.png" alt="{mdFileName}-201831012532">   不同的算法具有很多种的变形，比如冒泡，可以从序列前面开始，也可以从后面开始，其原理都一样。</p>
 
       
     </div>
@@ -609,11 +635,11 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/03/09/2018-3-9-135602/">常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言</a></p>
+  <p><span>本文标题:</span><a href="/2018/03/09/2018-3-9-135602/">常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言（一）</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Dimple 的个人博客">Dimple</a></p>
   <p><span>发布时间:</span>2018年03月09日 - 13:03</p>
-  <p><span>最后更新:</span>2018年06月03日 - 21:06</p>
-  <p><span>原始链接:</span><a href="/2018/03/09/2018-3-9-135602/" title="常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言">http://www.bianxiaofeng.com/2018/03/09/2018-3-9-135602/</a>
+  <p><span>最后更新:</span>2018年09月13日 - 16:09</p>
+  <p><span>原始链接:</span><a href="/2018/03/09/2018-3-9-135602/" title="常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言（一）">http://www.bianxiaofeng.com/2018/03/09/2018-3-9-135602/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.bianxiaofeng.com/2018/03/09/2018-3-9-135602/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
@@ -673,6 +699,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/排序/" rel="tag"><i class="fa fa-tag"></i> 排序</a>
+          
+        </div>
       
 
       
@@ -800,7 +832,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">49</span>
+                    <span class="site-state-item-count">50</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1060,7 +1092,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见算法"><span class="nav-number">2.</span> <span class="nav-text">常见算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序-Bubble-Sort"><span class="nav-number">2.1.</span> <span class="nav-text">冒泡排序(Bubble Sort)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#冒泡排序算法核心思想"><span class="nav-number">2.1.1.</span> <span class="nav-text">冒泡排序算法核心思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#举例"><span class="nav-number">2.1.2.</span> <span class="nav-text">举例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速排序-Quick-Sort"><span class="nav-number">2.2.</span> <span class="nav-text">快速排序(Quick Sort)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#举例-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">举例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入排序（Insertion-Sort）"><span class="nav-number">2.3.</span> <span class="nav-text">插入排序（Insertion Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#排序思想"><span class="nav-number">2.3.1.</span> <span class="nav-text">排序思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#举例-2"><span class="nav-number">2.3.2.</span> <span class="nav-text">举例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择排序（Selection-Sort）"><span class="nav-number">2.4.</span> <span class="nav-text">选择排序（Selection Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例介绍"><span class="nav-number">2.4.1.</span> <span class="nav-text">实例介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">2.4.2.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见算法"><span class="nav-number">2.</span> <span class="nav-text">常见算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序-Bubble-Sort"><span class="nav-number">2.1.</span> <span class="nav-text">冒泡排序(Bubble Sort)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#冒泡排序算法核心思想"><span class="nav-number">2.1.1.</span> <span class="nav-text">冒泡排序算法核心思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#举例"><span class="nav-number">2.1.2.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-number">2.1.3.</span> <span class="nav-text">时间复杂度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择排序（Selection-Sort）"><span class="nav-number">2.2.</span> <span class="nav-text">选择排序（Selection Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例介绍"><span class="nav-number">2.2.1.</span> <span class="nav-text">实例介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">2.2.2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度-1"><span class="nav-number">2.2.3.</span> <span class="nav-text">时间复杂度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速排序-Quick-Sort"><span class="nav-number">2.3.</span> <span class="nav-text">快速排序(Quick Sort)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#举例-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">举例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入排序（Insertion-Sort）"><span class="nav-number">2.4.</span> <span class="nav-text">插入排序（Insertion Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#排序思想"><span class="nav-number">2.4.1.</span> <span class="nav-text">排序思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#举例-2"><span class="nav-number">2.4.2.</span> <span class="nav-text">举例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>

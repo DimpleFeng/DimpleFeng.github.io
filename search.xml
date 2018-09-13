@@ -3,8 +3,84 @@
   
     
     <entry>
+      <title><![CDATA[常见排序算法总结（归并排序）——Java语言（二）]]></title>
+      <url>/2018/09/13/2018-9-13-16-36-10/</url>
+      <content type="html"><![CDATA[<p>未完结</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Java基础 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 归并排序 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MySQL复习（一）]]></title>
+      <url>/2018/09/07/2018-9-7-21-12-48/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近准备将自己所学的知识好好的复习一遍，看到了MySQL，对于MySQL，很多东西还是停留在知识点，实际应用还是差一大截，刚好是在网上看到一篇博文，本文主要是根据这篇博文，加上一些关于MySQL的知识点交叉串起来，方便自己复习。</p>
+<h1 id="常见的MySQL操作的命令大全"><a href="#常见的MySQL操作的命令大全" class="headerlink" title="常见的MySQL操作的命令大全"></a>常见的MySQL操作的命令大全</h1><p>以下是一些比较常用的MySQL的操作命令，并非查询语句。当然可以使用一些可视化的工具来代替这些命令，比如比较好用的Navicat，这里使用的是IDEA自带的database工具。</p>
+<p>命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"># 创建名为mysqlpractice的数据库</span><br><span class="line">create database mysqlpractice;</span><br><span class="line"></span><br><span class="line"># 显示所有的数据库</span><br><span class="line">show databases;</span><br><span class="line"></span><br><span class="line"># 删除数据库mysqlpractice</span><br><span class="line">drop database mysqlpractice;</span><br><span class="line"># 一般会在删除之前进行判断，判断是否存在该数据库,如果对不存在的数据库进行删除会报错，对表的删除同理。</span><br><span class="line">drop database if exists mysqlpractice;</span><br><span class="line"></span><br><span class="line"># 选择名为mysqlpractice的数据库,只有选择了某个数据库，才能对数据库中的表进行操作</span><br><span class="line">use mysqlpractice;</span><br><span class="line"></span><br><span class="line">#显示当前数据库下的course表的字段信息，以下两种方式均可</span><br><span class="line">show columns from course;</span><br><span class="line">describe course;</span><br><span class="line"></span><br><span class="line"># 显示创建数据库的mysql语句</span><br><span class="line">show create database mysqlpractice;</span><br><span class="line"></span><br><span class="line"># 显示创建表的sql语句</span><br><span class="line">show create table course;</span><br><span class="line"></span><br><span class="line"># 删除表</span><br><span class="line">drop table course;</span><br><span class="line">#一般会在删除数据库表之前进行判断，如果存在就进行删除</span><br><span class="line">drop table if exists course;</span><br><span class="line"></span><br><span class="line"># 删除表中的数据，不删除表delete方式</span><br><span class="line">delete</span><br><span class="line">from course;</span><br><span class="line"># 删除表中的数据，不删除表truncate方式</span><br><span class="line">truncate table course;</span><br><span class="line"></span><br><span class="line"># 以上两种方式都可以删除表中的数据，但是还是由区别的</span><br><span class="line"># 1、truncate是不可以rollback的，delete可以rollback。</span><br><span class="line"># 2、truncate删除后会重置索引（自增类型的id会从0开始），而delete不会删除索引。</span><br><span class="line"># 3、delete可以返回受影响的行数，且delete可以按照条件删除。</span><br><span class="line"># 4、truncate不会触发任何的delete触发器。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 表结构的修改</span><br><span class="line">## 增加一个字段int类型的test1</span><br><span class="line">alter table course</span><br><span class="line">  add column (test1 int);</span><br><span class="line"></span><br><span class="line">## 指定字段test1之后插入一个int类型的字段test2</span><br><span class="line">## 需要和上面一个命令区别开来，上面的命令是必须要带括号的，下面这个命令是不能带括号的</span><br><span class="line">alter table course</span><br><span class="line">  add column test2 int</span><br><span class="line">  after test1;</span><br><span class="line"></span><br><span class="line">## 删除一个test1字段</span><br><span class="line">alter table course</span><br><span class="line">  drop test1;</span><br><span class="line"></span><br><span class="line">## 修改字段的名称test1为newtest1，类型为char</span><br><span class="line"></span><br><span class="line">alter table course</span><br><span class="line">  change test1 newtest1 char(32);</span><br><span class="line"></span><br><span class="line">## 修改表的名字，将course表的名称修改为newCourse</span><br><span class="line"></span><br><span class="line">alter table course</span><br><span class="line">rename to newCourse;</span><br></pre></td></tr></table></figure>
+<h1 id="学生-课程-教师-成绩SQL练习题"><a href="#学生-课程-教师-成绩SQL练习题" class="headerlink" title="学生-课程-教师-成绩SQL练习题"></a>学生-课程-教师-成绩SQL练习题</h1><h2 id="表的架构"><a href="#表的架构" class="headerlink" title="表的架构"></a>表的架构</h2><p>ps：</p>
+<p>原文是采用的S#这种写法来表示id的，在navicat以及idea自带的一些插件中是不能识别的，所以以下全部改为sno这种形式。</p>
+<h3 id="Student表"><a href="#Student表" class="headerlink" title="Student表"></a>Student表</h3><p>Student表具有学号sno，学生姓名sname，年龄sage以及性别ssex。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-- auto-generated definition</span><br><span class="line">create table student</span><br><span class="line">(</span><br><span class="line">  sno   int         null,</span><br><span class="line">  sname varchar(32) null,</span><br><span class="line">  sage  int         null,</span><br><span class="line">  ssex  varchar(8)  null</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>对于Student表插入的测试数据如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">insert into Student</span><br><span class="line">select 1, N&apos;刘一&apos;, 18, N&apos;男&apos;</span><br><span class="line">union all</span><br><span class="line">select 2, N&apos;钱二&apos;, 19, N&apos;女&apos;</span><br><span class="line">union all</span><br><span class="line">select 3, N&apos;张三&apos;, 17, N&apos;男&apos;</span><br><span class="line">union all</span><br><span class="line">select 4, N&apos;李四&apos;, 18, N&apos;女&apos;</span><br><span class="line">union all</span><br><span class="line">select 5, N&apos;王五&apos;, 17, N&apos;男&apos;</span><br><span class="line">union all</span><br><span class="line">select 6, N&apos;赵六&apos;, 19, N&apos;女&apos;;</span><br></pre></td></tr></table></figure>
+<p>插入6条学生数据信息，数据显示如下：  </p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180908114254-201898.png" alt="QQ截图20180908114254-201898"></p>
+<h3 id="course表"><a href="#course表" class="headerlink" title="course表"></a>course表</h3><p>course有三个属性，分别是课程的编号，课程的名称，以及该课程的老师id<br>创表语句：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE course</span><br><span class="line">(</span><br><span class="line">  cno    INT,</span><br><span class="line">  cname nvarchar(32),</span><br><span class="line">  tno    INT</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<p>插入数据如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">insert into Course</span><br><span class="line">select 1, N&apos;语文&apos;, 1</span><br><span class="line">union all</span><br><span class="line">select 2, N&apos;数学&apos;, 2</span><br><span class="line">union all</span><br><span class="line">select 3, N&apos;英语&apos;, 3</span><br><span class="line">union all</span><br><span class="line">select 4, N&apos;物理&apos;, 4;</span><br></pre></td></tr></table></figure></p>
+<p>数据插入完成后的表如下：</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180908115655-201898.png" alt="QQ截图20180908115655-201898"></p>
+<h3 id="Teacher表"><a href="#Teacher表" class="headerlink" title="Teacher表"></a>Teacher表</h3><p>创表语句如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table teacher</span><br><span class="line">(</span><br><span class="line">  tno   int         null,</span><br><span class="line">  tname varchar(16) null</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<p>向表中插入数据：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">insert into Teacher</span><br><span class="line">select 1, N&apos;叶平&apos;</span><br><span class="line">union all</span><br><span class="line">select 2, N&apos;贺高&apos;</span><br><span class="line">union all</span><br><span class="line">select 3, N&apos;杨艳&apos;</span><br><span class="line">union all</span><br><span class="line">select 4, N&apos;周磊&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>教师表创建完成后的表如下：<br><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180908115853-201898.png" alt="QQ截图20180908115853-201898"></p>
+<h3 id="sc表-成绩、课程及学生的关联表"><a href="#sc表-成绩、课程及学生的关联表" class="headerlink" title="sc表-成绩、课程及学生的关联表"></a>sc表-成绩、课程及学生的关联表</h3><p>创建表的语句如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-- auto-generated definition</span><br><span class="line">create table sc</span><br><span class="line">(</span><br><span class="line">  sno   int null,</span><br><span class="line">  cno   int null,</span><br><span class="line">  score int null</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<p>插入测试数据：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">insert into SC</span><br><span class="line">select 1, 1, 56</span><br><span class="line">union all</span><br><span class="line">select 1, 2, 78</span><br><span class="line">union all</span><br><span class="line">select 1, 3, 67</span><br><span class="line">union all</span><br><span class="line">select 1, 4, 58</span><br><span class="line">union all</span><br><span class="line">select 2, 1, 79</span><br><span class="line">union all</span><br><span class="line">select 2, 2, 81</span><br><span class="line">union all</span><br><span class="line">select 2, 3, 92</span><br><span class="line">union all</span><br><span class="line">select 2, 4, 68</span><br><span class="line">union all</span><br><span class="line">select 3, 1, 91</span><br><span class="line">union all</span><br><span class="line">select 3, 2, 47</span><br><span class="line">union all</span><br><span class="line">select 3, 3, 88</span><br><span class="line">union all</span><br><span class="line">select 3, 4, 56</span><br><span class="line">union all</span><br><span class="line">select 4, 2, 88</span><br><span class="line">union all</span><br><span class="line">select 4, 3, 90</span><br><span class="line">union all</span><br><span class="line">select 4, 4, 93</span><br><span class="line">union all</span><br><span class="line">select 5, 1, 46</span><br><span class="line">union all</span><br><span class="line">select 5, 3, 78</span><br><span class="line">union all</span><br><span class="line">select 5, 4, 53</span><br><span class="line">union all</span><br><span class="line">select 6, 1, 35</span><br><span class="line">union all</span><br><span class="line">select 6, 2, 68</span><br><span class="line">union all</span><br><span class="line">select 6, 4, 71;</span><br></pre></td></tr></table></figure></p>
+<p>插入完成后的数据如下：<br><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180908120101-201898.png" alt="QQ截图20180908120101-201898"></p>
+<h2 id="SQL练习题"><a href="#SQL练习题" class="headerlink" title="SQL练习题"></a>SQL练习题</h2><p>1、查询课程号为1比课程号为2的成绩高的所有学生的学号：<br>解决思路：<br>  使用两个子表，一个字表装课程号为1的信息，一个表装课程号为2的信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">	a.sno </span><br><span class="line">FROM</span><br><span class="line">	( SELECT sno, score FROM sc WHERE cno = &apos;1&apos; ) a,</span><br><span class="line">	( SELECT sno, score FROM sc WHERE cno = &apos;2&apos; ) b </span><br><span class="line">WHERE</span><br><span class="line">	a.score &gt; b.score </span><br><span class="line">	AND a.sno = b.sno;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180908171025-201898.png" alt="QQ截图20180908171025-201898"><br>2、查询平均成绩大于60分的同学的学号和平均成绩:<br>解决思路：<br>  使用group by 将数据按照学号sno进行分组，这样就能和聚合函数avg一起，算出平均分，再使用having将得到的数据进行筛选。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">	sno,</span><br><span class="line">	avg( score ) </span><br><span class="line">FROM</span><br><span class="line">	sc </span><br><span class="line">GROUP BY</span><br><span class="line">	sno </span><br><span class="line">HAVING</span><br><span class="line">	avg( score ) &gt; 60;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180908170644-201898.png" alt="QQ截图20180908170644-201898"></p>
+<p>3、查询所有同学的学号、姓名、选课数、总成绩：</p>
+<p>解决思路：<br>  因为需要对每一个同学进行单独处理，所以一定要用到分组，所以group by 是必须的，选课数和总成绩这些就需要拥挤聚合函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">	student.sno,</span><br><span class="line">	student.sname,</span><br><span class="line">	count( sc.sno ),</span><br><span class="line">	sum( score ) </span><br><span class="line">FROM</span><br><span class="line">	student</span><br><span class="line">	LEFT JOIN sc ON student.sno = sc.sno </span><br><span class="line">GROUP BY</span><br><span class="line">	student.sno</span><br></pre></td></tr></table></figure>
+<p>结果如图：<br><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180908170614-201898.png" alt="QQ截图20180908170614-201898"></p>
+<p>4、查询姓“李”的老师的个数：</p>
+<p>解决思路：</p>
+<p>使用聚合函数count，需要注意的是需要对结果进行distinct处理。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">	count( DISTINCT ( tname ) ) </span><br><span class="line">FROM</span><br><span class="line">	teacher </span><br><span class="line">WHERE</span><br><span class="line">	tname LIKE &apos;李%&apos;</span><br></pre></td></tr></table></figure>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180908171738-201898.png" alt="QQ截图20180908171738-201898"></p>
+<p>5、查询没有学过”叶平”老师课的同学学号，姓名：</p>
+<p>解决思路：<br>  首先找出所有选修的叶平老师的学生的学号，这个可以通过sc表来进行查找。然后从student表中找出学号不在上面表中的学号。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">	student.sno,</span><br><span class="line">	student.sname </span><br><span class="line">FROM</span><br><span class="line">	student </span><br><span class="line">WHERE</span><br><span class="line">	student.sno NOT IN (</span><br><span class="line">	SELECT</span><br><span class="line">		sno </span><br><span class="line">	FROM</span><br><span class="line">		sc,</span><br><span class="line">		teacher,</span><br><span class="line">		course </span><br><span class="line">	WHERE</span><br><span class="line">		teacher.tname = &quot;叶平&quot; </span><br><span class="line">		AND teacher.tno = course.tno </span><br><span class="line">	AND course.cno = sc.cno </span><br><span class="line">	)</span><br></pre></td></tr></table></figure>
+<p>结果如下：</p>
+<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180908175856-201898.png" alt="QQ截图20180908175856-201898"></p>
+<p>6、查询学过课程号为1同时课程号为2的同学的学号、姓名：</p>
+<p>关于exists的使用参看：<a href="https://www.cnblogs.com/V1haoge/p/6385312.html" target="_blank" rel="noopener">https://www.cnblogs.com/V1haoge/p/6385312.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">	student.sno,</span><br><span class="line">	student.sname </span><br><span class="line">FROM</span><br><span class="line">	student,</span><br><span class="line">	sc </span><br><span class="line">WHERE</span><br><span class="line">	student.sno = sc.sno </span><br><span class="line">	AND sc.cno = &quot;1&quot; </span><br><span class="line">	AND EXISTS ( SELECT * FROM sc AS sc2 WHERE sc2.sno = sc.sno AND sc2.cno = &quot;2&quot; )</span><br></pre></td></tr></table></figure></p>
+<p>7、查询学过“叶平”老师所教的课的同学的学号、姓名：</p>
+<h1 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h1><p>本文主要是参考一些很优秀的博文，链接如下：</p>
+<ul>
+<li><a href="http://www.cnblogs.com/qixuejia/p/3637735.html" target="_blank" rel="noopener">sql面试题（学生表<em>课程表</em>成绩表_教师表）</a></li>
+</ul>
+<p><a href="https://www.cnblogs.com/shenqz/p/6962493.html" target="_blank" rel="noopener">https://www.cnblogs.com/shenqz/p/6962493.html</a></p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[解决IDEA下的Terminal 乱码（unicode 编码）问题]]></title>
-      <url>/2018/08/27/2018-8-27-09-57-25/</url>
+      <url>/2018/09/05/2018-8-27-09-57-25/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用IDEA进行开发的时候，难免会用到Git，两个窗口切换来切换去的很不方便，为了简单，我将IDEA自带的Terminal设置为Git的，这样就能达到在IDEA上敲Git命令的效果。</p>
 <p>这里简单的介绍下具体的配置流程以及使用Git会引起的Unicode的解决方案。</p>
 <p>更多IDEA配置参看 <a href="http://www.bianxiaofeng.com/2018/07/23/2018-7-23-09-36-27/">Intellij IDEA  2018.02 最新版 优化配置</a></p>
@@ -108,6 +184,7 @@
 <p>在弹出的Vim编辑页面输入命令：  </p>
 <p> Commands:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># p, pick &lt;commit&gt; = use commit</span><br><span class="line"># r, reword &lt;commit&gt; = use commit, but edit the commit message</span><br><span class="line"># e, edit &lt;commit&gt; = use commit, but stop for amending</span><br><span class="line"># s, squash &lt;commit&gt; = use commit, but meld into previous commit</span><br><span class="line"># f, fixup &lt;commit&gt; = like &quot;squash&quot;, but discard this commit&apos;s log message</span><br><span class="line"># x, exec &lt;command&gt; = run command (the rest of the line) using shell</span><br><span class="line"># d, drop &lt;commit&gt; = remove commit</span><br><span class="line"># l, label &lt;label&gt; = label current HEAD with a name</span><br><span class="line"># t, reset &lt;label&gt; = reset HEAD to a label</span><br><span class="line"># m, merge [-C &lt;commit&gt; | -c &lt;commit&gt;] &lt;label&gt; [# &lt;oneline&gt;]</span><br></pre></td></tr></table></figure></p>
 <p> 然后wq保存，再弹出一个Vim编辑框，修改commit信息。</p>
+<p>16、恢复删除的分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reflog 查看之前的这个已经删除的分支的提交历史</span><br><span class="line">git branch &lt;之前提交的那个分支的名字&gt; &lt;上一步操作查询到sha1&gt;</span><br></pre></td></tr></table></figure></p>
 <h1 id="六、标签"><a href="#六、标签" class="headerlink" title="六、标签"></a>六、标签</h1><p>1、列出所有标签</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git tag</span></span><br></pre></td></tr></table></figure>
 <p>2、新建一个指向当前commit的tag</p>
@@ -964,6 +1041,12 @@
 ]]></content>
       
         
+        <tags>
+            
+            <tag> 3 </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -1627,11 +1710,11 @@
         
         <tags>
             
-            <tag> JavaWeb </tag>
-            
             <tag> Struts2 </tag>
             
             <tag> 拦截器 </tag>
+            
+            <tag> JavaWeb </tag>
             
         </tags>
         
@@ -1712,11 +1795,11 @@
         
         <tags>
             
+            <tag> Struts2 </tag>
+            
             <tag> JavaWeb </tag>
             
             <tag> 属性封装，表达式封装，模型驱动封装 </tag>
-            
-            <tag> Struts2 </tag>
             
         </tags>
         
@@ -1867,26 +1950,61 @@
     </entry>
     
     <entry>
-      <title><![CDATA[常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言]]></title>
+      <title><![CDATA[常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言（一）]]></title>
       <url>/2018/03/09/2018-3-9-135602/</url>
-      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>排序算法是最基本的算法之一，为此衍生出很多种的排序算法，而不同的排序算法具有不同的使用环境，为此掌握几种常见的排序算法是作为一个精致的程序员必不可少的技能。本文主要是介绍常见的四种排序算法的思想以及Java实现。  </p>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>排序算法是最基本的算法之一，为此衍生出很多种的排序算法，而不同的排序算法具有不同的使用环境，为此掌握几种常见的排序算法是作为一个精致的程序员必不可少的技能。本文主要是介绍常见的四种排序算法的思想以及Java实现。 </p>
+<p>2018年9月13日11:27:56更新：</p>
+<p>更新内容：</p>
+<pre><code>* 重置原有算法，按照一种更加容易理解的白话文说明各种算法的特点。
+* 增加时间复杂度概念，分析时间复杂度。
+</code></pre><p>序列文章：</p>
+<ul>
+<li><p><a href="http://www.bianxiaofeng.com/2018/03/09/2018-3-9-135602/">常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言（一）</a></p>
+</li>
+<li><p>常见排序算法总结（归并排序）——Java语言（二）</p>
+</li>
+</ul>
 <h1 id="常见算法"><a href="#常见算法" class="headerlink" title="常见算法"></a>常见算法</h1><h2 id="冒泡排序-Bubble-Sort"><a href="#冒泡排序-Bubble-Sort" class="headerlink" title="冒泡排序(Bubble Sort)"></a>冒泡排序(Bubble Sort)</h2><blockquote>
 <p>冒泡排序（英语：Bubble Sort，台湾另外一种译名为：泡沫排序）是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。 ——来源<a href="https://zh.wikipedia.org/wiki/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">《维基百科》</a></p>
 </blockquote>
-<h3 id="冒泡排序算法核心思想"><a href="#冒泡排序算法核心思想" class="headerlink" title="冒泡排序算法核心思想"></a>冒泡排序算法核心思想</h3><ul>
-<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
-<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</li>
-<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
-<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。  </li>
+<h3 id="冒泡排序算法核心思想"><a href="#冒泡排序算法核心思想" class="headerlink" title="冒泡排序算法核心思想"></a>冒泡排序算法核心思想</h3><p>假如有n个无序的数需要从小到大进行排序，那么使用冒泡排序一定是这样做的：</p>
+<ul>
+<li><p>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</p>
+</li>
+<li><p>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一（即为0和1比较，1和2比较，n-2和n-1比较）。这步做完后，最后的元素会是最大的数。</p>
+</li>
+<li><p>针对下标为 0-(n-2)重复以上的步骤。</p>
+</li>
+<li><p>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。  </p>
+</li>
 </ul>
+<p>图示例：</p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-20183914350.gif" alt="{mdFileName}-20183914350">    </p>
 <h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>比如对于8 4 9 2 5 这组无序序列来说：<br>算法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">	for (int j = i; j &lt; arr.length; j++) &#123;</span><br><span class="line">		if (arr[i]&gt;arr[j]) &#123;</span><br><span class="line">			int temp=arr[i];</span><br><span class="line">			arr[i]=arr[j];</span><br><span class="line">			arr[j]=temp;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>此算法的执行思想是：外层循环i是控制第1、2···个数，然后把这第1、2···个数依次与后面的数进行比较，如果后面的数不符合排序规则，那么就进行替换。这样一来，能够保证外层循环已经循环过的数始终是符合排序规则的。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">     * 冒泡函数</span><br><span class="line">     *</span><br><span class="line">     * @param array 目标数组</span><br><span class="line">     */</span><br><span class="line">    public static void bubbleSort(int array[]) &#123;</span><br><span class="line">        //输入合法性校验，如果是空数组或者数组只有一个数，那么不需要排序，直接返回</span><br><span class="line">        if (array == null || array.length &lt; 2) &#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        //外层循环控制需要排序的数列，从0到i</span><br><span class="line">        for (int i = array.length - 1; i &gt; 0; i--) &#123;</span><br><span class="line">            //内层循环进行比较</span><br><span class="line">            for (int j = 0; j &lt; i; j++) &#123;</span><br><span class="line">                if (array[j] &gt; array[j + 1]) &#123;</span><br><span class="line">                    swap(array, j, j + 1);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 交换函数</span><br><span class="line">     *</span><br><span class="line">     * @param array 目标数组</span><br><span class="line">     * @param i     交换的数组的下标</span><br><span class="line">     * @param j     交换的数组的下标</span><br><span class="line">     */</span><br><span class="line">    private static void swap(int[] array, int i, int j) &#123;</span><br><span class="line">        int temp = array[i];</span><br><span class="line">        array[i] = array[j];</span><br><span class="line">        array[j] = temp;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>此算法的执行思想是：</p>
+<p>外层循环控制的是这个数组中需要排序的序列，第一趟之后，需要排序的序列的下标就是从0到n-2。而内层循环通过j和j+1进行比较，如果array[j]&gt;array[j+1]，那么就进行交换，通过array.length次的遍历，每一次都能将最大的排列到数组序列的最后一个，这样就能够完成排序。</p>
 <p>当然，此类算法还有许多变形，比如下面：  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">for (int i = 0; i &lt; arr.length-1; i++) &#123;</span><br><span class="line">	for (int j = arr.length-1; j &gt;i ; j--) &#123;</span><br><span class="line">		if (arr[j]&gt;arr[j-1]) &#123;</span><br><span class="line">			int temp=arr[j];</span><br><span class="line">			arr[j]=arr[j-1];</span><br><span class="line">			arr[j-1]=temp;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>此算法的思想是：从后向前进行比较,外层循环只是控制循环的次数，内层循环控制交换。这样一来，始终能保持在最前面的数是符合排序规则的。  </p>
 <p>无论是怎样的变形，都是像吐泡泡一样，将符合条件的吐出来，然后没有吐出来的进行比较，直到找到合适的泡泡然后吐出来。  </p>
+<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>时间复杂度这个概念很复杂，是为一个算法流程中的，常数操作数量的指标。对于这样一个O(N)，是通过取极限的方式得到的，总的来说，忽略低阶项，忽略高阶项的系数项。</p>
+<p>在常数操作数量的表达式中，只要高阶项，不要低阶项，不要高阶项的系数，剩下的部分即为f(N),那么时间复杂度为O(f(N))。</p>
+<p>那么对于冒泡算法来说（ps：该算法基本已经绝迹，因为时间复杂度相对较高，消耗的系统资源较大），时间复杂度的计算方式如下：</p>
+<p>对于这样一个算法流程来说，需要遍历的次数为：n+(n-1)+(n-2)+···2+1，这是一个等差数列，对于等差数列进行求和，得到的是：aN^2 +bN+c (a,b,c)为常数项。这里用到了数学的取极限的方法，这里的bN+c可以忽略，对于N很大来说，a对aN^2的影响不是特别大，可以忽略，在这里得到的时间复杂度为O(N^2)，读作（big o N^2)。</p>
+<h2 id="选择排序（Selection-Sort）"><a href="#选择排序（Selection-Sort）" class="headerlink" title="选择排序（Selection Sort）"></a>选择排序（Selection Sort）</h2><blockquote>
+<p>选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理如下。首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。<br>选择排序的主要优点与数据移动有关。如果某个元素位于正确的最终位置上，则它不会被移动。选择排序每次交换一对元素，它们当中至少有一个将被移到其最终位置上，因此对 n个元素的表进行排序总共进行至多 n-1次交换。在所有的完全依靠交换去移动元素的排序方法中，选择排序属于非常好的一种。   ————来源<a href="https://zh.wikipedia.org/zh-cn/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">《维基百科》</a>  </p>
+</blockquote>
+<h3 id="实例介绍"><a href="#实例介绍" class="headerlink" title="实例介绍"></a>实例介绍</h3><p>图片动画演示   </p>
+<p> <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Selection-Sort-Animation.gif" alt="图片来源——维基百科"><br>红色表示当前最小值，黄色表示已排序序列，蓝色表示当前位置。<br> 以上动画演示的是数组：a[]={8, 5, 2, 6, 9, 3, 1, 4, 0, 7};接下来会结合动画进行说明：  </p>
+<ul>
+<li>遍历数组a[0,n] (n为数组的长度)，找到里面最小的数0，放到最前面，数组变为：a[]={0,5,2,6,9,3,1,4,8,7};</li>
+<li>遍历数组a[1,n]，找到最小的数1，放到数组下标为1的位置，数组变为a[]={0,1,2,6,9,3,5,4,8,7};</li>
+</ul>
+<p>重复以上步骤，最终数组变为：a[]={0,1,2,3,4,5,6,7,8,9}。  </p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 选择排序</span><br><span class="line"> *</span><br><span class="line"> * @param array 目标数组</span><br><span class="line"> */</span><br><span class="line">public static void selectionSort(int[] array) &#123;</span><br><span class="line">    //数组输入参数合法性校验</span><br><span class="line">    if (array == null || array.length &lt; 2) &#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    for (int i = 0; i &lt; array.length; i++) &#123;</span><br><span class="line">        int minIndex = i;</span><br><span class="line">        for (int j = i + 1; j &lt; array.length; j++) &#123;</span><br><span class="line">            minIndex = array[j] &lt; array[minIndex] ? j : minIndex;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(array, minIndex, i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 交换</span><br><span class="line"> * @param array 目标数组</span><br><span class="line"> * @param minIndex 当前找到的最小的数的下标</span><br><span class="line"> * @param i 要交换的数的下标</span><br><span class="line"> */</span><br><span class="line">private static void swap(int[] array, int minIndex, int i) &#123;</span><br><span class="line">    int temp = array[minIndex];</span><br><span class="line">    array[minIndex] = array[i];</span><br><span class="line">    array[i] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="时间复杂度-1"><a href="#时间复杂度-1" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>可以看下上面的图示，可以看到，每次都会去遍历这样一个数组，遍历的次数为（n-1+(n-2)+····2+1。这还是一个等差数列，由于这个算法是写死的，什么意思呢，就是说这样一个算法，如果这是一个完全有序的数组，要进行排序，它还是会对每一个数都遍历一次，找到这个序列中最小的，放到合适的位置上去。与数组是否有序无关。</p>
+<p>从上面的分析可以知道，这个时间复杂度还是一个等差数列，和上面的冒泡的分析一样，这里的时间复杂度为O(N^2)</p>
 <h2 id="快速排序-Quick-Sort"><a href="#快速排序-Quick-Sort" class="headerlink" title="快速排序(Quick Sort)"></a>快速排序(Quick Sort)</h2><blockquote>
 <p>快速排序使用分治法（Divide and conquer）策略来把一个序列（list）分为两个子序列（sub-lists）。快速排序采用“分而治之、各个击破”的观念。  ————来源<a href="https://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">《维基百科》</a></p>
 </blockquote>
@@ -1904,23 +2022,19 @@
 <h2 id="插入排序（Insertion-Sort）"><a href="#插入排序（Insertion-Sort）" class="headerlink" title="插入排序（Insertion Sort）"></a>插入排序（Insertion Sort）</h2><blockquote>
 <p>插入排序（英语：Insertion Sort）是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序，因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。  ————来源<a href="https://zh.wikipedia.org/wiki/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">《维基百科》</a>    </p>
 </blockquote>
-<h3 id="排序思想"><a href="#排序思想" class="headerlink" title="排序思想"></a>排序思想</h3><p>将一组数据分为两组，分别为有序组和无序组。每次从无序组中取出最前面的数和有序组的最后一个数进行比较，为这个数在有序组中找到一个合适的位置，这样始终保持着有序组中的数始终是有序的。  </p>
+<h3 id="排序思想"><a href="#排序思想" class="headerlink" title="排序思想"></a>排序思想</h3><p>将一组数据分为两组，分别为有序组和无序组。每次从无序组中取出最前面的数和有序组的最后一个数进行比较，为这个数在有序组中找到一个合适的位置，这样始终保持着有序组中的数始终是有序的，直到遍历到最后一个。</p>
+<p>想象下斗地主，摸牌的之前自己手中的牌是不是有序的，对吧，当你又摸起来了一张牌的时候，是不是要找它的合适位置，是不是就相当于要进行一次遍历，然后把牌插入到指定的位置。这就是插入排序。</p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-2018310111715.gif" alt="{mdFileName}-2018310111715"><br>图片来源于网络</p>
-<h3 id="举例-2"><a href="#举例-2" class="headerlink" title="举例"></a>举例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">static void InsertionSort(int num[]) &#123;</span><br><span class="line">	int j=0,temp=0;//定义变量，temp用于保存要进行比较的数（未排序队列的第一个数）</span><br><span class="line">	for (int i = 1; i &lt; num.length; i++) &#123;//遍历（之所以是从数组下标1开始是因为数组下标为0的数只有一个，本身就是一个有序组）</span><br><span class="line">		temp=num[i];//保存未排序队列的第一个数，这个时候相当于数组下标为i的位置为坑，需要找到一个合适的数来填这个坑</span><br><span class="line">		j=i-1;//j定位已经排序好了的队列的最后一个数的下标</span><br><span class="line">		while (j&gt;=0&amp;&amp;num[j]&gt;temp) &#123;//j&gt;=0防止数组越界。num[j]&gt;temp是交换条件 </span><br><span class="line">			num[j+1]=num[j];</span><br><span class="line">			j--;</span><br><span class="line">		&#125;</span><br><span class="line">		num[j+1]=temp;//这里是j+1不是j的原因是执行了上一步j--之后，j比本身应该在的位置少1，所以+1</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="选择排序（Selection-Sort）"><a href="#选择排序（Selection-Sort）" class="headerlink" title="选择排序（Selection Sort）"></a>选择排序（Selection Sort）</h2><blockquote>
-<p>选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理如下。首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。<br>选择排序的主要优点与数据移动有关。如果某个元素位于正确的最终位置上，则它不会被移动。选择排序每次交换一对元素，它们当中至少有一个将被移到其最终位置上，因此对 n个元素的表进行排序总共进行至多 n-1次交换。在所有的完全依靠交换去移动元素的排序方法中，选择排序属于非常好的一种。   ————来源<a href="https://zh.wikipedia.org/zh-cn/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">《维基百科》</a>  </p>
-</blockquote>
-<h3 id="实例介绍"><a href="#实例介绍" class="headerlink" title="实例介绍"></a>实例介绍</h3><p>图片动画演示   </p>
-<p> <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Selection-Sort-Animation.gif" alt="图片来源——维基百科"><br>红色表示当前最小值，黄色表示已排序序列，蓝色表示当前位置。<br> 以上动画演示的是数组：a[]={8, 5, 2, 6, 9, 3, 1, 4, 0, 7};接下来会结合动画进行说明：  </p>
-<ul>
-<li>遍历数组a[0,n] (n为数组的长度)，找到里面最小的数0，放到最前面，数组变为：a[]={0,5,2,6,9,3,1,4,8,7};</li>
-<li>遍历数组a[1,n]，找到最小的数1，放到数组下标为1的位置，数组变为a[]={0,1,2,6,9,3,5,4,8,7};</li>
-</ul>
-<p>重复以上步骤，最终数组变为：a[]={0,1,2,3,4,5,6,7,8,9}。  </p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">static void SelectionSort(int a[]) &#123;</span><br><span class="line">	int k = 0, temp = 0;// 其中k用于记录符合条件的数组的下标，temp用于交换数据作为中间变量</span><br><span class="line">	for (int i = 0; i &lt; a.length - 1; i++) &#123;// 这里减一的原因是，之前的数都是分别和这个最后一个数比较的，所以最后一个数一定是符合排序规则的</span><br><span class="line">		for (int j = i; j &lt; a.length - 1; j++) &#123;</span><br><span class="line">			if (a[j] &lt; a[i]) &#123;</span><br><span class="line">				k = j;// 记录下符合排序规则的数的下标</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		// 交换</span><br><span class="line">		temp = a[i];</span><br><span class="line">		a[i] = a[k];</span><br><span class="line">		a[k] = temp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>四种最常见的排序算法的相关指标如下：<br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201831012532.png" alt="{mdFileName}-201831012532"><br>不同的算法具有很多种的变形，比如冒泡，可以从序列前面开始，也可以从后面开始，其原理都一样。</p>
+<h3 id="举例-2"><a href="#举例-2" class="headerlink" title="举例"></a>举例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">     * 插入排序</span><br><span class="line">     *</span><br><span class="line">     * @param array 目标数组</span><br><span class="line">     */</span><br><span class="line">    public static void insertSort(int[] array) &#123;</span><br><span class="line">//        参数合法性校验</span><br><span class="line">        if (array == null || array.length &lt; 2) &#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        //外层循环，控制的需要进行插入的数的位置</span><br><span class="line">        for (int i = 1; i &lt; array.length; i++) &#123;</span><br><span class="line">            //内层循环，将当前这个数拿到有序祖列中进行遍历，找到它的合适位置</span><br><span class="line">            for (int j = i - 1; j &gt;= 0 &amp;&amp; array[j] &gt; array[j + 1]; j--) &#123;</span><br><span class="line">                swap(array, j, j + 1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 交换函数</span><br><span class="line">     *</span><br><span class="line">     * @param array 目标数组</span><br><span class="line">     * @param i     需要交换的下标位置</span><br><span class="line">     * @param j     需要交换的下标位置</span><br><span class="line">     */</span><br><span class="line">    private static void swap(int[] array, int i, int j) &#123;</span><br><span class="line">        int temp = array[i];</span><br><span class="line">        array[i] = array[j];</span><br><span class="line">        array[j] = temp;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>四种最常见的排序算法的相关指标如下：<br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201831012532.png" alt="{mdFileName}-201831012532">   不同的算法具有很多种的变形，比如冒泡，可以从序列前面开始，也可以从后面开始，其原理都一样。</p>
 ]]></content>
       
+        
+        <tags>
+            
+            <tag> 排序 </tag>
+            
+        </tags>
         
     </entry>
     
@@ -2924,152 +3038,7 @@ yarn config set disturl https://npm.taobao.org/dist --global
     </entry>
     
     <entry>
-      <title><![CDATA[2018最新版Hexo博客Next主题6.0配置优化]]></title>
-      <url>/2018/01/04/2018-01-04%20213124/</url>
-      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p>或许是对默认的东西没有好感，总觉得默认的主题是很丑很丑的，完美控是接受不了这个东东的，还好hexo是可以修改主题的。这里首推NexT主题，<code>精于心，简于形</code>标语说的是真的不错。使用NexT主题的人比较多，这也说明这个主题确实很成熟了。优化，配置，扩展很多都集成了，比较简单。博文重质量，弄的太花哨确实没啥用。。。</p>
-</blockquote>
-<p>读者可以在<a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a>可以查看你喜欢的主题。 这里我主要说下NexT主题的相关配置。其他主题可以多看看官方文档。<br> <a id="more"></a></p>
-<h1 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h1><p>安装的过程就一行代码，你需要在博客根目录出打开命令行输入以下命令：    </p>
-<pre><code>git clone https://github.com/theme-next/hexo-theme-next themes / next
-</code></pre><p>以上代码的意思是从 <a href="https://github.com/iissnan/hexo-theme-next将next下载到当前目录下的themes里面的next文件夹中。" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next将next下载到当前目录下的themes里面的next文件夹中。</a>  </p>
-<h1 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h1><p>修改站点配置文件<code>_config.yml</code>  </p>
-<pre><code># Extensions
-## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
-theme: next
-</code></pre><h1 id="主题设定"><a href="#主题设定" class="headerlink" title="主题设定"></a>主题设定</h1><p><img src="http://theme-next.iissnan.com/assets/img/NextSchemes3.png" alt=""></p>
-<p>选择 Scheme  </p>
-<p>Scheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持三种 Scheme，他们是：</p>
-<ul>
-<li>Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</li>
-<li>Mist - Muse 的紧凑版本，整洁有序的单栏外观</li>
-<li>Pisces - 双栏 Scheme，小家碧玉似的清新  </li>
-<li>Gemini - 左侧网站信息及目录，块+片段结构布局<br>cheme 的切换通过更改 主题配置文件，搜索 scheme 关键字。 你会看到有四行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可。 </li>
-</ul>
-<h1 id="设置-语言"><a href="#设置-语言" class="headerlink" title="设置 语言"></a>设置 语言</h1><p>编辑站点配置文件， 将 language 设置成你所需要的语言。建议明确设置你所需要的语言，例如选用简体中文，配置如下：</p>
-<pre><code>language: zh-Hans  
-</code></pre><p>PS：这里提一下，你使用<code>hexo s</code>预览的时候，你会发现是设置了语言之后界面还是英文，这个时候不要慌，使用<code>hexo clean</code>清理下database文件夹以及public文件夹就行了。然后再使用<code>hexo s</code> 预览。事实上，这个方法在遇到很多问题的时候都是通用的。</p>
-<h1 id="设置-菜单"><a href="#设置-菜单" class="headerlink" title="设置 菜单"></a>设置 菜单</h1><p>菜单配置包括三个部分，第一是菜单项（名称和链接），第二是菜单项的显示文本，第三是菜单项对应的图标。 NexT 使用的是 Font Awesome 提供的图标， Font Awesome 提供了 600+ 的图标，可以满足绝大的多数的场景，同时无须担心在 Retina 屏幕下 图标模糊的问题。</p>
-<p>编辑 主题配置文件，修改以下内容：</p>
-<p>设定菜单内容，对应的字段是 menu。 菜单内容的设置格式是：item name: link。其中 item name 是一个名称，这个名称并不直接显示在页面上，它将用于匹配图标以及翻译。  </p>
-<h1 id="设置标签、分类的界面"><a href="#设置标签、分类的界面" class="headerlink" title="设置标签、分类的界面"></a>设置标签、分类的界面</h1><p>设置菜单那里，我设置了显示标签、分类、关于几个选项。如图：<br><img src="https://i.imgur.com/mAF33TE.png" alt="">  </p>
-<p>但是点击进去，却报错：<code>Cannot GET /tags/</code>，不要慌，不能获取tags，创建一个就OK！  </p>
-<p>这里介绍创建page的语法：   </p>
-<pre><code>hexo new page &apos;name&apos; # name分别为tags、categories  
-</code></pre><p>这样就创建了pages。<br>在控制台输入以下命令：  </p>
-<pre><code>hexo new page &apos;tags&apos; #创建tags子目录
-hexo new page &apos;categories&apos; #创建categories子目录
-</code></pre><p>在你的网站根目录下面的source文件夹会分别生成tags、categories以及about文件夹。 </p>
-<p>分别修改这tags和categories文件夹中的index.md文件，新增type属性，如下：</p>
-<pre><code>---
-title: tags
-date: 2018-01-04 11:45:41
-type: tags
----
-</code></pre><p> categories的修改类似。   </p>
-<p>当你新建一篇博文的时候，增加上tags和categories属性值，就能在tags和categories界面检索到你的文章了。   </p>
-<h1 id="个性化定制"><a href="#个性化定制" class="headerlink" title="个性化定制"></a>个性化定制</h1><h2 id="添加fork-me-on-github"><a href="#添加fork-me-on-github" class="headerlink" title="添加fork me on github"></a>添加fork me on github</h2><p>在<a href="http://tholman.com/github-corners/" target="_blank" rel="noopener">http://tholman.com/github-corners/</a>或者<a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="noopener">https://github.com/blog/273-github-ribbons</a>选择合适的样式复制代码到<code>themes/next/layout/_layout.swig</code>，在<code>&lt;div class=&quot;headband&quot;&gt;&lt;/div&gt;</code>下面：<br><img src="https://i.imgur.com/QHwALhC.png" alt="">  </p>
-<h2 id="动态背景"><a href="#动态背景" class="headerlink" title="动态背景"></a>动态背景</h2><p>实现效果之一：<br><img src="https://upload-images.jianshu.io/upload_images/5308475-ef603580be708882.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/466" alt=""><br>目前NexT主题最新的是V6.0版本，这个版本中可以有4种动态背景：  </p>
-<ul>
-<li>Canvas-nest  </li>
-</ul>
-<ul>
-<li>three_waves  </li>
-</ul>
-<ul>
-<li>canvas_lines  </li>
-</ul>
-<ul>
-<li>canvas_sphere  </li>
-</ul>
-<p>设置方法也很简单，直接设置里需要的动态背景为<code>true</code>。</p>
-<h2 id="点击出现桃心效果"><a href="#点击出现桃心效果" class="headerlink" title="点击出现桃心效果"></a>点击出现桃心效果</h2><p>浏览器输入：<a href="http://7u2ss1.com1.z0.glb.clouddn.com/love.js" target="_blank" rel="noopener">http://7u2ss1.com1.z0.glb.clouddn.com/love.js</a>  </p>
-<p>拷贝所有代码，在<code>/themes/next/source/js/src</code>里面新建<code>love.js</code>，然后在<code>\themes\next\layout\_layout.swig</code>文件末尾添加以下代码：     </p>
-<p><code>&lt;!-- 页面点击小红心 --&gt;
-    &lt;script type=&quot;text/javascript&quot; src=&quot;/js/src/love.js&quot;&gt;&lt;/script&gt;</code></p>
-<h2 id="文章底部带-号的标签"><a href="#文章底部带-号的标签" class="headerlink" title="文章底部带#号的标签"></a>文章底部带#号的标签</h2><p><img src="https://i.imgur.com/FNMiJmQ.png" alt="">   </p>
-<p>去掉文章后面的标签前面的#号。   </p>
-<p>修改模板<code>/themes/next/layout/_macro/post.swig</code>，搜索 <code>rel=&quot;tag&quot;&gt;#</code>，将<code>#</code>换成<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code></p>
-<h2 id="在每篇文章末尾统一添加“本文结束”标记"><a href="#在每篇文章末尾统一添加“本文结束”标记" class="headerlink" title="在每篇文章末尾统一添加“本文结束”标记"></a>在每篇文章末尾统一添加“本文结束”标记</h2><p>在路径 <code>\themes\next\layout\_macro</code> 中新建 <code>passage-end-tag.swig</code> 文件,并添加以下内容：   </p>
-<pre><code>&lt;div&gt;
-{% if not is_index %}
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-    {% endif %}
-&lt;/div&gt;
-</code></pre><p>接着打开<code>\themes\next\layout\_macro\post.swig</code>文件，在post-body 之后， 添加以下代码：   </p>
-<pre><code>&lt;div&gt;
-{% if not is_index %}
-    {% include 'passage-end-tag.swig' %}
-  	{% endif %}
-&lt;/div&gt;
-</code></pre><p>添加位置如图：  </p>
-<p><img src="https://i.imgur.com/NWZw9uo.png" alt="">  </p>
-<p>然后打开主题配置文件（_config.yml),在末尾添加： </p>
-<pre><code># 文章末尾添加“本文结束”标记
-passage_end_tag:
-  enabled: true
-</code></pre><p>完成以上设置之后，在每篇文章之后都会添加如上效果图的样子。</p>
-<h2 id="侧边栏社交小图标设置"><a href="#侧边栏社交小图标设置" class="headerlink" title="侧边栏社交小图标设置"></a>侧边栏社交小图标设置</h2><p>实现效果：<br><img src="https://i.imgur.com/rwwMWVj.png" alt=""></p>
-<p>打开主题配置文件_config.yml，搜索<code>social:</code>, <code>||</code>之后是在图标库中对应的图标。注意空格就行。  </p>
-<p><img src="https://i.imgur.com/KXJGPqS.png" alt="">  </p>
-<p>图标库链接：<a href="http://fontawesome.io/icons/" target="_blank" rel="noopener">http://fontawesome.io/icons/</a></p>
-<h2 id="主页文章加阴影"><a href="#主页文章加阴影" class="headerlink" title="主页文章加阴影"></a>主页文章加阴影</h2><p>具体实现方法<br>打开<code>\themes\next\source\css\_custom\custom.styl</code>,向里面加入：</p>
-<pre><code>// 主页文章添加阴影效果
- .post {
-   margin-top: 60px;
-   margin-bottom: 60px;
-padding: 25px;
--webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);
--moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);
-}
-</code></pre><h2 id="添加热度"><a href="#添加热度" class="headerlink" title="添加热度"></a>添加热度</h2><p>具体实现方法<br>next主题集成<code>leanCloud</code>，打开<code>/themes/next/layout/_macro/post.swig</code></p>
-<p>在<code>&lt;span class=&quot;leancloud-visitors-count&quot;&gt;&lt;/span&gt;</code>下添加一句：  </p>
-<pre><code>&lt;span&gt;℃&lt;/span&gt;
-</code></pre><p>然后打开，<code>/themes/next/languages/zh-Hans.yml</code>  </p>
-<p>将<code>visitors: 阅读次数</code>改为<code>visitors: 热度</code></p>
-<h2 id="设置网站图标"><a href="#设置网站图标" class="headerlink" title="设置网站图标"></a>设置网站图标</h2><p>默认的网站图标是一个N，当然是需要制定一个图了，在网上找到图后，将其放在<code>/themes/next/source/images</code>里面，然后在主题配置文件中修改下图所示图片位置</p>
-<p><img src="https://i.imgur.com/sHd5kLC.png" alt="">  </p>
-<p>还有一些就不详细说了，另外注意下好多的东西已经过时了。比如next主题已经换了域了。很多教程还停留在3.0时代，但是现在next的版本是V6.0，截止我这篇教程发布的时期。</p>
-<h2 id="设置文章浏览数（热度）"><a href="#设置文章浏览数（热度）" class="headerlink" title="设置文章浏览数（热度）"></a>设置文章浏览数（热度）</h2><p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201821323114.png" alt="{mdFileName}-201821323114">   </p>
-<p>如上图所示  </p>
-<p>首先需要在<a href="https://leancloud.cn" target="_blank" rel="noopener">leancloud</a>上注册一个账号，注册的过程省略。  </p>
-<p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-2018213231335.png" alt="{mdFileName}-2018213231335">  </p>
-<p>点击<strong>访问控制台</strong>  </p>
-<p>点击<strong>创建应用</strong><br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-2018213231512.png" alt="{mdFileName}-2018213231512">  </p>
-<p>这里选择开发版就行，应用名称随意。  </p>
-<p>随后进入设置界面  </p>
-<p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-2018213231716.png" alt="{mdFileName}-2018213231716">  </p>
-<p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-2018213231754.png" alt="{mdFileName}-2018213231754">   </p>
-<p>在next主题的配置文件中填写以下信息：  </p>
-<p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201821323191.png" alt="{mdFileName}-201821323191">  </p>
-<p>随后在主题文件的languages目录下找到你设置的语言yml下，把visitors后面的字符改为<strong>热度</strong>，到此大功告成。</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>这篇文章就只是简单的介绍了下NexT主题，关于这个主题呢，要达到个性化定制的话，还是需要再花点功夫的。还有就是这个<code>hexo s</code>预览效果确实不好，修改了网站内容之后，需要重新<code>hexo clean</code>再<code>hexo s</code>才能看到效果，有同样问题的兄dei就不需要担心自己的修改是错的。</p>
-]]></content>
-      
-        <categories>
-            
-            <category> hexo个人博客搭建之路 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> hexo </tag>
-            
-            <tag> next </tag>
-            
-            <tag> next主题优化 </tag>
-            
-            <tag> next6.0 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[2018最新版hexo+Github搭建个人博客教程（2018-1-22 更新）]]></title>
+      <title><![CDATA[2018最新版hexo+Github搭建个人博客教程（2018-09-10 更新）]]></title>
       <url>/2018/01/04/2018-01-04%20212731/</url>
       <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
 <p>现在是大三了，身边的甚多朋友技术都还不错，动不动就搭建自己的网站什么的。本着向大佬学习（zhuangbi）的心情，我也开始在阿里云上面买了一个云服务器（学生套餐9.9），使用phpstudy软件一键部署了一个web服务器。但是想想其实没什么用，我只是想找一个属于自己的个人博客而已。所以将目光转向了hexo。 经过很多的摸索，终于是做好了我的博客：<a href="http://bianxiaofeng.com" target="_blank" rel="noopener">http://bianxiaofeng.com</a>, 就像每个语言入门必写<code>hello world</code>一样，我也想把自己使用hexo的相关经历写下来，方便自己以后查阅也希望能够帮助到更多的朋友。  </p>
@@ -3193,12 +3162,6 @@ deploy:
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>洋洋洒洒的写了4000+字，确实每一步都是在仔仔细细的做，记录。这篇博文参考了hexo的官方文档，以及百度谷歌的各种教程，重复杂乱居多，网上各种文章都是复制粘贴重复很多且不是最新的，我只想用最平凡的文字记录最清晰的道路。我是一个被代码耽误的诗人，这是我朋友给我的评价哈哈哈。</p>
 ]]></content>
       
-        <categories>
-            
-            <category> hexo个人博客搭建之路 </category>
-            
-        </categories>
-        
         
         <tags>
             
