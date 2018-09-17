@@ -4,19 +4,83 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/09/13/2018-9-13-16-36-10/</loc>
-    <lastmod>2018-09-14T03:57:06.218Z</lastmod>
+    <loc>http://www.bianxiaofeng.com/2018/01/04/2018-01-04%20212731/</loc>
+    <lastmod>2018-09-17T12:10:01.956Z</lastmod>
     <data>
         <display>
-        <title>常见排序算法总结（归并排序）——Java语言（二）</title>
-        <pubTime>2018-09-13T08:36:16.000Z</pubTime>
+        <title>2018最新版hexo+Github搭建个人博客教程（2018-09-10 更新）</title>
+        <pubTime>2018-01-04T13:27:31.000Z</pubTime>
         
-        <tag>归并排序</tag>
+        <tag>hexo</tag>
+         
+        <tag>博客从零搭建</tag>
+         
+        <tag>最新</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/03/09/2018-3-9-135602/</loc>
+    <lastmod>2018-09-17T12:10:01.931Z</lastmod>
+    <data>
+        <display>
+        <title>常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言（一）</title>
+        <pubTime>2018-03-09T05:56:33.000Z</pubTime>
+        
+        <tag>排序</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/03/31/2018-3-31-194919/</loc>
+    <lastmod>2018-09-17T12:10:01.907Z</lastmod>
+    <data>
+        <display>
+        <title>JavaWeb获取表单数据的三种方式（属性封装，表达式封装，模型驱动封装）</title>
+        <pubTime>2018-03-31T11:49:29.000Z</pubTime>
+        
+        <tag>Struts2</tag>
+         
+        <tag>JavaWeb</tag>
+         
+        <tag>属性封装，表达式封装，模型驱动封装</tag>
          
          
            
              
-              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+              <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/03/26/2018-3-26-193844/</loc>
+    <lastmod>2018-09-17T12:10:01.857Z</lastmod>
+    <data>
+        <display>
+        <title>JavaEE Async 异步支持</title>
+        <pubTime>2018-03-26T11:38:49.000Z</pubTime>
+        
+        <tag>JavaEE</tag>
+         
+        <tag>Async</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
           
         </display>
     </data>
@@ -25,7 +89,7 @@
     
   <url>
     <loc>http://www.bianxiaofeng.com/2018/03/26/2018-3-26-193523/</loc>
-    <lastmod>2018-09-13T08:56:34.013Z</lastmod>
+    <lastmod>2018-09-17T12:10:01.857Z</lastmod>
     <data>
         <display>
         <title>JavaEE之Session理解</title>
@@ -44,21 +108,438 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/03/26/2018-3-26-193844/</loc>
-    <lastmod>2018-09-13T08:56:33.953Z</lastmod>
+    <loc>http://www.bianxiaofeng.com/2018/05/31/2018-5-31-10-00-19/</loc>
+    <lastmod>2018-09-17T12:10:01.834Z</lastmod>
     <data>
         <display>
-        <title>JavaEE Async 异步支持</title>
-        <pubTime>2018-03-26T11:38:49.000Z</pubTime>
+        <title>Java中的内存回收与内存泄漏的防治</title>
+        <pubTime>2018-05-31T02:00:30.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/05/31/2018-5-31-15-40-24/</loc>
+    <lastmod>2018-09-17T12:10:01.809Z</lastmod>
+    <data>
+        <display>
+        <title>Java异常</title>
+        <pubTime>2018-05-31T07:40:27.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/06/05/2018-6-5-10-29-56/</loc>
+    <lastmod>2018-09-17T12:10:01.759Z</lastmod>
+    <data>
+        <display>
+        <title>AJAX异步请求和JQuery的post,get,getJSON,ajax函数的使用</title>
+        <pubTime>2018-06-05T02:30:01.000Z</pubTime>
         
         <tag>JavaEE</tag>
          
-        <tag>Async</tag>
+        <tag>JQuery</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/06/26/2018-6-26-09-47-10/</loc>
+    <lastmod>2018-09-17T12:10:01.759Z</lastmod>
+    <data>
+        <display>
+        <title>关于REST风格的编程</title>
+        <pubTime>2018-06-26T01:47:20.000Z</pubTime>
+        
+        <tag>JavaEE</tag>
+         
+        <tag>RESt</tag>
          
          
            
              
               <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/08/01/2018-8-1-15-32-13/</loc>
+    <lastmod>2018-09-17T12:10:01.699Z</lastmod>
+    <data>
+        <display>
+        <title>Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式）</title>
+        <pubTime>2018-08-01T07:32:20.000Z</pubTime>
+        
+        <tag>JavaWeb</tag>
+         
+        <tag>Jacoco</tag>
+         
+        <tag>代码覆盖率</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/07/01/2018-7-1-20-55-35/</loc>
+    <lastmod>2018-09-17T12:10:01.699Z</lastmod>
+    <data>
+        <display>
+        <title>SpringMVC拦截器</title>
+        <pubTime>2018-07-01T12:55:46.000Z</pubTime>
+        
+        <tag>javaEE</tag>
+         
+        <tag>springMVC</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/06/27/2018-6-27-09-22-28/</loc>
+    <lastmod>2018-09-17T12:10:01.699Z</lastmod>
+    <data>
+        <display>
+        <title>Jquery的attr()和prop()方法</title>
+        <pubTime>2018-06-27T01:22:35.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>jQuery</tag>
+         
+         
+           
+             
+              <breadCrumb title="Jquery" url="http://www.bianxiaofeng.com/categories/Jquery/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/07/22/2018-7-22-19-04-46/</loc>
+    <lastmod>2018-09-17T12:10:01.607Z</lastmod>
+    <data>
+        <display>
+        <title>线程相关总结</title>
+        <pubTime>2018-07-22T11:05:01.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>线程</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/07/23/2018-7-23-09-36-27/</loc>
+    <lastmod>2018-09-17T12:10:01.553Z</lastmod>
+    <data>
+        <display>
+        <title>Intellij IDEA  2018.02 最新版 优化配置</title>
+        <pubTime>2018-07-23T01:37:07.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/08/01/2018-8-1-16-37-56/</loc>
+    <lastmod>2018-09-17T12:10:01.467Z</lastmod>
+    <data>
+        <display>
+        <title>Jacoco服务器代码覆盖率测试工具使用（二）（远程Tomcat Web部署的方式）</title>
+        <pubTime>2018-08-01T08:37:58.000Z</pubTime>
+        
+        <tag>JavaWeb</tag>
+         
+        <tag>Jacoco</tag>
+         
+        <tag>代码覆盖率</tag>
+         
+        <tag>远程Tomcat部署</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/08/01/2018-8-1-20-35-28/</loc>
+    <lastmod>2018-09-17T12:10:01.443Z</lastmod>
+    <data>
+        <display>
+        <title>Java中接口和抽象类</title>
+        <pubTime>2018-08-01T12:35:34.000Z</pubTime>
+        
+        <tag>接口</tag>
+         
+        <tag>抽象类</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/07/22/2018-7-22-21-20-34/</loc>
+    <lastmod>2018-09-17T12:10:01.443Z</lastmod>
+    <data>
+        <display>
+        <title>Java创建对象的几种方式</title>
+        <pubTime>2018-07-22T13:20:37.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>new</tag>
+         
+        <tag>Class</tag>
+         
+        <tag>reflect</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/08/03/2018-8-3-20-36-12/</loc>
+    <lastmod>2018-09-17T12:10:01.442Z</lastmod>
+    <data>
+        <display>
+        <title>Error running 'Tomcat'Unable to open debugger port (127.0.0.1:2148)的解决办法</title>
+        <pubTime>2018-08-03T12:36:20.000Z</pubTime>
+        
+        <tag>Tomcat</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/08/08/2018-08-08-05-56-11/</loc>
+    <lastmod>2018-09-17T12:10:01.418Z</lastmod>
+    <data>
+        <display>
+        <title>SpringMVC文件AJAX上传+JQuery文件进度条</title>
+        <pubTime>2018-08-07T21:56:11.000Z</pubTime>
+        
+        <tag>SpringMVC</tag>
+         
+        <tag>文件上传</tag>
+         
+        <tag>进度条</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/08/14/2018-08-14-04-38-57/</loc>
+    <lastmod>2018-09-17T12:10:01.368Z</lastmod>
+    <data>
+        <display>
+        <title>Java中的前置++和后置++的理解</title>
+        <pubTime>2018-08-13T20:38:57.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>前置++</tag>
+         
+        <tag>后置++</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/09/05/2018-8-27-09-57-25/</loc>
+    <lastmod>2018-09-17T12:10:01.211Z</lastmod>
+    <data>
+        <display>
+        <title>解决IDEA下的Terminal 乱码（unicode 编码）问题</title>
+        <pubTime>2018-09-05T08:53:02.740Z</pubTime>
+        
+        <tag>IDEA</tag>
+         
+        <tag>Terminal</tag>
+         
+        <tag>乱码</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/08/16/2018-08-16-03-58-02/</loc>
+    <lastmod>2018-09-17T12:10:01.211Z</lastmod>
+    <data>
+        <display>
+        <title>Java读取Properties文件的几种方式</title>
+        <pubTime>2018-08-15T19:58:02.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>properties</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/08/24/2018-8-24-10-00-54/</loc>
+    <lastmod>2018-09-17T12:10:01.211Z</lastmod>
+    <data>
+        <display>
+        <title>Git常用个人备份笔记</title>
+        <pubTime>2018-08-24T02:01:06.000Z</pubTime>
+        
+        <tag>Git</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/08/09/2018-08-09-09-29-20/</loc>
+    <lastmod>2018-09-17T12:10:01.211Z</lastmod>
+    <data>
+        <display>
+        <title>对HashMap的思考</title>
+        <pubTime>2018-08-09T01:29:20.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>HashMap</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/09/13/2018-9-13-16-36-10/</loc>
+    <lastmod>2018-09-14T03:57:06.218Z</lastmod>
+    <data>
+        <display>
+        <title>常见排序算法总结（归并排序）——Java语言（二）</title>
+        <pubTime>2018-09-13T08:36:16.000Z</pubTime>
+        
+        <tag>归并排序</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
           
         </display>
     </data>
@@ -116,47 +597,6 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/03/31/2018-3-31-194919/</loc>
-    <lastmod>2018-09-13T08:56:33.794Z</lastmod>
-    <data>
-        <display>
-        <title>JavaWeb获取表单数据的三种方式（属性封装，表达式封装，模型驱动封装）</title>
-        <pubTime>2018-03-31T11:49:29.000Z</pubTime>
-        
-        <tag>Struts2</tag>
-         
-        <tag>JavaWeb</tag>
-         
-        <tag>属性封装，表达式封装，模型驱动封装</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/03/09/2018-3-9-135602/</loc>
-    <lastmod>2018-09-13T08:56:33.793Z</lastmod>
-    <data>
-        <display>
-        <title>常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言（一）</title>
-        <pubTime>2018-03-09T05:56:33.000Z</pubTime>
-        
-        <tag>排序</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.bianxiaofeng.com/2018/09/07/2018-9-7-21-12-48/</loc>
     <lastmod>2018-09-13T05:09:50.643Z</lastmod>
     <data>
@@ -172,297 +612,6 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/09/05/2018-8-27-09-57-25/</loc>
-    <lastmod>2018-09-13T05:09:45.161Z</lastmod>
-    <data>
-        <display>
-        <title>解决IDEA下的Terminal 乱码（unicode 编码）问题</title>
-        <pubTime>2018-09-05T08:53:02.740Z</pubTime>
-        
-        <tag>IDEA</tag>
-         
-        <tag>Terminal</tag>
-         
-        <tag>乱码</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/08/24/2018-8-24-10-00-54/</loc>
-    <lastmod>2018-09-13T05:09:39.453Z</lastmod>
-    <data>
-        <display>
-        <title>Git常用个人备份笔记</title>
-        <pubTime>2018-08-24T02:01:06.000Z</pubTime>
-        
-        <tag>Git</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/08/16/2018-08-16-03-58-02/</loc>
-    <lastmod>2018-09-13T05:09:26.093Z</lastmod>
-    <data>
-        <display>
-        <title>Java读取Properties文件的几种方式</title>
-        <pubTime>2018-08-15T19:58:02.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>properties</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/08/14/2018-08-14-04-38-57/</loc>
-    <lastmod>2018-09-13T05:09:21.093Z</lastmod>
-    <data>
-        <display>
-        <title>Java中的前置++和后置++的理解</title>
-        <pubTime>2018-08-13T20:38:57.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>前置++</tag>
-         
-        <tag>后置++</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/08/09/2018-08-09-09-29-20/</loc>
-    <lastmod>2018-09-13T05:09:17.741Z</lastmod>
-    <data>
-        <display>
-        <title>对HashMap的思考</title>
-        <pubTime>2018-08-09T01:29:20.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>HashMap</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/08/08/2018-08-08-05-56-11/</loc>
-    <lastmod>2018-09-13T05:09:14.068Z</lastmod>
-    <data>
-        <display>
-        <title>SpringMVC文件AJAX上传+JQuery文件进度条</title>
-        <pubTime>2018-08-07T21:56:11.000Z</pubTime>
-        
-        <tag>SpringMVC</tag>
-         
-        <tag>文件上传</tag>
-         
-        <tag>进度条</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/08/03/2018-8-3-20-36-12/</loc>
-    <lastmod>2018-09-13T05:09:09.763Z</lastmod>
-    <data>
-        <display>
-        <title>Error running 'Tomcat'Unable to open debugger port (127.0.0.1:2148)的解决办法</title>
-        <pubTime>2018-08-03T12:36:20.000Z</pubTime>
-        
-        <tag>Tomcat</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/08/01/2018-8-1-20-35-28/</loc>
-    <lastmod>2018-09-13T05:09:03.700Z</lastmod>
-    <data>
-        <display>
-        <title>Java中接口和抽象类</title>
-        <pubTime>2018-08-01T12:35:34.000Z</pubTime>
-        
-        <tag>接口</tag>
-         
-        <tag>抽象类</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/08/01/2018-8-1-16-37-56/</loc>
-    <lastmod>2018-09-13T05:08:58.095Z</lastmod>
-    <data>
-        <display>
-        <title>Jacoco服务器代码覆盖率测试工具使用（二）（远程Tomcat Web部署的方式）</title>
-        <pubTime>2018-08-01T08:37:58.000Z</pubTime>
-        
-        <tag>JavaWeb</tag>
-         
-        <tag>Jacoco</tag>
-         
-        <tag>代码覆盖率</tag>
-         
-        <tag>远程Tomcat部署</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/08/01/2018-8-1-15-32-13/</loc>
-    <lastmod>2018-09-13T05:08:51.406Z</lastmod>
-    <data>
-        <display>
-        <title>Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式）</title>
-        <pubTime>2018-08-01T07:32:20.000Z</pubTime>
-        
-        <tag>JavaWeb</tag>
-         
-        <tag>Jacoco</tag>
-         
-        <tag>代码覆盖率</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/07/23/2018-7-23-09-36-27/</loc>
-    <lastmod>2018-09-13T05:08:47.040Z</lastmod>
-    <data>
-        <display>
-        <title>Intellij IDEA  2018.02 最新版 优化配置</title>
-        <pubTime>2018-07-23T01:37:07.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/07/22/2018-7-22-21-20-34/</loc>
-    <lastmod>2018-09-13T05:08:37.708Z</lastmod>
-    <data>
-        <display>
-        <title>Java创建对象的几种方式</title>
-        <pubTime>2018-07-22T13:20:37.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>new</tag>
-         
-        <tag>Class</tag>
-         
-        <tag>reflect</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/07/22/2018-7-22-19-04-46/</loc>
-    <lastmod>2018-09-13T05:08:33.076Z</lastmod>
-    <data>
-        <display>
-        <title>线程相关总结</title>
-        <pubTime>2018-07-22T11:05:01.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>线程</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.bianxiaofeng.com/2018/07/07/2018-7-7-16-35-54/</loc>
     <lastmod>2018-09-13T05:08:29.361Z</lastmod>
     <data>
@@ -471,155 +620,6 @@
         <pubTime>2018-07-07T08:36:06.000Z</pubTime>
         
         <tag>3</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/07/01/2018-7-1-20-55-35/</loc>
-    <lastmod>2018-09-13T05:08:23.407Z</lastmod>
-    <data>
-        <display>
-        <title>SpringMVC拦截器</title>
-        <pubTime>2018-07-01T12:55:46.000Z</pubTime>
-        
-        <tag>javaEE</tag>
-         
-        <tag>springMVC</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/06/27/2018-6-27-09-22-28/</loc>
-    <lastmod>2018-09-13T05:08:17.351Z</lastmod>
-    <data>
-        <display>
-        <title>Jquery的attr()和prop()方法</title>
-        <pubTime>2018-06-27T01:22:35.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>jQuery</tag>
-         
-         
-           
-             
-              <breadCrumb title="Jquery" url="http://www.bianxiaofeng.com/categories/Jquery/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/06/26/2018-6-26-09-47-10/</loc>
-    <lastmod>2018-09-13T05:08:11.982Z</lastmod>
-    <data>
-        <display>
-        <title>关于REST风格的编程</title>
-        <pubTime>2018-06-26T01:47:20.000Z</pubTime>
-        
-        <tag>JavaEE</tag>
-         
-        <tag>RESt</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaEE" url="http://www.bianxiaofeng.com/categories/JavaEE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/06/05/2018-6-5-10-29-56/</loc>
-    <lastmod>2018-09-13T05:08:04.559Z</lastmod>
-    <data>
-        <display>
-        <title>AJAX异步请求和JQuery的post,get,getJSON,ajax函数的使用</title>
-        <pubTime>2018-06-05T02:30:01.000Z</pubTime>
-        
-        <tag>JavaEE</tag>
-         
-        <tag>JQuery</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/05/31/2018-5-31-15-40-24/</loc>
-    <lastmod>2018-09-13T05:07:58.748Z</lastmod>
-    <data>
-        <display>
-        <title>Java异常</title>
-        <pubTime>2018-05-31T07:40:27.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/05/31/2018-5-31-10-00-19/</loc>
-    <lastmod>2018-09-13T05:07:52.501Z</lastmod>
-    <data>
-        <display>
-        <title>Java中的内存回收与内存泄漏的防治</title>
-        <pubTime>2018-05-31T02:00:30.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/04/2018-01-04%20212731/</loc>
-    <lastmod>2018-09-13T05:06:42.392Z</lastmod>
-    <data>
-        <display>
-        <title>2018最新版hexo+Github搭建个人博客教程（2018-09-10 更新）</title>
-        <pubTime>2018-01-04T13:27:31.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>博客从零搭建</tag>
-         
-        <tag>最新</tag>
          
          
            
