@@ -4,6 +4,33 @@
 
     
   <url>
+    <loc>http://www.bianxiaofeng.com/2018/09/17/2018-9-17-20-16-54/</loc>
+    <lastmod>2018-09-19T08:29:36.213Z</lastmod>
+    <data>
+        <display>
+        <title>Java集合（一）————List</title>
+        <pubTime>2018-09-17T12:16:56.000Z</pubTime>
+        
+        <tag>List</tag>
+         
+        <tag>Map</tag>
+         
+        <tag>Set</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+          
+             
+              <breadCrumb title="集合" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/%E9%9B%86%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.bianxiaofeng.com/2018/01/04/2018-01-04%20212731/</loc>
     <lastmod>2018-09-17T12:10:01.956Z</lastmod>
     <data>
@@ -49,11 +76,11 @@
         <title>JavaWeb获取表单数据的三种方式（属性封装，表达式封装，模型驱动封装）</title>
         <pubTime>2018-03-31T11:49:29.000Z</pubTime>
         
-        <tag>Struts2</tag>
-         
         <tag>JavaWeb</tag>
          
         <tag>属性封装，表达式封装，模型驱动封装</tag>
+         
+        <tag>Struts2</tag>
          
          
            
@@ -192,18 +219,16 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/08/01/2018-8-1-15-32-13/</loc>
+    <loc>http://www.bianxiaofeng.com/2018/07/01/2018-7-1-20-55-35/</loc>
     <lastmod>2018-09-17T12:10:01.699Z</lastmod>
     <data>
         <display>
-        <title>Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式）</title>
-        <pubTime>2018-08-01T07:32:20.000Z</pubTime>
+        <title>SpringMVC拦截器</title>
+        <pubTime>2018-07-01T12:55:46.000Z</pubTime>
         
-        <tag>JavaWeb</tag>
+        <tag>javaEE</tag>
          
-        <tag>Jacoco</tag>
-         
-        <tag>代码覆盖率</tag>
+        <tag>springMVC</tag>
          
          
            
@@ -216,16 +241,18 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/07/01/2018-7-1-20-55-35/</loc>
+    <loc>http://www.bianxiaofeng.com/2018/08/01/2018-8-1-15-32-13/</loc>
     <lastmod>2018-09-17T12:10:01.699Z</lastmod>
     <data>
         <display>
-        <title>SpringMVC拦截器</title>
-        <pubTime>2018-07-01T12:55:46.000Z</pubTime>
+        <title>Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式）</title>
+        <pubTime>2018-08-01T07:32:20.000Z</pubTime>
         
-        <tag>javaEE</tag>
+        <tag>JavaWeb</tag>
          
-        <tag>springMVC</tag>
+        <tag>Jacoco</tag>
+         
+        <tag>代码覆盖率</tag>
          
          
            
@@ -323,28 +350,6 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/08/01/2018-8-1-20-35-28/</loc>
-    <lastmod>2018-09-17T12:10:01.443Z</lastmod>
-    <data>
-        <display>
-        <title>Java中接口和抽象类</title>
-        <pubTime>2018-08-01T12:35:34.000Z</pubTime>
-        
-        <tag>接口</tag>
-         
-        <tag>抽象类</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.bianxiaofeng.com/2018/07/22/2018-7-22-21-20-34/</loc>
     <lastmod>2018-09-17T12:10:01.443Z</lastmod>
     <data>
@@ -359,6 +364,28 @@
         <tag>Class</tag>
          
         <tag>reflect</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/08/01/2018-8-1-20-35-28/</loc>
+    <lastmod>2018-09-17T12:10:01.443Z</lastmod>
+    <data>
+        <display>
+        <title>Java中接口和抽象类</title>
+        <pubTime>2018-08-01T12:35:34.000Z</pubTime>
+        
+        <tag>接口</tag>
+         
+        <tag>抽象类</tag>
          
          
            
@@ -439,6 +466,50 @@
 
     
   <url>
+    <loc>http://www.bianxiaofeng.com/2018/08/16/2018-08-16-03-58-02/</loc>
+    <lastmod>2018-09-17T12:10:01.211Z</lastmod>
+    <data>
+        <display>
+        <title>Java读取Properties文件的几种方式</title>
+        <pubTime>2018-08-15T19:58:02.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>properties</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/08/09/2018-08-09-09-29-20/</loc>
+    <lastmod>2018-09-17T12:10:01.211Z</lastmod>
+    <data>
+        <display>
+        <title>对HashMap的思考</title>
+        <pubTime>2018-08-09T01:29:20.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>HashMap</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.bianxiaofeng.com/2018/09/05/2018-8-27-09-57-25/</loc>
     <lastmod>2018-09-17T12:10:01.211Z</lastmod>
     <data>
@@ -463,28 +534,6 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/08/16/2018-08-16-03-58-02/</loc>
-    <lastmod>2018-09-17T12:10:01.211Z</lastmod>
-    <data>
-        <display>
-        <title>Java读取Properties文件的几种方式</title>
-        <pubTime>2018-08-15T19:58:02.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>properties</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.bianxiaofeng.com/2018/08/24/2018-8-24-10-00-54/</loc>
     <lastmod>2018-09-17T12:10:01.211Z</lastmod>
     <data>
@@ -493,28 +542,6 @@
         <pubTime>2018-08-24T02:01:06.000Z</pubTime>
         
         <tag>Git</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java基础" url="http://www.bianxiaofeng.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/08/09/2018-08-09-09-29-20/</loc>
-    <lastmod>2018-09-17T12:10:01.211Z</lastmod>
-    <data>
-        <display>
-        <title>对HashMap的思考</title>
-        <pubTime>2018-08-09T01:29:20.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>HashMap</tag>
          
          
            
@@ -789,6 +816,26 @@
 
     
   <url>
+    <loc>http://www.bianxiaofeng.com/2018/03/20/2018-3-20-153425/</loc>
+    <lastmod>2018-06-03T13:01:23.725Z</lastmod>
+    <data>
+        <display>
+        <title>Error:Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug'的解决办法</title>
+        <pubTime>2018-03-20T07:34:34.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.bianxiaofeng.com/2018/01/05/2018-01-05%20201655/</loc>
     <lastmod>2018-06-03T13:01:23.725Z</lastmod>
     <data>
@@ -806,26 +853,6 @@
            
              
               <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.bianxiaofeng.com/2018/03/20/2018-3-20-153425/</loc>
-    <lastmod>2018-06-03T13:01:23.725Z</lastmod>
-    <data>
-        <display>
-        <title>Error:Execution failed for task ':app:transformDexArchiveWithExternalLibsDexMergerForDebug'的解决办法</title>
-        <pubTime>2018-03-20T07:34:34.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
           
         </display>
     </data>
@@ -877,26 +904,6 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/03/04/2018-3-4-135539/</loc>
-    <lastmod>2018-06-03T13:01:23.596Z</lastmod>
-    <data>
-        <display>
-        <title>Android BroadcastReceiver 的静态动态注册及区别</title>
-        <pubTime>2018-03-04T05:56:09.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.bianxiaofeng.com/2018/01/29/2018-1-29-220254/</loc>
     <lastmod>2018-06-03T13:01:23.596Z</lastmod>
     <data>
@@ -919,21 +926,19 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/19/2018-1-19%20153336/</loc>
-    <lastmod>2018-06-03T13:01:23.542Z</lastmod>
+    <loc>http://www.bianxiaofeng.com/2018/03/04/2018-3-4-135539/</loc>
+    <lastmod>2018-06-03T13:01:23.596Z</lastmod>
     <data>
         <display>
-        <title>使用VSCode+七牛云图床插件+自定义快捷键配置Hexo博文编写环境</title>
-        <pubTime>2018-01-19T07:33:36.000Z</pubTime>
+        <title>Android BroadcastReceiver 的静态动态注册及区别</title>
+        <pubTime>2018-03-04T05:56:09.000Z</pubTime>
         
-        <tag>Hexo</tag>
-         
-        <tag>七牛云图床，VSCode</tag>
+        <tag>Android</tag>
          
          
            
              
-              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
+              <breadCrumb title="Android" url="http://www.bianxiaofeng.com/categories/Android/"/>
           
         </display>
     </data>
@@ -963,20 +968,16 @@
 
     
   <url>
-    <loc>http://www.bianxiaofeng.com/2018/01/02/2018-01-02%20120748/</loc>
-    <lastmod>2018-06-03T13:01:21.245Z</lastmod>
+    <loc>http://www.bianxiaofeng.com/2018/01/19/2018-1-19%20153336/</loc>
+    <lastmod>2018-06-03T13:01:23.542Z</lastmod>
     <data>
         <display>
-        <title>站点被百度谷歌收录</title>
-        <pubTime>2018-01-02T04:07:48.000Z</pubTime>
+        <title>使用VSCode+七牛云图床插件+自定义快捷键配置Hexo博文编写环境</title>
+        <pubTime>2018-01-19T07:33:36.000Z</pubTime>
         
-        <tag>hexo</tag>
+        <tag>Hexo</tag>
          
-        <tag>google</tag>
-         
-        <tag>baidu</tag>
-         
-        <tag>收录</tag>
+        <tag>七牛云图床，VSCode</tag>
          
          
            
@@ -1001,6 +1002,32 @@
         <tag>next优化</tag>
          
         <tag>Comment</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo个人博客搭建之路" url="http://www.bianxiaofeng.com/categories/hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E8%B7%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.bianxiaofeng.com/2018/01/02/2018-01-02%20120748/</loc>
+    <lastmod>2018-06-03T13:01:21.245Z</lastmod>
+    <data>
+        <display>
+        <title>站点被百度谷歌收录</title>
+        <pubTime>2018-01-02T04:07:48.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>google</tag>
+         
+        <tag>baidu</tag>
+         
+        <tag>收录</tag>
          
          
            
@@ -1064,11 +1091,11 @@
         <title>Struts2 拦截器</title>
         <pubTime>2018-03-31T13:06:33.000Z</pubTime>
         
+        <tag>JavaWeb</tag>
+         
         <tag>Struts2</tag>
          
         <tag>拦截器</tag>
-         
-        <tag>JavaWeb</tag>
          
          
            
