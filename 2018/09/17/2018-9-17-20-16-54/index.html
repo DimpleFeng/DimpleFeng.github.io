@@ -164,19 +164,19 @@
 
 
 
-  <meta name="description" content="前言本文为序列文章：  Java集合（一）————List  对于Java中的集合，大致可以分为Set、List、Queue和Map，其中Set是不重复且无序的集合，List是有序，可重复的集合，而Map则代表的是具有映射关系的集合，Java5后增加了Queue集合，代表一种队列集合的实现。 本文主要介绍总结List集合。List是一个有序（插入有序）的Collection（序列），可以包含重复的">
+  <meta name="description" content="前言本文为序列文章：  Java集合（一）——Java集合（一）——ArrayList的源码解读  Java集合（二）——LinkedList的源码解读   对于Java中的集合，大致可以分为Set、List、Queue和Map，其中Set是不重复且无序的集合，List是有序，可重复的集合，而Map则代表的是具有映射关系的集合，Java5后增加了Queue集合，代表一种队列集合的实现。 本文主要介">
 <meta name="keywords" content="List,Map,Set">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java集合（一）————List">
+<meta property="og:title" content="Java集合（一）——ArrayList的源码解读">
 <meta property="og:url" content="http://www.bianxiaofeng.com/2018/09/17/2018-9-17-20-16-54/index.html">
 <meta property="og:site_name" content="Dimple&#39;s Blog">
-<meta property="og:description" content="前言本文为序列文章：  Java集合（一）————List  对于Java中的集合，大致可以分为Set、List、Queue和Map，其中Set是不重复且无序的集合，List是有序，可重复的集合，而Map则代表的是具有映射关系的集合，Java5后增加了Queue集合，代表一种队列集合的实现。 本文主要介绍总结List集合。List是一个有序（插入有序）的Collection（序列），可以包含重复的">
+<meta property="og:description" content="前言本文为序列文章：  Java集合（一）——Java集合（一）——ArrayList的源码解读  Java集合（二）——LinkedList的源码解读   对于Java中的集合，大致可以分为Set、List、Queue和Map，其中Set是不重复且无序的集合，List是有序，可重复的集合，而Map则代表的是具有映射关系的集合，Java5后增加了Queue集合，代表一种队列集合的实现。 本文主要介">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://p2sj58chj.bkt.clouddn.com/timg-2018919.jpg">
-<meta property="og:updated_time" content="2018-09-19T08:29:36.213Z">
+<meta property="og:updated_time" content="2018-09-27T10:01:39.268Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java集合（一）————List">
-<meta name="twitter:description" content="前言本文为序列文章：  Java集合（一）————List  对于Java中的集合，大致可以分为Set、List、Queue和Map，其中Set是不重复且无序的集合，List是有序，可重复的集合，而Map则代表的是具有映射关系的集合，Java5后增加了Queue集合，代表一种队列集合的实现。 本文主要介绍总结List集合。List是一个有序（插入有序）的Collection（序列），可以包含重复的">
+<meta name="twitter:title" content="Java集合（一）——ArrayList的源码解读">
+<meta name="twitter:description" content="前言本文为序列文章：  Java集合（一）——Java集合（一）——ArrayList的源码解读  Java集合（二）——LinkedList的源码解读   对于Java中的集合，大致可以分为Set、List、Queue和Map，其中Set是不重复且无序的集合，List是有序，可重复的集合，而Map则代表的是具有映射关系的集合，Java5后增加了Queue集合，代表一种队列集合的实现。 本文主要介">
 <meta name="twitter:image" content="http://p2sj58chj.bkt.clouddn.com/timg-2018919.jpg">
 
 
@@ -196,7 +196,7 @@
   };
 </script>
 
-  <title>Java集合（一）————List | Dimple's Blog</title>
+  <title>Java集合（一）——ArrayList的源码解读 | Dimple's Blog</title>
   
 
 
@@ -319,7 +319,7 @@
           
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">10</span></a>
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">9</span></a>
   </li>
         
         
@@ -327,7 +327,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">51</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">52</span></a>
   </li>
         
         
@@ -434,7 +434,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Java集合（一）————List
+          <h2 class="post-title" itemprop="name headline">Java集合（一）——ArrayList的源码解读
               
             
           </h2>
@@ -476,7 +476,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-19 16:29:36" itemprop="dateModified" datetime="2018-09-19T16:29:36+08:00">2018-09-19</time>
+                <time title="修改时间：2018-09-27 18:01:39" itemprop="dateModified" datetime="2018-09-27T18:01:39+08:00">2018-09-27</time>
               
             
           </span>
@@ -514,7 +514,7 @@
 
           
           
-             <span id="/2018/09/17/2018-9-17-20-16-54/" class="leancloud_visitors" data-flag-title="Java集合（一）————List">
+             <span id="/2018/09/17/2018-9-17-20-16-54/" class="leancloud_visitors" data-flag-title="Java集合（一）——ArrayList的源码解读">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -548,7 +548,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://p2sj58chj.bkt.clouddn.com/timg-2018919.jpg" rel="gallery_cjm699hwg003x80hxv76q4ezv"
+                 href="http://p2sj58chj.bkt.clouddn.com/timg-2018919.jpg" rel="gallery_cjmkepqs300526chx3u2zt7zy"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://p2sj58chj.bkt.clouddn.com/timg-2018919.jpg" itemprop="contentUrl"/>
               </a>
@@ -563,7 +563,10 @@
       
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本文为序列文章：</p>
 <ul>
-<li>Java集合（一）————List</li>
+<li><p><a href="http://www.bianxiaofeng.com/2018/09/17/2018-9-17-20-16-54/">Java集合（一）——Java集合（一）——ArrayList的源码解读</a></p>
+</li>
+<li><p><a href="http://www.bianxiaofeng.com/2018/09/20/2018-9-20-10-38-49/">Java集合（二）——LinkedList的源码解读</a></p>
+</li>
 </ul>
 <p>对于Java中的集合，大致可以分为Set、List、Queue和Map，其中Set是不重复且无序的集合，List是有序，可重复的集合，而Map则代表的是具有映射关系的集合，Java5后增加了Queue集合，代表一种队列集合的实现。</p>
 <p>本文主要介绍总结List集合。List是一个有序（插入有序）的Collection（序列），可以包含重复的元素。</p>
@@ -579,6 +582,7 @@
 <li>迭代：Collection继承自Iterable，由于继承的传递性，可以通过Iterable来实现一些遍历操作。listIteratorf方法返回迭代器用于迭代；</li>
 </ul>
 <p>Java中的有两种常见的List的实现：<strong>ArrayList</strong>、<strong>LinkedList</strong>；</p>
+<p>本文主要介绍ArrayList</p>
 <h1 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h1><p>ArrayList是基于数组实现的，因为每次add的时候都会去检查容量，自动扩容，那么也可以说是动态扩容的。每个ArrayList实例都有一个变量，用来指向当前List的大小，这个变量就是size。</p>
 <p>随着往ArrayList中添加数据的时候，其容量也会自动增加，自动增加会带来数组的拷贝，拷贝会带来额外的空间消耗，那么怎么增加就是一个值得思考的问题了，</p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180917205342-2018917.png" alt="QQ截图20180917205342-2018917"></p>
@@ -654,93 +658,9 @@
 <p>modCount是采用的transient修饰，保证不同进程之间的可见性；<br>迭代器的操作源码如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">    * An optimized version of AbstractList.Itr</span><br><span class="line">    这是一个Arraylist 的内部类</span><br><span class="line">    */</span><br><span class="line">   private class Itr implements Iterator&lt;E&gt; &#123;</span><br><span class="line">       int cursor;       // index of next element to return</span><br><span class="line">       int lastRet = -1; // index of last element returned; -1 if no such</span><br><span class="line">       int expectedModCount = modCount;</span><br><span class="line"></span><br><span class="line">       Itr() &#123;&#125;</span><br><span class="line"></span><br><span class="line">       public boolean hasNext() &#123;</span><br><span class="line">           return cursor != size;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       @SuppressWarnings(&quot;unchecked&quot;)</span><br><span class="line">       public E next() &#123;</span><br><span class="line">           checkForComodification();</span><br><span class="line">           int i = cursor;</span><br><span class="line">           if (i &gt;= size)</span><br><span class="line">               throw new NoSuchElementException();</span><br><span class="line">           Object[] elementData = ArrayList.this.elementData;</span><br><span class="line">           if (i &gt;= elementData.length)</span><br><span class="line">               throw new ConcurrentModificationException();</span><br><span class="line">           cursor = i + 1;</span><br><span class="line">           return (E) elementData[lastRet = i];</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       public void remove() &#123;</span><br><span class="line">           if (lastRet &lt; 0)</span><br><span class="line">               throw new IllegalStateException();</span><br><span class="line">           checkForComodification();</span><br><span class="line"></span><br><span class="line">           try &#123;</span><br><span class="line">               ArrayList.this.remove(lastRet);</span><br><span class="line">               cursor = lastRet;</span><br><span class="line">               lastRet = -1;</span><br><span class="line">               expectedModCount = modCount;</span><br><span class="line">           &#125; catch (IndexOutOfBoundsException ex) &#123;</span><br><span class="line">               throw new ConcurrentModificationException();</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       @Override</span><br><span class="line">       @SuppressWarnings(&quot;unchecked&quot;)</span><br><span class="line">       public void forEachRemaining(Consumer&lt;? super E&gt; consumer) &#123;</span><br><span class="line">           Objects.requireNonNull(consumer);</span><br><span class="line">           final int size = ArrayList.this.size;</span><br><span class="line">           int i = cursor;</span><br><span class="line">           if (i &gt;= size) &#123;</span><br><span class="line">               return;</span><br><span class="line">           &#125;</span><br><span class="line">           final Object[] elementData = ArrayList.this.elementData;</span><br><span class="line">           if (i &gt;= elementData.length) &#123;</span><br><span class="line">               throw new ConcurrentModificationException();</span><br><span class="line">           &#125;</span><br><span class="line">           while (i != size &amp;&amp; modCount == expectedModCount) &#123;</span><br><span class="line">               consumer.accept((E) elementData[i++]);</span><br><span class="line">           &#125;</span><br><span class="line">           // update once at end of iteration to reduce heap write traffic</span><br><span class="line">           cursor = i;</span><br><span class="line">           lastRet = i - 1;</span><br><span class="line">           checkForComodification();</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       final void checkForComodification() &#123;</span><br><span class="line">           if (modCount != expectedModCount)</span><br><span class="line">               throw new ConcurrentModificationException();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 <p>   注意，迭代器的快速失败行为不能得到保证，一般来说，存在非同步的并发修改时，不可能作出任何坚决的保证。快速失败迭代器尽最大努力抛出 ConcurrentModificationException。因此，编写依赖于此异常的程序的做法是错误的，正确做法是：迭代器的快速失败行为应该仅用于检测程序错误。</p>
-<h1 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h1><p>我们知道ArrayList底层是以动态数组的方式实现的，在遍历的时候直接修改的是数组下标，没有其他额外的空间消耗，但是在插入，删除的时候，都需要进行移动，即数组的拷贝，效率略差。</p>
-<p>当时LinkedList的底层是以链表的方式进行实现，插入和删除的时候只需要改变pre和next节点的指向，在插入和删除的时候效率较高。</p>
-<h2 id="LinkedList实现"><a href="#LinkedList实现" class="headerlink" title="LinkedList实现"></a>LinkedList实现</h2><h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p>LinkedList有两个构造函数：</p>
-<p>默认的无参构造器：</p>
-<ul>
-<li>public LinkedList()</li>
-</ul>
-<p>以集合为参数的有参构造器：</p>
-<ul>
-<li>public LinkedList(Collection&lt;? extends E&gt; c)<br><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180919151947-2018919.png" alt="QQ截图20180919151947-2018919"><br>调用addAll()方法进行初始化。<br>其中allALL方法如下：<br><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180919155330-2018919.png" alt="QQ截图20180919155330-2018919"><br>这个 函数的解释如下：<br>首先检查index是否合法，如果是初始化的话，那么这个index=size=0，使用Collection接口的方法toArray将Collection转为数组。接下来的if判断，作用是保存pred和succ两个变量，你想呀，在进行插入的时候，肯定要得到具体的位置呀，具体的位置就是前后嘛。接下来一个for循环，将循环将数组的元素转为node结构，然后挂到链表上。</li>
-</ul>
-<h3 id="存储-1"><a href="#存储-1" class="headerlink" title="存储"></a>存储</h3><p>对于LinkedList，在底层是采用Node的方式进行存储,Node是定义在LinkedList内部的内部类：</p>
-<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180919152453-2018919.png" alt="QQ截图20180919152453-2018919"></p>
-<p>仅有一个有参构造器，其中第一个参数是前置节点，第二个参数是需要插入的元素，第三个是后置节点。</p>
-<p>对于LinkedList来说，有以下几种插入数据的方式：</p>
-<p>在链表的最后一个位置插入元素：</p>
-<ul>
-<li>public boolean add(E e)<br><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180919152222-2018919.png" alt="QQ截图20180919152222-2018919"></li>
-</ul>
-<p>其中使用到了一个linkLast函数将该元素链接到链表的最后面：</p>
-<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180919152759-2018919.png" alt="QQ截图20180919152759-2018919"></p>
-<p>注意到是创建了一个Node实例，last是使用transient关键字修饰了的，保证了进程之间的可见性。然后是将新节点链接到原链表的最后一个节点上，size也是使用transient关键字修饰了的，size代表的是链表的长度。modCount的 作用如上，保证迭代的准确性，使用的是Fail-Fast机制。</p>
-<p>在链表的指定位置插入元素</p>
-<ul>
-<li>public void add(int index, E element)</li>
-</ul>
-<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180919153434-2018919.png" alt="QQ截图20180919153434-2018919"></p>
-<p>这里首先会对这个index进行合法性校验，如果这个index等于size，那么就证明是在链表的最后一个位置插入element（linklast方法见上），如果不是，就是在这个index之前插入element。</p>
-<p>这里看下node(index)这个函数，如下：</p>
-<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180919153804-2018919.png" alt="QQ截图20180919153804-2018919"></p>
-<p>这个函数首先做了一个判断，(size&gt;&gt;1)是位运算，表示的是size/2。<br>如果是小于size/2的，表示在链表的前半截；然后使用x=x.next进行遍历。else方法同理，最终返回node;</p>
-<p>对于LinkedBefore函数：</p>
-<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180919151947-2018919.png" alt="QQ截图20180919151947-2018919"></p>
-<p>首先找到我们刚才通过index查询到的node的前置节点保存起来，将这个node的前置节点改为新的element，这样就完成了新节点和其之后的节点链接。</p>
-<p>然后需要将后面的链表和前面的链表链接起来。这个时候分为两种情况了，这个时候就体现了我们之前记录下node的前置节点的作用了。如果这个node本来就是头结点了，那么需要在LinkedList中修改first节点的值。如果不是，那么就直接将node的next和新节点连接起来，这样就完成了插入工作。</p>
-<ul>
-<li>public boolean addAll(Collection&lt;? extends E&gt; c)</li>
-<li>public boolean addAll(int index, Collection&lt;? extends E&gt; c)<br><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180919154932-2018919.png" alt="QQ截图20180919154932-2018919"></li>
-</ul>
-<p>这两个合在一起，public boolean addAll(Collection&lt;? extends E&gt; c)这个是调用的public boolean addAll(int index, Collection&lt;? extends E&gt; c)方法。而这个方法在有参构造器中有用到，在那里有讲解。</p>
-<h3 id="读取-1"><a href="#读取-1" class="headerlink" title="读取"></a>读取</h3><p>对于链表的遍历的效率不高，尽管在遍历的时候会采用到除以二以判断从头开始遍历还是从尾开始遍历的方法。</p>
-<p>LInkedList获取元素有以下几种方式</p>
-<ul>
-<li>public E get(int index)</li>
-</ul>
-<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180919160316-2018919.png" alt="QQ截图20180919160316-2018919"></p>
-<p>获取链表的第一个元素</p>
-<ul>
-<li>public E getFirst()<br><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180919160349-2018919.png" alt="QQ截图20180919160349-2018919"></li>
-</ul>
-<p>有获取第一个元素，那么也有获取最后一个元素</p>
-<ul>
-<li>public E getLast()<br><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180919160637-2018919.png" alt="QQ截图20180919160637-2018919"></li>
-</ul>
-<p>获取元素在链表中的位置</p>
-<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180919161008-2018919.png" alt="QQ截图20180919161008-2018919"></p>
-<h3 id="删除-1"><a href="#删除-1" class="headerlink" title="删除"></a>删除</h3><ul>
-<li>public E remove()<br>删除第一个元素</li>
-</ul>
-<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180919161438-2018919.png" alt="QQ截图20180919161438-2018919"></p>
-<ul>
-<li><p>public E remove(int index)<br>删除index位置的元素</p>
-<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180919161627-2018919.png" alt="QQ截图20180919161627-2018919"></p>
-</li>
-<li><p>public boolean remove(Object o)<br>删除第一个出现o的位置的元素</p>
-</li>
-</ul>
-<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180919161748-2018919.png" alt="QQ截图20180919161748-2018919"></p>
-<ul>
-<li>public boolean removeFirstOccurrence(Object o)</li>
-<li>public boolean removeLastOccurrence(Object o)</li>
-</ul>
-<p>分别移除第一次或者最后一次出现在链表中的元素</p>
-<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><ul>
-<li>public E set(int index, E element)</li>
-</ul>
-<p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180919162219-2018919.png" alt="QQ截图20180919162219-2018919"></p>
-<p>将index位置的原element设置为新的element</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="ArrayList-1"><a href="#ArrayList-1" class="headerlink" title="ArrayList"></a>ArrayList</h2><ul>
 <li>基于数组，在数组中搜索和读取数据是很快的。因此 ArrayList 获取数据的时间复杂度是O(1);</li>
-<li><p>添加、删除时该元素后面的所有元素都要移动，所以添加/删除数据效率不高。</p>
-<h2 id="LinkedList-1"><a href="#LinkedList-1" class="headerlink" title="LinkedList"></a>LinkedList</h2></li>
-<li><p>基于双端链表，添加/删除元素只会影响周围的两个节点，开销很低；</p>
-</li>
-<li>只能顺序遍历，无法按照索引获得元素，因此查询效率不高；</li>
-<li>没有固定容量，不需要扩容；</li>
-<li>需要更多的内存，每个节点中需要多存储前后节点的信息，占用空间更多些。</li>
+<li>添加、删除时该元素后面的所有元素都要移动，所以添加/删除数据效率不高。</li>
 </ul>
 
       
@@ -771,11 +691,11 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/09/17/2018-9-17-20-16-54/">Java集合（一）————List</a></p>
+  <p><span>本文标题:</span><a href="/2018/09/17/2018-9-17-20-16-54/">Java集合（一）——ArrayList的源码解读</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Dimple 的个人博客">Dimple</a></p>
   <p><span>发布时间:</span>2018年09月17日 - 20:09</p>
-  <p><span>最后更新:</span>2018年09月19日 - 16:09</p>
-  <p><span>原始链接:</span><a href="/2018/09/17/2018-9-17-20-16-54/" title="Java集合（一）————List">http://www.bianxiaofeng.com/2018/09/17/2018-9-17-20-16-54/</a>
+  <p><span>最后更新:</span>2018年09月27日 - 18:09</p>
+  <p><span>原始链接:</span><a href="/2018/09/17/2018-9-17-20-16-54/" title="Java集合（一）——ArrayList的源码解读">http://www.bianxiaofeng.com/2018/09/17/2018-9-17-20-16-54/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.bianxiaofeng.com/2018/09/17/2018-9-17-20-16-54/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
@@ -891,6 +811,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/09/20/2018-9-20-10-38-49/" rel="prev" title="Java集合（二）——LinkedList的源码解读">
+                Java集合（二）——LinkedList的源码解读 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -968,7 +892,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">51</span>
+                    <span class="site-state-item-count">52</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -980,8 +904,6 @@
                 <div class="site-state-item site-state-categories">
                   <a href="/categories/index.html">
                     
-                    
-                      
                     
                       
                     
@@ -1238,7 +1160,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ArrayList"><span class="nav-number">2.</span> <span class="nav-text">ArrayList</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayList的实现"><span class="nav-number">2.1.</span> <span class="nav-text">ArrayList的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造方法"><span class="nav-number">2.1.1.</span> <span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储"><span class="nav-number">2.1.2.</span> <span class="nav-text">存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取"><span class="nav-number">2.1.3.</span> <span class="nav-text">读取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除"><span class="nav-number">2.1.4.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩容"><span class="nav-number">2.1.5.</span> <span class="nav-text">扩容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fail-Fast机制"><span class="nav-number">2.1.6.</span> <span class="nav-text">Fail-Fast机制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LinkedList"><span class="nav-number">3.</span> <span class="nav-text">LinkedList</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LinkedList实现"><span class="nav-number">3.1.</span> <span class="nav-text">LinkedList实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数"><span class="nav-number">3.1.1.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储-1"><span class="nav-number">3.1.2.</span> <span class="nav-text">存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取-1"><span class="nav-number">3.1.3.</span> <span class="nav-text">读取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除-1"><span class="nav-number">3.1.4.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改"><span class="nav-number">3.1.5.</span> <span class="nav-text">修改</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayList-1"><span class="nav-number">4.1.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LinkedList-1"><span class="nav-number">4.2.</span> <span class="nav-text">LinkedList</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ArrayList"><span class="nav-number">2.</span> <span class="nav-text">ArrayList</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayList的实现"><span class="nav-number">2.1.</span> <span class="nav-text">ArrayList的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造方法"><span class="nav-number">2.1.1.</span> <span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储"><span class="nav-number">2.1.2.</span> <span class="nav-text">存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取"><span class="nav-number">2.1.3.</span> <span class="nav-text">读取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除"><span class="nav-number">2.1.4.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩容"><span class="nav-number">2.1.5.</span> <span class="nav-text">扩容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fail-Fast机制"><span class="nav-number">2.1.6.</span> <span class="nav-text">Fail-Fast机制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayList-1"><span class="nav-number">3.1.</span> <span class="nav-text">ArrayList</span></a></li></ol></li></ol></div>
             
 
           </div>
