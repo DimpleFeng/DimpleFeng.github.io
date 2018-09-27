@@ -564,7 +564,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[JavaEE中的过滤器和拦截器[未完结]]]></title>
+      <title><![CDATA[JavaEE中的过滤器和拦截器]]></title>
       <url>/2018/08/23/2018-8-23-14-51-13/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>对于Interceptor和Filter，在很多时候都可以混淆使用，都是可以拦截用户请求，然后做一些事情。为了不混淆两者关系，在此整理了关于拦截器和过滤器的相关知识和区别。</p>
 <h1 id="过滤器Filter"><a href="#过滤器Filter" class="headerlink" title="过滤器Filter"></a>过滤器Filter</h1><h2 id="Filter说明"><a href="#Filter说明" class="headerlink" title="Filter说明"></a>Filter说明</h2><p>过滤器是处于客户端和服务器资源文件之间的一道过滤网，在访问资源之前，通过一系列的拦截器，即构成的拦截器链FilterChain，对响应进行过滤拦截和修改。</p>
