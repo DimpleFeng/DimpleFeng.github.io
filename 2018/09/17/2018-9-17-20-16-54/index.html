@@ -164,19 +164,19 @@
 
 
 
-  <meta name="description" content="前言本文为序列文章：  Java集合（一）——Java集合（一）——ArrayList的源码解读  Java集合（二）——LinkedList的源码解读   对于Java中的集合，大致可以分为Set、List、Queue和Map，其中Set是不重复且无序的集合，List是有序，可重复的集合，而Map则代表的是具有映射关系的集合，Java5后增加了Queue集合，代表一种队列集合的实现。 本文主要介">
+  <meta name="description" content="前言本文为序列文章：  Java集合（一）——Java集合（一）——ArrayList的源码解读  Java集合（二）——LinkedList的源码解读   对于Java中的集合，大致可以分为Set、List、Queue和Map，其中Set是不重复且无序的集合，List是有序，可重复的集合，而Map则代表的是具有映射关系的集合，Java5后增加了Queue集合，代表一种队列集合的实现。">
 <meta name="keywords" content="List,Map,Set">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java集合（一）——ArrayList的源码解读">
 <meta property="og:url" content="http://www.bianxiaofeng.com/2018/09/17/2018-9-17-20-16-54/index.html">
 <meta property="og:site_name" content="Dimple&#39;s Blog">
-<meta property="og:description" content="前言本文为序列文章：  Java集合（一）——Java集合（一）——ArrayList的源码解读  Java集合（二）——LinkedList的源码解读   对于Java中的集合，大致可以分为Set、List、Queue和Map，其中Set是不重复且无序的集合，List是有序，可重复的集合，而Map则代表的是具有映射关系的集合，Java5后增加了Queue集合，代表一种队列集合的实现。 本文主要介">
+<meta property="og:description" content="前言本文为序列文章：  Java集合（一）——Java集合（一）——ArrayList的源码解读  Java集合（二）——LinkedList的源码解读   对于Java中的集合，大致可以分为Set、List、Queue和Map，其中Set是不重复且无序的集合，List是有序，可重复的集合，而Map则代表的是具有映射关系的集合，Java5后增加了Queue集合，代表一种队列集合的实现。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://p2sj58chj.bkt.clouddn.com/timg-2018919.jpg">
-<meta property="og:updated_time" content="2018-09-27T10:01:39.268Z">
+<meta property="og:updated_time" content="2018-09-28T09:14:38.653Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java集合（一）——ArrayList的源码解读">
-<meta name="twitter:description" content="前言本文为序列文章：  Java集合（一）——Java集合（一）——ArrayList的源码解读  Java集合（二）——LinkedList的源码解读   对于Java中的集合，大致可以分为Set、List、Queue和Map，其中Set是不重复且无序的集合，List是有序，可重复的集合，而Map则代表的是具有映射关系的集合，Java5后增加了Queue集合，代表一种队列集合的实现。 本文主要介">
+<meta name="twitter:description" content="前言本文为序列文章：  Java集合（一）——Java集合（一）——ArrayList的源码解读  Java集合（二）——LinkedList的源码解读   对于Java中的集合，大致可以分为Set、List、Queue和Map，其中Set是不重复且无序的集合，List是有序，可重复的集合，而Map则代表的是具有映射关系的集合，Java5后增加了Queue集合，代表一种队列集合的实现。">
 <meta name="twitter:image" content="http://p2sj58chj.bkt.clouddn.com/timg-2018919.jpg">
 
 
@@ -476,7 +476,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-27 18:01:39" itemprop="dateModified" datetime="2018-09-27T18:01:39+08:00">2018-09-27</time>
+                <time title="修改时间：2018-09-28 17:14:38" itemprop="dateModified" datetime="2018-09-28T17:14:38+08:00">2018-09-28</time>
               
             
           </span>
@@ -548,7 +548,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://p2sj58chj.bkt.clouddn.com/timg-2018919.jpg" rel="gallery_cjmlru4d3006fj4hxaxhpsnyu"
+                 href="http://p2sj58chj.bkt.clouddn.com/timg-2018919.jpg" rel="gallery_cjmlslmak004dqkhxp2pxg1th"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://p2sj58chj.bkt.clouddn.com/timg-2018919.jpg" itemprop="contentUrl"/>
               </a>
@@ -568,8 +568,7 @@
 <li><p><a href="http://www.bianxiaofeng.com/2018/09/20/2018-9-20-10-38-49/">Java集合（二）——LinkedList的源码解读</a></p>
 </li>
 </ul>
-<p>对于Java中的集合，大致可以分为Set、List、Queue和Map，其中Set是不重复且无序的集合，List是有序，可重复的集合，而Map则代表的是具有映射关系的集合，Java5后增加了Queue集合，代表一种队列集合的实现。</p>
-<p>本文主要介绍总结List集合。List是一个有序（插入有序）的Collection（序列），可以包含重复的元素。</p>
+<p>对于Java中的集合，大致可以分为Set、List、Queue和Map，其中Set是不重复且无序的集合，List是有序，可重复的集合，而Map则代表的是具有映射关系的集合，Java5后增加了Queue集合，代表一种队列集合的实现。<br><a id="more"></a><br>本文主要介绍总结List集合。List是一个有序（插入有序）的Collection（序列），可以包含重复的元素。</p>
 <p>List是实现了Collection接口的，所以实现了Collection的方法：</p>
 <p><strong>Collection的方法：</strong></p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180917203606-2018917.png" alt="QQ截图20180917203606-2018917"></p>
@@ -694,7 +693,7 @@
   <p><span>本文标题:</span><a href="/2018/09/17/2018-9-17-20-16-54/">Java集合（一）——ArrayList的源码解读</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Dimple 的个人博客">Dimple</a></p>
   <p><span>发布时间:</span>2018年09月17日 - 20:09</p>
-  <p><span>最后更新:</span>2018年09月27日 - 18:09</p>
+  <p><span>最后更新:</span>2018年09月28日 - 17:09</p>
   <p><span>原始链接:</span><a href="/2018/09/17/2018-9-17-20-16-54/" title="Java集合（一）——ArrayList的源码解读">http://www.bianxiaofeng.com/2018/09/17/2018-9-17-20-16-54/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.bianxiaofeng.com/2018/09/17/2018-9-17-20-16-54/"  aria-label="复制成功！"></i></span>
   </p>

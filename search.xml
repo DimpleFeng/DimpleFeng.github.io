@@ -6,8 +6,7 @@
       <title><![CDATA[TCP的三次握手和四次挥手]]></title>
       <url>/2018/09/28/2018-9-28-16-43-30/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>TCP报文格式（标志位，确认号，序列号）：</strong><br><strong>FIN</strong>：finish，结束</p>
-<p><strong>PSH</strong>：push，传输</p>
-<p><strong>SYN</strong>：synchronous，建立连接</p>
+<p><strong>PSH</strong>：push，传输<br><a id="more"></a><br><strong>SYN</strong>：synchronous，建立连接</p>
 <p><strong>RST</strong>：reset，重置</p>
 <p><strong>ACK</strong>：acknowledgement：确认</p>
 <p><strong>seq</strong>：sequence number 序列号</p>
@@ -62,8 +61,7 @@
 <li><p><a href="http://www.bianxiaofeng.com/2018/09/20/2018-9-20-10-38-49/">Java集合（二）——LinkedList的源码解读</a></p>
 </li>
 </ul>
-<p>对于Java中的集合，大致可以分为Set、List、Queue和Map，其中Set是不重复且无序的集合，List是有序，可重复的集合，而Map则代表的是具有映射关系的集合，Java5后增加了Queue集合，代表一种队列集合的实现。</p>
-<p>本文主要介绍总结List集合。List是一个有序（插入有序）的Collection（序列），可以包含重复的元素。</p>
+<p>对于Java中的集合，大致可以分为Set、List、Queue和Map，其中Set是不重复且无序的集合，List是有序，可重复的集合，而Map则代表的是具有映射关系的集合，Java5后增加了Queue集合，代表一种队列集合的实现。<br><a id="more"></a><br>本文主要介绍总结List集合。List是一个有序（插入有序）的Collection（序列），可以包含重复的元素。</p>
 <p>List是实现了Collection接口的，所以实现了Collection的方法：</p>
 <p><strong>Collection的方法：</strong></p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180917203606-2018917.png" alt="QQ截图20180917203606-2018917"></p>
@@ -193,8 +191,7 @@
 <li><p><a href="http://www.bianxiaofeng.com/2018/09/20/2018-9-20-10-38-49/">Java集合（二）——LinkedList的源码解读</a></p>
 </li>
 </ul>
-<p>对于Java中的集合，大致可以分为Set、List、Queue和Map，其中Set是不重复且无序的集合，List是有序，可重复的集合，而Map则代表的是具有映射关系的集合，Java5后增加了Queue集合，代表一种队列集合的实现。</p>
-<p>本文主要介绍总结List集合。List是一个有序（插入有序）的Collection（序列），可以包含重复的元素。</p>
+<p>对于Java中的集合，大致可以分为Set、List、Queue和Map，其中Set是不重复且无序的集合，List是有序，可重复的集合，而Map则代表的是具有映射关系的集合，Java5后增加了Queue集合，代表一种队列集合的实现。<br><a id="more"></a><br>本文主要介绍总结List集合。List是一个有序（插入有序）的Collection（序列），可以包含重复的元素。</p>
 <p>List是实现了Collection接口的，所以实现了Collection的方法：</p>
 <p><strong>Collection的方法：</strong></p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180917203606-2018917.png" alt="QQ截图20180917203606-2018917"></p>
@@ -314,9 +311,8 @@
       <title><![CDATA[常见排序算法总结（归并排序）——Java语言（二）]]></title>
       <url>/2018/09/13/2018-9-13-16-36-10/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p>归并排序（英语：Merge sort，或mergesort），是创建在归并操作上的一种有效的排序算法，效率为 O(NlogN)（大O符号）。1945年由约翰·冯·诺伊曼首次提出。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用，且各层分治递归可以同时进行。</p>
+<p>归并排序（英语：Merge sort，或mergesort），是创建在归并操作上的一种有效的排序算法，效率为 O(NlogN)（大O符号）。1945年由约翰·冯·诺伊曼首次提出。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用，且各层分治递归可以同时进行。<br><a id="more"></a><br>归并排序的图示：</p>
 </blockquote>
-<p>归并排序的图示：</p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/Merge_sort_animation2-2018913.gif" alt="Merge_sort_animation2-2018913"></p>
 <h1 id="算法讲解"><a href="#算法讲解" class="headerlink" title="算法讲解"></a>算法讲解</h1><p>归并排序算法是采用经典的分治策略，将问题divide成一些小问题，然后在conquer阶段将分的阶段得到的答案修补在一起，即为分而治之。</p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180914111850-2018914.png" alt="QQ截图20180914111850-2018914"></p>
@@ -356,8 +352,7 @@
       <title><![CDATA[MySQL复习（一）]]></title>
       <url>/2018/09/07/2018-9-7-21-12-48/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近准备将自己所学的知识好好的复习一遍，看到了MySQL，对于MySQL，很多东西还是停留在知识点，实际应用还是差一大截，刚好是在网上看到一篇博文，本文主要是根据这篇博文，加上一些关于MySQL的知识点交叉串起来，方便自己复习。</p>
-<h1 id="常见的MySQL操作的命令大全"><a href="#常见的MySQL操作的命令大全" class="headerlink" title="常见的MySQL操作的命令大全"></a>常见的MySQL操作的命令大全</h1><p>以下是一些比较常用的MySQL的操作命令，并非查询语句。当然可以使用一些可视化的工具来代替这些命令，比如比较好用的Navicat，这里使用的是IDEA自带的database工具。</p>
-<p>命令如下：</p>
+<h1 id="常见的MySQL操作的命令大全"><a href="#常见的MySQL操作的命令大全" class="headerlink" title="常见的MySQL操作的命令大全"></a>常见的MySQL操作的命令大全</h1><p>以下是一些比较常用的MySQL的操作命令，并非查询语句。当然可以使用一些可视化的工具来代替这些命令，比如比较好用的Navicat，这里使用的是IDEA自带的database工具。<br><a id="more"></a><br>命令如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"># 创建名为mysqlpractice的数据库</span><br><span class="line">create database mysqlpractice;</span><br><span class="line"></span><br><span class="line"># 显示所有的数据库</span><br><span class="line">show databases;</span><br><span class="line"></span><br><span class="line"># 删除数据库mysqlpractice</span><br><span class="line">drop database mysqlpractice;</span><br><span class="line"># 一般会在删除之前进行判断，判断是否存在该数据库,如果对不存在的数据库进行删除会报错，对表的删除同理。</span><br><span class="line">drop database if exists mysqlpractice;</span><br><span class="line"></span><br><span class="line"># 选择名为mysqlpractice的数据库,只有选择了某个数据库，才能对数据库中的表进行操作</span><br><span class="line">use mysqlpractice;</span><br><span class="line"></span><br><span class="line">#显示当前数据库下的course表的字段信息，以下两种方式均可</span><br><span class="line">show columns from course;</span><br><span class="line">describe course;</span><br><span class="line"></span><br><span class="line"># 显示创建数据库的mysql语句</span><br><span class="line">show create database mysqlpractice;</span><br><span class="line"></span><br><span class="line"># 显示创建表的sql语句</span><br><span class="line">show create table course;</span><br><span class="line"></span><br><span class="line"># 删除表</span><br><span class="line">drop table course;</span><br><span class="line">#一般会在删除数据库表之前进行判断，如果存在就进行删除</span><br><span class="line">drop table if exists course;</span><br><span class="line"></span><br><span class="line"># 删除表中的数据，不删除表delete方式</span><br><span class="line">delete</span><br><span class="line">from course;</span><br><span class="line"># 删除表中的数据，不删除表truncate方式</span><br><span class="line">truncate table course;</span><br><span class="line"></span><br><span class="line"># 以上两种方式都可以删除表中的数据，但是还是由区别的</span><br><span class="line"># 1、truncate是不可以rollback的，delete可以rollback。</span><br><span class="line"># 2、truncate删除后会重置索引（自增类型的id会从0开始），而delete不会删除索引。</span><br><span class="line"># 3、delete可以返回受影响的行数，且delete可以按照条件删除。</span><br><span class="line"># 4、truncate不会触发任何的delete触发器。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 表结构的修改</span><br><span class="line">## 增加一个字段int类型的test1</span><br><span class="line">alter table course</span><br><span class="line">  add column (test1 int);</span><br><span class="line"></span><br><span class="line">## 指定字段test1之后插入一个int类型的字段test2</span><br><span class="line">## 需要和上面一个命令区别开来，上面的命令是必须要带括号的，下面这个命令是不能带括号的</span><br><span class="line">alter table course</span><br><span class="line">  add column test2 int</span><br><span class="line">  after test1;</span><br><span class="line"></span><br><span class="line">## 删除一个test1字段</span><br><span class="line">alter table course</span><br><span class="line">  drop test1;</span><br><span class="line"></span><br><span class="line">## 修改字段的名称test1为newtest1，类型为char</span><br><span class="line"></span><br><span class="line">alter table course</span><br><span class="line">  change test1 newtest1 char(32);</span><br><span class="line"></span><br><span class="line">## 修改表的名字，将course表的名称修改为newCourse</span><br><span class="line"></span><br><span class="line">alter table course</span><br><span class="line">rename to newCourse;</span><br></pre></td></tr></table></figure>
 <h1 id="学生-课程-教师-成绩SQL练习题"><a href="#学生-课程-教师-成绩SQL练习题" class="headerlink" title="学生-课程-教师-成绩SQL练习题"></a>学生-课程-教师-成绩SQL练习题</h1><h2 id="表的架构"><a href="#表的架构" class="headerlink" title="表的架构"></a>表的架构</h2><p>ps：</p>
 <p>原文是采用的S#这种写法来表示id的，在navicat以及idea自带的一些插件中是不能识别的，所以以下全部改为sno这种形式。</p>
@@ -412,7 +407,7 @@
       <url>/2018/09/05/2018-8-27-09-57-25/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在使用IDEA进行开发的时候，难免会用到Git，两个窗口切换来切换去的很不方便，为了简单，我将IDEA自带的Terminal设置为Git的，这样就能达到在IDEA上敲Git命令的效果。</p>
 <p>这里简单的介绍下具体的配置流程以及使用Git会引起的Unicode的解决方案。</p>
-<p>更多IDEA配置参看 <a href="http://www.bianxiaofeng.com/2018/07/23/2018-7-23-09-36-27/">Intellij IDEA  2018.02 最新版 优化配置</a></p>
+<p>更多IDEA配置参看 <a href="http://www.bianxiaofeng.com/2018/07/23/2018-7-23-09-36-27/">Intellij IDEA  2018.02 最新版 优化配置</a><br><a id="more"></a></p>
 <h1 id="配置IDEA使用Git的Terminal"><a href="#配置IDEA使用Git的Terminal" class="headerlink" title="配置IDEA使用Git的Terminal"></a>配置IDEA使用Git的Terminal</h1><p><img src="http://p2sj58chj.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20180827094225.png" alt="enter description here" title="IDEA配置Git Terminal"></p>
 <h1 id="解决使用IDEA-Terminal引起的中文-Unicode编码问题"><a href="#解决使用IDEA-Terminal引起的中文-Unicode编码问题" class="headerlink" title="解决使用IDEA Terminal引起的中文 Unicode编码问题"></a>解决使用IDEA Terminal引起的中文 Unicode编码问题</h1><p> 乱码现象如下：</p>
 <p> <img src="http://p2sj58chj.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20180827093139.png" alt="enter description here" title="乱码现象"></p>
@@ -444,8 +439,7 @@
     <entry>
       <title><![CDATA[Git常用个人备份笔记]]></title>
       <url>/2018/08/24/2018-8-24-10-00-54/</url>
-      <content type="html"><![CDATA[<h1 id="一、新建代码库"><a href="#一、新建代码库" class="headerlink" title="一、新建代码库"></a>一、新建代码库</h1><p>1、在当前目录下创建一个Git代码库</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git init</span></span><br></pre></td></tr></table></figure>
+      <content type="html"><![CDATA[<h1 id="一、新建代码库"><a href="#一、新建代码库" class="headerlink" title="一、新建代码库"></a>一、新建代码库</h1><p>1、在当前目录下创建一个Git代码库<br><a id="more"></a><br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git init</span></span><br></pre></td></tr></table></figure></p>
 <p>创建的.git默认是隐藏的，使用命令ls -ah显示出来。</p>
 <p>2、新建一个目录，并初始化为Git的代码库</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init [<span class="keyword">dir</span>-name]</span><br></pre></td></tr></table></figure>
@@ -616,7 +610,7 @@
     <entry>
       <title><![CDATA[JavaEE中的过滤器和拦截器]]></title>
       <url>/2018/08/23/2018-8-23-14-51-13/</url>
-      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>对于Interceptor和Filter，在很多时候都可以混淆使用，都是可以拦截用户请求，然后做一些事情。为了不混淆两者关系，在此整理了关于拦截器和过滤器的相关知识和区别。</p>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>对于Interceptor和Filter，在很多时候都可以混淆使用，都是可以拦截用户请求，然后做一些事情。为了不混淆两者关系，在此整理了关于拦截器和过滤器的相关知识和区别。<br><a id="more"></a></p>
 <h1 id="过滤器Filter"><a href="#过滤器Filter" class="headerlink" title="过滤器Filter"></a>过滤器Filter</h1><h2 id="Filter说明"><a href="#Filter说明" class="headerlink" title="Filter说明"></a>Filter说明</h2><p>过滤器是处于客户端和服务器资源文件之间的一道过滤网，在访问资源之前，通过一系列的拦截器，即构成的拦截器链FilterChain，对响应进行过滤拦截和修改。</p>
 <p>Filter是JavaEE规范中的，是Servlet最实用的技术，通过Filter，就可以对Web服务器管理的所有Web资源如JSP、Servlet等等进行拦截，</p>
 <p>具体的应用场景应该有URL级别的权限访问控制，过滤敏感词汇，压缩响应信息等等。</p>
@@ -663,7 +657,8 @@
 <p>在开始之前，说下目前比价常用的几种方式：</p>
 <pre><code>1. 使用java.util.Properties类,可以使用它的load方法加载inputStream字节流。
 2. 使用java.util.ResourceBundle类来读取。
-</code></pre><h1 id="使用Properties类"><a href="#使用Properties类" class="headerlink" title="使用Properties类"></a>使用Properties类</h1><p>Properties类继承自Hashtable，而Hashtable是实现了Map接口的，所以对Properties类的操作和Map有些相似。</p>
+</code></pre><a id="more"></a>
+<h1 id="使用Properties类"><a href="#使用Properties类" class="headerlink" title="使用Properties类"></a>使用Properties类</h1><p>Properties类继承自Hashtable，而Hashtable是实现了Map接口的，所以对Properties类的操作和Map有些相似。</p>
 <p>使用Properties来加载.properties文件的主要关键是在于load方法。而load方法需要的是InputStream流。</p>
 <p>这里比较常用的流的获取有以下几种：</p>
 <ol>
@@ -704,7 +699,7 @@
       <title><![CDATA[Java中的前置++和后置++的理解]]></title>
       <url>/2018/08/14/2018-08-14-04-38-57/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在C、C++等编程语言中都会存在i++，++i,在实际运用中我们总能记住一句话==i++(后置++)是先使用在+1，而++i(前置++)是先自增再使用==。但是在一些很烧脑的场合，这种规律就会“失效”。</p>
-<p>本文会首先简单的介绍下前置和后置++在一些场合的实际应用，可以看到的是合理的使用++会使得代码简洁不少。</p>
+<p>本文会首先简单的介绍下前置和后置++在一些场合的实际应用，可以看到的是合理的使用++会使得代码简洁不少。<br><a id="more"></a></p>
 <h1 id="前置后置的实际使用"><a href="#前置后置的实际使用" class="headerlink" title="++前置后置的实际使用"></a>++前置后置的实际使用</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.dimple.javabase;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@program</span>: JavaSEProject</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 测试++运算符</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: Dimple</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span>: 2018-08-14 16:46</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AddOpt</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">		String[] people = &#123;<span class="string">"Dennis Ritchie"</span>, <span class="string">"Bjarne Stroustrup"</span>, <span class="string">"James Gosling"</span>&#125;;</span><br><span class="line">		System.out.println(Arrays.asList(people).toString());</span><br><span class="line">		System.out.println(<span class="string">"preposition ++"</span>);</span><br><span class="line">		System.out.println(<span class="string">"        before operation···"</span>);</span><br><span class="line">		System.out.println(<span class="string">"        i= "</span>+i);</span><br><span class="line">		System.out.println(<span class="string">"        "</span>+people[i++]);</span><br><span class="line">		System.out.println(<span class="string">"        after operation···"</span>);</span><br><span class="line">		System.out.println(<span class="string">"        i= "</span>+i);</span><br><span class="line">		System.out.println(<span class="string">"postposition ++"</span>);</span><br><span class="line">		i = <span class="number">0</span>;</span><br><span class="line">		System.out.println(<span class="string">"        before operation···"</span>);</span><br><span class="line">		System.out.println(<span class="string">"        i= "</span>+i);</span><br><span class="line">		System.out.println(<span class="string">"        "</span>+people[++i]);</span><br><span class="line">		System.out.println(<span class="string">"        after operation···"</span>);</span><br><span class="line">		System.out.println(<span class="string">"        i= "</span>+i);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>运行结果如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[Dennis Ritchie, Bjarne Stroustrup, James Gosling]</span><br><span class="line">preposition ++</span><br><span class="line">        before operation···</span><br><span class="line">        i= <span class="number">0</span></span><br><span class="line">        Dennis Ritchie</span><br><span class="line">        after operation···</span><br><span class="line">        i= <span class="number">1</span></span><br><span class="line">postposition ++</span><br><span class="line">        before operation···</span><br><span class="line">        i= <span class="number">0</span></span><br><span class="line">        Bjarne Stroustrup</span><br><span class="line">        after operation···</span><br><span class="line">        i= <span class="number">1</span></span><br><span class="line"></span><br><span class="line">Process finished with exit code <span class="number">0</span></span><br></pre></td></tr></table></figure>
@@ -756,6 +751,7 @@
 <p>类原型如下：</p>
 <p>继承自抽象类AbstractMap<k,v>，实现Map接口，Cloneable主要是用于clone方法，以及序列化接口。</k,v></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HashMap</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractMap</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">Map</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;, <span class="title">Cloneable</span>, <span class="title">Serializable</span> </span>&#123;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h1 id="Map的常用类型"><a href="#Map的常用类型" class="headerlink" title="Map的常用类型"></a>Map的常用类型</h1><p><img src="http://p2sj58chj.bkt.clouddn.com/blog/java.util.map类图.png" alt="enter description here"><br>继承Map接口的有以下几种：</p>
 <ul>
 <li>HashMap：根据键的HashCode值进行数据的存储，可以直接根据键获取值，访问速度很快。是非同步的，即线程不安全。==key和value都可以为null，但是只能有一个为null的key，value无限制。==</li>
@@ -855,7 +851,7 @@
     <entry>
       <title><![CDATA[SpringMVC文件AJAX上传+JQuery文件进度条]]></title>
       <url>/2018/08/08/2018-08-08-05-56-11/</url>
-      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>文件上传是一个很常用的功能，比如头像上传，视频上传等等，本文主要使用SpringMVC+Ajax实现文件上传，下载，删除等操作，同时重写CommonsMultipartResolver添加监听器ProgressListener，通过客户端轮询的方式来获取上传文件的进度。本文会首先介绍文件AJAX上传并获取进度的操作。</p>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>文件上传是一个很常用的功能，比如头像上传，视频上传等等，本文主要使用SpringMVC+Ajax实现文件上传，下载，删除等操作，同时重写CommonsMultipartResolver添加监听器ProgressListener，通过客户端轮询的方式来获取上传文件的进度。本文会首先介绍文件AJAX上传并获取进度的操作。<br><a id="more"></a></p>
 <ul>
 <li><a href="#前言">前言</a></li>
 <li><a href="#文件上传">文件上传</a><ul>
@@ -939,6 +935,7 @@
       <title><![CDATA[Error running 'Tomcat'Unable to open debugger port (127.0.0.1:2148)的解决办法]]></title>
       <url>/2018/08/03/2018-8-3-20-36-12/</url>
       <content type="html"><![CDATA[<p>在Web项目运行的时候，IDEA可能会报Error running ‘Tomcat’: Unable to open debugger port (127.0.0.1:2148): java.net.SocketException “socket closed”错误，启动不了Tomcat，在这种时候，网上的解决办法大多都是修改端口的这种方式，但是这种方式治标不治本。</p>
+<a id="more"></a>
 <p>错误截图如下：</p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180803144001.png" alt="QQ截图20180803144001"></p>
 <p>解决办法：</p>
@@ -970,6 +967,7 @@
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>经常看到关于Java中的接口和抽象类的比较，看着这两难兄难弟确实还是有些像，又有些不想，借此，想好好总结下他们两。</p>
 <h1 id="关于抽象类"><a href="#关于抽象类" class="headerlink" title="关于抽象类"></a>关于抽象类</h1><p>在Java中，抽象类是以abstract关键字修饰的。有抽象方法的一定是抽象类，反之，抽象类不一定有抽象方法，这句话是《Java编程思想》这本书中提到的，说的是只要是被关键字abstract修饰的类都叫抽象类，而不管这个类中是否含有抽象方法。抽象类的定义格式为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abstaract class ClassName&#123;&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>抽象方法： 抽象方法是一种特殊的方法，只有方法的声明，但是没有方法的实现。抽象方法的声明格式为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abstract void function();</span><br></pre></td></tr></table></figure></p>
 <p>抽象类是为了继承而存在的，抽象出子类共有的一些特点，然后交给其具体的实现。</p>
 <p>抽象类并不一定包含抽象方法，它和普通的类一样，也是可以拥有成员变量和普通的成员方法。</p>
@@ -1021,7 +1019,7 @@
       <content type="html"><![CDATA[<p>本文为系列文章：</p>
 <p><a href="http://www.bianxiaofeng.com/2018/08/01/2018-8-1-15-32-13/">Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式）</a><br><a href="http://www.bianxiaofeng.com/2018/08/01/2018-8-1-16-37-56/">Jacoco服务器代码覆盖率测试工具使用（二）（远程Tomcat Web部署的方式）</a></p>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前面介绍了使用IDEA的方式进行代码覆盖率测试，当然这种方式是有一种局限就是只能在本地跑，而且需要安装IDEA的插件（Eclipse貌似插件下不了，也就不能使用了），如果想要测试已经部署在服务器上的Web项目的代码覆盖率的话，就需要用到下面说到的方法。</p>
-<p>远程的服务器有Tomcat，galssfish等等，也可能用到一些中间件，如金蝶中间件等等。所以不同的远程服务器可能配置方式不同，但原理一样。</p>
+<p>远程的服务器有Tomcat，galssfish等等，也可能用到一些中间件，如金蝶中间件等等。所以不同的远程服务器可能配置方式不同，但原理一样。<br><a id="more"></a></p>
 <h1 id="安装部署前的说明"><a href="#安装部署前的说明" class="headerlink" title="安装部署前的说明"></a>安装部署前的说明</h1><p>本文主要是用到ant + jacoco的方式进行部署的。分为服务器和客户端，分别需要安装的软件环境配置如下：</p>
 <p>服务器端： Java环境（这个肯定是有的，因为部署Tomcat这些是需要用到Java的），Jacoco JAR包；</p>
 <p>客户端： Java环境，Ant环境，Jacoco JAR包。</p>
@@ -1081,6 +1079,7 @@
       <url>/2018/08/01/2018-8-1-16-23-49/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天写了一篇博客，然后准备推到GitHub的时候发现报以下错误</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unable to access &apos;https://github.com/DimpleFeng/dimplefeng.github.io.git/&apos;: OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>Git支持三种协议，分别是：git://、ssh://和http://<br>因为HEXO也是将博文编译为静态的文件,然后再push到Git 上的。解决方法是取消http代理。</p>
 <p>打开Git Bash输入以下命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br></pre></td></tr></table></figure>
@@ -1109,7 +1108,7 @@
 <p><a href="http://www.bianxiaofeng.com/2018/08/01/2018-8-1-15-32-13/">Jacoco服务器代码覆盖率测试工具使用（一）（IDEA插件的方式）</a><br><a href="http://www.bianxiaofeng.com/2018/08/01/2018-8-1-16-37-56/">Jacoco服务器代码覆盖率测试工具使用（二）（远程Tomcat Web部署的方式）</a></p>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本文主要以自己的实际项目经历写下一份Jacoco的使用总结，首先是IDEA的使用，在IDEA上有直接的插件可以使用。接下来的第二篇会说到远程Tomcat Web服务器的代码覆盖率测试。</p>
 <p>代码覆盖（Code coverage）是软件测试中的一种度量，描述程式中源代码被测试的比例和程度，所得比例称为代码覆盖率。在做单元测试时，代码覆盖率常常被拿来作为衡量测试好坏的指标，甚至，用代码覆盖率来考核测试任务完成情况，比如，代码覆盖率必须达到80%或 90%。于是乎，测试人员费尽心思设计案例覆盖代码。用代码覆盖率来衡量，有利也有弊。</p>
-<p>本文中，不会使用单元测试的方式来得到代码的覆盖率，因为IDEA有直接的插件（下面会顺手说明下这个插件）。一般来说，代码覆盖率这种东西应该是测试工程师做的工作，但是作为Java开发的我就是手痒想搞一搞呀···</p>
+<p>本文中，不会使用单元测试的方式来得到代码的覆盖率，因为IDEA有直接的插件（下面会顺手说明下这个插件）。一般来说，代码覆盖率这种东西应该是测试工程师做的工作，但是作为Java开发的我就是手痒想搞一搞呀···<br><a id="more"></a></p>
 <h1 id="IDEA中的Coverage插件使用"><a href="#IDEA中的Coverage插件使用" class="headerlink" title="IDEA中的Coverage插件使用"></a>IDEA中的Coverage插件使用</h1><p>下载插件：<br><img src="http://p2sj58chj.bkt.clouddn.com/TIM截图20180801154145.png" alt="TIM截图20180801154145"></p>
 <p>安装完成之后就可以在IDEA上看到：<br><img src="http://p2sj58chj.bkt.clouddn.com/TIM截图20180801154450.png" alt="TIM截图20180801154450"></p>
 <p>点击这个按钮表示以代码覆盖统计的方式运行。（在此之前还是先进入到Tomcat的配置中设置为Jacoco的方式）<br><img src="http://p2sj58chj.bkt.clouddn.com/TIM截图20180801155443.png" alt="TIM截图20180801155443"></p>
@@ -1138,8 +1137,7 @@
     <entry>
       <title><![CDATA[Intellij IDEA  2018.02 最新版 优化配置]]></title>
       <url>/2018/07/23/2018-7-23-09-36-27/</url>
-      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>好吧工欲善其事必先利其器，我平时比较喜欢使用IDEA，这个软件可以很大程度上提高工作效率。<a href="http://www.jetbrains.com/" target="_blank" rel="noopener">IDEA</a>全称IntelliJ IDEA，是用于java语言开发的集成环境（也可用于其他语言），IntelliJ在业界被公认为最好的java开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE支持、Ant、JUnit、CVS整合、代码审查、 创新的GUI设计等方面的功能可以说是超常的。IDEA是JetBrains公司的产品，这家公司总部位于捷克共和国的首都布拉格，开发人员以严谨著称的东欧程序员为主。<br>一直都有想过写一篇关于IDEA的设置优化的博文，因为确实网上的不是很适合我的风格。且网上的优化教程不是很多，自己摸索出来一下，希望能够帮到大家。</p>
-<p>本文呢，会分为一下四部分进行说明：</p>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>好吧工欲善其事必先利其器，我平时比较喜欢使用IDEA，这个软件可以很大程度上提高工作效率。<a href="http://www.jetbrains.com/" target="_blank" rel="noopener">IDEA</a>全称IntelliJ IDEA，是用于java语言开发的集成环境（也可用于其他语言），IntelliJ在业界被公认为最好的java开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE支持、Ant、JUnit、CVS整合、代码审查、 创新的GUI设计等方面的功能可以说是超常的。IDEA是JetBrains公司的产品，这家公司总部位于捷克共和国的首都布拉格，开发人员以严谨著称的东欧程序员为主。<br>一直都有想过写一篇关于IDEA的设置优化的博文，因为确实网上的不是很适合我的风格。且网上的优化教程不是很多，自己摸索出来一下，希望能够帮到大家。<br><a id="more"></a><br>本文呢，会分为一下四部分进行说明：</p>
 <ol>
 <li><p>IDEA设置优化</p>
 </li>
@@ -1199,7 +1197,7 @@
 <p>②、使用Class类的newInstance方法；</p>
 <p>③、使用Constructor类的newInstance方法；</p>
 <p>④、使用Object类的clone方法；</p>
-<p>⑤、使用反序列化的方式；</p>
+<p>⑤、使用反序列化的方式；<br><a id="more"></a></p>
 <h1 id="实例化对象的几种方式"><a href="#实例化对象的几种方式" class="headerlink" title="实例化对象的几种方式"></a>实例化对象的几种方式</h1><h2 id="new关键字实例化对象"><a href="#new关键字实例化对象" class="headerlink" title="new关键字实例化对象"></a>new关键字实例化对象</h2><p>最常见，也是最简单的实例化对象的方式，通过这种方式，可以调用任意一个构造函数。</p>
 <p>如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Student student = new Student();</span><br><span class="line">Student student = new Student(&quot;小明&quot;);</span><br></pre></td></tr></table></figure>
@@ -1258,7 +1256,7 @@
 <p><strong>等待阻塞</strong>： 调用线程的wait()方法，让线程等待某工作完成。</p>
 <p><strong>同步阻塞</strong>： 线程在获取synchronized同步锁失败（同步锁被其他线程占用），会进入到同步阻塞状态。</p>
 <p><strong>其他阻塞</strong>： 通过调用线程的sleep()或join或发出IO请求。</p>
-<p><strong>Dead 死亡状态</strong>：线程执行完毕或者因为一场退出run()方法。</p>
+<p><strong>Dead 死亡状态</strong>：线程执行完毕或者因为一场退出run()方法。<br><a id="more"></a></p>
 <h2 id="2、实现多线程的两种方式"><a href="#2、实现多线程的两种方式" class="headerlink" title="2、实现多线程的两种方式"></a>2、实现多线程的两种方式</h2><ul>
 <li><p>实现runnable接口</p>
 </li>
@@ -1327,7 +1325,7 @@
       <title><![CDATA[记一次实际项目从Eclipse转到IDEA的经历]]></title>
       <url>/2018/07/07/2018-7-7-16-35-54/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在我的印象中，<strong>Eclipse</strong>是所有从事与Java开发相关的人员都熟知的一个IDE，在C/C++领域有微软的VS，VS也是号称宇宙第一IDE，足见它的强大。IDEA作为一个更好用的IDE工具，也是饱饱的吸引了我们的眼球。</p>
-<p>此文会一个完整的项目作为引子，逐步讲解如何将一个<strong>Eclipse</strong>的JavaWeb项目转到IDEA上面，本文不会像到某度上面搜到的东西那样千篇一律，而是会完完整整的介绍该如何操作，也包括了IDEA和<strong>Eclipse</strong>的URL的问题。</p>
+<p>此文会一个完整的项目作为引子，逐步讲解如何将一个<strong>Eclipse</strong>的JavaWeb项目转到IDEA上面，本文不会像到某度上面搜到的东西那样千篇一律，而是会完完整整的介绍该如何操作，也包括了IDEA和<strong>Eclipse</strong>的URL的问题。<br><a id="more"></a></p>
 <h1 id="具体实施步骤"><a href="#具体实施步骤" class="headerlink" title="具体实施步骤"></a>具体实施步骤</h1><h2 id="Eclipse环境"><a href="#Eclipse环境" class="headerlink" title="Eclipse环境"></a><strong>Eclipse</strong>环境</h2><p>在这里首先说一下<strong>Eclipse</strong>的项目的相关环境，项目是采用直接配置<strong>Jar</strong>包的，所有的<strong>Jar</strong>包在<strong>Eclipse</strong>的<strong>WEB-INF</strong>的<strong>lib</strong>文件夹中。项目是采用的是主机名+端口号+项目名称作为首页的这种配置方式的，即<a href="http://localhost:8080/special" target="_blank" rel="noopener">http://localhost:8080/special</a> 这样的方式。</p>
 <h2 id="1、导入项目"><a href="#1、导入项目" class="headerlink" title="1、导入项目"></a>1、导入项目</h2><p>首先打开IDEA，来到欢迎页面，选择import Project</p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180707164640.png" alt="QQ截图20180707164640"></p>
@@ -1381,7 +1379,7 @@
     <entry>
       <title><![CDATA[SpringMVC拦截器]]></title>
       <url>/2018/07/01/2018-7-1-20-55-35/</url>
-      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>拦截器是Spring MVC中强大的控件，它可以在处理器之前做一些操作，或者是在处理器完成后做一个操作，甚至是在渲染视图，也就是viewResolver之后做一些操作。我们知道，在web.xml网站描述文件中，我们会配置DispatchServlet，然后SpringMVC启动的时候就回通过@requestMapping的注解解析统一资源定位符URI和处理器handler之间的关系，在运行的时候，通过URL请求找到对应的HandlerMapping，然后构建HandlerExecuteChain对象，再交给handleradapter执行。</p>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>拦截器是Spring MVC中强大的控件，它可以在处理器之前做一些操作，或者是在处理器完成后做一个操作，甚至是在渲染视图，也就是viewResolver之后做一些操作。我们知道，在web.xml网站描述文件中，我们会配置DispatchServlet，然后SpringMVC启动的时候就回通过@requestMapping的注解解析统一资源定位符URI和处理器handler之间的关系，在运行的时候，通过URL请求找到对应的HandlerMapping，然后构建HandlerExecuteChain对象，再交给handleradapter执行。<br><a id="more"></a></p>
 <h1 id="HandlerInterceptor"><a href="#HandlerInterceptor" class="headerlink" title="HandlerInterceptor"></a>HandlerInterceptor</h1><p>一般要实现拦截器，需要实现HandlerInterceptor接口，这个接口有三个方法，如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public interface HandlerInterceptor &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	default boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)</span><br><span class="line">			throws Exception &#123;</span><br><span class="line">		return true;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	default void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,</span><br><span class="line">			@Nullable ModelAndView modelAndView) throws Exception &#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	default void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler,</span><br><span class="line">			@Nullable Exception ex) throws Exception &#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以上三个方法意义：</p>
@@ -1419,7 +1417,7 @@
     <entry>
       <title><![CDATA[SpringMVC和Struts2的区别]]></title>
       <url>/2018/06/27/2018-6-27-10-38-53/</url>
-      <content type="html"><![CDATA[<p>1、    springmvc的入口是一个servlet即前端控制器，而struts2入口是一个filter过滤器。<br>2、    springmvc是基于方法开发(一个url对应一个方法)，请求参数传递到方法的形参，可以设计为单例或多例(建议单例)，struts2是基于类开发，传递参数是通过类的属性，只能设计为多例。<br>3、    Struts采用值栈存储请求和响应的数据，通过OGNL存取数据， springmvc通过参数解析器是将request请求内容解析，并给方法形参赋值，将数据和视图封装成ModelAndView对象，最后又将ModelAndView中的模型数据通过request域传输到页面。Jsp视图解析器默认使用jstl。</p>
+      <content type="html"><![CDATA[<p>1、    springmvc的入口是一个servlet即前端控制器，而struts2入口是一个filter过滤器。<br>2、    springmvc是基于方法开发(一个url对应一个方法)，请求参数传递到方法的形参，可以设计为单例或多例(建议单例)，struts2是基于类开发，传递参数是通过类的属性，只能设计为多例。<br>3、    Struts采用值栈存储请求和响应的数据，通过OGNL存取数据， springmvc通过参数解析器是将request请求内容解析，并给方法形参赋值，将数据和视图封装成ModelAndView对象，最后又将ModelAndView中的模型数据通过request域传输到页面。Jsp视图解析器默认使用jstl。<br><a id="more"></a></p>
 ]]></content>
       
         
@@ -1429,7 +1427,7 @@
       <title><![CDATA[Jquery的attr()和prop()方法]]></title>
       <url>/2018/06/27/2018-6-27-09-22-28/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在jQuery中有许多的功能能够简化开发流程，jQuery是一个JavaScript的库，封装了许多方法，很多时候，你会发现，在实现某个功能的时候，会发现这个功能的实现可以使用多种方法。</p>
-<p>本文主要是介绍jQuery设置属性的两个方法：attr（attributes）和prop（properties）。</p>
+<p>本文主要是介绍jQuery设置属性的两个方法：attr（attributes）和prop（properties）。<br><a id="more"></a></p>
 <h1 id="官方介绍"><a href="#官方介绍" class="headerlink" title="官方介绍"></a>官方介绍</h1><p>我们知道有的浏览器在input表单项中写disabled或者checked就可以了，但是有的浏览器需要写成disabled=”disabled”或者checked=”checked”才可以，比如用attr(“checked”)获取checkbox的checked属性时选中的时候可以取到值,值为”checked”但没选中获取值就是undefined。</p>
 <p>jQuery1.6之后，使用prop来获取这些属性就能解决问题，使用统一的返回true或者false。</p>
 <p>在jQuery的3.3.1中有以下说明，截图如下：</p>
@@ -1489,9 +1487,9 @@
 <ol>
 <li>状态无关 —— 确保系统的横向拓展能力  </li>
 <li>超文本驱动，Fielding的原话是”hypertext-driven” —— 确保系统的演化能力</li>
-<li>对 resource 相关的模型建立统一的原语，例如：uri、http的method定义等 —— 确保系统能够接纳多样而又标准的客户端。</li>
+<li>对 resource 相关的模型建立统一的原语，例如：uri、http的method定义等 —— 确保系统能够接纳多样而又标准的客户端。<a id="more"></a>
+这样对URL进行了限制，用于定义资源。简单来说就是定义了<strong>如何设计系统来对外提供服务</strong>。使用HTTP+JSON就可以搞定一切。</li>
 </ol>
-<p>这样对URL进行了限制，用于定义资源。简单来说就是定义了<strong>如何设计系统来对外提供服务</strong>。使用HTTP+JSON就可以搞定一切。</p>
 <h1 id="REST详解"><a href="#REST详解" class="headerlink" title="REST详解"></a>REST详解</h1><p>REST究竟是什么？因为REST的内涵非常丰富，所以很难用一两句话解释清楚这个问题。</p>
 <p>首先，REST是Web自身的架构风格。REST也是Web之所以取得成功的技术架构方面因素的总结。REST是世界上最成功的分布式应用架构风格（成功案例：Web，还不够吗？）。它是为 运行在互联网环境 的 分布式 超媒体系统量身定制的。互联网环境与企业内网环境有非常大的差别，最主要的差别是两个方面：</p>
 <p>可伸缩性需求无法控制：并发访问量可能会暴涨，也可能会暴跌。</p>
@@ -1571,6 +1569,7 @@
       <title><![CDATA[在线考试系统——项目说明]]></title>
       <url>/2018/06/13/2018-6-13-15-09-50/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这是一篇关于JavaEE的课程设计项目的部分文档部分。项目的名称为《学生在线考试系统》。</p>
+<a id="more"></a>
 <h2 id="项目名称：学生在线考试系统"><a href="#项目名称：学生在线考试系统" class="headerlink" title="项目名称：学生在线考试系统"></a>项目名称：<strong>学生在线考试系统</strong></h2><p><strong>分工：</strong><br>    边小丰：后端代码编写<br>    黄慧：项目前端代码编写，原型设计</p>
 <p><strong>需求分析</strong></p>
 <p>在线考试系统提高了考试的可靠性、有效性和工作效率，降低了考试成本,顺应了社会的网络化趋势,必将成为一种不可或缺的考试方式。本文研究的目的是设计一个易于管理和维护的面向教学的考试系统，具有一定的通用性，能够满足多门课程的测试与考核要求。为教师开展平时考核及期末考核提供一个考核平台；为学生利用网络自主学习提供条件；为不同课程的网上考试提供平台。</p>
@@ -1621,7 +1620,7 @@
     <entry>
       <title><![CDATA[ObjectMapper类]]></title>
       <url>/2018/06/07/2018-6-7-09-58-02/</url>
-      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>ObjectMapper类是Jackson库的主要类。它提供一些功能将转换成Java对象匹配JSON结构，反之亦然。它使用JsonParser和JsonGenerator的实例实现JSON实际的读/写。</p>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>ObjectMapper类是Jackson库的主要类。它提供一些功能将转换成Java对象匹配JSON结构，反之亦然。它使用JsonParser和JsonGenerator的实例实现JSON实际的读/写。<br><a id="more"></a></p>
 <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>使用Jackson，首先需要相关的jar包。对于使用maven的，需要添加以下依赖：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.9.5&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jackson-core&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.9.5&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jackson-annotations&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.9.5&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 <p>同时，也可以直接下载Jar包。</p>
@@ -1668,7 +1667,7 @@
       <title><![CDATA[AJAX异步请求和JQuery的post,get,getJSON,ajax函数的使用]]></title>
       <url>/2018/06/05/2018-6-5-10-29-56/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p>ajax:是一种与服务器交互的技术，在不刷新全部网页的情况下，更新某些表单项的数据。实现对部分网页的刷新。<br>常用场景：百度或者谷歌的时候，输入的时候给出具体的提示。</p>
+<p>ajax:是一种与服务器交互的技术，在不刷新全部网页的情况下，更新某些表单项的数据。实现对部分网页的刷新。<br>常用场景：百度或者谷歌的时候，输入的时候给出具体的提示。<br><a id="more"></a></p>
 </blockquote>
 <h1 id="关于XHR（XMLHttpRequest）"><a href="#关于XHR（XMLHttpRequest）" class="headerlink" title="关于XHR（XMLHttpRequest）"></a>关于XHR（XMLHttpRequest）</h1><p>XHR时AJAX的基础，所有的浏览器都支持XMLHTTPRequest对象，老年版本的IE5/6使用的是ActiveXObject。所以一般来说，为了兼容性，还是会做一个判断，判断用户的浏览器支不支持XHR。检测的方法如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var xhr;</span><br><span class="line">if(window.XMLHttpRequest)&#123;</span><br><span class="line">    xhr=new XMLHttpRequest();</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    xhr=new ActiveXObject(&quot;Mircosoft.XMLHTTP);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1840,9 +1839,8 @@
       <url>/2018/05/31/2018-5-31-15-40-24/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在面试的过程中一般会问道关于Java的异常处理相关的内容，异常处理是一般容易被忽略的，但是确是很考验一个程序员功底的方面。本文会介绍关于异常，以及关于异常的面试会问到的一些问题。</p>
 <h1 id="异常的分类"><a href="#异常的分类" class="headerlink" title="异常的分类"></a>异常的分类</h1><blockquote>
-<p>异常：程序在运行的过程中，如果程序执行出错，阻止了程序的正常运行，那么就会产生异常。而在Java中有一套解决方案，这就是异常处理机制。Java中的异常机制是针对正常运行程序的一个必要补充，一般来说没有加入异常机制，程序也能正常运行，但是，由于入参、程序逻辑的严谨度，总会有期望之外的结果生成，因此加入异常机制的补充，就是为了更好的处理意料之外的结果。</p>
+<p>异常：程序在运行的过程中，如果程序执行出错，阻止了程序的正常运行，那么就会产生异常。而在Java中有一套解决方案，这就是异常处理机制。Java中的异常机制是针对正常运行程序的一个必要补充，一般来说没有加入异常机制，程序也能正常运行，但是，由于入参、程序逻辑的严谨度，总会有期望之外的结果生成，因此加入异常机制的补充，就是为了更好的处理意料之外的结果。<br><a id="more"></a><br>首先说第一点：</p>
 </blockquote>
-<p>首先说第一点：</p>
 <p><strong>所有的异常类的父类是throwable</strong>，这个出现在我的笔试题上面，是一道判断题，但是当时没有回答正确。</p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180531155359.png" alt="QQ截图20180531155359"><br><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180531155458.png" alt="QQ截图20180531155458"></p>
 <p>通过以上两张图就能看到Exception和Error的直接父类是Throwable，而Throwable是实现了Serializable接口，Object的子类。</p>
@@ -1897,7 +1895,7 @@
       <title><![CDATA[Java中的内存回收与内存泄漏的防治]]></title>
       <url>/2018/05/31/2018-5-31-10-00-19/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>对于JVM（Java虚拟机）的GC（垃圾回收机制）来说，是否回收一个对象的标准是：是否还有引用变量指向该对象。只有有引用变量指向该对象，那么JVM就不会考虑去回收它。</p>
-<p>而在学习Java的时候，一般都是会说：Java有一套完整的垃圾回收机制，程序员可以不需要考虑内存。但是在实际应用中，还是会出现“内存泄漏”的情况。  </p>
+<p>而在学习Java的时候，一般都是会说：Java有一套完整的垃圾回收机制，程序员可以不需要考虑内存。但是在实际应用中，还是会出现“内存泄漏”的情况。<br><a id="more"></a></p>
 <h1 id="对象在内存中的状态"><a href="#对象在内存中的状态" class="headerlink" title="对象在内存中的状态"></a>对象在内存中的状态</h1><p>基本上可以将JVM中的对象引用理解为离散中学到的有向图。</p>
 <p>将对象当做有向图的<strong>顶点</strong>，将引用关系当做有向图的有向边，有向边总是从引用端指向被引用的变量。在JVM中，Java的各种对象都是由各个线程创建的，所以可以将Java的线程对象作为有向图的起点。</p>
 <p>如果按照上述的方式，对于某一个对象来说，始终有大于等于一条路径能够从起点指到它，那么它就不会被GC。当然，如果找不到一条路径能够指向它，那么它就可能会被回收（注意这里说的是可能，因为GC的回收机制是由一套相对复杂的算法来决定的，所有的对象并不是失去引用马上就会被回收）。</p>
@@ -1950,7 +1948,7 @@
       <title><![CDATA[JavaEE-SSH框架整合（Spring5.04+Struts2.5.16+Hibernate5.3）]]></title>
       <url>/2018/04/24/2018-4-25-114413/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本文主要是通过一个简单的注册登录来说明SSH框架的整合过程。在项目中，可以使用注解或者是XML的方式来配置依赖。</p>
-<p>首先时Struts2和Spring和整合。</p>
+<p>首先时Struts2和Spring和整合。<br><a id="more"></a></p>
 <h1 id="导入的Jar包"><a href="#导入的Jar包" class="headerlink" title="导入的Jar包"></a>导入的Jar包</h1><h2 id="Struts2基本Jar包"><a href="#Struts2基本Jar包" class="headerlink" title="Struts2基本Jar包"></a>Struts2基本Jar包</h2><p><img src="http://p2sj58chj.bkt.clouddn.com/JavaEE-SSH框架整合（Spring）/20180424061215929.png" alt=""></p>
 <h2 id="Spring基本Jar包"><a href="#Spring基本Jar包" class="headerlink" title="Spring基本Jar包"></a>Spring基本Jar包</h2><p><img src="http://p2sj58chj.bkt.clouddn.com/JavaEE-SSH框架整合（Spring）/20180424061255398.png" alt=""></p>
 <h2 id="Hibernate基本Jar包"><a href="#Hibernate基本Jar包" class="headerlink" title="Hibernate基本Jar包"></a>Hibernate基本Jar包</h2><p><img src="http://p2sj58chj.bkt.clouddn.com/JavaEE-SSH框架整合（Spring）/20180424061327015.png" alt=""></p>
@@ -2039,11 +2037,11 @@
         
         <tags>
             
-            <tag> JavaWeb </tag>
-            
             <tag> Struts2 </tag>
             
             <tag> 拦截器 </tag>
+            
+            <tag> JavaWeb </tag>
             
         </tags>
         
@@ -2053,8 +2051,7 @@
       <title><![CDATA[JavaWeb获取表单数据的三种方式（属性封装，表达式封装，模型驱动封装）]]></title>
       <url>/2018/03/31/2018-3-31-194919/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在JavaWeb中，常常会遇到用户注册、提交表单数据等等，这个时候使用Struts2框架怎么获取页面的数据呢？传统的有通过域对象的方法来挨个使用getParameter方法来获取表单数据再进行操作（比如封装到一个JavaBean等等），本文主要使用Struts2框架来获取表单数据。</p>
-<p>在首先会通过最传统的方法通过Servlet来获取表单数据，接着会介绍三种获取表单数据的方式，最后会对这几种方式来进行比较。</p>
-<p>本文各类环境如下：  </p>
+<p>在首先会通过最传统的方法通过Servlet来获取表单数据，接着会介绍三种获取表单数据的方式，最后会对这几种方式来进行比较。<br> <a id="more"></a><br>本文各类环境如下：  </p>
 <p>Struts2版本：struts-2.5.16-all<br>IDE：Intellij IDEA 2018.1    </p>
 <p>此外关于添加Struts2 jar包不再叙述。</p>
 <h1 id="Servlet域对象获取表单数据"><a href="#Servlet域对象获取表单数据" class="headerlink" title="Servlet域对象获取表单数据"></a>Servlet域对象获取表单数据</h1><p>此处使用的是最原始的方式获取表单数据，主要是操作request域来获取数据的。</p>
@@ -2124,11 +2121,11 @@
         
         <tags>
             
+            <tag> Struts2 </tag>
+            
             <tag> JavaWeb </tag>
             
             <tag> 属性封装，表达式封装，模型驱动封装 </tag>
-            
-            <tag> Struts2 </tag>
             
         </tags>
         
@@ -2138,9 +2135,9 @@
       <title><![CDATA[JavaEE Async 异步支持]]></title>
       <url>/2018/03/26/2018-3-26-193844/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p> Async技术是Servlet3.0 之后添加的，用于处理异步请求。在此之前，大多为同步请求，客户端向服务器提交请求，假设请求很耗时，那么按照之前同步的处理办法，servlet在接收到这个请求之后，会调用去处理这个耗时操作，如果这个耗时操作长时间没有返回，那么就造成了服务器的阻塞，服务器资源得不到有效利用，这样的结果显然对于服务器的高并发是非常不利的。<br> 服务器可以异步执行，在等待长时间的过程完成期间，控制容器执行其他任务，当耗时操作完成返回后，再调用资源处理这个返回请求。   </p>
-</blockquote>
-<h1 id="使用Async的步骤"><a href="#使用Async的步骤" class="headerlink" title="使用Async的步骤"></a>使用Async的步骤</h1><h2 id="启用async"><a href="#启用async" class="headerlink" title="启用async"></a>启用async</h2><p>异步行为需要在Servlet中显式启用 ，其方法有两种：  </p>
+<p> Async技术是Servlet3.0 之后添加的，用于处理异步请求。在此之前，大多为同步请求，客户端向服务器提交请求，假设请求很耗时，那么按照之前同步的处理办法，servlet在接收到这个请求之后，会调用去处理这个耗时操作，如果这个耗时操作长时间没有返回，那么就造成了服务器的阻塞，服务器资源得不到有效利用，这样的结果显然对于服务器的高并发是非常不利的。<br> 服务器可以异步执行，在等待长时间的过程完成期间，控制容器执行其他任务，当耗时操作完成返回后，再调用资源处理这个返回请求。<br><a id="more"></a></p>
+<h1 id="使用Async的步骤"><a href="#使用Async的步骤" class="headerlink" title="使用Async的步骤"></a>使用Async的步骤</h1></blockquote>
+<h2 id="启用async"><a href="#启用async" class="headerlink" title="启用async"></a>启用async</h2><p>异步行为需要在Servlet中显式启用 ，其方法有两种：  </p>
 <ul>
 <li>添加@WebServlet的<strong>asyncSupported</strong>属性实现  </li>
 </ul>
@@ -2190,9 +2187,9 @@
       <title><![CDATA[JavaEE之Session理解]]></title>
       <url>/2018/03/26/2018-3-26-193523/</url>
       <content type="html"><![CDATA[<h1 id="Session应用场景"><a href="#Session应用场景" class="headerlink" title="Session应用场景"></a>Session应用场景</h1><blockquote>
-<p>在互联网生活中，通常大家在使用浏览器的时候会接触到session。由于HTTP的无状态性，也就是说，当打开浏览器输入<a href="http://www.bianxiaofeng.com">http://www.bianxiaofeng.com</a> 网址，然后该请求会被服务器处理后，返回所请求的网页的内容，至此，整个Request/Response过程已经完全结束了。当你接下来访问网站的时候，网站服务器端是不认识你的。这就是无状态性。为了解决这个问题（比如在某个需要输入密码的网页登录，不能说每一次打开该网站的新的网页就要输入一次密码。对吧？）。此时session的作用就体现出来了。简单的说。就是让服务器知道你就是你。  </p>
-</blockquote>
-<h1 id="面对无状态性的解决方案"><a href="#面对无状态性的解决方案" class="headerlink" title="面对无状态性的解决方案"></a>面对无状态性的解决方案</h1><p>Java Servlet 通过引入session机制来跟踪客户端的状态。当用户访问网站的时候，网站会分配给该客户端一个sessionID用于标识该客户端，至此，在接下来的一段时间内，用户可以请求不同的服务器资源。当网页被关闭的时候，服务器会释放掉这个ID。比如在线购物的过程，浏览物品，到添加购物车到付款完成关闭页面这整个过程就是一个session。</p>
+<p>在互联网生活中，通常大家在使用浏览器的时候会接触到session。由于HTTP的无状态性，也就是说，当打开浏览器输入<a href="http://www.bianxiaofeng.com">http://www.bianxiaofeng.com</a> 网址，然后该请求会被服务器处理后，返回所请求的网页的内容，至此，整个Request/Response过程已经完全结束了。当你接下来访问网站的时候，网站服务器端是不认识你的。这就是无状态性。为了解决这个问题（比如在某个需要输入密码的网页登录，不能说每一次打开该网站的新的网页就要输入一次密码。对吧？）。此时session的作用就体现出来了。简单的说。就是让服务器知道你就是你。<br><a id="more"></a></p>
+<h1 id="面对无状态性的解决方案"><a href="#面对无状态性的解决方案" class="headerlink" title="面对无状态性的解决方案"></a>面对无状态性的解决方案</h1></blockquote>
+<p>Java Servlet 通过引入session机制来跟踪客户端的状态。当用户访问网站的时候，网站会分配给该客户端一个sessionID用于标识该客户端，至此，在接下来的一段时间内，用户可以请求不同的服务器资源。当网页被关闭的时候，服务器会释放掉这个ID。比如在线购物的过程，浏览物品，到添加购物车到付款完成关闭页面这整个过程就是一个session。</p>
 <h1 id="Session的使用"><a href="#Session的使用" class="headerlink" title="Session的使用"></a>Session的使用</h1><p>session的使用方式很多，常见的方式是使用jsp和servlet。  </p>
 <p>jsp的9大内置对象中就有session，所以在jsp页面可以直接使用。在servlet中，需要构建出session实例，然后才能使用。构建方式有两种：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HttpSession session=request.getSession();</span><br><span class="line">HttpSession session=request.getSession(Boolean b);</span><br><span class="line">//参数为true：若会话存在就返回该对话，如果不存在就创建一个对话；</span><br><span class="line">//参数为false：若会话存在就返回该对话，如果不存在就返回null</span><br></pre></td></tr></table></figure>
@@ -2221,7 +2218,7 @@
       <url>/2018/03/20/2018-3-20-153425/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在Android的开源环境下，也就多出来很多优秀的第三方的项目，但是因为很多第三方的项目和目前你正在开发的APP使用的Lib有些是重复的，这样会导致<strong>transformClassesWithDexForDebug</strong>  </p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/20180320154257.png" alt="20180320154257">  </p>
-<p>本文介绍年两种方法来处理这个问题。</p>
+<p>本文介绍年两种方法来处理这个问题。<br><a id="more"></a></p>
 <h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><h2 id="添加“multiDexEnabled-true”到-defaultConfig"><a href="#添加“multiDexEnabled-true”到-defaultConfig" class="headerlink" title="添加“multiDexEnabled true”到 defaultConfig"></a>添加“multiDexEnabled true”到 defaultConfig</h2><p>在app的build.gradle文件中的 defaultConfig添加：  </p>
 <p><code>multiDexEnabled true</code><br>如图所示：</p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/QQ截图20180320154214.png" alt="QQ截图20180320154214"></p>
@@ -2252,7 +2249,7 @@
     <entry>
       <title><![CDATA[Qt实现串口通信控制51单片机（上下位机）]]></title>
       <url>/2018/03/09/2018-3-9-165439/</url>
-      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Qt是我在大一下学期开始接触的，当时刚学完C++，然后每天对着黑漆漆的console窗口，在偶然的机会接触到Qt这个跨平台的C++应用程序开发框架。又在老师的怂恿下（单片机老师说如果做出上下位机实验成绩就是满分），使用Qt来进行上下位机的开发。当然实现的功能很简单，控制LED灯的明灭，输入数字显示在数码管上，控制继电器和蜂鸣器以及定时器。</p>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Qt是我在大一下学期开始接触的，当时刚学完C++，然后每天对着黑漆漆的console窗口，在偶然的机会接触到Qt这个跨平台的C++应用程序开发框架。又在老师的怂恿下（单片机老师说如果做出上下位机实验成绩就是满分），使用Qt来进行上下位机的开发。当然实现的功能很简单，控制LED灯的明灭，输入数字显示在数码管上，控制继电器和蜂鸣器以及定时器。<br><a id="more"></a></p>
 <h1 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h1><p>首先是界面截图 </p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-20183917547.png" alt="{mdFileName}-20183917547"><br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-20183917553.png" alt="{mdFileName}-20183917553"><br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-20183917556.png" alt="{mdFileName}-20183917556"><br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-20183917559.png" alt="{mdFileName}-20183917559"><br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-2018391762.png" alt="{mdFileName}-2018391762"><br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-2018391765.png" alt="{mdFileName}-2018391765"><br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-2018391767.png" alt="{mdFileName}-2018391767">  </p>
 <h1 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h1><p>其实实现的原理很简单，Qt已经是封装好了串口通信的 QSerialPort类，我们只需要设置好串口通信的相关属性（波特率、数据位、奇偶校验位等等），然后调用 QSerialPort的write方法发送命令到下位机就行。当然了，还需要相应的编写下位机的代码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">void MainWindow::on_openButton_clicked()</span><br><span class="line">&#123;</span><br><span class="line">    if(ui-&gt;openButton-&gt;text()==tr(&quot;打开串口&quot;))</span><br><span class="line">    &#123;</span><br><span class="line">        serial = new QSerialPort;</span><br><span class="line">        //设置串口名</span><br><span class="line">        serial-&gt;setPortName(ui-&gt;PortBox-&gt;currentText());</span><br><span class="line">        //打开串口</span><br><span class="line">        serial-&gt;open(QIODevice::ReadWrite);</span><br><span class="line">        //设置波特率</span><br><span class="line">        serial-&gt;setBaudRate(ui-&gt;BaudBox-&gt;currentText().toInt());</span><br><span class="line">        //设置数据位数</span><br><span class="line">        switch(ui-&gt;BitNumBox-&gt;currentIndex())</span><br><span class="line">        &#123;</span><br><span class="line">         case 8: serial-&gt;setDataBits(QSerialPort::Data8); break;</span><br><span class="line">        default: break;</span><br><span class="line">        &#125;</span><br><span class="line">        //设置奇偶校验</span><br><span class="line">        switch(ui-&gt;ParityBox-&gt;currentIndex())</span><br><span class="line">        &#123;</span><br><span class="line">        case 0: serial-&gt;setParity(QSerialPort::NoParity); break;</span><br><span class="line">        default: break;</span><br><span class="line">        &#125;</span><br><span class="line">        //设置停止位</span><br><span class="line">        switch(ui-&gt;StopBox-&gt;currentIndex())</span><br><span class="line">        &#123;</span><br><span class="line">             case 1: serial-&gt;setStopBits(QSerialPort::OneStop); break;</span><br><span class="line">            case 2: serial-&gt;setStopBits(QSerialPort::TwoStop); break;</span><br><span class="line">        default: break;</span><br><span class="line">        &#125;</span><br><span class="line">        //设置流控制</span><br><span class="line">        serial-&gt;setFlowControl(QSerialPort::NoFlowControl);</span><br><span class="line"></span><br><span class="line">        //关闭设置菜单使能</span><br><span class="line">        ui-&gt;PortBox-&gt;setEnabled(false);</span><br><span class="line">        ui-&gt;BaudBox-&gt;setEnabled(false);</span><br><span class="line">        ui-&gt;BitNumBox-&gt;setEnabled(false);</span><br><span class="line">        ui-&gt;ParityBox-&gt;setEnabled(false);</span><br><span class="line">        ui-&gt;StopBox-&gt;setEnabled(false);</span><br><span class="line">        ui-&gt;openButton-&gt;setText(tr(&quot;关闭串口&quot;));</span><br><span class="line"></span><br><span class="line">        //连接信号槽</span><br><span class="line">        QObject::connect(serial, &amp;QSerialPort::readyRead, this, &amp;MainWindow::Read_Data);</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        //关闭串口</span><br><span class="line">        serial-&gt;clear();</span><br><span class="line">        serial-&gt;close();</span><br><span class="line">        serial-&gt;deleteLater();</span><br><span class="line"></span><br><span class="line">        //恢复设置使能</span><br><span class="line">        ui-&gt;PortBox-&gt;setEnabled(true);</span><br><span class="line">        ui-&gt;BaudBox-&gt;setEnabled(true);</span><br><span class="line">        ui-&gt;BitNumBox-&gt;setEnabled(true);</span><br><span class="line">        ui-&gt;ParityBox-&gt;setEnabled(true);</span><br><span class="line">        ui-&gt;StopBox-&gt;setEnabled(true);</span><br><span class="line">        ui-&gt;openButton-&gt;setText(tr(&quot;打开串口&quot;));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -2286,7 +2283,8 @@
 <p>更新内容：</p>
 <pre><code>* 重置原有算法，按照一种更加容易理解的白话文说明各种算法的特点。
 * 增加时间复杂度概念，分析时间复杂度。
-</code></pre><p>序列文章：</p>
+</code></pre><a id="more"></a>
+<p>序列文章：</p>
 <ul>
 <li><p><a href="http://www.bianxiaofeng.com/2018/03/09/2018-3-9-135602/">常见排序算法总结（冒泡排序、快速排序、选择排序、插入排序）——Java语言（一）</a></p>
 </li>
@@ -2372,6 +2370,7 @@
       <url>/2018/03/08/2018-3-8-084846/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>一般来说，启动Activity的方法有两种，显式启动和隐式启动。对于显示启动来说，只需要实例化一个Intent对象，指明被启动对象的组件信息，包括包名以及类名。例如  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Intent intent=new Intent(MainActivity.this,OtherActivity.class);</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>原则上是单独的使用隐式启动和显式启动，如果两者并存的话，以显式启动为准。<br>隐式调用需要Intent能够匹配目标组件的IntentFilter设置的过滤信息，如果不匹配的话是不能正常的启动Activity。Intent中需要过滤的信息包括：action、category和data。  </p>
 <h1 id="IntentFilter的匹配规则"><a href="#IntentFilter的匹配规则" class="headerlink" title="IntentFilter的匹配规则"></a>IntentFilter的匹配规则</h1><p>一个过滤列表中的action，category，data可以有多个，所有的action，category，data分别构成不同的类别。只要有一个Intent能够同时匹配action、category、data类别才能匹配成功。一个Activity可以有多个IntentFilter，只要成功的符合一组IntentFilter就可以启动相应的Activity。  </p>
 <h2 id="action的匹配规则"><a href="#action的匹配规则" class="headerlink" title="action的匹配规则"></a>action的匹配规则</h2><p>action是一个字符串，系统定义了一些，同时也支持自定义此字符串。action<strong>严格区分大小写</strong>。  </p>
@@ -2414,7 +2413,7 @@
     <entry>
       <title><![CDATA[Android Activity的启动模式]]></title>
       <url>/2018/03/07/2018-3-7-104145/</url>
-      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>当用户多次启动同一个Activity的时候，系统默认会一直为这个Activity创建实例，并将实例放入任务栈中，在用户按back键的时候会一一回退，每按一次任务栈的时候，栈顶的任务就会出栈，当任务栈为空的时候系统会回收这个任务栈。这就是在默认的情况下，系统对于Activity的处理方式。而这种默认的方式在某些时候可能不太符合开发者的意图。所以Android出现了多种的启动模式和标志位来更改这一默认的行为。  </p>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>当用户多次启动同一个Activity的时候，系统默认会一直为这个Activity创建实例，并将实例放入任务栈中，在用户按back键的时候会一一回退，每按一次任务栈的时候，栈顶的任务就会出栈，当任务栈为空的时候系统会回收这个任务栈。这就是在默认的情况下，系统对于Activity的处理方式。而这种默认的方式在某些时候可能不太符合开发者的意图。所以Android出现了多种的启动模式和标志位来更改这一默认的行为。<br><a id="more"></a></p>
 <h1 id="Activity的LaunchMode"><a href="#Activity的LaunchMode" class="headerlink" title="Activity的LaunchMode"></a>Activity的LaunchMode</h1><p>目前有四种LaunchMode，分别是：standard、singleTop、singleTask以及singleInstance。<br>为了方便说明和解释，我这里写了一个Demo，以上传到GitHub，详情请<a href="https://github.com/DimpleFeng/Android-Activity-LaunchMode" target="_blank" rel="noopener">点击</a>。界面如下：<br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201837155052.png" alt="{mdFileName}-201837155052"><br>分别对应4种状态的LaunchMode。</p>
 <h2 id="standard-LaunchMode"><a href="#standard-LaunchMode" class="headerlink" title="standard LaunchMode"></a>standard LaunchMode</h2><p>标准模式，这是系统默认的模式，每次启动的Activity的时候会默认创建一个实例，不管这个实例是不是存在。被创建的Activity实例符合典型情况下的生命周期。<br>在这种情况下，谁启动了这个Activity，那么这个Activity就属于启动它的Activity的任务栈中。比如： A启动了B，那么B就属于A的任务栈的成员。  </p>
 <p>Demo点击第一项按钮4下结果如下：<br><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201837123217.png" alt="{mdFileName}-201837123217"><br>可以看到：<br>这里依次调用了4次的onCreate，且每次的hashcode都不一样。说明分别创建了4次Activity实例。而且任务栈的ID一直都是88.这也就说明了<strong>谁启动Activity，该Activity就位于哪个任务栈中的说法</strong>。</p>
@@ -2452,11 +2451,12 @@
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在Android开发的过程中，有一个特别重要的组件：Activity，它是除了Windows、Dialog和Toast之外我们用户可以直接看到的界面。本文主要记录下研究Activity中的一些感悟。<br>首先Activity的生命周期总体来说可以分为两种：  </p>
 <ul>
 <li>正常情况下的Activity生命周期  </li>
-<li>异常情况下的Activity生命周期  </li>
-</ul>
+<li>异常情况下的Activity生命周期  <a id="more"></a>
 <h1 id="正常情况下的生命周期"><a href="#正常情况下的生命周期" class="headerlink" title="正常情况下的生命周期"></a>正常情况下的生命周期</h1><blockquote>
 <p>所谓的正常的生命周期是指：在有用户的参与的情况下，Activity经历的生命周期的改变。  </p>
 </blockquote>
+</li>
+</ul>
 <p>首先上一张Activity的生命流程切换的图：  </p>
 <p><img src="http://p2sj58chj.bkt.clouddn.com/%7BmdFileName%7D-201835125748.png" alt="{mdFileName}-201835125748">  </p>
 <h2 id="7种状态方法说明"><a href="#7种状态方法说明" class="headerlink" title="7种状态方法说明"></a>7种状态方法说明</h2><p>接着对每个方法进行解释说明：</p>
@@ -2530,8 +2530,7 @@
     <entry>
       <title><![CDATA[Android BroadcastReceiver 的静态动态注册及区别]]></title>
       <url>/2018/03/04/2018-3-4-135539/</url>
-      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>为了方便Android系统各个应用程序及程序内部进行通信，Android系统引入了一套广播机制。各个应用程序可以对感兴趣的广播进行注册，当系统或者其他程序发出这条广播的时候，对发出的广播进行注册的程序便能够收到这条广播。为此，Android系统中有一套完整的API，允许程序只有的发送和接受广播。<br>本文会分别介绍静态注册广播和动态注册广播的方法并比较这两种的区别。   </p>
-<p><strong>在此会先说明发送广播的两种方法</strong></p>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>为了方便Android系统各个应用程序及程序内部进行通信，Android系统引入了一套广播机制。各个应用程序可以对感兴趣的广播进行注册，当系统或者其他程序发出这条广播的时候，对发出的广播进行注册的程序便能够收到这条广播。为此，Android系统中有一套完整的API，允许程序只有的发送和接受广播。<br>本文会分别介绍静态注册广播和动态注册广播的方法并比较这两种的区别。<br><a id="more"></a><br><strong>在此会先说明发送广播的两种方法</strong></p>
 <h1 id="广播两种基本类型"><a href="#广播两种基本类型" class="headerlink" title="广播两种基本类型"></a>广播两种基本类型</h1><p>在一个程序中，可以发送广播供当前程序的广播接收器收到。首先我们来看下两种方式的发送广播。<br>在Android系统中，主要有两种基本的广播类型：  </p>
 <ul>
 <li>标准广播（Normal Broadcasts）  </li>
@@ -2605,7 +2604,7 @@
     <entry>
       <title><![CDATA[Android学习之路笔记]]></title>
       <url>/2018/01/29/2018-1-29-220254/</url>
-      <content type="html"><![CDATA[<p>最近是看了下大二上学期的时候学习Android的一些笔记资料，觉得以前是写的还有需要改进的地方，所以准备再重新整理整理发出来。学习Android的时候，是采用的视频+文档结合的方式。书呢看的是：郭大神的《第一行代码》。所以本篇笔记还是按照郭大神的目录来进行记录的。  </p>
+      <content type="html"><![CDATA[<p>最近是看了下大二上学期的时候学习Android的一些笔记资料，觉得以前是写的还有需要改进的地方，所以准备再重新整理整理发出来。学习Android的时候，是采用的视频+文档结合的方式。书呢看的是：郭大神的《第一行代码》。所以本篇笔记还是按照郭大神的目录来进行记录的。<br><a id="more"></a></p>
 <h1 id="第一章：了解全貌——Android王国简介"><a href="#第一章：了解全貌——Android王国简介" class="headerlink" title="第一章：了解全貌——Android王国简介"></a>第一章：了解全貌——Android王国简介</h1><p> 1、Android的四层架构：Linux内核层、系统运行库层、应用框架层和应用层<br> 2、Android的四大组件：活动（Activity）、服务（Service）、广播接收器（Broadcast Receiver）、内容提供器（Content Provider）<br> 3 、使用res目录下的资源的两种方式     </p>
 <pre><code>例如：
     使用Res/values/string.xml文件，内容如下   
@@ -3029,7 +3028,7 @@ compile &apos;com.github.bumptech.glide:glide:4.0.0-RC1&apos;
       <title><![CDATA[使用VSCode+七牛云图床插件+自定义快捷键配置Hexo博文编写环境]]></title>
       <url>/2018/01/19/2018-1-19%20153336/</url>
       <content type="html"><![CDATA[<h1 id="使用VSCode-七牛云图床插件-自定义快捷键配置Hexo博文编写环境"><a href="#使用VSCode-七牛云图床插件-自定义快捷键配置Hexo博文编写环境" class="headerlink" title="使用VSCode+七牛云图床插件+自定义快捷键配置Hexo博文编写环境"></a>使用VSCode+七牛云图床插件+自定义快捷键配置Hexo博文编写环境</h1><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在我的电脑上安装了MarkdownPad++还有VSCode（主要是用来写前端的），VSCode也是可以写md文章的。之所以之前我是安装了MarkdownPad++，是因为它有一个可以上传图片的功能，再加上它还有一些VSCode没有的快捷键，所以一直是两个软件并存，直到今天重新捣鼓了一下，终于可以去掉MarkdownPad++了。不得不说VSCode确实很强大，更加难得的是支持中文，这使我对这个软件的好感度哧溜的加加加。 </p>
-<p>特写下这个教程，方便同样是我这种情况的朋友。   </p>
+<p>特写下这个教程，方便同样是我这种情况的朋友。<br><a id="more"></a></p>
 <h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><ul>
 <li>首先你得要有VSCode对吧，没有的话我也是附上链接：<a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Go</a>  </li>
 </ul>
@@ -3096,6 +3095,7 @@ compile &apos;com.github.bumptech.glide:glide:4.0.0-RC1&apos;
       <title><![CDATA[大学期间的视频文档]]></title>
       <url>/2018/01/17/2018-1-17%20162928/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>考完试恍恍惚惚，简直不敢相信大三已经又过去了一半了，时间是真的快。经历了前两天去西岭雪山玩的时候手机丢了的不愉快，决定好好整理了下大学做过的一些东西，做一个备份。  </p>
+<a id="more"></a>
 <h2 id="视频篇"><a href="#视频篇" class="headerlink" title="视频篇"></a>视频篇</h2><h3 id="成都大学信息科学与工程学院-2016年迎新晚会暖场视频"><a href="#成都大学信息科学与工程学院-2016年迎新晚会暖场视频" class="headerlink" title="成都大学信息科学与工程学院 2016年迎新晚会暖场视频"></a>成都大学信息科学与工程学院 2016年迎新晚会暖场视频</h3><p>这是我担任学生会科文部部长的时候带领小干事们做的一些东西。权当留个纪念吧，我相信这套视频，对于16级的小同学们来说有着特别的意义。 </p>
 <embed src="http://player.video.qiyi.com/428f02012a8d2b16fd49c579b2cd0d6d/0/0/w_19rwhy0npt.swf-albumId=11158755709-tvId=11158755709-isPurchase=0-cnId=7" allowfullscreen="true" quality="high" width="480" height="350" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">  
 
@@ -3159,11 +3159,9 @@ compile &apos;com.github.bumptech.glide:glide:4.0.0-RC1&apos;
       <title><![CDATA[Hexo-NexT主题添加评论功能（来必力、Hypercomments、畅言、友言）]]></title>
       <url>/2018/01/17/2018-01-17%20102253/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p>最近捣鼓着博客的评论功能，看到很多形形色色的评论插件，比如来必力，畅言等等之类的。功能是各不一样，网上教程是关于某一类的评论插件的介绍，不是很全面，所以本文主要是弄一个全面的评论插件集成，然后分别说一下各自的优点以及不足，千挑万选之后总有一个适合你。<br>我使用的是NexT主题，NexT主题是集成了评论功能的。所以这里就直接是以NexT主题为例了。  </p>
-</blockquote>
+<p>最近捣鼓着博客的评论功能，看到很多形形色色的评论插件，比如来必力，畅言等等之类的。功能是各不一样，网上教程是关于某一类的评论插件的介绍，不是很全面，所以本文主要是弄一个全面的评论插件集成，然后分别说一下各自的优点以及不足，千挑万选之后总有一个适合你。<br>我使用的是NexT主题，NexT主题是集成了评论功能的。所以这里就直接是以NexT主题为例了。<br><a id="more"></a></p>
 <h1 id="多说"><a href="#多说" class="headerlink" title="多说"></a>多说</h1><p>多说的功能还是很强大的，加上很早之前就有了各种社交途径的分享，很受大家喜爱。虽然多说在2017年6月1日正式停止，但是还是纪念下多说吧。虽然我没有用过，但是我在一些技术交流群中还是听到很多人在说多说。<br><img src="https://i.imgur.com/IcR5S7r.png" alt="">  </p>
-<h1 id="Hypercomments"><a href="#Hypercomments" class="headerlink" title="Hypercomments"></a>Hypercomments</h1><blockquote>
-<p>Communication is Empathy.<br>Tailored comment system for your site.    </p>
+<h1 id="Hypercomments"><a href="#Hypercomments" class="headerlink" title="Hypercomments"></a>Hypercomments</h1><p>Communication is Empathy.<br>Tailored comment system for your site.    </p>
 </blockquote>
 <p><img src="https://i.imgur.com/BgAR237.png" alt=""></p>
 <h2 id="说在前面"><a href="#说在前面" class="headerlink" title="说在前面"></a>说在前面</h2><p>这是一个国外的评论系统，总的来说，界面设计等等还是很不错的。在NexT主题中操作也还算简单，事实上所有的评论在NexT上的操作都还是很简单的。  </p>
@@ -3252,7 +3250,7 @@ changyan:
     <entry>
       <title><![CDATA[2018React-Native环境安装及运行第一个demo]]></title>
       <url>/2018/01/07/2018-01-07%20121946/</url>
-      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Android放下很久了，前段时间一直扎根于前端三大件（HTML、CSS、JavaScript）的学习，目的呢是想为之后的学习React Native学习做好准备。趁着离考试还有一段时间，也是重新走上Android开发的道路。<br>现在确实是移动设备占优，现在智能手机能够完成网页端很多的工作。大有一统江山的趋势。移动开发在未来的很长时间里面都是热门。<br>工欲善其事必先利其器，本文主要是结合自己的相关经验搭建开发环境，来开始关于React Native的第一篇博文。纵观网上的各种教程，还有官方的一些教程吧，写的是比较简略的，所以本文的定位是写一点比较详细的环境安装教程。  </p>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Android放下很久了，前段时间一直扎根于前端三大件（HTML、CSS、JavaScript）的学习，目的呢是想为之后的学习React Native学习做好准备。趁着离考试还有一段时间，也是重新走上Android开发的道路。<br>现在确实是移动设备占优，现在智能手机能够完成网页端很多的工作。大有一统江山的趋势。移动开发在未来的很长时间里面都是热门。<br>工欲善其事必先利其器，本文主要是结合自己的相关经验搭建开发环境，来开始关于React Native的第一篇博文。纵观网上的各种教程，还有官方的一些教程吧，写的是比较简略的，所以本文的定位是写一点比较详细的环境安装教程。<br><a id="more"></a></p>
 <h1 id="关于react-native"><a href="#关于react-native" class="headerlink" title="关于react native"></a>关于react native</h1><p>还是老规矩，介绍下这个东东吧。  </p>
 <blockquote>
 <p>React Native 是一个 JavaScript 的框架，用来撰写实时的、可原生呈现 iOS 和 Android 的应用。其是基于 React的，而 React 是 Facebook 的用于构建用户界面的 JavaScript 库，但是这里不是给浏览器解释的，而是为移动平台。换句话说：如果你是一名 web 开发者，你可以使用熟悉的框架和单一的 JavaScript 代码库，即 React Native来撰写清晰的、高效的移动应用。</p>
@@ -3333,7 +3331,7 @@ yarn config set disturl https://npm.taobao.org/dist --global
     <entry>
       <title><![CDATA[Hexo内嵌html或者Js代码遇到的问题]]></title>
       <url>/2018/01/05/2018-01-05%20201655/</url>
-      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><img src="https://i.imgur.com/3Ewq7e1.gif" alt=""><br>在没有遇到这个坑之前我是完全不知道原来markdown里面是可以嵌入html或者js代码运行的。好吧是我孤陋寡闻了。在了解了原来还有这种操作的时候，整个人是惊呆了。<img src="https://i.imgur.com/DxDVkwv.gif" alt="">，但想想也是，不然一个博客里面随随便便冒出一个<code>button</code>还能点击是怎么做出来的。  </p>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><img src="https://i.imgur.com/3Ewq7e1.gif" alt=""><br>在没有遇到这个坑之前我是完全不知道原来markdown里面是可以嵌入html或者js代码运行的。好吧是我孤陋寡闻了。在了解了原来还有这种操作的时候，整个人是惊呆了。<img src="https://i.imgur.com/DxDVkwv.gif" alt="">，但想想也是，不然一个博客里面随随便便冒出一个<code>button</code>还能点击是怎么做出来的。<br><a id="more"></a></p>
 <h1 id="进坑过程"><a href="#进坑过程" class="headerlink" title="进坑过程"></a>进坑过程</h1><p><code>&lt;script type=&quot;text/javascript&quot;  alert(&quot;hello world！&quot;);&gt;</code></p>
 <p>比如上面一段代码，写出来了，在<code>markdownpad</code>上面还是可以看到的，但是在<code>hexo</code>中就看不到了。此时脸上笑嘻嘻，心里<em>*</em>。（以上代码我是直接用``括起来的，如果没有扩起来的话，博文后面的内容是完全看不到的。）也是很奇怪这个东西，好像是因为hexo把MD文档全部按照它自己的语法编译了一次，这样就导致编译看起来效果不错，发布出去到处是坑。</p>
 <p>昨晚上我写了一篇博文，<code>hexo g</code>的时候就宝一大堆错，我尝试在其报错的位置进行解决，但是左看右看确实没错。原来是因为hexo文档中的有js代码，引起了连锁反应。毕竟hexo到现在虽然很不错了，但是还有些问题。  </p>
@@ -3370,10 +3368,9 @@ yarn config set disturl https://npm.taobao.org/dist --global
       <title><![CDATA[2018最新版hexo+Github搭建个人博客教程（2018-09-10 更新）]]></title>
       <url>/2018/01/04/2018-01-04%20212731/</url>
       <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>现在是大三了，身边的甚多朋友技术都还不错，动不动就搭建自己的网站什么的。本着向大佬学习（zhuangbi）的心情，我也开始在阿里云上面买了一个云服务器（学生套餐9.9），使用phpstudy软件一键部署了一个web服务器。但是想想其实没什么用，我只是想找一个属于自己的个人博客而已。所以将目光转向了hexo。 经过很多的摸索，终于是做好了我的博客：<a href="http://bianxiaofeng.com" target="_blank" rel="noopener">http://bianxiaofeng.com</a>, 就像每个语言入门必写<code>hello world</code>一样，我也想把自己使用hexo的相关经历写下来，方便自己以后查阅也希望能够帮助到更多的朋友。  </p>
-</blockquote>
-<p>博主使用是Windows10操作系统，其他系统自测。</p>
-<h2 id="总述"><a href="#总述" class="headerlink" title="总述"></a>总述</h2><p>搭建的过程分为以下几步：  </p>
+<p>现在是大三了，身边的甚多朋友技术都还不错，动不动就搭建自己的网站什么的。本着向大佬学习（zhuangbi）的心情，我也开始在阿里云上面买了一个云服务器（学生套餐9.9），使用phpstudy软件一键部署了一个web服务器。但是想想其实没什么用，我只是想找一个属于自己的个人博客而已。所以将目光转向了hexo。 经过很多的摸索，终于是做好了我的博客：<a href="http://bianxiaofeng.com" target="_blank" rel="noopener">http://bianxiaofeng.com</a>, 就像每个语言入门必写<code>hello world</code>一样，我也想把自己使用hexo的相关经历写下来，方便自己以后查阅也希望能够帮助到更多的朋友。<br><a id="more"></a><br>博主使用是Windows10操作系统，其他系统自测。</p>
+<h2 id="总述"><a href="#总述" class="headerlink" title="总述"></a>总述</h2></blockquote>
+<p>搭建的过程分为以下几步：  </p>
 <ol>
 <li>安装Node.js  </li>
 </ol>
@@ -3508,7 +3505,7 @@ deploy:
       <title><![CDATA[站点被百度谷歌收录]]></title>
       <url>/2018/01/02/2018-01-02%20120748/</url>
       <content type="html"><![CDATA[<p>精心写一篇博文但是没人看怎么办呢？百度搜不到，谷歌搜不到？别慌，还需要将你的网站提交到百度和谷歌。</p>
-<p>在开始之前，你可以按照以下格式在百度和谷歌搜索下你的网站：<br><img src="https://i.imgur.com/5hnjkNo.png" alt=""></p>
+<p>在开始之前，你可以按照以下格式在百度和谷歌搜索下你的网站：<br><a id="more"></a><br><img src="https://i.imgur.com/5hnjkNo.png" alt=""></p>
 <p><img src="https://i.imgur.com/yQ3UAjT.png" alt=""><br>注意：提交到谷歌需要科学上网。</p>
 <h1 id="提交百度搜索引擎"><a href="#提交百度搜索引擎" class="headerlink" title="提交百度搜索引擎"></a>提交百度搜索引擎</h1><p>登录<a href="http://ziyuan.baidu.com/site/index" target="_blank" rel="noopener">http://ziyuan.baidu.com/site/index</a></p>
 <p>ps：可能需要个人信息认证，按照提示认证即可！  </p>
@@ -3606,8 +3603,7 @@ baidu_push: true
       <content type="html"><![CDATA[<blockquote>
 <p>HEXO默认是按照时间顺序排一条线，然后按照时间顺序来决定显示的顺序的。按照网上的教程整理了一份方法。</p>
 </blockquote>
-<h1 id="Hexo博文置顶（自定义排序）"><a href="#Hexo博文置顶（自定义排序）" class="headerlink" title="Hexo博文置顶（自定义排序）"></a>Hexo博文置顶（自定义排序）</h1><p>使用的是<code>top</code>属性，<code>top</code>值越高，排序越在前，不设置<code>top</code>值得博文按照时间顺序排序。<br>修改Hexo文件夹下的node_modules/hexo-generator-index/lib/generator.js  </p>
-<p>打开在最后添加如下<code>javascript</code>代码  </p>
+<h1 id="Hexo博文置顶（自定义排序）"><a href="#Hexo博文置顶（自定义排序）" class="headerlink" title="Hexo博文置顶（自定义排序）"></a>Hexo博文置顶（自定义排序）</h1><p>使用的是<code>top</code>属性，<code>top</code>值越高，排序越在前，不设置<code>top</code>值得博文按照时间顺序排序。<br>修改Hexo文件夹下的node_modules/hexo-generator-index/lib/generator.js<br><a id="more"></a><br>打开在最后添加如下<code>javascript</code>代码  </p>
 <pre><code>posts.data = posts.data.sort(function(a, b) {
 if(a.top &amp;&amp; b.top) { // 两篇文章top都有定义
     if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排
@@ -3649,7 +3645,7 @@ else return b.date - a.date; // 都没定义按照文章日期降序排
       <title><![CDATA[MyEclipse2017 CI7 集成开发环境的破解与使用]]></title>
       <url>/2017/12/30/2017-12-30%20180202/</url>
       <content type="html"><![CDATA[<h1 id="MyEclipse2017-CI7-集成开发环境的破解与使用"><a href="#MyEclipse2017-CI7-集成开发环境的破解与使用" class="headerlink" title="MyEclipse2017 CI7  集成开发环境的破解与使用"></a>MyEclipse2017 CI7  集成开发环境的破解与使用</h1><blockquote>
-<p>MyEclipse，是在eclipse 基础上加上自己的插件开发而成的功能强大的企业级集成开发环境，主要用于Java、Java EE以及移动应用的开发。MyEclipse的功能非常强大，支持也十分广泛，尤其是对各种开源产品的支持相当不错。<br>MyEclipse企业级工作平台（MyEclipseEnterprise Workbench ，简称MyEclipse）是对EclipseIDE的扩展，利用它我们可以在数据库和JavaEE的开发、发布以及应用程序服务器的整合方面极大的提高工作效率。它是功能丰富的JavaEE集成开发环境，包括了完备的编码、调试、测试和发布功能，完整支持HTML，Struts，JSP，CSS，Javascript，Spring，SQL，Hibernate  。<br>MyEclipse 是一个十分优秀的用于开发Java, J2EE的 Eclipse 插件集合，MyEclipse的功能非常强大，支持也十分广泛，尤其是对各种开源产品的支持十分不错。MyEclipse可以支持Java Servlet，AJAX，JSP，JSF，Struts，Spring，Hibernate，EJB3，JDBC数据库链接工具等多项功能。可以说MyEclipse是几乎囊括了目前所有主流开源产品的专属eclipse开发工具。—— <a href="https://baike.baidu.com/item/MyEclipse/783967?fr=aladdin" target="_blank"> [百度百科 ]</a></p>
+<p>MyEclipse，是在eclipse 基础上加上自己的插件开发而成的功能强大的企业级集成开发环境，主要用于Java、Java EE以及移动应用的开发。MyEclipse的功能非常强大，支持也十分广泛，尤其是对各种开源产品的支持相当不错。<br>MyEclipse企业级工作平台（MyEclipseEnterprise Workbench ，简称MyEclipse）是对EclipseIDE的扩展，利用它我们可以在数据库和JavaEE的开发、发布以及应用程序服务器的整合方面极大的提高工作效率。它是功能丰富的JavaEE集成开发环境，包括了完备的编码、调试、测试和发布功能，完整支持HTML，Struts，JSP，CSS，Javascript，Spring，SQL，Hibernate  。<a id="more"></a><br>MyEclipse 是一个十分优秀的用于开发Java, J2EE的 Eclipse 插件集合，MyEclipse的功能非常强大，支持也十分广泛，尤其是对各种开源产品的支持十分不错。MyEclipse可以支持Java Servlet，AJAX，JSP，JSF，Struts，Spring，Hibernate，EJB3，JDBC数据库链接工具等多项功能。可以说MyEclipse是几乎囊括了目前所有主流开源产品的专属eclipse开发工具。—— <a href="https://baike.baidu.com/item/MyEclipse/783967?fr=aladdin" target="_blank"> [百度百科 ]</a></p>
 </blockquote>
 <p><em>本文主要通过本人自己的经验对网上的一些各类大神的教程进行总结与更新（大神们的教程已经发布很久了，不能适用现在的最新版本）。</em><br>备注：本教程默认读者是配置好了JAVA的相关环境的，请读者自行配置相关环境。</p>
 <h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>下载地址建议还是去官方的网站吧，为了安全。嘻嘻</p>
@@ -3697,8 +3693,7 @@ else return b.date - a.date; // 都没定义按照文章日期降序排
       <content type="html"><![CDATA[<blockquote>
 <p><em>安装好Android Studio之后需要根据自己的习惯进行一些设置，下载些插件、设置下软件的相关属性等等。刚好重装了下系统，针对这个Android Studio进行了相关的设置，在这里将经历说一下，避免自己以后晚了相关设置也方便一些需要帮助的朋友</em>  </p>
 </blockquote>
-<p>更新记录：2017年12月24日22:32:37更新</p>
-<p>本文主要分为设置篇和插件篇： </p>
+<p>更新记录：2017年12月24日22:32:37更新<br><a id="more"></a><br>本文主要分为设置篇和插件篇： </p>
 <h1 id="技巧篇"><a href="#技巧篇" class="headerlink" title="技巧篇"></a>技巧篇</h1><p>##快速查找以及快捷键搜索<br>在AS的面板上双击<code>shift</code>键，即可调出全局搜索。</p>
 <p> <img src="http://img.blog.csdn.net/20171224213924058?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>AS有很多的快捷键，对于这些快捷键你不一定随时都能记得，这个时候可以使用<code>Win+Shift+A</code>键输入你想用的功能。后面会提示相关的快捷键的。<br><img src="http://img.blog.csdn.net/20171224214158337?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"> </p>
 <h2 id="恢复默认布局"><a href="#恢复默认布局" class="headerlink" title="恢复默认布局"></a>恢复默认布局</h2><p>当你各种乱动默认的面板布局的时候，有的面板你想找的时候却发现找不到了，这个时候按住 <code>Shift+F12</code>就可以重置默认面板。<br><img src="http://img.blog.csdn.net/20171224214521926?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzI0NTQ1Mzc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述">  </p>

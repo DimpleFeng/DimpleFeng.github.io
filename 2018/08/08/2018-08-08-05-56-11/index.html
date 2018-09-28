@@ -164,19 +164,19 @@
 
 
 
-  <meta name="description" content="前言文件上传是一个很常用的功能，比如头像上传，视频上传等等，本文主要使用SpringMVC+Ajax实现文件上传，下载，删除等操作，同时重写CommonsMultipartResolver添加监听器ProgressListener，通过客户端轮询的方式来获取上传文件的进度。本文会首先介绍文件AJAX上传并获取进度的操作。  前言 文件上传 前端设计 Java后端设计 CommonsMultipar">
+  <meta name="description" content="前言文件上传是一个很常用的功能，比如头像上传，视频上传等等，本文主要使用SpringMVC+Ajax实现文件上传，下载，删除等操作，同时重写CommonsMultipartResolver添加监听器ProgressListener，通过客户端轮询的方式来获取上传文件的进度。本文会首先介绍文件AJAX上传并获取进度的操作。">
 <meta name="keywords" content="SpringMVC,文件上传,进度条">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringMVC文件AJAX上传+JQuery文件进度条">
 <meta property="og:url" content="http://www.bianxiaofeng.com/2018/08/08/2018-08-08-05-56-11/index.html">
 <meta property="og:site_name" content="Dimple&#39;s Blog">
-<meta property="og:description" content="前言文件上传是一个很常用的功能，比如头像上传，视频上传等等，本文主要使用SpringMVC+Ajax实现文件上传，下载，删除等操作，同时重写CommonsMultipartResolver添加监听器ProgressListener，通过客户端轮询的方式来获取上传文件的进度。本文会首先介绍文件AJAX上传并获取进度的操作。  前言 文件上传 前端设计 Java后端设计 CommonsMultipar">
+<meta property="og:description" content="前言文件上传是一个很常用的功能，比如头像上传，视频上传等等，本文主要使用SpringMVC+Ajax实现文件上传，下载，删除等操作，同时重写CommonsMultipartResolver添加监听器ProgressListener，通过客户端轮询的方式来获取上传文件的进度。本文会首先介绍文件AJAX上传并获取进度的操作。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://p2sj58chj.bkt.clouddn.com/blog/colorful-donuts-free-photo-2210x1473.jpg">
-<meta property="og:updated_time" content="2018-09-17T12:10:01.418Z">
+<meta property="og:updated_time" content="2018-09-28T09:14:38.407Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringMVC文件AJAX上传+JQuery文件进度条">
-<meta name="twitter:description" content="前言文件上传是一个很常用的功能，比如头像上传，视频上传等等，本文主要使用SpringMVC+Ajax实现文件上传，下载，删除等操作，同时重写CommonsMultipartResolver添加监听器ProgressListener，通过客户端轮询的方式来获取上传文件的进度。本文会首先介绍文件AJAX上传并获取进度的操作。  前言 文件上传 前端设计 Java后端设计 CommonsMultipar">
+<meta name="twitter:description" content="前言文件上传是一个很常用的功能，比如头像上传，视频上传等等，本文主要使用SpringMVC+Ajax实现文件上传，下载，删除等操作，同时重写CommonsMultipartResolver添加监听器ProgressListener，通过客户端轮询的方式来获取上传文件的进度。本文会首先介绍文件AJAX上传并获取进度的操作。">
 <meta name="twitter:image" content="http://p2sj58chj.bkt.clouddn.com/blog/colorful-donuts-free-photo-2210x1473.jpg">
 
 
@@ -476,7 +476,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-17 20:10:01" itemprop="dateModified" datetime="2018-09-17T20:10:01+08:00">2018-09-17</time>
+                <time title="修改时间：2018-09-28 17:14:38" itemprop="dateModified" datetime="2018-09-28T17:14:38+08:00">2018-09-28</time>
               
             
           </span>
@@ -541,7 +541,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://p2sj58chj.bkt.clouddn.com/blog/colorful-donuts-free-photo-2210x1473.jpg" rel="gallery_cjmlru45z001xj4hx6aqv0v5w"
+                 href="http://p2sj58chj.bkt.clouddn.com/blog/colorful-donuts-free-photo-2210x1473.jpg" rel="gallery_cjmlslm77000hqkhxmozojhv0"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://p2sj58chj.bkt.clouddn.com/blog/colorful-donuts-free-photo-2210x1473.jpg" itemprop="contentUrl"/>
               </a>
@@ -554,7 +554,7 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>文件上传是一个很常用的功能，比如头像上传，视频上传等等，本文主要使用SpringMVC+Ajax实现文件上传，下载，删除等操作，同时重写CommonsMultipartResolver添加监听器ProgressListener，通过客户端轮询的方式来获取上传文件的进度。本文会首先介绍文件AJAX上传并获取进度的操作。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>文件上传是一个很常用的功能，比如头像上传，视频上传等等，本文主要使用SpringMVC+Ajax实现文件上传，下载，删除等操作，同时重写CommonsMultipartResolver添加监听器ProgressListener，通过客户端轮询的方式来获取上传文件的进度。本文会首先介绍文件AJAX上传并获取进度的操作。<br><a id="more"></a></p>
 <ul>
 <li><a href="#前言">前言</a></li>
 <li><a href="#文件上传">文件上传</a><ul>
@@ -645,7 +645,7 @@
   <p><span>本文标题:</span><a href="/2018/08/08/2018-08-08-05-56-11/">SpringMVC文件AJAX上传+JQuery文件进度条</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Dimple 的个人博客">Dimple</a></p>
   <p><span>发布时间:</span>2018年08月08日 - 05:08</p>
-  <p><span>最后更新:</span>2018年09月17日 - 20:09</p>
+  <p><span>最后更新:</span>2018年09月28日 - 17:09</p>
   <p><span>原始链接:</span><a href="/2018/08/08/2018-08-08-05-56-11/" title="SpringMVC文件AJAX上传+JQuery文件进度条">http://www.bianxiaofeng.com/2018/08/08/2018-08-08-05-56-11/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.bianxiaofeng.com/2018/08/08/2018-08-08-05-56-11/"  aria-label="复制成功！"></i></span>
   </p>
